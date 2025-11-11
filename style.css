@@ -1,0 +1,40 @@
+# file: style.css
+cat > style.css <<'CSS'
+/* Estilo base moderno y ligero */
+:root{
+  --accent:#0b7285; /* azul-acero */
+  --accent-2:#e63946; /* rojo acento */
+  --muted:#6b6b6b;
+  --maxw:1100px;
+}
+*{box-sizing:border-box}
+body{
+  font-family: "Poppins", system-ui, Arial, sans-serif;
+  line-height:1.5;
+  margin:0;
+  color:#111;
+  padding:24px;
+  background: #f8fafb;
+}
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  background:#fff;
+  border-radius:10px;
+  padding:28px;
+  box-shadow:0 6px 20px rgba(10,10,10,0.06);
+}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:54px;height:54px;background:linear-gradient(135deg,var(--accent),#2bb5c0);
+  border-radius:10px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;
+}
+nav a{margin-left:14px;text-decoration:none;color:var(--accent);font-weight:600}
+h1{margin:0 0 6px 0}
+.lead{color:var(--muted);margin-top:6px}
+.section{margin-top:20px}
+.card{padding:18px;border-radius:8px;background:#fbfeff;border:1px solid #eef6f8}
+.footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
+@media (max-width:720px){header{flex-direction:column;align-items:flex-start}nav a{margin-left:0;margin-right:10px}}
+CSS
