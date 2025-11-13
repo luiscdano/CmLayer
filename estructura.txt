@@ -5,21 +5,17 @@ Cognition
 estructura.txt
 Field-of-Dev
 index.html
-layout.js
-Personal Inform. 
 Proof-of-Self
 Services
-style.css
-template.html
 
 ./assets:
 css
-js
 
 ./assets/css:
+layout.js
+main.css
 style.css
-
-./assets/js:
+template.html
 
 ./Ciphers:
 index.html
@@ -28,9 +24,6 @@ index.html
 index.html
 
 ./Field-of-Dev:
-index.html
-
-./Personal Inform. :
 index.html
 
 ./Proof-of-Self:
