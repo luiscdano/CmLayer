@@ -1,59 +1,84 @@
-/* === CmLayer Base === */
 body {
-  font-family: 'Inter', Arial, sans-serif;
-  background-color: #0a0a0a;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #000;
   color: #e6e6e6;
   margin: 0;
   padding: 0;
-  text-align: center;
   overflow-x: hidden;
+  text-align: center;
+  background: radial-gradient(circle at center, #0a0a0a, #000);
+  background-size: 400% 400%;
+  animation: pulseBg 10s infinite alternate;
 }
 
 header {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  padding: 20px 0;
-  border-bottom: 1px solid #222;
-  background-color: rgba(0,0,0,0.6);
-  backdrop-filter: blur(8px);
-  position: sticky;
+  gap: 20px;
+  background-color: rgba(20, 20, 20, 0.85);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
   top: 0;
-  z-index: 10;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
 }
 
 header a {
   color: #00ffff;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+  font-weight: bold;
+  transition: color 0.3s;
 }
-header a:hover { color: #fff; }
+
+header a:hover {
+  color: #ffffff;
+}
 
 .hero {
-  height: 100vh;
+  margin-top: 120px;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 1.5s ease-out;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .hero h1 {
   font-size: 3rem;
+  margin: 0;
   color: #00ffff;
+  animation: floatUp 2s ease-out;
 }
-.hero p { color: #bbb; }
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 10px;
+  animation: fadeIn 3s ease-in;
+}
 
 footer {
-  border-top: 1px solid #222;
+  background-color: #111;
+  padding: 20px 0;
+  border-top: 1px solid #333;
   color: #777;
-  padding: 15px 0;
   font-size: 0.9rem;
-  margin-top: 40px;
 }
 
+/* === ANIMACIONES === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseBg {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
