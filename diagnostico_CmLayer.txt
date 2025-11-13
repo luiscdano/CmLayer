@@ -1,0 +1,463 @@
+=== Diagnóstico CmLayer — Thu Nov 13 18:49:16 AST 2025 ===
+
+--- RUTA (pwd) ---
+/Users/luiscdano/Desktop/Grupo DiCed, SRL/GitHub Repositories/CmLayer
+
+--- ARBOL DE ARCHIVOS (tree) ---
+.
+├── assets
+│   ├── css
+│   │   ├── main.css
+│   │   ├── style.css
+│   │   └── template.html
+│   ├── img
+│   │   ├── github.svg
+│   │   ├── java.svg
+│   │   ├── js.svg
+│   │   ├── python.svg
+│   │   └── vscode.svg
+│   └── js
+│       ├── layout.js
+│       ├── logos.js
+│       └── main.js
+├── Ciphers
+│   └── index.html
+├── CNAME
+├── Cognition
+│   └── index.html
+├── diagnostico_CmLayer.txt
+├── estructura.txt
+├── Field-of-Dev
+│   └── index.html
+├── index.html
+├── Proof-of-Self
+│   └── index.html
+└── Services
+    └── index.html
+
+10 directories, 20 files
+
+--- LISTA DE ARCHIVOS TRACKEADOS POR GIT ---
+CNAME
+Ciphers/index.html
+Cognition/index.html
+Field-of-Dev/index.html
+Proof-of-Self/index.html
+Services/index.html
+assets/css/main.css
+assets/css/style.css
+assets/css/template.html
+assets/img/github.svg
+assets/img/java.svg
+assets/img/js.svg
+assets/img/python.svg
+assets/img/vscode.svg
+assets/js/layout.js
+assets/js/logos.js
+assets/js/main.js
+estructura.txt
+index.html
+
+--- ESTADO GIT ---
+## main...origin/main
+?? diagnostico_CmLayer.txt
+
+--- REMOTOS ---
+origin	https://github.com/luiscdano/CmLayer.git (fetch)
+origin	https://github.com/luiscdano/CmLayer.git (push)
+
+--- ÚLTIMOS 30 COMMITS ---
+a0941ba Corrige ruta de layout.js para permitir ejecución de scripts
+c49d73d Activa animación flotante agregando logos.js al index root
+111bd12 Añade carpeta assets/img con íconos SVG para animación de fondo
+8afcf1d Crea assets/js con main.js (parallax) y logos.js (animación flotante)
+5ddf688 Corrige referencias y agrega fondo animado con parallax sutil
+5e20679 Unifica layout global en todas las secciones de CmLayer
+cee8965 Limpieza de estructura + layout base unificado con menú global
+1810a1a Limpieza completa — estructura estable con secciones finales
+fc10c42 Agrega menú global con Home y layout unificado en todas las secciones
+e2db48d Aplica layout dinámico a todas las secciones
+4d1d1e0 Update index.html
+5b19476 Update index.html
+7b87815 Update index.html
+2657728 Update index.html
+ee78b33 Update index.html
+a558f2b Agrega layout base con menú global y estilo unificado
+36080f7 Agrega secciones Cognition, Field of Dev, Ciphers, Services y Proof of Self
+72c3122 Corrige index.html con contenido válido
+69152dc Estructura base limpia con index.html, style.css y CNAME
+b36bf57 Create index.html
+8e4c96a Create index.html
+fd38c7c Create index.html
+fe50f79 Delete secure directory
+ba0d1a6 Create index.html
+9dde9bb Create style.css
+504ffa7 Update index.html
+12ef4b1 Create index.html
+f764425 Create CNAME
+171590d Create index.html
+
+--- HTTP HEAD del sitio (cmlayer.com) ---
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   871    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+HTTP/2 200 
+server: GitHub.com
+content-type: text/html; charset=utf-8
+last-modified: Thu, 13 Nov 2025 22:21:20 GMT
+access-control-allow-origin: *
+etag: "691659e0-367"
+expires: Thu, 13 Nov 2025 22:59:17 GMT
+cache-control: max-age=600
+x-proxy-cache: MISS
+x-github-request-id: 7E83:1B5B:424C4D:4C1B0F:6916606C
+accept-ranges: bytes
+age: 0
+date: Thu, 13 Nov 2025 22:49:17 GMT
+via: 1.1 varnish
+x-served-by: cache-pdk-kfty8610028-PDK
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1763074158.790820,VS0,VE33
+vary: Accept-Encoding
+x-fastly-request-id: ce8533ad18de1e231f397e92abfde965d52504e9
+content-length: 871
+
+
+--- CONTENIDOS: archivos clave (primeras 400 líneas cada uno) ---
+
+>>> FILE: index.html
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CmLayer · Núcleo Central</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/layout.js" defer></script>
+</head>
+<body>
+<header>
+  <a href="/">Home</a>
+  <a href="Cognition/">Cognition</a>
+  <a href="Field-of-Dev/">Field of Dev</a>
+  <a href="Ciphers/">Ciphers</a>
+  <a href="Services/">Services</a>
+  <a href="Proof-of-Self/">Proof of Self</a>
+</header>
+
+<section class="hero">
+  <h1>Bienvenidos a CmLayer</h1>
+  <p>Laboratorio de ideas, IA, desarrollo y ciberseguridad.</p>
+</section>
+
+<footer>
+  <p>© 2025 CmLayer · Laboratorio · IA · Ciberseguridad · Desarrollo</p>
+</footer>
+<script src="assets/js/logos.js" defer></script>
+</body>
+</html>
+
+>>> FILE: assets/css/style.css
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #000;
+  color: #e6e6e6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  text-align: center;
+  background: radial-gradient(circle at center, #0a0a0a, #000);
+  background-size: 400% 400%;
+  animation: pulseBg 10s infinite alternate;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(20, 20, 20, 0.85);
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+header a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header a:hover {
+  color: #ffffff;
+}
+
+.hero {
+  margin-top: 120px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  color: #00ffff;
+  animation: floatUp 2s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-top: 10px;
+  animation: fadeIn 3s ease-in;
+}
+
+footer {
+  background-color: #111;
+  padding: 20px 0;
+  border-top: 1px solid #333;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseBg {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+>>> FILE: assets/css/main.css
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #e6e6e6;
+  text-align: center;
+}
+
+header {
+  background: #111;
+  padding: 15px;
+}
+
+nav a {
+  color: #00ffff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+main {
+  padding: 60px 20px;
+}
+
+footer {
+  background: #111;
+  color: #777;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-top: 1px solid #333;
+}
+
+>>> FILE: assets/css/template.html
+
+<header>
+  <a href="/">Home</a>
+  <a href="/Cognition/">Cognition</a>
+  <a href="/Field-of-Dev/">Field of Dev</a>
+  <a href="/Ciphers/">Ciphers</a>
+  <a href="/Services/">Services</a>
+  <a href="/Proof-of-Self/">Proof of Self</a>
+</header>
+
+<footer>
+  <p>© 2025 CmLayer · Laboratorio · IA · Ciberseguridad · Desarrollo</p>
+</footer>
+
+>>> FILE: assets/js/layout.js
+
+// layout.js — Inserta header y footer en cada subpágina automáticamente
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const response = await fetch("/assets/css/template.html");
+    const template = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(template, "text/html");
+    const header = doc.querySelector("header");
+    const footer = doc.querySelector("footer");
+    
+    document.body.insertBefore(header, document.body.firstChild);
+    document.body.appendChild(footer);
+  } catch (error) {
+    console.error("Error al cargar layout:", error);
+  }
+});
+
+>>> FILE: assets/js/main.js
+
+document.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  document.body.style.backgroundPositionY = `${scrollY * 0.3}px`;
+});
+
+>>> FILE: assets/js/logos.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.createElement("div");
+  container.classList.add("floating-logos");
+  document.body.appendChild(container);
+
+  const logos = ["python.svg", "java.svg", "vscode.svg", "github.svg", "js.svg"];
+
+  logos.forEach((logo, i) => {
+    const img = document.createElement("img");
+    img.src = `/assets/img/${logo}`;
+    img.classList.add("floating-logo");
+    img.style.top = `${Math.random() * 80 + 10}%`;
+    img.style.left = `${Math.random() * 80 + 10}%`;
+    img.style.animationDelay = `${i * 2}s`;
+    container.appendChild(img);
+  });
+});
+
+--- SECCIONES (primeras 200 líneas) ---
+
+>>> SECCIÓN: Cognition (Cognition/index.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cognition · CmLayer</title>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/css/layout.js" defer></script>
+</head>
+<body>
+<main class="hero">
+  <h1>Cognition</h1>
+  <p>Contenido de la sección Cognition.</p>
+</main>
+</body>
+</html>
+
+>>> SECCIÓN: Field-of-Dev (Field-of-Dev/index.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Field-of-Dev · CmLayer</title>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/css/layout.js" defer></script>
+</head>
+<body>
+<main class="hero">
+  <h1>Field-of-Dev</h1>
+  <p>Contenido de la sección Field-of-Dev.</p>
+</main>
+</body>
+</html>
+
+>>> SECCIÓN: Ciphers (Ciphers/index.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciphers · CmLayer</title>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/css/layout.js" defer></script>
+</head>
+<body>
+<main class="hero">
+  <h1>Ciphers</h1>
+  <p>Contenido de la sección Ciphers.</p>
+</main>
+</body>
+</html>
+
+>>> SECCIÓN: Services (Services/index.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services · CmLayer</title>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/css/layout.js" defer></script>
+</head>
+<body>
+<main class="hero">
+  <h1>Services</h1>
+  <p>Contenido de la sección Services.</p>
+</main>
+</body>
+</html>
+
+>>> SECCIÓN: Proof-of-Self (Proof-of-Self/index.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proof-of-Self · CmLayer</title>
+<link rel="stylesheet" href="/assets/css/style.css">
+<script src="/assets/css/layout.js" defer></script>
+</head>
+<body>
+<main class="hero">
+  <h1>Proof-of-Self</h1>
+  <p>Contenido de la sección Proof-of-Self.</p>
+</main>
+</body>
+</html>
+
+--- assets/js ---
+total 24
+drwxr-xr-x  5 luiscdano  staff  160 Nov 13 18:20 .
+drwxr-xr-x  5 luiscdano  staff  160 Nov 13 18:09 ..
+-rw-r--r--  1 luiscdano  staff  638 Nov 13 15:54 layout.js
+-rw-r--r--  1 luiscdano  staff  618 Nov 13 17:43 logos.js
+-rw-r--r--  1 luiscdano  staff  148 Nov 13 17:43 main.js
+
+--- assets/img ---
+total 40
+drwxr-xr-x  7 luiscdano  staff  224 Nov 13 18:09 .
+drwxr-xr-x  5 luiscdano  staff  160 Nov 13 18:09 ..
+-rw-r--r--  1 luiscdano  staff  130 Nov 13 18:09 github.svg
+-rw-r--r--  1 luiscdano  staff  130 Nov 13 18:09 java.svg
+-rw-r--r--  1 luiscdano  staff  137 Nov 13 18:09 js.svg
+-rw-r--r--  1 luiscdano  staff  136 Nov 13 18:09 python.svg
+-rw-r--r--  1 luiscdano  staff  150 Nov 13 18:09 vscode.svg
+
+--- CNAME ---
+cmlayer.com
+
+--- FIN DIAGNÓSTICO ===
