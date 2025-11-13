@@ -1,4 +1,3 @@
-// layout.js — inserta header y footer desde template.html
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const response = await fetch("/template.html");
@@ -10,6 +9,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.body.insertBefore(header, document.body.firstChild);
     document.body.appendChild(footer);
+
+    // Botón flotante de regreso
+    const backBtn = document.createElement("button");
+    backBtn.textContent = "←";
+    backBtn.classList.add("back-button");
+    backBtn.onclick = () => (window.location.href = "/");
+    document.body.appendChild(backBtn);
+
   } catch (error) {
     console.error("Error al cargar layout:", error);
   }
