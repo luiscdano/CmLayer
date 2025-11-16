@@ -1,26 +1,23 @@
-/* ============================
-   Header + Footer dinámicos
-============================ */
-function resolve(path) {
-  const depth = window.location.pathname.split("/").length - 2;
-  return depth === 0 ? path : "../".repeat(depth) + path;
-}
+// Detectar la ruta base correctamente
+const basePath = window.location.pathname.includes("/") ? "." : "";
 
-// Insert header
-fetch(resolve("header.html"))
-  .then(r => r.text())
+// Insertar header
+fetch(`${basePath}/header.html`)
+  .then(res => res.text())
   .then(html => {
     document.getElementById("header-container").innerHTML = html;
+
+    // Después del header, insertar el fondo flotante si no existe
+    if (!document.querySelector(".floating-logos")) {
+      const logosDiv = document.createElement("div");
+      logosDiv.classList.add("floating-logos");
+      document.body.appendChild(logosDiv);
+    }
   });
 
-// Insert footer
-fetch(resolve("footer.html"))
-  .then(r => r.text())
+// Insertar footer
+fetch(`${basePath}/footer.html`)
+  .then(res => res.text())
   .then(html => {
     document.getElementById("footer-container").innerHTML = html;
-
-    // 📌 Inyectar logos.js automáticamente en TODAS las páginas
-    const s = document.createElement("script");
-    s.src = resolve("assets/js/logos.js");
-    document.body.appendChild(s);
   });
