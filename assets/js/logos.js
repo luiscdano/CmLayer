@@ -1,17 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.createElement("div");
-  container.classList.add("floating-logos");
-  document.body.appendChild(container);
+const logos = ["python.svg", "java.svg", "js.svg", "vscode.svg", "github.svg"];
 
-  const logos = ["python.svg", "java.svg", "vscode.svg", "github.svg", "js.svg"];
+const container = document.createElement("div");
+container.id = "floating-logos";
+document.body.appendChild(container);
 
-  logos.forEach((logo, i) => {
-    const img = document.createElement("img");
-    img.src = `assets/img/${logo}`;
-    img.classList.add("floating-logo");
-    img.style.top = `${Math.random() * 80 + 10}%`;
-    img.style.left = `${Math.random() * 80 + 10}%`;
-    img.style.animationDelay = `${i * 2}s`;
-    container.appendChild(img);
-  });
+logos.forEach((logo, i) => {
+  const img = document.createElement("img");
+  img.src = `assets/img/${logo}`;
+
+  img.style.top = `${10 + i * 15}%`;
+  img.style.left = `${10 + (i * 15)}%`;
+  img.style.animationDelay = `${i * 1.2}s`;
+
+  container.appendChild(img);
 });
