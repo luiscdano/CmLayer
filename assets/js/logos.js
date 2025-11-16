@@ -1,28 +1,20 @@
 const logos = [
-    "python.svg",
-    "js.svg",
-    "vscode.svg",
-    "github.svg",
-    "java.svg"
+  "assets/img/python.svg",
+  "assets/img/js.svg",
+  "assets/img/vscode.svg",
+  "assets/img/github.svg"
 ];
 
-const TOTAL_LOGOS = 25;  // ajusta si quieres más o menos
+const container = document.querySelector(".floating-logos");
 
-function createFloatingLogo() {
+// Generar 30 logos distribuidos al azar
+for (let i = 0; i < 30; i++) {
     const img = document.createElement("img");
-    img.src = `assets/img/${logos[Math.floor(Math.random() * logos.length)]}`;
-    img.classList.add("floating-logo");
+    img.src = logos[Math.floor(Math.random() * logos.length)];
 
-    // Posición aleatoria inicial
-    img.style.top = Math.random() * 3000 + "px";
-    img.style.left = Math.random() * window.innerWidth + "px";
+    img.style.top = Math.random() * 100 + "%";
+    img.style.left = Math.random() * 100 + "%";
+    img.style.animationDuration = 10 + Math.random() * 20 + "s";
 
-    // Velocidad diferente por logo
-    img.style.animationDuration = (18 + Math.random() * 14) + "s";
-
-    document.body.appendChild(img);
-}
-
-for (let i = 0; i < TOTAL_LOGOS; i++) {
-    createFloatingLogo();
+    container.appendChild(img);
 }
