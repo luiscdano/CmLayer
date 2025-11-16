@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CmLayer — Home</title>
 
   <!-- CSS principal -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- Fondo con logos flotantes -->
+  <style>
+    .floating-logos-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .floating-logo {
+      position: absolute;
+      width: 80px;
+      opacity: 0.18;
+      animation: float 18s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(120vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-20vh) rotate(360deg);
+      }
+    }
+
+    /* Que el contenido quede encima */
+    main, header, footer, section {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Fondo con logos flotantes -->
+  <div class="floating-logos-container" id="floating-logos"></div>
 
   <!-- Header dinámico -->
   <div id="header-container"></div>
@@ -25,7 +64,32 @@
 
   <!-- Scripts -->
   <script src="assets/js/include.js"></script>
-  <script src="assets/js/logos.js"></script>
+
+  <!-- Script para generar logos flotantes -->
+  <script>
+    const logos = [
+      "assets/img/python.svg",
+      "assets/img/java.svg",
+      "assets/img/js.svg",
+      "assets/img/vscode.svg",
+      "assets/img/github.svg"
+    ];
+
+    const container = document.getElementById("floating-logos");
+
+    for (let i = 0; i < 18; i++) {
+      const img = document.createElement("img");
+      img.src = logos[Math.floor(Math.random() * logos.length)];
+      img.classList.add("floating-logo");
+
+      // Posición inicial aleatoria
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDelay = Math.random() * 15 + "s";
+      img.style.animationDuration = 15 + Math.random() * 12 + "s";
+
+      container.appendChild(img);
+    }
+  </script>
 
 </body>
 </html>

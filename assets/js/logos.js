@@ -1,57 +1,28 @@
-// === CONFIGURACIÓN DE LOGOS ===
 const logos = [
-  "/assets/img/python.svg",
-  "/assets/img/java.svg",
-  "/assets/img/js.svg",
-  "/assets/img/vscode.svg",
-  "/assets/img/github.svg"
+    "python.svg",
+    "js.svg",
+    "vscode.svg",
+    "github.svg",
+    "java.svg"
 ];
 
-// Cantidad total de logos flotantes
-const LOGO_COUNT = 20;
+const TOTAL_LOGOS = 25;  // ajusta si quieres más o menos
 
-// Área protegida (para que no pasen sobre títulos)
-const PROTECTED_AREA_HEIGHT = 250; // pixeles desde el top
-
-// Crear logos
-function createFloatingLogos() {
-  const container = document.body;
-
-  for (let i = 0; i < LOGO_COUNT; i++) {
+function createFloatingLogo() {
     const img = document.createElement("img");
-    img.src = logos[i % logos.length];
-    img.className = "floating-logo";
+    img.src = `assets/img/${logos[Math.floor(Math.random() * logos.length)]}`;
+    img.classList.add("floating-logo");
 
-    // Posición inicial aleatoria
-    let x = Math.random() * window.innerWidth;
-    let y = PROTECTED_AREA_HEIGHT + Math.random() * (window.innerHeight - PROTECTED_AREA_HEIGHT - 150);
+    // Posición aleatoria inicial
+    img.style.top = Math.random() * 3000 + "px";
+    img.style.left = Math.random() * window.innerWidth + "px";
 
-    // Dirección aleatoria
-    let dx = (Math.random() - 0.5) * 0.5;
-    let dy = (Math.random() - 0.5) * 0.5;
+    // Velocidad diferente por logo
+    img.style.animationDuration = (18 + Math.random() * 14) + "s";
 
-    img.style.left = `${x}px`;
-    img.style.top = `${y}px`;
-
-    container.appendChild(img);
-
-    // Movimiento suave
-    function animate() {
-      x += dx;
-      y += dy;
-
-      if (x < 0 || x > window.innerWidth - 40) dx *= -1;
-      if (y < PROTECTED_AREA_HEIGHT || y > window.innerHeight - 40) dy *= -1;
-
-      img.style.left = `${x}px`;
-      img.style.top = `${y}px`;
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  }
+    document.body.appendChild(img);
 }
 
-// Ejecutar al cargar
-window.addEventListener("load", createFloatingLogos);
+for (let i = 0; i < TOTAL_LOGOS; i++) {
+    createFloatingLogo();
+}
