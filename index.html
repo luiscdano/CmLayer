@@ -1,34 +1,145 @@
-cat > index.html <<'EOF'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>CmLayer — Home</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CmLayer — Luis C. Dano</title>
+  <meta name="description" content="Portafolio de Luis C. Dano: software, IA, ciberseguridad y proyectos personales." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="bg-grid"></div>
 
-  <div id="header-container"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="dot"></div>
+      <span>CmLayer</span>
+    </div>
+    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <nav class="nav-links">
+      <a href="#inicio">Home</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#certificados">Certificados</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-  <main id="content" class="container content-layer">
-    <section class="hero">
-      <h1>Welcome to CmLayer</h1>
-      <p>Exploring cognition, development, encryption, and more.</p>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">Software · IA · Ciberseguridad</p>
+        <h1>Hola, soy <span class="accent">Luis C. Dano</span></h1>
+        <p class="lede">Desarrollo soluciones que combinan ingeniería, aprendizaje automático y seguridad. Esta es la capa donde documento, pruebo y publico todo lo que construyo.</p>
+        <div class="cta">
+          <a class="btn primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn ghost" href="#sobre-mi">Sobre mí</a>
+        </div>
+        <div class="meta">
+          <span>🇩🇴 / 🇺🇸</span>
+          <span>Hablando: ES · EN</span>
+          <span>En GitHub: <a href="https://github.com/luiscdano" target="_blank" rel="noreferrer">@luiscdano</a></span>
+        </div>
+      </div>
+      <div class="hero__card">
+        <p class="label">En construcción continua</p>
+        <h3>Roadmap personal</h3>
+        <ul>
+          <li>✓ QR-Generator listo y publicado</li>
+          <li>• Portafolio 2026 (esta página)</li>
+          <li>• Playbook de ciberseguridad</li>
+          <li>• Experimentos de IA aplicada</li>
+        </ul>
+        <p class="tiny">Actualizado: 29 ene 2026</p>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>About</h2>
-      <p>Quick intro about CmLayer...</p>
+    <section id="sobre-mi" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Quién soy</p>
+          <h2>Sobre mí</h2>
+        </div>
+      </div>
+      <div class="two-col">
+        <div>
+          <p>Soy ingeniero de software orientado a productos que mezclan backend seguro, front-end cuidadoso y toques de IA. Me mueven los proyectos end-to-end: idear, prototipar, asegurar y desplegar.</p>
+          <p>Me gusta documentar y automatizar: tests, CI/CD y playbooks de seguridad. En mi tiempo libre exploro cifrados clásicos, build tools minimalistas y visualizaciones ligeras.</p>
+          <div class="chips">
+            <span>TypeScript</span>
+            <span>Python</span>
+            <span>Node / FastAPI</span>
+            <span>Security-by-design</span>
+            <span>GitHub Actions</span>
+            <span>AI prototyping</span>
+          </div>
+        </div>
+        <div class="card glass">
+          <h3>Snapshot</h3>
+          <ul class="stats">
+            <li><span class="stat">8+</span><span>Años creando software</span></li>
+            <li><span class="stat">3</span><span>Idiomas técnicos: ES, EN, código</span></li>
+            <li><span class="stat">∞</span><span>Curiosidad por cifrado & IA</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificados" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Logros</p>
+          <h2>Certificados & formación</h2>
+        </div>
+        <a class="link" href="#contacto">Solicita mi CV</a>
+      </div>
+      <div class="timeline" id="cert-list">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div>
+            <h4>Certificación — (pendiente de agregar)</h4>
+            <p class="muted">Añade aquí tus títulos, diplomas o cursos con año y organismo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Trabajo reciente</p>
+          <h2>Proyectos</h2>
+          <p class="muted">Se cargan directamente desde GitHub; se destacan algunos propios.</p>
+        </div>
+        <a class="link" href="https://github.com/luiscdano?tab=repositories" target="_blank" rel="noreferrer">Ver todo en GitHub</a>
+      </div>
+      <div id="projects-grid" class="grid projects-grid" aria-live="polite">
+        <p class="muted">Cargando proyectos...</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="panel contact">
+      <div>
+        <p class="eyebrow">Conectemos</p>
+        <h2>Contacto</h2>
+        <p class="muted">Listo para colaborar, revisar código, o charlar sobre ideas.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:luiscdano@gmail.com">Escríbeme</a>
+          <a class="btn ghost" href="https://github.com/luiscdano" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <div id="footer-container"></div>
+  <footer class="footer">
+    <span>© 2026 CmLayer · Luis C. Dano</span>
+    <span class="dot"></span>
+    <span>cmlayer.com</span>
+  </footer>
 
-  <!-- mosaic layer is created and filled by assets/js/logos.js -->
-  <script src="assets/js/include.js" defer></script>
-  <script src="assets/js/logos.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-EOF
