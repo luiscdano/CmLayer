@@ -167,6 +167,38 @@ section { margin: 0 auto; max-width: 1180px; }
 
 .contact { text-align: left; }
 
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.service-card {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+}
+.service-card h3 { margin: 0 0 8px; }
+.service-card p { margin: 0 0 10px; color: var(--muted); }
+.service-card ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.service-card li { margin: 6px 0; }
+
+.faq details {
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+}
+.faq p { margin: 8px 0 2px; }
+
 .footer {
   max-width: 1180px;
   margin: 30px auto 50px;

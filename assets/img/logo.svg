@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="CmLayer logo">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#31d5ff"/>
+      <stop offset="100%" stop-color="#48f0c2"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="#041020" stroke="url(#g)" stroke-width="6"/>
+  <path d="M37 74c0-16 0-32 0-32h10v24h14v8H37z" fill="url(#g)"/>
+  <path d="M64 42h10l8 16 8-16h10l-13 32h-10z" fill="#cfefff"/>
+</svg>

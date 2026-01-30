@@ -4,11 +4,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CmLayer — Luis C. Dano</title>
-  <meta name="description" content="Portafolio de Luis C. Dano: software, IA, ciberseguridad y proyectos personales." />
+  <meta name="description" content="Portafolio y servicios de Luis C. Dano: software, IA, ciberseguridad y desarrollo end-to-end." />
+  <meta property="og:title" content="CmLayer — Luis C. Dano" />
+  <meta property="og:description" content="Ingeniería de software, IA aplicada y ciberseguridad. Portafolio, servicios y proyectos open source." />
+  <meta property="og:url" content="https://cmlayer.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cmlayer.com/assets/img/logo.svg" />
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luis C. Dano",
+    "url": "https://cmlayer.com",
+    "jobTitle": "Software Engineer / Security & AI",
+    "sameAs": [
+      "https://github.com/luiscdano"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="bg-grid"></div>
@@ -22,8 +41,10 @@
     <nav class="nav-links">
       <a href="#inicio">Home</a>
       <a href="#sobre-mi">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
       <a href="#certificados">Certificados</a>
       <a href="#proyectos">Proyectos</a>
+      <a href="#faq">FAQ</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -33,7 +54,7 @@
       <div class="hero__text">
         <p class="eyebrow">Software · IA · Ciberseguridad</p>
         <h1>Hola, soy <span class="accent">Luis C. Dano</span></h1>
-        <p class="lede">Desarrollo soluciones que combinan ingeniería, aprendizaje automático y seguridad. Esta es la capa donde documento, pruebo y publico todo lo que construyo.</p>
+        <p class="lede">Founder & CTO enfocado en ecosistemas digitales, plataformas con IA y arquitecturas seguras. Creo productos end-to-end: idea, código, hardening y despliegue.</p>
         <div class="cta">
           <a class="btn primary" href="#proyectos">Ver proyectos</a>
           <a class="btn ghost" href="#sobre-mi">Sobre mí</a>
@@ -57,6 +78,71 @@
       </div>
     </section>
 
+    <section id="servicios" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Qué hago</p>
+          <h2>Servicios profesionales</h2>
+          <p class="muted">Trabajo por proyecto o paquetes cerrados; foco en delivery y seguridad.</p>
+        </div>
+        <a class="btn ghost" href="#contacto">Agenda una llamada</a>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>Producto end-to-end</h3>
+          <p class="muted">Diseño, frontend, backend, despliegue y observabilidad ligera.</p>
+          <ul>
+            <li>Prototipos en semanas, con handoff documentado.</li>
+            <li>Stack típico: TypeScript/React o HTML estático + APIs.</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h3>IA aplicada</h3>
+          <p class="muted">Integración de modelos, pipelines y validación humana.</p>
+          <ul>
+            <li>POCs rápidos con medición de calidad.</li>
+            <li>Automatización y guardrails de seguridad.</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h3>Seguridad & Hardening</h3>
+          <p class="muted">Revisiones de superficie, CI/CD seguro y playbooks.</p>
+          <ul>
+            <li>Checklist OWASP adaptado al contexto.</li>
+            <li>SecDevOps: secrets, mínimos permisos, logging.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="ecosistema" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Ecosistema tecnológico</p>
+          <h2>Repositorios pilares</h2>
+          <p class="muted">Capas principales que sostienen mi visión de plataformas digitales.</p>
+        </div>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>CmLayer</h3>
+          <p class="muted">Plataforma base para software, IA, automatización y ciberseguridad.</p>
+        </article>
+        <article class="service-card">
+          <h3>GrupoDiCed</h3>
+          <p class="muted">Ecosistema empresarial para ingeniería digital y soluciones inteligentes.</p>
+        </article>
+        <article class="service-card">
+          <h3>Proyectos-ITLA</h3>
+          <p class="muted">Portafolio académico y técnico: patrones, APIs y desarrollo web.</p>
+        </article>
+        <article class="service-card">
+          <h3>PersonalProjects</h3>
+          <p class="muted">Laboratorio para APIs, sistemas distribuidos, DevOps e IA aplicada.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="sobre-mi" class="panel">
       <div class="section-head">
         <div>
@@ -66,8 +152,9 @@
       </div>
       <div class="two-col">
         <div>
-          <p>Soy ingeniero de software orientado a productos que mezclan backend seguro, front-end cuidadoso y toques de IA. Me mueven los proyectos end-to-end: idear, prototipar, asegurar y desplegar.</p>
-          <p>Me gusta documentar y automatizar: tests, CI/CD y playbooks de seguridad. En mi tiempo libre exploro cifrados clásicos, build tools minimalistas y visualizaciones ligeras.</p>
+          <p>Founder & CTO que construye ecosistemas tecnológicos, plataformas digitales y arquitecturas orientadas a impacto real, escalabilidad y automatización.</p>
+          <p>Estudiante de Desarrollo de Software en ITLA (GPA 4.0, último término 3.9). Integro backend moderno, APIs, cloud, IA y seguridad desde el diseño.</p>
+          <p>Me gusta documentar y automatizar: tests, CI/CD, playbooks de seguridad y observabilidad ligera.</p>
           <div class="chips">
             <span>TypeScript</span>
             <span>Python</span>
@@ -107,17 +194,139 @@
       </div>
     </section>
 
+    <section id="vision" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Visión & foco técnico</p>
+          <h2>Cómo construyo plataformas</h2>
+        </div>
+      </div>
+      <div class="chips">
+        <span>Cloud-Native & Microservices</span>
+        <span>AI-Driven Systems</span>
+        <span>DevOps & CI/CD</span>
+        <span>Zero Trust / JWT</span>
+        <span>APIs orientadas a servicios</span>
+        <span>Observabilidad</span>
+        <span>Infra as Code</span>
+      </div>
+    </section>
+
+    <section id="stack" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Stack principal</p>
+          <h2>Herramientas que uso a diario</h2>
+        </div>
+      </div>
+      <div class="chips">
+        <span>C# / .NET</span>
+        <span>Java</span>
+        <span>Python</span>
+        <span>JavaScript / TypeScript</span>
+        <span>HTML / CSS</span>
+        <span>MySQL / SQLite</span>
+        <span>REST / Swagger</span>
+        <span>Git / GitHub</span>
+        <span>Flutter</span>
+        <span>Xcode / Android Studio</span>
+        <span>VS Code</span>
+        <span>Postman</span>
+      </div>
+    </section>
+
+    <section id="proyectos-activos" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Desarrollo activo</p>
+          <h2>Proyectos en marcha</h2>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div>
+            <h4>LoggerMantenimientoApp</h4>
+            <p class="muted">Sistema de mantenimiento con arquitectura por capas y patrón Singleton.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div>
+            <h4>MascotasAPI</h4>
+            <p class="muted">API RESTful con frontend JS, OpenAPI/Swagger y validación de servicios.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div>
+            <h4>ColeccionDePeliculas</h4>
+            <p class="muted">Plataforma ASP.NET + JS con CRUD y base de datos relacional.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="dot"></div>
+          <div>
+            <h4>Total_Asignaciones</h4>
+            <p class="muted">Portafolio web de proyectos frontend/backend y prácticas académicas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="proyectos" class="panel">
       <div class="section-head">
         <div>
           <p class="eyebrow">Trabajo reciente</p>
           <h2>Proyectos</h2>
-          <p class="muted">Se cargan directamente desde GitHub; se destacan algunos propios.</p>
+          <p class="muted">Repositorios pilares y proyectos activos seleccionados.</p>
         </div>
         <a class="link" href="https://github.com/luiscdano?tab=repositories" target="_blank" rel="noreferrer">Ver todo en GitHub</a>
       </div>
       <div id="projects-grid" class="grid projects-grid" aria-live="polite">
         <p class="muted">Cargando proyectos...</p>
+      </div>
+    </section>
+
+    <section id="aprendizaje" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Aprendizaje continuo</p>
+          <h2>Siempre estudiando</h2>
+          <p class="muted">Tecnologías emergentes, arquitectura y productos digitales.</p>
+        </div>
+      </div>
+      <div class="chips">
+        <a class="btn ghost" href="https://www.udemy.com/user/luiscdano" target="_blank" rel="noreferrer">Udemy</a>
+        <a class="btn ghost" href="https://partner.skills.google/" target="_blank" rel="noreferrer">Google Skills</a>
+        <a class="btn ghost" href="https://platzi.com/p/luiscdano/" target="_blank" rel="noreferrer">Platzi</a>
+        <a class="btn ghost" href="https://www.freecodecamp.org/luiscdano" target="_blank" rel="noreferrer">freeCodeCamp</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/luiscdano" target="_blank" rel="noreferrer">LinkedIn Learning</a>
+        <a class="btn ghost" href="https://www.behance.net/luiscdano" target="_blank" rel="noreferrer">Behance</a>
+      </div>
+      <p class="muted">Open to colaborar en plataformas digitales, IA aplicada, backend y cloud-native.</p>
+    </section>
+
+    <section id="faq" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>¿En qué tipo de proyectos trabajas?</summary>
+          <p class="muted">Productos web, automatizaciones, integraciones con APIs, prototipos de IA y revisiones de seguridad.</p>
+        </details>
+        <details>
+          <summary>¿Cómo arrancamos?</summary>
+          <p class="muted">Agendamos una llamada breve, definimos alcance y entregables, y preparo un plan de una página con tiempos y costos.</p>
+        </details>
+        <details>
+          <summary>¿Trabajas remoto?</summary>
+          <p class="muted">Sí. Horario flexible US/EU, con comunicación en español o inglés.</p>
+        </details>
       </div>
     </section>
 

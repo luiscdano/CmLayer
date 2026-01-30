@@ -14,22 +14,14 @@
   const username = 'luiscdano';
 
   const curated = [
-    {
-      name: 'QR-Generator',
-      description: 'Generador de códigos QR ligero con UI minimalista, listo para publicar en web.',
-      html_url: 'https://github.com/luiscdano/QR-Generator',
-      topics: ['frontend', 'utility', 'javascript'],
-      stargazers_count: 0,
-      language: 'JavaScript'
-    },
-    {
-      name: 'CmLayer',
-      description: 'Este sitio: portafolio personal, IA y seguridad.',
-      html_url: 'https://github.com/luiscdano/CmLayer',
-      topics: ['portfolio', 'static-site'],
-      stargazers_count: 0,
-      language: 'HTML'
-    }
+    { name: 'CmLayer', description: 'Plataforma base para software, IA, automatización y ciberseguridad.', html_url: 'https://github.com/luiscdano/CmLayer', topics: ['portfolio', 'platform', 'security'], language: 'HTML' },
+    { name: 'GrupoDiCed', description: 'Ecosistema empresarial para ingeniería digital y soluciones inteligentes.', html_url: 'https://github.com/luiscdano/GrupoDiCed', topics: ['architecture', 'cloud', 'api'], language: 'TypeScript' },
+    { name: 'Proyectos-ITLA', description: 'Portafolio académico y técnico con prácticas de arquitectura y APIs.', html_url: 'https://github.com/luiscdano/Proyectos-ITLA', topics: ['academic', 'api', 'web'], language: 'C#' },
+    { name: 'PersonalProjects', description: 'Laboratorio de innovación: APIs, distribuidos, DevOps e IA.', html_url: 'https://github.com/luiscdano/PersonalProjects', topics: ['lab', 'devops', 'ai'], language: 'Python' },
+    { name: 'LoggerMantenimientoApp', description: 'Sistema de mantenimiento con arquitectura por capas y patrón Singleton.', html_url: 'https://github.com/luiscdano/LoggerMantenimientoApp', topics: ['maintenance', 'architecture'], language: 'C#' },
+    { name: 'MascotasAPI', description: 'API RESTful con frontend JS y documentación OpenAPI/Swagger.', html_url: 'https://github.com/luiscdano/MascotasAPI', topics: ['rest', 'swagger', 'frontend'], language: 'C#' },
+    { name: 'ColeccionDePeliculas', description: 'Plataforma ASP.NET + JS con CRUD y base relacional.', html_url: 'https://github.com/luiscdano/ColeccionDePeliculas', topics: ['aspnet', 'crud', 'db'], language: 'C#' },
+    { name: 'Total_Asignaciones', description: 'Portafolio web de proyectos frontend/backend y prácticas académicas.', html_url: 'https://github.com/luiscdano/Total_Asignaciones', topics: ['web', 'portfolio'], language: 'JavaScript' }
   ];
 
   const renderProjects = list => {
@@ -56,11 +48,12 @@
   };
 
   // Try to load from GitHub API
-  const endpoint = `https://api.github.com/users/${username}/repos?sort=updated&per_page=12`;
+  const endpoint = `https://api.github.com/users/${username}/repos?sort=updated&per_page=100`;
   fetch(endpoint, { headers: { 'Accept': 'application/vnd.github+json' } })
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(repos => {
-      const cleaned = repos.map(r => ({
+      const repoMap = new Map();
+      repos.forEach(r => repoMap.set(r.name.toLowerCase(), {
         name: r.name,
         description: r.description,
         html_url: r.html_url,
@@ -68,13 +61,11 @@
         stargazers_count: r.stargazers_count,
         language: r.language
       }));
-      const merged = [...curated];
-      cleaned.forEach(r => {
-        if (!merged.find(c => c.name.toLowerCase() === r.name.toLowerCase())) {
-          merged.push(r);
-        }
+      const merged = curated.map(c => {
+        const found = repoMap.get(c.name.toLowerCase());
+        return found ? { ...c, ...found } : c;
       });
-      renderProjects(merged.slice(0, 8));
+      renderProjects(merged);
     })
     .catch(() => renderProjects(curated));
 })();
