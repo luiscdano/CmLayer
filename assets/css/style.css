@@ -62,6 +62,12 @@ a:hover { color: #7ce4ff; }
   letter-spacing: 0.2px;
 }
 
+.brand-mark{
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
 .brand .dot {
   width: 12px; height: 12px;
   border-radius: 50%;
