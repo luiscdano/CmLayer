@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CmLayer — Consultoría tecnológica</title>
-  <meta name="description" content="Consultoría tecnológica, arquitectura de software, IA y ciberseguridad. Casos reales, servicios y contacto." />
-  <meta name="keywords" content="consultoría tecnológica, arquitectura software, IA, ciberseguridad, fintech, Luis Emilio Cedano" />
+  <title>CmLayer — Engineering Software, Securing Systems, Powering Intelligence</title>
+  <meta name="description" content="CmLayer: software development, cybersecurity, and generative AI consulting. Projects, services, knowledge hub, and contact." />
+  <meta name="keywords" content="software development, cybersecurity, generative AI, consulting, CmLayer, Luis Emilio Cedano" />
   <meta property="og:title" content="CmLayer" />
-  <meta property="og:description" content="Plataformas digitales seguras, inteligentes y listas para escalar." />
+  <meta property="og:description" content="Engineering software, securing systems, powering intelligence." />
   <meta property="og:url" content="https://cmlayer.com" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
@@ -22,7 +22,7 @@
     "@type": "Person",
     "name": "Luis Emilio Cedano",
     "url": "https://cmlayer.com",
-    "jobTitle": "Founder & CTO | Software, IA, Seguridad",
+    "jobTitle": "Founder & CTO | Software, Security, AI",
     "sameAs": ["https://github.com/luiscdano", "https://www.linkedin.com/in/luiscdano"]
   }
   </script>
@@ -33,341 +33,245 @@
   <header class="topbar">
     <div class="brand">
       <img src="assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
-      <span>CmLayer</span>
     </div>
-    <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
     <nav class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#valor">Valor</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#testimonios">Testimonios</a>
-      <a href="#articulos">Artículos</a>
-      <a href="#certificados">Certificados</a>
-      <a href="#contacto">Contacto</a>
+      <a data-i18n="nav.home" href="#home">Home</a>
+      <a data-i18n="nav.projects" href="/projects/index.html">Projects</a>
+      <a data-i18n="nav.services" href="#services">Services</a>
+      <a data-i18n="nav.knowledge" href="#knowledge">Knowledge Hub</a>
+      <a data-i18n="nav.voices" href="#voices">Voices & Experiences</a>
+      <a data-i18n="nav.about" href="#about">About</a>
+      <a data-i18n="nav.contact" href="#contact">Contact</a>
     </nav>
-    <a class="btn primary cta-header" href="#contacto">Agenda una llamada</a>
+    <div class="lang-switch">
+      <button data-lang="en" class="active">🇺🇸 EN</button>
+      <button data-lang="es">🇩🇴 ES</button>
+    </div>
+    <a class="btn primary cta-header" href="#contact" data-i18n="cta.talk">Book a call</a>
   </header>
 
   <main>
-    <section id="inicio" class="hero">
+    <section id="home" class="hero">
       <div class="hero__text">
-        <p class="eyebrow">Software · IA · Ciberseguridad · Fintech</p>
-        <h1>Construyo plataformas digitales seguras, inteligentes y listas para escalar.</h1>
-        <p class="lede">Arquitectura, desarrollo y hardening para startups, fintech y proyectos académicos que buscan tecnología real, no solo prototipos.</p>
+        <p class="eyebrow" data-i18n="hero.tags">Software · Cybersecurity · Generative AI</p>
+        <h1 data-i18n="hero.title">Engineering software, securing systems, and powering intelligence for a digital future.</h1>
+        <p class="lede" data-i18n="hero.sub">Architecture, development, and hardening for startups, fintech, and academic projects that need real technology, not just prototypes.</p>
         <div class="cta">
-          <a class="btn primary" href="#proyectos">Ver proyectos</a>
-          <a class="btn ghost" href="#contacto">Agenda una llamada</a>
+          <a class="btn primary" href="/projects/index.html" data-i18n="cta.projects">View projects</a>
+          <a class="btn ghost" href="#contact" data-i18n="cta.talk">Book a call</a>
         </div>
         <div class="meta">
-          <span class="tag">Software</span>
-          <span class="tag">Inteligencia Artificial</span>
-          <span class="tag">Ciberseguridad</span>
-          <span class="tag">Fintech</span>
-          <span class="tag">Arquitectura Digital</span>
+          <span class="tag">Software Development</span>
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">Generative AI</span>
         </div>
       </div>
       <div class="hero__card">
-        <p class="label">En construcción continua</p>
-        <h3>Roadmap personal</h3>
+        <p class="label" data-i18n="hero.roadmap.label">In continuous build</p>
+        <h3 data-i18n="hero.roadmap.title">Personal roadmap</h3>
         <ul>
-          <li>✓ QR-Generator listo y publicado</li>
-          <li>• Portafolio 2026 (esta página)</li>
-          <li>• Playbook de ciberseguridad</li>
-          <li>• Experimentos de IA aplicada</li>
+          <li>✓ QR-Generator shipped</li>
+          <li>• Portfolio 2026 (this site)</li>
+          <li>• Security playbook</li>
+          <li>• Applied AI experiments</li>
         </ul>
-        <p class="tiny">Actualizado: 29 ene 2026</p>
+        <p class="tiny" data-i18n="hero.roadmap.updated">Updated: Jan 29, 2026</p>
       </div>
     </section>
 
-    <section id="valor" class="panel">
+    <section id="pillars" class="panel">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Propuesta</p>
-          <h2>Qué problema resuelvo</h2>
+          <p class="eyebrow">Strategic Pillars</p>
+          <h2>Core capabilities</h2>
+        </div>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>Software Development</h3>
+          <p class="muted">Systems design, APIs, frontends, and deployable products.</p>
+        </article>
+        <article class="service-card">
+          <h3>Cybersecurity</h3>
+          <p class="muted">Secure auth, API protection, encryption, and threat-aware design.</p>
+        </article>
+        <article class="service-card">
+          <h3>Generative AI</h3>
+          <p class="muted">Assistants, automation tools, AI-driven features, and learning platforms.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="live" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Live Platform Preview</p>
+          <h2>What’s new</h2>
         </div>
       </div>
       <div class="value-grid">
         <article class="value-card">
-          <h3>Dolor</h3>
-          <p class="muted">Equipos con prototipos que no escalan, sin seguridad ni automatización.</p>
+          <h3>Latest Project</h3>
+          <p class="muted">CmLayerBank — fintech scoring platform.</p>
         </article>
         <article class="value-card">
-          <h3>Solución</h3>
-          <p class="muted">Arquitecturas claras, APIs seguras, CI/CD y observabilidad ligera desde el día uno.</p>
+          <h3>Latest Resource</h3>
+          <p class="muted">API Security checklist (coming soon).</p>
         </article>
         <article class="value-card">
-          <h3>Impacto</h3>
-          <p class="muted">Tiempo de salida a producción menor y menos riesgo operativo.</p>
+          <h3>Latest Experience</h3>
+          <p class="muted">Security-first delivery for academic + startup pilots.</p>
         </article>
       </div>
     </section>
 
-    <section id="proyectos" class="panel">
+    <section id="identity" class="panel">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Casos de estudio</p>
-          <h2>Proyectos seleccionados</h2>
-          <p class="muted">Soluciones reales con enfoque de negocio, arquitectura y seguridad.</p>
+          <p class="eyebrow">CmLayer Identity Snapshot</p>
+          <h2>What, why, who</h2>
         </div>
-        <a class="link" href="https://github.com/luiscdano?tab=repositories" target="_blank" rel="noreferrer">Ver repos en GitHub</a>
+      </div>
+      <div class="value-grid">
+        <article class="value-card"><h3>What</h3><p class="muted">A platform for building secure, intelligent digital systems.</p></article>
+        <article class="value-card"><h3>Problem</h3><p class="muted">Teams stuck between prototypes and production-grade systems.</p></article>
+        <article class="value-card"><h3>Who</h3><p class="muted">Startups, fintech, and academic builders needing real delivery.</p></article>
+      </div>
+    </section>
+
+    <section id="projects" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Evidence</p>
+          <h2>Projects (deep dive)</h2>
+          <p class="muted">Real-world systems and secure digital platforms.</p>
+        </div>
+        <a class="btn ghost" href="/projects/index.html">Open Projects</a>
       </div>
       <div class="case-grid">
         <article class="case">
           <div>
-            <p class="label">Fintech · Seguridad</p>
+            <p class="label">Software Systems</p>
             <h3>CmLayerBank</h3>
-            <p class="muted"><strong>Problema:</strong> microfinanzas sin scoring confiable. <strong>Solución:</strong> plataforma bancaria con scoring inteligente y seguridad por capas. <strong>Resultado:</strong> base lista para pilotos fintech.</p>
-            <div class="topics">
-              <span>.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>JWT</span><span>CI/CD</span>
-            </div>
-            <div class="case-actions">
-              <a class="btn primary" href="https://www.cmlayerbank.com" target="_blank" rel="noreferrer">Ver Proyecto</a>
-              <a class="btn ghost" href="https://github.com/luiscdano/CmLayer" target="_blank" rel="noreferrer">Ver Código</a>
-            </div>
+            <p class="muted"><strong>Problem:</strong> microfinance scoring gaps. <strong>Solution:</strong> modular banking platform with layered security. <strong>Outcome:</strong> pilot-ready fintech base.</p>
+            <div class="topics"><span>.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>JWT</span><span>CI/CD</span></div>
+            <div class="case-actions"><a class="btn primary" href="https://www.cmlayerbank.com" target="_blank" rel="noreferrer">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/CmLayer" target="_blank" rel="noreferrer">View Code</a></div>
           </div>
-          <div class="case-media">
-            <img src="assets/img/isotipo02.png" alt="CmLayerBank branding">
-          </div>
+          <div class="case-media"><img src="assets/img/isotipo02.png" alt="CmLayerBank branding"></div>
         </article>
         <article class="case">
           <div>
-            <p class="label">Ecosistema empresarial</p>
+            <p class="label">Secure Platforms</p>
             <h3>GrupoDiCed</h3>
-            <p class="muted"><strong>Problema:</strong> proyectos dispersos sin capa común. <strong>Solución:</strong> ecosistema API-first, modular y observable. <strong>Resultado:</strong> unificación de servicios y rapidez en iterar.</p>
-            <div class="topics">
-              <span>TypeScript</span><span>APIs</span><span>Cloud</span><span>Security</span>
-            </div>
-            <div class="case-actions">
-              <a class="btn primary" href="https://grupodiced.com" target="_blank" rel="noreferrer">Ver Proyecto</a>
-              <a class="btn ghost" href="https://github.com/luiscdano/GrupoDiCed" target="_blank" rel="noreferrer">Ver Código</a>
-            </div>
+            <p class="muted"><strong>Problem:</strong> scattered projects. <strong>Solution:</strong> API-first ecosystem with observability. <strong>Outcome:</strong> unified services and faster iterations.</p>
+            <div class="topics"><span>TypeScript</span><span>APIs</span><span>Cloud</span><span>Security</span></div>
+            <div class="case-actions"><a class="btn primary" href="https://grupodiced.com" target="_blank" rel="noreferrer">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/GrupoDiCed" target="_blank" rel="noreferrer">View Code</a></div>
           </div>
-          <div class="case-media">
-            <img src="assets/img/isotipo01.png" alt="GrupoDiCed branding">
-          </div>
+          <div class="case-media"><img src="assets/img/isotipo01.png" alt="GrupoDiCed branding"></div>
         </article>
         <article class="case">
           <div>
-            <p class="label">Académico · Patrones</p>
+            <p class="label">AI-Driven Solutions</p>
             <h3>Proyectos-ITLA</h3>
-            <p class="muted"><strong>Problema:</strong> prácticas aisladas sin estándares. <strong>Solución:</strong> portafolio académico con patrones y APIs documentadas. <strong>Resultado:</strong> base demostrable para roles técnicos.</p>
-            <div class="topics">
-              <span>C#</span><span>ASP.NET</span><span>APIs</span><span>Clean arch</span>
-            </div>
-            <div class="case-actions">
-              <a class="btn primary" href="#contacto">Ver Proyecto</a>
-              <a class="btn ghost" href="https://github.com/luiscdano/Proyectos-ITLA" target="_blank" rel="noreferrer">Ver Código</a>
-            </div>
+            <p class="muted"><strong>Problem:</strong> academic work without standards. <strong>Solution:</strong> documented patterns and APIs. <strong>Outcome:</strong> demonstrable base for technical roles.</p>
+            <div class="topics"><span>C#</span><span>ASP.NET</span><span>APIs</span><span>Clean arch</span></div>
+            <div class="case-actions"><a class="btn primary" href="/projects/index.html">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/Proyectos-ITLA" target="_blank" rel="noreferrer">View Code</a></div>
           </div>
-          <div class="case-media">
-            <img src="assets/img/logo01.png" alt="Proyectos ITLA">
-          </div>
+          <div class="case-media"><img src="assets/img/Logo01.png" alt="Proyectos ITLA"></div>
         </article>
         <article class="case">
           <div>
-            <p class="label">Lab personal</p>
+            <p class="label">Lab</p>
             <h3>PersonalProjects</h3>
-            <p class="muted"><strong>Problema:</strong> necesidad de probar ideas rápido. <strong>Solución:</strong> laboratorio con APIs, DevOps e IA. <strong>Resultado:</strong> pruebas de concepto medibles y transferibles.</p>
-            <div class="topics">
-              <span>Python</span><span>DevOps</span><span>AI</span><span>APIs</span>
-            </div>
-            <div class="case-actions">
-              <a class="btn primary" href="#contacto">Ver Proyecto</a>
-              <a class="btn ghost" href="https://github.com/luiscdano/PersonalProjects" target="_blank" rel="noreferrer">Ver Código</a>
-            </div>
+            <p class="muted"><strong>Problem:</strong> need to test ideas fast. <strong>Solution:</strong> lab with APIs, DevOps, AI. <strong>Outcome:</strong> measurable POCs and handoffs.</p>
+            <div class="topics"><span>Python</span><span>DevOps</span><span>AI</span><span>APIs</span></div>
+            <div class="case-actions"><a class="btn primary" href="/projects/index.html">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/PersonalProjects" target="_blank" rel="noreferrer">View Code</a></div>
           </div>
-          <div class="case-media">
-            <img src="assets/img/isotipo01.png" alt="Laboratorio personal">
-          </div>
+          <div class="case-media"><img src="assets/img/isotipo01.png" alt="Lab"></div>
         </article>
       </div>
     </section>
 
-    <section id="servicios" class="panel">
+    <section id="services" class="panel">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Qué hacemos</p>
-          <h2>Servicios profesionales</h2>
-          <p class="muted">Oferta clara para clientes, reclutadores o socios.</p>
+          <p class="eyebrow">Services</p>
+          <h2>Technology solutions designed and delivered</h2>
         </div>
-        <a class="btn ghost" href="#contacto">Agenda una llamada</a>
+        <a class="btn ghost" href="#contact">Book a call</a>
       </div>
       <div class="services-grid">
-        <article class="service-card wide">
-          <h3>Arquitectura de Software</h3>
-          <p class="muted">Plataformas escalables y seguras listas para crecimiento académico o empresarial.</p>
-          <ul>
-            <li>Diseño modular, dominios claros y contratos de API.</li>
-            <li>Documentación y handoff listos para equipos.</li>
-          </ul>
-        </article>
-        <article class="service-card wide">
-          <h3>Ciberseguridad Aplicada</h3>
-          <p class="muted">Protección de APIs, autenticación, cifrado y auditoría.</p>
-          <ul>
-            <li>Zero Trust, JWT, control de acceso y logging.</li>
-            <li>Hardening de despliegues y revisiones OWASP.</li>
-          </ul>
-        </article>
-        <article class="service-card wide">
-          <h3>Inteligencia Artificial</h3>
-          <p class="muted">Automatización, scoring y toma de decisiones con modelos integrados.</p>
-          <ul>
-            <li>POCs medibles con guardrails de seguridad.</li>
-            <li>Integración en productos existentes.</li>
-          </ul>
-        </article>
-        <article class="service-card wide">
-          <h3>Desarrollo Full Stack</h3>
-          <p class="muted">Aplicaciones web y backend con despliegue real y CI/CD.</p>
-          <ul>
-            <li>Stacks: .NET, Node, TS/React o HTML estático + APIs.</li>
-            <li>Observabilidad ligera y entrega continua.</li>
-          </ul>
-        </article>
+        <article class="service-card wide"><h3>Software Development</h3><p class="muted">Web platforms, mobile apps, APIs & backend, UI/UX.</p></article>
+        <article class="service-card wide"><h3>Cybersecurity</h3><p class="muted">Auth (JWT, roles), API security, data protection, arch reviews.</p></article>
+        <article class="service-card wide"><h3>Generative AI</h3><p class="muted">Assistants, automation tools, AI-driven features, learning platforms.</p></article>
+        <article class="service-card wide"><h3>How we work</h3><p class="muted">Discovery → Design → Development → Testing → Deployment → Support.</p></article>
       </div>
     </section>
 
-    <section id="sobre-mi" class="panel">
+    <section id="knowledge" class="panel">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Quién soy</p>
-          <h2>Sobre mí</h2>
+          <p class="eyebrow">Knowledge Hub</p>
+          <h2>A living library</h2>
         </div>
       </div>
-      <div class="about-grid">
-        <div class="about-photo">
-          <div class="photo-frame">
-            <img src="assets/img/foto.luis.jpg" alt="Foto de Luis C. Dano" loading="lazy">
-          </div>
-        </div>
-        <div class="about-copy">
-          <h3>Luis Emilio Cedano Martínez</h3>
-          <p class="muted">Founder & CTO | Digital Ecosystems, AI-Driven Platforms & Systems Architecture</p>
-          <p>Construyo ecosistemas tecnológicos, plataformas digitales y arquitecturas orientadas a impacto real, escalabilidad y automatización.</p>
-          <p>Estudiante de Desarrollo de Software en ITLA · GPA 4.0 (último término 3.9). Integro backend moderno, APIs, cloud, IA y seguridad como base.</p>
-          <div class="chips">
-            <span>C# / .NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>GitHub Actions</span><span>Linux</span><span>Cloud</span><span>IA</span>
-          </div>
-        </div>
+      <div class="value-grid">
+        <article class="value-card"><h3>Streams</h3><p class="muted">Software Engineering · Cybersecurity · Generative AI</p></article>
+        <article class="value-card"><h3>Types</h3><p class="muted">Articles · Videos · Guides · Resources · Labs</p></article>
+        <article class="value-card"><h3>Paths</h3><p class="muted">Beginner → Intermediate → Advanced</p></article>
       </div>
     </section>
 
-    <section id="testimonios" class="panel">
+    <section id="voices" class="panel">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Validación</p>
-          <h2>Testimonios</h2>
+          <p class="eyebrow">Voices & Experiences</p>
+          <h2>Trust through real impact</h2>
         </div>
       </div>
       <div class="testimonial-grid">
-        <blockquote class="testimonial">
-          <p>“Destaca por su capacidad de estructurar sistemas complejos y llevarlos a producción con enfoque profesional.”</p>
-          <cite>Profesor ITLA</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>“Entrega prototipos con seguridad integrada y documentación lista para equipos.”</p>
-          <cite>Colaborador · Proyecto académico</cite>
-        </blockquote>
+        <blockquote class="testimonial"><p>“Structures complex systems and ships with a professional mindset.”</p><cite>ITLA Professor</cite></blockquote>
+        <blockquote class="testimonial"><p>“Delivers prototypes with security built-in and handoffs ready for teams.”</p><cite>Academic collaborator</cite></blockquote>
       </div>
     </section>
 
-    <section id="articulos" class="panel">
+    <section id="about" class="panel">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Artículos / Lab</p>
-          <h2>Notas técnicas</h2>
+          <p class="eyebrow">About</p>
+          <h2>The engineer and the platform</h2>
         </div>
       </div>
-      <div class="articles">
-        <article>
-          <h4>Seguridad en APIs modernas</h4>
-          <p class="muted">JWT, Zero Trust y hardening práctico para APIs públicas.</p>
-          <span class="tiny muted">2026</span>
-        </article>
-        <article>
-          <h4>Arquitectura para plataformas fintech</h4>
-          <p class="muted">Dominios, contratos y observabilidad desde el día cero.</p>
-          <span class="tiny muted">2026</span>
-        </article>
-        <article>
-          <h4>CI/CD en entornos académicos y startups</h4>
-          <p class="muted">Pipelines pequeños que no frenan la entrega.</p>
-          <span class="tiny muted">2026</span>
-        </article>
+      <div class="about-grid">
+        <div class="about-photo"><div class="photo-frame"><img src="assets/img/foto.luis.jpg" alt="Photo of Luis C. Dano" loading="lazy"></div></div>
+        <div class="about-copy">
+          <h3>Luis Emilio Cedano Martínez</h3>
+          <p class="muted">Founder & CTO. Software, security, AI. Building platforms with impact.</p>
+          <p>Vision: become a reference for digital innovation, education, and secure intelligent systems in the Dominican Republic and beyond.</p>
+          <p>Mission: build technology that helps people learn, create, and grow through secure, practical, intelligent platforms.</p>
+          <div class="chips"><span>C#/.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>GitHub Actions</span><span>Linux</span><span>Cloud</span><span>AI</span></div>
+        </div>
       </div>
     </section>
 
-    <section id="certificados" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Logros</p>
-          <h2>Certificados & formación</h2>
-        </div>
-        <span class="muted tiny">Documentación disponible en PDF</span>
-      </div>
-      <div class="cert-grid">
-        <article class="cert-card">
-          <h4>CV · Español</h4>
-          <a class="btn ghost" href="assets/certificates/cv-espanol.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
-        </article>
-        <article class="cert-card">
-          <h4>Certificado de Secundaria</h4>
-          <a class="btn ghost" href="assets/certificates/certificado-secundaria.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
-        </article>
-        <article class="cert-card">
-          <h4>Título Dominico Americano</h4>
-          <a class="btn ghost" href="assets/certificates/titulo-dominico-americano.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
-        </article>
-        <article class="cert-card">
-          <h4>Título UTESA</h4>
-          <a class="btn ghost" href="assets/certificates/titulo-utesa.pdf" target="_blank" rel="noreferrer">Ver PDF</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="faq" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">FAQ</p>
-          <h2>Preguntas frecuentes</h2>
-        </div>
-      </div>
-      <div class="faq">
-        <details open>
-          <summary>¿En qué tipo de proyectos trabajas?</summary>
-          <p class="muted">Consultoría tecnológica, APIs, fintech, automatización, IA aplicada y revisiones de seguridad.</p>
-        </details>
-        <details>
-          <summary>¿Cómo arrancamos?</summary>
-          <p class="muted">Llamada breve, alcance y entregables claros, plan de una página con tiempos.</p>
-        </details>
-        <details>
-          <summary>¿Trabajas remoto?</summary>
-          <p class="muted">Sí, horario flexible US/EU; comunicación en español o inglés.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="contacto" class="panel contact">
+    <section id="contact" class="panel contact">
       <div class="two-col contact-grid">
         <div>
-          <p class="eyebrow">Conectemos</p>
-          <h2>¿Tienes un proyecto o idea?</h2>
-          <p class="muted">Hablemos y conviértelo en una solución real.</p>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s collaborate, build, and learn together.</h2>
+          <p class="muted">Project requests, academic collaborations, consulting, or community feedback.</p>
           <div class="cta">
-            <a class="btn primary" href="mailto:luiscdano@gmail.com">Escríbeme</a>
+            <a class="btn primary" href="mailto:luiscdano@gmail.com">Email</a>
             <a class="btn ghost" href="https://www.linkedin.com/in/luiscdano" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/luiscdano" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
         <form class="contact-form">
-          <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre"></label>
-          <label>Email<input type="email" name="email" placeholder="tu@email.com"></label>
-          <label>Mensaje<textarea name="mensaje" rows="4" placeholder="Cuéntame sobre el proyecto"></textarea></label>
-          <button class="btn primary" type="submit">Enviar</button>
+          <label>Name<input type="text" name="nombre" placeholder="Your name"></label>
+          <label>Email<input type="email" name="email" placeholder="you@email.com"></label>
+          <label>Message<textarea name="mensaje" rows="4" placeholder="Tell me about the project"></textarea></label>
+          <button class="btn primary" type="submit">Send</button>
         </form>
       </div>
     </section>

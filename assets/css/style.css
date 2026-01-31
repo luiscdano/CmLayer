@@ -63,9 +63,10 @@ a:hover { color: #7ce4ff; }
 }
 
 .brand-mark{
-  height: 28px;
+  height: 120px;
   width: auto;
   display: block;
+  object-fit: contain;
 }
 
 .brand .dot {
@@ -80,6 +81,24 @@ a:hover { color: #7ce4ff; }
 .nav-links a:hover { background: var(--panel-strong); color: #bdeaff; }
 
 .nav-toggle { display: none; background: none; border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 10px; }
+
+.lang-switch{
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+.lang-switch button{
+  background: var(--panel-strong);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:6px 10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.lang-switch button.active{
+  border-color: var(--accent);
+  background: rgba(49,213,255,0.12);
+}
 
 main { position: relative; z-index: 1; padding: 32px 20px 80px; }
 
@@ -201,6 +220,7 @@ section { margin: 0 auto; max-width: 1180px; }
   .nav-links { position: absolute; right: 20px; top: 58px; background: rgba(4,9,21,0.94); border: 1px solid var(--border); border-radius: 12px; padding: 10px; flex-direction: column; gap: 8px; min-width: 180px; display: none; }
   .nav-links.open { display: flex; }
   .topbar { position: sticky; top: 0; }
+  .brand-mark { height: 70px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
