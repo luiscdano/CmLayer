@@ -47,9 +47,9 @@ a:hover { color: #7ce4ff; }
   align-items: center;
   gap: 10px;
   justify-content: flex-start;
-  padding: 10px 18px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 12px 12px;
+  max-width: 1380px;
+  margin: 0 auto 6px;
   background: rgba(4, 9, 21, 0.9);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -64,7 +64,7 @@ a:hover { color: #7ce4ff; }
 }
 
 .brand-mark{
-  height: 280px;
+  height: 120px;
   width: auto;
   display: block;
   object-fit: contain;
