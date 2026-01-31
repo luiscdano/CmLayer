@@ -33,6 +33,14 @@
     }
   };
 
+  // Projects page specific strings
+  strings.en['projects.hero.title'] = 'From concept to deployment';
+  strings.en['projects.hero.sub'] = 'Designing, securing, and scaling real-world digital systems across software, security, and AI.';
+  strings.en['projects.cta.featured'] = 'View Featured Systems';
+  strings.es['projects.hero.title'] = 'Del concepto al despliegue';
+  strings.es['projects.hero.sub'] = 'Diseñando, asegurando y escalando sistemas digitales reales en software, seguridad e IA.';
+  strings.es['projects.cta.featured'] = 'Ver sistemas destacados';
+
   function applyLang(lang){
     const dict = strings[lang] || strings.en;
     document.documentElement.lang = lang;
@@ -48,5 +56,16 @@
   applyLang(savedLang);
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  });
+
+  // Active nav highlight by path
+  const path = window.location.pathname.replace(/\/+$/,'');
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = a.getAttribute('href').replace(/\/+$/,'');
+    if (href && href !== '' && path === href) {
+      a.classList.add('active');
+    } else if (href === '' || href === '/') {
+      if (path === '') a.classList.add('active');
+    }
   });
 })();

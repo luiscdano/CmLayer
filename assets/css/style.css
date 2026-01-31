@@ -85,6 +85,7 @@ a:hover { color: #7ce4ff; }
 .nav-links { display: flex; gap: 12px; align-items: center; margin-left: 12px; }
 .nav-links a { font-weight: 600; color: var(--text); padding: 8px 10px; border-radius: 10px; transition: all .2s ease; }
 .nav-links a:hover { background: var(--panel-strong); color: #bdeaff; }
+.nav-links a.active { color: var(--accent); }
 
 .nav-toggle { display: none; background: none; border: 1px solid var(--border); color: var(--text); padding: 6px 10px; border-radius: 10px; }
 
