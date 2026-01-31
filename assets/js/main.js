@@ -24,7 +24,7 @@
       'hero.roadmap.label': 'In continuous build', 'hero.roadmap.title': 'Personal roadmap', 'hero.roadmap.updated': 'Updated: Jan 29, 2026'
     },
     es: {
-      'nav.home': 'Inicio', 'nav.projects': 'Proyectos', 'nav.services': 'Servicios', 'nav.knowledge': 'Knowledge Hub', 'nav.voices': 'Voces & Experiencias', 'nav.about': 'Sobre mí', 'nav.contact': 'Contacto',
+      'nav.home': 'Inicio', 'nav.projects': 'Proyectos', 'nav.services': 'Servicios', 'nav.knowledge': 'Centro de Conocimiento', 'nav.voices': 'Voces y Experiencias', 'nav.about': 'Sobre', 'nav.contact': 'Contacto',
       'cta.talk': 'Agenda una llamada', 'cta.projects': 'Ver proyectos',
       'hero.tags': 'Software · Ciberseguridad · IA Generativa',
       'hero.title': 'Ingeniería de software, sistemas seguros e inteligencia para el futuro digital.',
