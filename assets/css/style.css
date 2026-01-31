@@ -63,7 +63,7 @@ a:hover { color: #7ce4ff; }
 }
 
 .brand-mark{
-  height: 120px;
+  height: 280px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -220,7 +220,7 @@ section { margin: 0 auto; max-width: 1180px; }
   .nav-links { position: absolute; right: 20px; top: 58px; background: rgba(4,9,21,0.94); border: 1px solid var(--border); border-radius: 12px; padding: 10px; flex-direction: column; gap: 8px; min-width: 180px; display: none; }
   .nav-links.open { display: flex; }
   .topbar { position: sticky; top: 0; }
-  .brand-mark { height: 70px; }
+  .brand-mark { height: 140px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
