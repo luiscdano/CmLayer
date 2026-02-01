@@ -33,35 +33,94 @@
   <main>
     <section class="hero">
       <div class="hero__text">
-        <p class="eyebrow" data-i18n="kh.hero.eyebrow">CmLayer — Knowledge Hub</p>
-        <h1 data-i18n="kh.hero.title">Learn in public · Curated knowledge · Engineering mindset</h1>
-        <p class="lede" data-i18n="kh.hero.sub">A living learning hub for software development, cybersecurity, and generative AI.</p>
+        <p class="eyebrow" data-i18n="kh.hero.eyebrow">Knowledge Hub</p>
+        <h1 data-i18n="kh.hero.title">Explore what I study, read, and apply to real systems.</h1>
+        <p class="lede" data-i18n="kh.hero.sub">Learn in public · Curated knowledge · Engineering mindset</p>
         <div class="cta">
-          <a class="btn primary" href="#library" data-i18n="kh.hero.cta1">Explore Knowledge</a>
-          <a class="btn ghost" href="#updates" data-i18n="kh.hero.cta2">Subscribe</a>
-          <a class="btn ghost" href="#contribute" data-i18n="kh.hero.cta3">Contribute</a>
+          <a class="btn primary" href="#library" data-i18n="kh.hero.cta1">Study Guides</a>
+          <a class="btn ghost" href="#videos" data-i18n="kh.hero.cta2">Videos</a>
+          <a class="btn ghost" href="#videos" data-i18n="kh.hero.cta3">Courses</a>
+          <a class="btn ghost" href="#news" data-i18n="kh.hero.cta4">News</a>
         </div>
       </div>
     </section>
 
     <section class="panel" id="library">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.library.eyebrow">Knowledge Library</p><h2 data-i18n="kh.library.title">Public learning archive</h2></div></div>
-      <p class="muted" data-i18n="kh.library.desc">PDF guides, books, and technical documents used in my learning sprints. Each file is paired with a summary, personal note, and a related project link.</p>
-      <div class="services-grid">
-        <article class="service-card"><h3>/knowledge-library/</h3><p class="muted">Root library (public view)</p></article>
-        <article class="service-card"><h3>/libros/</h3><p class="muted">Books and long-form references</p></article>
-        <article class="service-card"><h3>/guias-de-estudio/</h3><p class="muted">Study guides and structured paths</p></article>
-        <article class="service-card"><h3>/documentos-tecnicos/</h3><p class="muted">Technical docs and whitepapers</p></article>
-        <article class="service-card"><h3>/resumenes/</h3><p class="muted">My summaries and reflections</p></article>
-      </div>
-      <h3 data-i18n="kh.library.latest">Latest uploads</h3>
-      <div class="grid">
-        <a class="btn ghost" href="/knowledge-hub/knowledge-library/libros/Los%20200%20Terminos%20ma%CC%81s%20Usados%20en%20Programacio%CC%81n.pdf">Los 200 Términos más Usados en Programación (PDF)</a>
-        <a class="btn ghost" href="/knowledge-hub/knowledge-library/guias-de-estudio/Gu%C3%ADa%20de%20Estudio.pdf">Guía de Estudio (PDF)</a>
-        <a class="btn ghost" href="/knowledge-hub/knowledge-library/documentos-tecnicos/Gui%CC%81a%20de%20Fundamentos%20de%20SQL%20y%20bases%20de%20datos.pdf">Guía de Fundamentos de SQL (PDF)</a>
-        <a class="btn ghost" href="/knowledge-hub/knowledge-library/documentos-tecnicos/Gui%CC%81a%20Ra%CC%81pida%20de%20Fundamentos%20en%20Python.pdf">Guía Rápida de Fundamentos en Python (PDF)</a>
-        <a class="btn ghost" href="/knowledge-hub/knowledge-library/documentos-tecnicos/Gui%CC%81a%20Ra%CC%81pida%20de%20Fundamentos%20en%20JavaScript.pdf">Guía Rápida de Fundamentos en JavaScript (PDF)</a>
-        <a class="btn ghost" href="/knowledge-hub/knowledge-library/documentos-tecnicos/Gui%CC%81a%20Ra%CC%81pida%20Bash:Shell.pdf">Guía Rápida Bash/Shell (PDF)</a>
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.library.eyebrow">Study Guide Library</p><h2 data-i18n="kh.library.title">Visual library of PDFs</h2></div></div>
+      <p class="muted" data-i18n="kh.library.desc">All PDFs in one place. Each item includes a cover, summary, my comment, and a link to related projects.</p>
+      <div class="cover-grid">
+        <article class="cover-card">
+          <div class="cover" aria-hidden="true">
+            <div class="cover-title">Ruta de Estudio</div>
+            <div class="cover-meta">Software</div>
+            <div class="cover-brand">CmLayer</div>
+          </div>
+          <h3>Ruta de Estudio</h3>
+          <p class="muted">Categoría: Software</p>
+          <div class="case-actions">
+            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Estudio.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <div class="cover" aria-hidden="true">
+            <div class="cover-title">SQL Fundamentals</div>
+            <div class="cover-meta">Data · Software</div>
+            <div class="cover-brand">CmLayer</div>
+          </div>
+          <h3>Guía de Fundamentos de SQL</h3>
+          <p class="muted">Categoría: Software</p>
+          <div class="case-actions">
+            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Fundamentos%20de%20SQL%20y%20bases%20de%20datos.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <div class="cover" aria-hidden="true">
+            <div class="cover-title">Python Fast Guide</div>
+            <div class="cover-meta">Software</div>
+            <div class="cover-brand">CmLayer</div>
+          </div>
+          <h3>Guía Rápida Python</h3>
+          <p class="muted">Categoría: Software</p>
+          <div class="case-actions">
+            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20Python.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <div class="cover" aria-hidden="true">
+            <div class="cover-title">JS Quickstart</div>
+            <div class="cover-meta">Software</div>
+            <div class="cover-brand">CmLayer</div>
+          </div>
+          <h3>Guía Rápida JavaScript</h3>
+          <p class="muted">Categoría: Software</p>
+          <div class="case-actions">
+            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20JavaScript.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <div class="cover" aria-hidden="true">
+            <div class="cover-title">Bash Shell</div>
+            <div class="cover-meta">Security · Tools</div>
+            <div class="cover-brand">CmLayer</div>
+          </div>
+          <h3>Guía Rápida Bash/Shell</h3>
+          <p class="muted">Categoría: Seguridad</p>
+          <div class="case-actions">
+            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20Bash:Shell.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <div class="cover" aria-hidden="true">
+            <div class="cover-title">Los 200 Términos</div>
+            <div class="cover-meta">Software</div>
+            <div class="cover-brand">CmLayer</div>
+          </div>
+          <h3>200 Términos de Programación</h3>
+          <p class="muted">Categoría: Software</p>
+          <div class="case-actions">
+            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Los%20200%20Terminos%20m%C3%A1s%20Usados%20en%20Programaci%C3%B3n.pdf">Explorar</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -72,22 +131,32 @@
       <p data-i18n="kh.position.principle"><strong>Principle:</strong> Knowledge grows when it is shared, questioned, and documented.</p>
     </section>
 
-    <section class="panel" id="weekly">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.weekly.eyebrow">Weekly Knowledge</p><h2 data-i18n="kh.weekly.title">New material every week or biweekly</h2></div></div>
-      <div class="services-grid">
-        <article class="service-card"><h3 data-i18n="kh.weekly.video">📺 Featured Video</h3><p class="muted" data-i18n="kh.weekly.video.desc">Talks or tutorials on software, security, or AI.</p></article>
-        <article class="service-card"><h3 data-i18n="kh.weekly.pdf">📄 PDF Insight</h3><p class="muted" data-i18n="kh.weekly.pdf.desc">Study guide, book chapter, or technical reference.</p></article>
-        <article class="service-card"><h3 data-i18n="kh.weekly.course">🔗 Course Link</h3><p class="muted" data-i18n="kh.weekly.course.desc">Free or time-limited courses on trusted platforms.</p></article>
-        <article class="service-card"><h3 data-i18n="kh.weekly.note">🧠 Personal Note</h3><p class="muted" data-i18n="kh.weekly.note.desc">Reflection and practical application.</p></article>
-      </div>
-    </section>
-
-    <section class="panel" id="video-featured">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.video.eyebrow">Featured Video</p><h2 data-i18n="kh.video.title">Engineering talks & learning sessions</h2></div></div>
-      <div class="value-grid">
-        <article class="value-card">
-          <h3 data-i18n="kh.video.template.title">Template</h3>
-          <p class="muted" data-i18n="kh.video.template.desc">Title · Source · Topic · Why I chose it · Key points · My comment (connection to projects).</p>
+    <section class="panel" id="videos">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.videos.eyebrow">Video & Courses</p><h2 data-i18n="kh.videos.title">Learning through visuals</h2></div></div>
+      <div class="media-list">
+        <article class="media-card">
+          <div class="thumb">🎥</div>
+          <div>
+            <h3>API Security 101</h3>
+            <p class="muted">YouTube · Security · Why: strengthen API design basics.</p>
+          </div>
+          <a class="btn ghost" href="#" aria-disabled="true">Ver</a>
+        </article>
+        <article class="media-card">
+          <div class="thumb">🎥</div>
+          <div>
+            <h3>Clean Architecture in Practice</h3>
+            <p class="muted">Conference · Software · Why: architecture patterns in real teams.</p>
+          </div>
+          <a class="btn ghost" href="#" aria-disabled="true">Ver</a>
+        </article>
+        <article class="media-card">
+          <div class="thumb">🎓</div>
+          <div>
+            <h3>FreeCodeCamp — Backend Roadmap</h3>
+            <p class="muted">Course · Software · Why: structured backend learning.</p>
+          </div>
+          <a class="btn ghost" href="#" aria-disabled="true">Ver</a>
         </article>
       </div>
     </section>
@@ -114,27 +183,30 @@
     </section>
 
     <section class="panel" id="news">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.news.eyebrow">News & Updates</p><h2 data-i18n="kh.news.title">Monthly tech brief</h2></div></div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3>🧠 Generative AI</h3>
-          <p class="muted">AI assistants move from chat tools to integrated development layers: IDE integrations, doc generation, AI code reviews.</p>
-          <p class="muted"><strong>Why it matters:</strong> AI becomes a workflow layer, not just a feature.</p>
-          <p class="muted"><strong>My take:</strong> AI as amplifier for learning, debugging, and design.</p>
-        </article>
-        <article class="service-card">
-          <h3>🔐 Cybersecurity</h3>
-          <p class="muted">Zero-trust and identity-first security dominate 2026 planning.</p>
-          <p class="muted"><strong>Why it matters:</strong> Design for compromise, prioritize traceability and control.</p>
-          <p class="muted"><strong>My take:</strong> Validate auth, logging, and access early—even in learning projects.</p>
-        </article>
-        <article class="service-card">
-          <h3>💻 Software Development</h3>
-          <p class="muted">Developer Experience (DX) becomes a key success metric.</p>
-          <p class="muted"><strong>Why it matters:</strong> Maintainability and clarity rival speed.</p>
-          <p class="muted"><strong>My take:</strong> Reinforces clean structure, docs, reproducible deployments.</p>
-        </article>
-      </div>
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.news.eyebrow">News & Updates</p><h2 data-i18n="kh.news.title">Monthly timeline</h2></div></div>
+      <ul class="timeline news-timeline">
+        <li>
+          <div class="dot"></div>
+          <div>
+            <h4>Enero 2026 — IA integrada en entornos de desarrollo</h4>
+            <p class="muted">Reflexión: “La IA pasa de feature a capa de flujo de trabajo.”</p>
+          </div>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <div>
+            <h4>Enero 2026 — Zero Trust como estándar moderno</h4>
+            <p class="muted">Reflexión: “Autenticación, trazabilidad y control desde el diseño.”</p>
+          </div>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <div>
+            <h4>Enero 2026 — DX como métrica clave</h4>
+            <p class="muted">Reflexión: “Estructura limpia y documentación compiten con la velocidad.”</p>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <section class="panel" id="reflection">
@@ -145,21 +217,12 @@
       </article>
     </section>
 
-    <section class="panel" id="filters">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.filters.eyebrow">Categories</p><h2 data-i18n="kh.filters.title">Explore by domain</h2></div></div>
-      <div class="chips">
-        <span data-i18n="kh.filters.cat.software">Software Engineering</span>
-        <span data-i18n="kh.filters.cat.security">Cybersecurity</span>
-        <span data-i18n="kh.filters.cat.ai">Generative AI</span>
-        <span data-i18n="kh.filters.cat.arch">Systems Architecture</span>
-        <span data-i18n="kh.filters.cat.learning">Learning Methods</span>
-        <span data-i18n="kh.filters.cat.tools">Tools & Platforms</span>
-      </div>
-    </section>
-
     <section class="panel" id="contribute">
       <div class="section-head"><div><p class="eyebrow" data-i18n="kh.contrib.eyebrow">Contribution & Community</p><h2 data-i18n="kh.contrib.title">Share knowledge, not just links</h2></div></div>
       <p class="muted" data-i18n="kh.contrib.desc">Visitors can suggest videos, articles, courses, or topics to explore. This hub grows through curiosity, collaboration, and constant learning.</p>
+      <div class="chips">
+        <span>Software</span><span>Security</span><span>AI</span>
+      </div>
     </section>
 
     <section class="panel" id="roadmap">
