@@ -16,12 +16,12 @@
       </a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a href="/projects/">Projects</a>
-        <a href="/services/">Services</a>
-        <a class="active" href="/knowledge-hub/">Knowledge Hub</a>
-        <a href="/voices-experiences/">Voices & Experiences</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+        <a href="/projects/" data-i18n="nav.projects">Projects</a>
+        <a href="/services/" data-i18n="nav.services">Services</a>
+        <a class="active" href="/knowledge-hub/" data-i18n="nav.knowledge">Knowledge Hub</a>
+        <a href="/voices-experiences/" data-i18n="nav.voices">Voices & Experiences</a>
+        <a href="/about/" data-i18n="nav.about">About</a>
+        <a href="/contact/" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="lang-switch">
         <button data-lang="en" class="active">🇺🇸 EN</button>
@@ -47,78 +47,70 @@
 
     <section class="panel" id="library">
       <div class="section-head"><div><p class="eyebrow" data-i18n="kh.library.eyebrow">Study Guide Library</p><h2 data-i18n="kh.library.title">Visual library of PDFs</h2></div></div>
-      <p class="muted" data-i18n="kh.library.desc">All PDFs in one place. Each item includes a cover, summary, my comment, and a link to related projects.</p>
+      <p class="muted" data-i18n="kh.library.desc">All PDFs in one place. Each item includes a cover, summary, my comment, and a link to related projects. If it has no cover, it doesn’t get published.</p>
       <div class="cover-grid">
         <article class="cover-card">
-          <div class="cover" aria-hidden="true">
-            <div class="cover-title">Ruta de Estudio</div>
-            <div class="cover-meta">Software</div>
-            <div class="cover-brand">CmLayer</div>
-          </div>
-          <h3>Ruta de Estudio</h3>
-          <p class="muted">Categoría: Software</p>
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/ruta-estudio.png" alt="Ruta de Estudio" loading="lazy" />
+          <h3 data-i18n="kh.library.card1.title">Ruta de Estudio</h3>
+          <p class="muted" data-i18n="kh.library.card1.cat">Categoría: Software</p>
           <div class="case-actions">
-            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Estudio.pdf">Explorar</a>
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Estudio.pdf">Explorar</a>
           </div>
         </article>
         <article class="cover-card">
-          <div class="cover" aria-hidden="true">
-            <div class="cover-title">SQL Fundamentals</div>
-            <div class="cover-meta">Data · Software</div>
-            <div class="cover-brand">CmLayer</div>
-          </div>
-          <h3>Guía de Fundamentos de SQL</h3>
-          <p class="muted">Categoría: Software</p>
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/fundamentos-sql.png" alt="Guía de Fundamentos de SQL" loading="lazy" />
+          <h3 data-i18n="kh.library.card2.title">Guía de Fundamentos de SQL</h3>
+          <p class="muted" data-i18n="kh.library.card2.cat">Categoría: Software</p>
           <div class="case-actions">
-            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Fundamentos%20de%20SQL%20y%20bases%20de%20datos.pdf">Explorar</a>
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Fundamentos%20de%20SQL%20y%20bases%20de%20datos.pdf">Explorar</a>
           </div>
         </article>
         <article class="cover-card">
-          <div class="cover" aria-hidden="true">
-            <div class="cover-title">Python Fast Guide</div>
-            <div class="cover-meta">Software</div>
-            <div class="cover-brand">CmLayer</div>
-          </div>
-          <h3>Guía Rápida Python</h3>
-          <p class="muted">Categoría: Software</p>
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/python-basics.png" alt="Guía Rápida Python" loading="lazy" />
+          <h3 data-i18n="kh.library.card3.title">Guía Rápida Python</h3>
+          <p class="muted" data-i18n="kh.library.card3.cat">Categoría: Software</p>
           <div class="case-actions">
-            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20Python.pdf">Explorar</a>
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20Python.pdf">Explorar</a>
           </div>
         </article>
         <article class="cover-card">
-          <div class="cover" aria-hidden="true">
-            <div class="cover-title">JS Quickstart</div>
-            <div class="cover-meta">Software</div>
-            <div class="cover-brand">CmLayer</div>
-          </div>
-          <h3>Guía Rápida JavaScript</h3>
-          <p class="muted">Categoría: Software</p>
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/javascript-basics.png" alt="Guía Rápida JavaScript" loading="lazy" />
+          <h3 data-i18n="kh.library.card4.title">Guía Rápida JavaScript</h3>
+          <p class="muted" data-i18n="kh.library.card4.cat">Categoría: Software</p>
           <div class="case-actions">
-            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20JavaScript.pdf">Explorar</a>
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20JavaScript.pdf">Explorar</a>
           </div>
         </article>
         <article class="cover-card">
-          <div class="cover" aria-hidden="true">
-            <div class="cover-title">Bash Shell</div>
-            <div class="cover-meta">Security · Tools</div>
-            <div class="cover-brand">CmLayer</div>
-          </div>
-          <h3>Guía Rápida Bash/Shell</h3>
-          <p class="muted">Categoría: Seguridad</p>
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/bash-shell.png" alt="Guía Rápida Bash/Shell" loading="lazy" />
+          <h3 data-i18n="kh.library.card5.title">Guía Rápida Bash/Shell</h3>
+          <p class="muted" data-i18n="kh.library.card5.cat">Categoría: Seguridad</p>
           <div class="case-actions">
-            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20Bash:Shell.pdf">Explorar</a>
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20Bash:Shell.pdf">Explorar</a>
           </div>
         </article>
         <article class="cover-card">
-          <div class="cover" aria-hidden="true">
-            <div class="cover-title">Los 200 Términos</div>
-            <div class="cover-meta">Software</div>
-            <div class="cover-brand">CmLayer</div>
-          </div>
-          <h3>200 Términos de Programación</h3>
-          <p class="muted">Categoría: Software</p>
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/terminos-200.png" alt="200 Términos de Programación" loading="lazy" />
+          <h3 data-i18n="kh.library.card6.title">200 Términos de Programación</h3>
+          <p class="muted" data-i18n="kh.library.card6.cat">Categoría: Software</p>
           <div class="case-actions">
-            <a class="btn primary" href="/knowledge-hub/knowledge-pdfs/Los%20200%20Terminos%20m%C3%A1s%20Usados%20en%20Programaci%C3%B3n.pdf">Explorar</a>
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Los%20200%20Terminos%20m%C3%A1s%20Usados%20en%20Programaci%C3%B3n.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/java-basics.png" alt="Guía Rápida Java" loading="lazy" />
+          <h3 data-i18n="kh.library.card7.title">Guía Rápida Java</h3>
+          <p class="muted" data-i18n="kh.library.card7.cat">Categoría: Software</p>
+          <div class="case-actions">
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20Java.pdf">Explorar</a>
+          </div>
+        </article>
+        <article class="cover-card">
+          <img class="cover-img" src="/knowledge-hub/knowledge-pdfs/covers/markdown.png" alt="Guía Rápida Markdown" loading="lazy" />
+          <h3 data-i18n="kh.library.card8.title">Guía Rápida Markdown</h3>
+          <p class="muted" data-i18n="kh.library.card8.cat">Categoría: Software · Docs</p>
+          <div class="case-actions">
+            <a class="btn primary" data-i18n="kh.library.explore" href="/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20MarkDown.pdf">Explorar</a>
           </div>
         </article>
       </div>
@@ -137,26 +129,34 @@
         <article class="media-card">
           <div class="thumb">🎥</div>
           <div>
-            <h3>API Security 101</h3>
-            <p class="muted">YouTube · Security · Why: strengthen API design basics.</p>
+            <h3 data-i18n="kh.videos.ai.title">AI in Modern Development</h3>
+            <p class="muted" data-i18n="kh.videos.ai.desc">YouTube · Software · <strong>Why:</strong> AI as coding assistant, automation, docs & reviews.</p>
           </div>
-          <a class="btn ghost" href="#" aria-disabled="true">Ver</a>
+          <a class="btn ghost" data-i18n="kh.videos.view" href="https://www.youtube.com/watch?v=ACZPj1tlqvg" target="_blank" rel="noreferrer">Ver</a>
         </article>
         <article class="media-card">
           <div class="thumb">🎥</div>
           <div>
-            <h3>Clean Architecture in Practice</h3>
-            <p class="muted">Conference · Software · Why: architecture patterns in real teams.</p>
+            <h3 data-i18n="kh.videos.sec.title">Security in the Age of AI</h3>
+            <p class="muted" data-i18n="kh.videos.sec.desc">YouTube · Security · <strong>Why:</strong> identity, access, Zero Trust, AI in defense.</p>
           </div>
-          <a class="btn ghost" href="#" aria-disabled="true">Ver</a>
+          <a class="btn ghost" data-i18n="kh.videos.view" href="https://www.youtube.com/watch?v=jfPFCIrFEbA" target="_blank" rel="noreferrer">Ver</a>
         </article>
         <article class="media-card">
           <div class="thumb">🎓</div>
           <div>
-            <h3>FreeCodeCamp — Backend Roadmap</h3>
-            <p class="muted">Course · Software · Why: structured backend learning.</p>
+            <h3 data-i18n="kh.videos.course1.title">IA Generativa (Udemy)</h3>
+            <p class="muted" data-i18n="kh.videos.course1.desc">LLMs, prompts y casos prácticos de automatización y asistencia.</p>
           </div>
-          <a class="btn ghost" href="#" aria-disabled="true">Ver</a>
+          <a class="btn ghost" data-i18n="kh.videos.view" href="https://www.udemy.com/courses/search/?q=cursos+gratuit%C3%B3s&src=sac&kw=Cursos" target="_blank" rel="noreferrer">Ver</a>
+        </article>
+        <article class="media-card">
+          <div class="thumb">🎓</div>
+          <div>
+            <h3 data-i18n="kh.videos.course2.title">Curso Completo de Python 3</h3>
+            <p class="muted" data-i18n="kh.videos.course2.desc">Fundamentos, estructuras de datos, funciones, automatización básica.</p>
+          </div>
+          <a class="btn ghost" data-i18n="kh.videos.view" href="https://www.udemy.com/course/curso-completo-de-python-3/?couponCode=26BBPAAG2DOCTRL" target="_blank" rel="noreferrer">Ver</a>
         </article>
       </div>
     </section>
@@ -174,7 +174,7 @@
     <section class="panel" id="courses">
       <div class="section-head"><div><p class="eyebrow" data-i18n="kh.courses.eyebrow">Free Courses</p><h2 data-i18n="kh.courses.title">Curated learning opportunities</h2></div></div>
       <div class="services-grid">
-        <article class="service-card"><h3 data-i18n="kh.courses.platforms">Platforms</h3><p class="muted">Udemy · Coursera · edX · FreeCodeCamp · Official academies</p></article>
+        <article class="service-card"><h3 data-i18n="kh.courses.platforms">Platforms</h3><p class="muted" data-i18n="kh.courses.platforms.desc">Udemy · Coursera · edX · FreeCodeCamp · Official academies</p></article>
         <article class="service-card">
           <h3 data-i18n="kh.courses.template.title">Entry template</h3>
           <p class="muted" data-i18n="kh.courses.template.desc">Name · Platform · Level (Beginner/Intermediate/Advanced) · Why valuable · Recommendation.</p>
@@ -188,22 +188,22 @@
         <li>
           <div class="dot"></div>
           <div>
-            <h4>Enero 2026 — IA integrada en entornos de desarrollo</h4>
-            <p class="muted">Reflexión: “La IA pasa de feature a capa de flujo de trabajo.”</p>
+            <h4 data-i18n="kh.news.item1.title">Enero 2026 — IA integrada en entornos de desarrollo</h4>
+            <p class="muted" data-i18n="kh.news.item1.desc">Reflexión: “La IA pasa de feature a capa de flujo de trabajo.”</p>
           </div>
         </li>
         <li>
           <div class="dot"></div>
           <div>
-            <h4>Enero 2026 — Zero Trust como estándar moderno</h4>
-            <p class="muted">Reflexión: “Autenticación, trazabilidad y control desde el diseño.”</p>
+            <h4 data-i18n="kh.news.item2.title">Enero 2026 — Zero Trust como estándar moderno</h4>
+            <p class="muted" data-i18n="kh.news.item2.desc">Reflexión: “Autenticación, trazabilidad y control desde el diseño.”</p>
           </div>
         </li>
         <li>
           <div class="dot"></div>
           <div>
-            <h4>Enero 2026 — DX como métrica clave</h4>
-            <p class="muted">Reflexión: “Estructura limpia y documentación compiten con la velocidad.”</p>
+            <h4 data-i18n="kh.news.item3.title">Enero 2026 — DX como métrica clave</h4>
+            <p class="muted" data-i18n="kh.news.item3.desc">Reflexión: “Estructura limpia y documentación compiten con la velocidad.”</p>
           </div>
         </li>
       </ul>
