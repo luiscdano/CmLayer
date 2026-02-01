@@ -743,7 +743,9 @@
   strings.en['about.certs.item4'] = 'Version Control with Git & GitHub';
   strings.en['about.certs.item5'] = 'Foundations of Cybersecurity';
   strings.en['about.certs.item6'] = 'Intro to Generative AI';
-  strings.en['about.certs.note'] = 'Section ready to add downloadable, verifiable certificates (assets/certificates/).';
+  strings.en['about.certs.note'] = 'Certificates and CV available for download.';
+  strings.en['about.certs.downloads'] = 'Downloads';
+  strings.en['about.certs.cv'] = 'CV (Spanish)';
 
   strings.en['about.cv.eyebrow'] = 'CV — Professional profile';
   strings.en['about.cv.title'] = 'Summary';
@@ -853,7 +855,9 @@
   strings.es['about.certs.item4'] = 'Control de Versiones con Git & GitHub';
   strings.es['about.certs.item5'] = 'Fundamentos de Ciberseguridad';
   strings.es['about.certs.item6'] = 'Introducción a Inteligencia Artificial Generativa';
-  strings.es['about.certs.note'] = 'Sección preparada para integrar certificados descargables y verificables (carpeta assets/certificates/).';
+  strings.es['about.certs.note'] = 'Certificados y CV disponibles para descarga.';
+  strings.es['about.certs.downloads'] = 'Descargas';
+  strings.es['about.certs.cv'] = 'CV (Español)';
 
   strings.es['about.cv.eyebrow'] = 'CV — Perfil profesional';
   strings.es['about.cv.title'] = 'Resumen';
