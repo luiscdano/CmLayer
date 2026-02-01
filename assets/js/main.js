@@ -573,6 +573,137 @@
   strings.es['kh.sprints.item5'] = 'Publicar como Sprint de aprendizaje #X';
   strings.es['kh.sprints.desc'] = 'Conecta teoría, reflexión y construcción real entre Knowledge Hub y Projects.';
 
+  // Voices & Experiences
+  strings.en['ve.hero.eyebrow'] = 'CmLayer — Voices & Experiences';
+  strings.en['ve.hero.title'] = 'Reflections · Collaboration · Learning in Public';
+  strings.en['ve.hero.sub'] = 'A space for feedback, shared learning, and real-world engineering stories.';
+  strings.en['ve.hero.cta1'] = 'My Voice';
+  strings.en['ve.hero.cta2'] = 'Share feedback';
+
+  strings.en['ve.pos.eyebrow'] = 'Voices from the Journey';
+  strings.en['ve.pos.title'] = 'What this section is';
+  strings.en['ve.pos.desc1'] = 'Reflections, feedback, and experiences from people who interact with my projects, learning process, and technical work — classmates, collaborators, mentors, early users.';
+  strings.en['ve.pos.principle'] = 'Principle: Every system teaches something. Every person leaves a trace.';
+  strings.en['ve.pos.note'] = 'No promises of “clients”; it promises learning, interaction, and real evolution.';
+
+  strings.en['ve.my.eyebrow'] = 'My Voice';
+  strings.en['ve.my.title'] = 'Engineering Journal';
+  strings.en['ve.my.desc'] = 'Short entries documenting challenges, design decisions, and lessons learned while building systems and learning in public.';
+  strings.en['ve.my.sample.title'] = 'Sample entry';
+  strings.en['ve.my.sample.context'] = 'Context: API refactor with authentication.';
+  strings.en['ve.my.sample.challenge'] = 'Challenge: Roles and scopes inconsistent.';
+  strings.en['ve.my.sample.decision'] = 'Decision: Move auth to middleware + claim unit tests.';
+  strings.en['ve.my.sample.result'] = 'Result: -30% 401/403 errors.';
+  strings.en['ve.my.sample.lesson'] = 'Lesson: Design access contracts before coding endpoints.';
+  strings.en['ve.my.template.label'] = 'Template for next entries:';
+  strings.en['ve.my.template.fields'] = 'Context · Challenge · Decision · Result · Lesson';
+
+  strings.en['ve.early.eyebrow'] = 'Early Voices';
+  strings.en['ve.early.title'] = 'Collaborators & classmates';
+  strings.en['ve.early.quote1'] = '“Reviewed his API project and liked how he organized layers and docs.”';
+  strings.en['ve.early.source1'] = '— Student, Programming II';
+  strings.en['ve.early.placeholder'] = 'Add new voices here as they come.';
+
+  strings.en['ve.stories.eyebrow'] = 'Project Stories';
+  strings.en['ve.stories.title'] = 'System experiences';
+  strings.en['ve.stories.s1.label'] = 'Layered architecture';
+  strings.en['ve.stories.s1.title'] = 'My first structured system';
+  strings.en['ve.stories.s1.desc'] = 'Going from console to API with domains, services, controllers forced clear boundaries.';
+  strings.en['ve.stories.s2.label'] = 'Security';
+  strings.en['ve.stories.s2.title'] = 'From CRUD to roles and access control';
+  strings.en['ve.stories.s2.desc'] = 'Adding roles and JWT changed how I design data and flows; security shapes the interface.';
+  strings.en['ve.stories.s3.label'] = 'DevOps';
+  strings.en['ve.stories.s3.title'] = 'What failed in my first cloud deploy';
+  strings.en['ve.stories.s3.desc'] = 'Env vars and healthchecks misconfigured; learned to watch logs and readiness probes.';
+
+  strings.en['ve.feedback.eyebrow'] = 'Feedback Loop';
+  strings.en['ve.feedback.title'] = 'Leave Your Voice';
+  strings.en['ve.feedback.desc'] = 'Share feedback or suggestions after viewing a project, guide, or system.';
+  strings.en['ve.feedback.side'] = 'Tell me what you saw/tested and what you think.';
+  strings.en['ve.feedback.name'] = 'Name (optional)';
+  strings.en['ve.feedback.context'] = 'Context';
+  strings.en['ve.feedback.comment'] = 'Comment';
+  strings.en['ve.feedback.submit'] = 'Send';
+
+  strings.en['ve.milestones.eyebrow'] = 'Milestones';
+  strings.en['ve.milestones.title'] = 'Personal milestones';
+  strings.en['ve.milestones.item1'] = 'First API published';
+  strings.en['ve.milestones.item2'] = 'First live domain';
+  strings.en['ve.milestones.item3'] = 'First Learning Sprint published';
+  strings.en['ve.milestones.item4'] = 'First external feedback received';
+
+  strings.en['ve.cta.eyebrow'] = 'CTA';
+  strings.en['ve.cta.title'] = 'Add Your Voice to the Journey';
+  strings.en['ve.cta.sub'] = 'Whether you tested a project, read a guide, or explored a system — your perspective helps shape what comes next.';
+  strings.en['ve.cta.btn1'] = 'Share Feedback';
+  strings.en['ve.cta.btn2'] = 'Collaborate';
+  strings.en['ve.cta.btn3'] = 'Connect';
+
+  strings.es['ve.hero.eyebrow'] = 'CmLayer — Voces y Experiencias';
+  strings.es['ve.hero.title'] = 'Reflexiones · Colaboración · Aprendizaje en público';
+  strings.es['ve.hero.sub'] = 'Un espacio para feedback, aprendizaje compartido e historias de ingeniería reales.';
+  strings.es['ve.hero.cta1'] = 'Mi voz';
+  strings.es['ve.hero.cta2'] = 'Compartir feedback';
+
+  strings.es['ve.pos.eyebrow'] = 'Voces del camino';
+  strings.es['ve.pos.title'] = 'Qué es esta sección';
+  strings.es['ve.pos.desc1'] = 'Reflexiones, feedback y experiencias de personas que interactúan con mis proyectos, el proceso de aprendizaje y el trabajo técnico: compañeros, colaboradores, mentores, early users.';
+  strings.es['ve.pos.principle'] = 'Principio: Cada sistema enseña algo. Cada persona deja una huella.';
+  strings.es['ve.pos.note'] = 'No se prometen “clientes”; se promete aprendizaje, interacción y evolución real.';
+
+  strings.es['ve.my.eyebrow'] = 'Mi voz';
+  strings.es['ve.my.title'] = 'Diario de ingeniería';
+  strings.es['ve.my.desc'] = 'Entradas cortas sobre retos, decisiones de diseño y lecciones aprendidas mientras construyo y aprendo en público.';
+  strings.es['ve.my.sample.title'] = 'Entrada de ejemplo';
+  strings.es['ve.my.sample.context'] = 'Contexto: Refactor de API con autenticación.';
+  strings.es['ve.my.sample.challenge'] = 'Reto: Roles y scopes inconsistentes.';
+  strings.es['ve.my.sample.decision'] = 'Decisión: Auth en middleware + pruebas unitarias de claims.';
+  strings.es['ve.my.sample.result'] = 'Resultado: -30% errores 401/403.';
+  strings.es['ve.my.sample.lesson'] = 'Lección: Diseñar contratos de acceso antes de codear endpoints.';
+  strings.es['ve.my.template.label'] = 'Formato para próximas entradas:';
+  strings.es['ve.my.template.fields'] = 'Contexto · Reto · Decisión · Resultado · Lección';
+
+  strings.es['ve.early.eyebrow'] = 'Voces tempranas';
+  strings.es['ve.early.title'] = 'Colaboradores y compañeros';
+  strings.es['ve.early.quote1'] = '“Revisé su proyecto de API y me gustó cómo organizó las capas y la documentación.”';
+  strings.es['ve.early.source1'] = '— Estudiante, Programación II';
+  strings.es['ve.early.placeholder'] = 'Agrega nuevas voces a medida que lleguen.';
+
+  strings.es['ve.stories.eyebrow'] = 'Historias de proyecto';
+  strings.es['ve.stories.title'] = 'Experiencias con sistemas';
+  strings.es['ve.stories.s1.label'] = 'Arquitectura en capas';
+  strings.es['ve.stories.s1.title'] = 'Mi primer sistema estructurado';
+  strings.es['ve.stories.s1.desc'] = 'Pasar de consola a API con dominios, servicios y controladores obligó a pensar en límites claros.';
+  strings.es['ve.stories.s2.label'] = 'Seguridad';
+  strings.es['ve.stories.s2.title'] = 'De CRUD a roles y control de acceso';
+  strings.es['ve.stories.s2.desc'] = 'Añadir roles y JWT cambió cómo diseño datos y flujos; la seguridad define la interfaz.';
+  strings.es['ve.stories.s3.label'] = 'DevOps';
+  strings.es['ve.stories.s3.title'] = 'Lo que falló en mi primer deploy cloud';
+  strings.es['ve.stories.s3.desc'] = 'Variables de entorno y healthchecks mal configurados; aprendí a observar logs y probar readiness.';
+
+  strings.es['ve.feedback.eyebrow'] = 'Bucle de feedback';
+  strings.es['ve.feedback.title'] = 'Deja tu voz';
+  strings.es['ve.feedback.desc'] = 'Comparte feedback o sugerencias después de ver un proyecto, guía o sistema.';
+  strings.es['ve.feedback.side'] = 'Cuéntame qué viste/probaste y qué piensas.';
+  strings.es['ve.feedback.name'] = 'Nombre (opcional)';
+  strings.es['ve.feedback.context'] = 'Contexto';
+  strings.es['ve.feedback.comment'] = 'Comentario';
+  strings.es['ve.feedback.submit'] = 'Enviar';
+
+  strings.es['ve.milestones.eyebrow'] = 'Hitos';
+  strings.es['ve.milestones.title'] = 'Experiencias personales';
+  strings.es['ve.milestones.item1'] = 'Primera API publicada';
+  strings.es['ve.milestones.item2'] = 'Primer dominio activo';
+  strings.es['ve.milestones.item3'] = 'Primer Learning Sprint publicado';
+  strings.es['ve.milestones.item4'] = 'Primer feedback externo recibido';
+
+  strings.es['ve.cta.eyebrow'] = 'CTA';
+  strings.es['ve.cta.title'] = 'Suma tu voz al camino';
+  strings.es['ve.cta.sub'] = 'Si probaste un proyecto, leíste una guía o exploraste un sistema, tu perspectiva ayuda a definir lo que sigue.';
+  strings.es['ve.cta.btn1'] = 'Compartir feedback';
+  strings.es['ve.cta.btn2'] = 'Colaborar';
+  strings.es['ve.cta.btn3'] = 'Conectar';
+
   function applyLang(lang){
     const dict = strings[lang] || strings.en;
     document.documentElement.lang = lang;
