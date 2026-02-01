@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CmLayer — Engineering Software, Securing Systems, Powering Intelligence</title>
-  <meta name="description" content="CmLayer: software development, cybersecurity, and generative AI consulting. Projects, services, knowledge hub, and contact." />
-  <meta name="keywords" content="software development, cybersecurity, generative AI, consulting, CmLayer, Luis Emilio Cedano" />
-  <meta property="og:title" content="CmLayer" />
-  <meta property="og:description" content="Engineering software, securing systems, powering intelligence." />
-  <meta property="og:url" content="https://cmlayer.com" />
+  <title>CmLayer — Voices & Experiences</title>
+  <meta name="description" content="CmLayer Voices & Experiences: reflections, feedback, and learning-in-public stories around software, security, and AI." />
+  <meta property="og:title" content="CmLayer — Voices & Experiences" />
+  <meta property="og:description" content="Reflections, collaboration, and learning in public." />
+  <meta property="og:url" content="https://cmlayer.com/voices-experiences/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
@@ -39,7 +38,7 @@
       <a data-i18n="nav.projects" href="/projects/">Projects</a>
       <a data-i18n="nav.services" href="/services/">Services</a>
       <a data-i18n="nav.knowledge" href="/knowledge-hub/">Knowledge Hub</a>
-      <a data-i18n="nav.voices" href="/voices-experiences/">Voices & Experiences</a>
+      <a data-i18n="nav.voices" class="active" href="/voices-experiences/">Voices & Experiences</a>
       <a data-i18n="nav.about" href="/about/">About</a>
       <a data-i18n="nav.contact" href="/contact/">Contact</a>
     </nav>
@@ -50,227 +49,120 @@
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <section id="hero" class="hero">
       <div class="hero__text">
-        <p class="eyebrow" data-i18n="hero.tags">Software · Cybersecurity · Generative AI</p>
-        <h1 data-i18n="hero.title">Engineering software, securing systems, and powering intelligence for a digital future.</h1>
-        <p class="lede" data-i18n="hero.sub">Architecture, development, and hardening for startups, fintech, and academic projects that need real technology, not just prototypes.</p>
+        <p class="eyebrow">CmLayer — Voices & Experiences</p>
+        <h1>Reflections · Collaboration · Learning in Public</h1>
+        <p class="lede">A space for feedback, shared learning, and real-world engineering stories.</p>
         <div class="cta">
-          <a class="btn primary" href="/projects/index.html" data-i18n="cta.projects">View projects</a>
-          <a class="btn ghost" href="#contact" data-i18n="cta.talk">Book a call</a>
+          <a class="btn primary" href="#my-voice">My Voice</a>
+          <a class="btn ghost" href="#feedback">Share feedback</a>
         </div>
-        <div class="meta">
-          <span class="tag">Software Development</span>
-          <span class="tag">Cybersecurity</span>
-          <span class="tag">Generative AI</span>
-        </div>
-      </div>
-      <div class="hero__card">
-        <p class="label" data-i18n="hero.roadmap.label">In continuous build</p>
-        <h3 data-i18n="hero.roadmap.title">Personal roadmap</h3>
-        <ul>
-          <li>✓ QR-Generator shipped</li>
-          <li>• Portfolio 2026 (this site)</li>
-          <li>• Security playbook</li>
-          <li>• Applied AI experiments</li>
-        </ul>
-        <p class="tiny" data-i18n="hero.roadmap.updated">Updated: Jan 29, 2026</p>
       </div>
     </section>
 
-    <section id="pillars" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Strategic Pillars</p>
-          <h2>Core capabilities</h2>
-        </div>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3>Software Development</h3>
-          <p class="muted">Systems design, APIs, frontends, and deployable products.</p>
-        </article>
-        <article class="service-card">
-          <h3>Cybersecurity</h3>
-          <p class="muted">Secure auth, API protection, encryption, and threat-aware design.</p>
-        </article>
-        <article class="service-card">
-          <h3>Generative AI</h3>
-          <p class="muted">Assistants, automation tools, AI-driven features, and learning platforms.</p>
-        </article>
-      </div>
+    <section class="panel" id="positioning">
+      <div class="section-head"><div><p class="eyebrow">Voices from the Journey</p><h2>What this section is</h2></div></div>
+      <p class="muted">Reflections, feedback, and experiences from people who interact with my projects, learning process, and technical work — classmates, collaborators, mentors, early users.</p>
+      <p><strong>Principle:</strong> Every system teaches something. Every person leaves a trace.</p>
+      <p class="muted">No se prometen “clientes”; se promete aprendizaje, interacción y evolución real.</p>
     </section>
 
-    <section id="live" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Live Platform Preview</p>
-          <h2>What’s new</h2>
-        </div>
-      </div>
+    <section class="panel" id="my-voice">
+      <div class="section-head"><div><p class="eyebrow">My Voice</p><h2>Engineering Journal</h2></div></div>
+      <p class="muted">Short entries documenting challenges, design decisions, and lessons learned while building systems and learning in public.</p>
       <div class="value-grid">
         <article class="value-card">
-          <h3>Latest Project</h3>
-          <p class="muted">CmLayerBank — fintech scoring platform.</p>
+          <h3>Entrada de ejemplo</h3>
+          <p><strong>Contexto:</strong> Refactor de API con autenticación.</p>
+          <p><strong>Reto:</strong> Roles y scopes inconsistentes.</p>
+          <p><strong>Decisión:</strong> Separar auth en middleware + pruebas unitarias de claims.</p>
+          <p><strong>Resultado:</strong> -30% errores 401/403.</p>
+          <p><strong>Lección:</strong> Diseñar contratos de acceso antes de codear endpoints.</p>
         </article>
-        <article class="value-card">
-          <h3>Latest Resource</h3>
-          <p class="muted">API Security checklist (coming soon).</p>
-        </article>
-        <article class="value-card">
-          <h3>Latest Experience</h3>
-          <p class="muted">Security-first delivery for academic + startup pilots.</p>
+        <article class="value-card placeholder">
+          <p class="muted">Formato para tus próximas entradas:</p>
+          <p class="tiny">Contexto · Reto · Decisión · Resultado · Lección</p>
         </article>
       </div>
     </section>
 
-    <section id="identity" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">CmLayer Identity Snapshot</p>
-          <h2>What, why, who</h2>
-        </div>
-      </div>
+    <section class="panel" id="early-voices">
+      <div class="section-head"><div><p class="eyebrow">Early Voices</p><h2>Colaboradores y compañeros</h2></div></div>
       <div class="value-grid">
-        <article class="value-card"><h3>What</h3><p class="muted">A platform for building secure, intelligent digital systems.</p></article>
-        <article class="value-card"><h3>Problem</h3><p class="muted">Teams stuck between prototypes and production-grade systems.</p></article>
-        <article class="value-card"><h3>Who</h3><p class="muted">Startups, fintech, and academic builders needing real delivery.</p></article>
+        <article class="value-card">
+          <p>“Revisé su proyecto de API y me gustó cómo organizó las capas y la documentación.”</p>
+          <p class="tiny muted">— Estudiante, Programación II</p>
+        </article>
+        <article class="value-card placeholder">
+          <p class="muted">Agrega aquí nuevas voces a medida que lleguen.</p>
+        </article>
       </div>
     </section>
 
-    <section id="projects" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Evidence</p>
-          <h2>Projects (deep dive)</h2>
-          <p class="muted">Real-world systems and secure digital platforms.</p>
-        </div>
-        <a class="btn ghost" href="/projects/index.html">Open Projects</a>
-      </div>
+    <section class="panel" id="project-stories">
+      <div class="section-head"><div><p class="eyebrow">Project Stories</p><h2>Experiencias con sistemas</h2></div></div>
       <div class="case-grid">
         <article class="case">
           <div>
-            <p class="label">Software Systems</p>
-            <h3>CmLayerBank</h3>
-            <p class="muted"><strong>Problem:</strong> microfinance scoring gaps. <strong>Solution:</strong> modular banking platform with layered security. <strong>Outcome:</strong> pilot-ready fintech base.</p>
-            <div class="topics"><span>.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>JWT</span><span>CI/CD</span></div>
-            <div class="case-actions"><a class="btn primary" href="https://www.cmlayerbank.com" target="_blank" rel="noreferrer">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/CmLayer" target="_blank" rel="noreferrer">View Code</a></div>
+            <p class="label">Arquitectura en capas</p>
+            <h3>Mi primer sistema estructurado</h3>
+            <p class="muted">Pasar de consola a API con dominios, servicios y controladores obligó a pensar en límites claros.</p>
+            <div class="topics"><span>Clean arch</span><span>APIs</span><span>Testing</span></div>
           </div>
-          <div class="case-media"><img src="assets/img/isotipo02.png" alt="CmLayerBank branding"></div>
         </article>
         <article class="case">
           <div>
-            <p class="label">Secure Platforms</p>
-            <h3>GrupoDiCed</h3>
-            <p class="muted"><strong>Problem:</strong> scattered projects. <strong>Solution:</strong> API-first ecosystem with observability. <strong>Outcome:</strong> unified services and faster iterations.</p>
-            <div class="topics"><span>TypeScript</span><span>APIs</span><span>Cloud</span><span>Security</span></div>
-            <div class="case-actions"><a class="btn primary" href="https://grupodiced.com" target="_blank" rel="noreferrer">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/GrupoDiCed" target="_blank" rel="noreferrer">View Code</a></div>
+            <p class="label">Seguridad</p>
+            <h3>De CRUD a roles y control de acceso</h3>
+            <p class="muted">Añadir roles y JWT cambió cómo diseño datos y flujos; la seguridad define la interfaz.</p>
+            <div class="topics"><span>JWT</span><span>RBAC</span><span>API Security</span></div>
           </div>
-          <div class="case-media"><img src="assets/img/isotipo01.png" alt="GrupoDiCed branding"></div>
         </article>
         <article class="case">
           <div>
-            <p class="label">AI-Driven Solutions</p>
-            <h3>Proyectos-ITLA</h3>
-            <p class="muted"><strong>Problem:</strong> academic work without standards. <strong>Solution:</strong> documented patterns and APIs. <strong>Outcome:</strong> demonstrable base for technical roles.</p>
-            <div class="topics"><span>C#</span><span>ASP.NET</span><span>APIs</span><span>Clean arch</span></div>
-            <div class="case-actions"><a class="btn primary" href="/projects/index.html">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/Proyectos-ITLA" target="_blank" rel="noreferrer">View Code</a></div>
+            <p class="label">DevOps</p>
+            <h3>Lo que falló en mi primer deploy cloud</h3>
+            <p class="muted">Variables de entorno y healthchecks mal configurados; aprendí a observar logs y probar readiness.</p>
+            <div class="topics"><span>Docker</span><span>Cloud</span><span>Observability</span></div>
           </div>
-          <div class="case-media"><img src="assets/img/Logo01.png" alt="Proyectos ITLA"></div>
-        </article>
-        <article class="case">
-          <div>
-            <p class="label">Lab</p>
-            <h3>PersonalProjects</h3>
-            <p class="muted"><strong>Problem:</strong> need to test ideas fast. <strong>Solution:</strong> lab with APIs, DevOps, AI. <strong>Outcome:</strong> measurable POCs and handoffs.</p>
-            <div class="topics"><span>Python</span><span>DevOps</span><span>AI</span><span>APIs</span></div>
-            <div class="case-actions"><a class="btn primary" href="/projects/index.html">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/PersonalProjects" target="_blank" rel="noreferrer">View Code</a></div>
-          </div>
-          <div class="case-media"><img src="assets/img/isotipo01.png" alt="Lab"></div>
         </article>
       </div>
     </section>
 
-    <section id="services" class="panel">
-      <div class="section-head">
+    <section class="panel" id="feedback">
+      <div class="section-head"><div><p class="eyebrow">Feedback Loop</p><h2>Leave Your Voice</h2></div></div>
+      <p class="muted">Comparte feedback o sugerencias después de ver un proyecto, guía o sistema.</p>
+      <div class="contact-grid">
         <div>
-          <p class="eyebrow">Services</p>
-          <h2>Technology solutions designed and delivered</h2>
-        </div>
-        <a class="btn ghost" href="#contact">Book a call</a>
-      </div>
-      <div class="services-grid">
-        <article class="service-card wide"><h3>Software Development</h3><p class="muted">Web platforms, mobile apps, APIs & backend, UI/UX.</p></article>
-        <article class="service-card wide"><h3>Cybersecurity</h3><p class="muted">Auth (JWT, roles), API security, data protection, arch reviews.</p></article>
-        <article class="service-card wide"><h3>Generative AI</h3><p class="muted">Assistants, automation tools, AI-driven features, learning platforms.</p></article>
-        <article class="service-card wide"><h3>How we work</h3><p class="muted">Discovery → Design → Development → Testing → Deployment → Support.</p></article>
-      </div>
-    </section>
-
-    <section id="knowledge" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Knowledge Hub</p>
-          <h2>A living library</h2>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card"><h3>Streams</h3><p class="muted">Software Engineering · Cybersecurity · Generative AI</p></article>
-        <article class="value-card"><h3>Types</h3><p class="muted">Articles · Videos · Guides · Resources · Labs</p></article>
-        <article class="value-card"><h3>Paths</h3><p class="muted">Beginner → Intermediate → Advanced</p></article>
-      </div>
-    </section>
-
-    <section id="voices" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Voices & Experiences</p>
-          <h2>Trust through real impact</h2>
-        </div>
-      </div>
-      <div class="testimonial-grid">
-        <blockquote class="testimonial"><p>“Structures complex systems and ships with a professional mindset.”</p><cite>ITLA Professor</cite></blockquote>
-        <blockquote class="testimonial"><p>“Delivers prototypes with security built-in and handoffs ready for teams.”</p><cite>Academic collaborator</cite></blockquote>
-      </div>
-    </section>
-
-    <section id="about" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>The engineer and the platform</h2>
-        </div>
-      </div>
-      <div class="about-grid">
-        <div class="about-photo"><div class="photo-frame"><img src="assets/img/foto.luis.png" alt="Photo of Luis C. Dano" loading="lazy"></div></div>
-        <div class="about-copy">
-          <h3>Luis Emilio Cedano Martínez</h3>
-          <p class="muted">Founder & CTO. Software, security, AI. Building platforms with impact.</p>
-          <p>Vision: become a reference for digital innovation, education, and secure intelligent systems in the Dominican Republic and beyond.</p>
-          <p>Mission: build technology that helps people learn, create, and grow through secure, practical, intelligent platforms.</p>
-          <div class="chips"><span>C#/.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>GitHub Actions</span><span>Linux</span><span>Cloud</span><span>AI</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="panel contact">
-      <div class="two-col contact-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s collaborate, build, and learn together.</h2>
-          <p class="muted">Project requests, academic collaborations, consulting, or community feedback.</p>
-          <div class="cta">
-            <a class="btn primary" href="mailto:luiscdano@gmail.com">Email</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/luiscdano" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/luiscdano" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
+          <p class="muted">Cuéntame qué viste/probaste y qué piensas.</p>
         </div>
         <form class="contact-form">
-          <label>Name<input type="text" name="nombre" placeholder="Your name"></label>
-          <label>Email<input type="email" name="email" placeholder="you@email.com"></label>
-          <label>Message<textarea name="mensaje" rows="4" placeholder="Tell me about the project"></textarea></label>
-          <button class="btn primary" type="submit">Send</button>
+          <label>Nombre (opcional)<input type="text" name="name" placeholder="Tu nombre"></label>
+          <label>Contexto<input type="text" name="context" placeholder="¿Qué viste o probaste?"></label>
+          <label>Comentario<textarea name="comment" rows="4" placeholder="Feedback, sugerencias o reflexiones"></textarea></label>
+          <button type="submit" class="btn primary">Enviar</button>
         </form>
+      </div>
+    </section>
+
+    <section class="panel" id="milestones">
+      <div class="section-head"><div><p class="eyebrow">Milestones</p><h2>Experiencias personales</h2></div></div>
+      <ul>
+        <li>Primer API publicada</li>
+        <li>Primer dominio activo</li>
+        <li>Primer Learning Sprint publicado</li>
+        <li>Primer feedback externo recibido</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="cta-final">
+      <div class="section-head"><div><p class="eyebrow">CTA</p><h2>Add Your Voice to the Journey</h2></div></div>
+      <p class="muted">Whether you tested a project, read a guide, or explored a system — your perspective helps shape what comes next.</p>
+      <div class="cta">
+        <a class="btn primary" href="#feedback">Share Feedback</a>
+        <a class="btn ghost" href="/contact/">Collaborate</a>
+        <a class="btn ghost" href="/contact/">Connect</a>
       </div>
     </section>
   </main>
@@ -280,7 +172,6 @@
     <span class="dot"></span>
     <span>cmlayer.com</span>
   </footer>
-
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
