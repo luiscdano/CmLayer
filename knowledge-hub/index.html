@@ -3,275 +3,189 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CmLayer — Engineering Software, Securing Systems, Powering Intelligence</title>
-  <meta name="description" content="CmLayer: software development, cybersecurity, and generative AI consulting. Projects, services, knowledge hub, and contact." />
-  <meta name="keywords" content="software development, cybersecurity, generative AI, consulting, CmLayer, Luis Emilio Cedano" />
-  <meta property="og:title" content="CmLayer" />
-  <meta property="og:description" content="Engineering software, securing systems, powering intelligence." />
-  <meta property="og:url" content="https://cmlayer.com" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
+  <title>CmLayer — Knowledge Hub</title>
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Luis Emilio Cedano",
-    "url": "https://cmlayer.com",
-    "jobTitle": "Founder & CTO | Software, Security, AI",
-    "sameAs": ["https://github.com/luiscdano", "https://www.linkedin.com/in/luiscdano"]
-  }
-  </script>
 </head>
 <body>
   <div class="bg-grid"></div>
-
   <header class="topbar">
-    <a class="brand" href="/">
-      <img src="assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
-    </a>
-    <button class="nav-toggle" aria-label="Open menu">☰</button>
-    <nav class="nav-links">
-      <a data-i18n="nav.projects" href="/projects/">Projects</a>
-      <a data-i18n="nav.services" href="/services/">Services</a>
-      <a data-i18n="nav.knowledge" href="/knowledge-hub/">Knowledge Hub</a>
-      <a data-i18n="nav.voices" href="/voices-experiences/">Voices & Experiences</a>
-      <a data-i18n="nav.about" href="/about/">About</a>
-      <a data-i18n="nav.contact" href="/contact/">Contact</a>
-    </nav>
-    <div class="lang-switch">
-      <button data-lang="en" class="active">🇺🇸 EN</button>
-      <button data-lang="es">🇩🇴 ES</button>
+    <div class="topbar-inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
+      </a>
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
+      <nav class="nav-links">
+        <a href="/projects/">Projects</a>
+        <a href="/services/">Services</a>
+        <a class="active" href="/knowledge-hub/">Knowledge Hub</a>
+        <a href="/voices-experiences/">Voices & Experiences</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+      <div class="lang-switch">
+        <button data-lang="en" class="active">🇺🇸 EN</button>
+        <button data-lang="es">🇩🇴 ES</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <section class="hero">
       <div class="hero__text">
-        <p class="eyebrow" data-i18n="hero.tags">Software · Cybersecurity · Generative AI</p>
-        <h1 data-i18n="hero.title">Engineering software, securing systems, and powering intelligence for a digital future.</h1>
-        <p class="lede" data-i18n="hero.sub">Architecture, development, and hardening for startups, fintech, and academic projects that need real technology, not just prototypes.</p>
+        <p class="eyebrow" data-i18n="kh.hero.eyebrow">CmLayer — Knowledge Hub</p>
+        <h1 data-i18n="kh.hero.title">Learn in public · Curated knowledge · Engineering mindset</h1>
+        <p class="lede" data-i18n="kh.hero.sub">A living learning hub for software development, cybersecurity, and generative AI.</p>
         <div class="cta">
-          <a class="btn primary" href="/projects/index.html" data-i18n="cta.projects">View projects</a>
-          <a class="btn ghost" href="#contact" data-i18n="cta.talk">Book a call</a>
+          <a class="btn primary" href="#library" data-i18n="kh.hero.cta1">Explore Knowledge</a>
+          <a class="btn ghost" href="#updates" data-i18n="kh.hero.cta2">Subscribe</a>
+          <a class="btn ghost" href="#contribute" data-i18n="kh.hero.cta3">Contribute</a>
         </div>
-        <div class="meta">
-          <span class="tag">Software Development</span>
-          <span class="tag">Cybersecurity</span>
-          <span class="tag">Generative AI</span>
-        </div>
-      </div>
-      <div class="hero__card">
-        <p class="label" data-i18n="hero.roadmap.label">In continuous build</p>
-        <h3 data-i18n="hero.roadmap.title">Personal roadmap</h3>
-        <ul>
-          <li>✓ QR-Generator shipped</li>
-          <li>• Portfolio 2026 (this site)</li>
-          <li>• Security playbook</li>
-          <li>• Applied AI experiments</li>
-        </ul>
-        <p class="tiny" data-i18n="hero.roadmap.updated">Updated: Jan 29, 2026</p>
       </div>
     </section>
 
-    <section id="pillars" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Strategic Pillars</p>
-          <h2>Core capabilities</h2>
-        </div>
+    <section class="panel" id="library">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.library.eyebrow">Knowledge Library</p><h2 data-i18n="kh.library.title">Public learning archive</h2></div></div>
+      <p class="muted" data-i18n="kh.library.desc">PDF guides, books, and technical documents used in my learning sprints. Each file is paired with a summary, personal note, and a related project link.</p>
+      <div class="services-grid">
+        <article class="service-card"><h3>/knowledge-library/</h3><p class="muted">Root library (public view)</p></article>
+        <article class="service-card"><h3>/libros/</h3><p class="muted">Books and long-form references</p></article>
+        <article class="service-card"><h3>/guias-de-estudio/</h3><p class="muted">Study guides and structured paths</p></article>
+        <article class="service-card"><h3>/documentos-tecnicos/</h3><p class="muted">Technical docs and whitepapers</p></article>
+        <article class="service-card"><h3>/resumenes/</h3><p class="muted">My summaries and reflections</p></article>
       </div>
+    </section>
+
+    <section class="panel" id="positioning">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.position.eyebrow">Positioning</p><h2 data-i18n="kh.position.title">A public space for learning</h2></div></div>
+      <p class="muted" data-i18n="kh.position.desc1">This hub documents what I study, watch, read, and reflect on while growing in software development, cybersecurity, and generative AI.</p>
+      <p class="muted" data-i18n="kh.position.desc2">It isn’t a library of final answers— it’s a record of continuous learning, curation, and applied thinking.</p>
+      <p data-i18n="kh.position.principle"><strong>Principle:</strong> Knowledge grows when it is shared, questioned, and documented.</p>
+    </section>
+
+    <section class="panel" id="weekly">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.weekly.eyebrow">Weekly Knowledge</p><h2 data-i18n="kh.weekly.title">New material every week or biweekly</h2></div></div>
+      <div class="services-grid">
+        <article class="service-card"><h3 data-i18n="kh.weekly.video">📺 Featured Video</h3><p class="muted" data-i18n="kh.weekly.video.desc">Talks or tutorials on software, security, or AI.</p></article>
+        <article class="service-card"><h3 data-i18n="kh.weekly.pdf">📄 PDF Insight</h3><p class="muted" data-i18n="kh.weekly.pdf.desc">Study guide, book chapter, or technical reference.</p></article>
+        <article class="service-card"><h3 data-i18n="kh.weekly.course">🔗 Course Link</h3><p class="muted" data-i18n="kh.weekly.course.desc">Free or time-limited courses on trusted platforms.</p></article>
+        <article class="service-card"><h3 data-i18n="kh.weekly.note">🧠 Personal Note</h3><p class="muted" data-i18n="kh.weekly.note.desc">Reflection and practical application.</p></article>
+      </div>
+    </section>
+
+    <section class="panel" id="video-featured">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.video.eyebrow">Featured Video</p><h2 data-i18n="kh.video.title">Engineering talks & learning sessions</h2></div></div>
+      <div class="value-grid">
+        <article class="value-card">
+          <h3 data-i18n="kh.video.template.title">Template</h3>
+          <p class="muted" data-i18n="kh.video.template.desc">Title · Source · Topic · Why I chose it · Key points · My comment (connection to projects).</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="pdf-series">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.pdf.eyebrow">PDF & Book Series</p><h2 data-i18n="kh.pdf.title">12-book learning cycle (in progress)</h2></div></div>
+      <article class="card glass">
+        <h3 data-i18n="kh.pdf.entry.title">Study Guide — Recommended learning path (MoureDev Pro)</h3>
+        <p class="muted" data-i18n="kh.pdf.entry.focus">Focus: programming mindset, CLI, OOP, Git, databases, backend fundamentals.</p>
+        <p class="muted" data-i18n="kh.pdf.entry.summary">Summary: Structured roadmap from fundamentals to backend and community-driven growth.</p>
+        <p class="muted" data-i18n="kh.pdf.entry.comment">My comment: Strong engineers are built through structured progression, not random tool adoption; aligns with my systems-first approach.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="courses">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.courses.eyebrow">Free Courses</p><h2 data-i18n="kh.courses.title">Curated learning opportunities</h2></div></div>
+      <div class="services-grid">
+        <article class="service-card"><h3 data-i18n="kh.courses.platforms">Platforms</h3><p class="muted">Udemy · Coursera · edX · FreeCodeCamp · Official academies</p></article>
+        <article class="service-card">
+          <h3 data-i18n="kh.courses.template.title">Entry template</h3>
+          <p class="muted" data-i18n="kh.courses.template.desc">Name · Platform · Level (Beginner/Intermediate/Advanced) · Why valuable · Recommendation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="news">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.news.eyebrow">News & Updates</p><h2 data-i18n="kh.news.title">Monthly tech brief</h2></div></div>
       <div class="services-grid">
         <article class="service-card">
-          <h3>Software Development</h3>
-          <p class="muted">Systems design, APIs, frontends, and deployable products.</p>
+          <h3>🧠 Generative AI</h3>
+          <p class="muted">AI assistants move from chat tools to integrated development layers: IDE integrations, doc generation, AI code reviews.</p>
+          <p class="muted"><strong>Why it matters:</strong> AI becomes a workflow layer, not just a feature.</p>
+          <p class="muted"><strong>My take:</strong> AI as amplifier for learning, debugging, and design.</p>
         </article>
         <article class="service-card">
-          <h3>Cybersecurity</h3>
-          <p class="muted">Secure auth, API protection, encryption, and threat-aware design.</p>
+          <h3>🔐 Cybersecurity</h3>
+          <p class="muted">Zero-trust and identity-first security dominate 2026 planning.</p>
+          <p class="muted"><strong>Why it matters:</strong> Design for compromise, prioritize traceability and control.</p>
+          <p class="muted"><strong>My take:</strong> Validate auth, logging, and access early—even in learning projects.</p>
         </article>
         <article class="service-card">
-          <h3>Generative AI</h3>
-          <p class="muted">Assistants, automation tools, AI-driven features, and learning platforms.</p>
+          <h3>💻 Software Development</h3>
+          <p class="muted">Developer Experience (DX) becomes a key success metric.</p>
+          <p class="muted"><strong>Why it matters:</strong> Maintainability and clarity rival speed.</p>
+          <p class="muted"><strong>My take:</strong> Reinforces clean structure, docs, reproducible deployments.</p>
         </article>
       </div>
     </section>
 
-    <section id="live" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Live Platform Preview</p>
-          <h2>What’s new</h2>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card">
-          <h3>Latest Project</h3>
-          <p class="muted">CmLayerBank — fintech scoring platform.</p>
-        </article>
-        <article class="value-card">
-          <h3>Latest Resource</h3>
-          <p class="muted">API Security checklist (coming soon).</p>
-        </article>
-        <article class="value-card">
-          <h3>Latest Experience</h3>
-          <p class="muted">Security-first delivery for academic + startup pilots.</p>
-        </article>
+    <section class="panel" id="reflection">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.reflection.eyebrow">Reflection Zone</p><h2 data-i18n="kh.reflection.title">My learning notes</h2></div></div>
+      <p class="muted" data-i18n="kh.reflection.desc">A journal of what I learned, what challenged me, and what I’ll explore next.</p>
+      <article class="card glass">
+        <p class="muted" data-i18n="kh.reflection.template">Template: What I studied · What I understood · What still confuses me · How I’ll apply it.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="filters">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.filters.eyebrow">Categories</p><h2 data-i18n="kh.filters.title">Explore by domain</h2></div></div>
+      <div class="chips">
+        <span data-i18n="kh.filters.cat.software">Software Engineering</span>
+        <span data-i18n="kh.filters.cat.security">Cybersecurity</span>
+        <span data-i18n="kh.filters.cat.ai">Generative AI</span>
+        <span data-i18n="kh.filters.cat.arch">Systems Architecture</span>
+        <span data-i18n="kh.filters.cat.learning">Learning Methods</span>
+        <span data-i18n="kh.filters.cat.tools">Tools & Platforms</span>
       </div>
     </section>
 
-    <section id="identity" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">CmLayer Identity Snapshot</p>
-          <h2>What, why, who</h2>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card"><h3>What</h3><p class="muted">A platform for building secure, intelligent digital systems.</p></article>
-        <article class="value-card"><h3>Problem</h3><p class="muted">Teams stuck between prototypes and production-grade systems.</p></article>
-        <article class="value-card"><h3>Who</h3><p class="muted">Startups, fintech, and academic builders needing real delivery.</p></article>
-      </div>
+    <section class="panel" id="contribute">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.contrib.eyebrow">Contribution & Community</p><h2 data-i18n="kh.contrib.title">Share knowledge, not just links</h2></div></div>
+      <p class="muted" data-i18n="kh.contrib.desc">Visitors can suggest videos, articles, courses, or topics to explore. This hub grows through curiosity, collaboration, and constant learning.</p>
     </section>
 
-    <section id="projects" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Evidence</p>
-          <h2>Projects (deep dive)</h2>
-          <p class="muted">Real-world systems and secure digital platforms.</p>
-        </div>
-        <a class="btn ghost" href="/projects/index.html">Open Projects</a>
-      </div>
-      <div class="case-grid">
-        <article class="case">
-          <div>
-            <p class="label">Software Systems</p>
-            <h3>CmLayerBank</h3>
-            <p class="muted"><strong>Problem:</strong> microfinance scoring gaps. <strong>Solution:</strong> modular banking platform with layered security. <strong>Outcome:</strong> pilot-ready fintech base.</p>
-            <div class="topics"><span>.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>JWT</span><span>CI/CD</span></div>
-            <div class="case-actions"><a class="btn primary" href="https://www.cmlayerbank.com" target="_blank" rel="noreferrer">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/CmLayer" target="_blank" rel="noreferrer">View Code</a></div>
-          </div>
-          <div class="case-media"><img src="assets/img/isotipo02.png" alt="CmLayerBank branding"></div>
-        </article>
-        <article class="case">
-          <div>
-            <p class="label">Secure Platforms</p>
-            <h3>GrupoDiCed</h3>
-            <p class="muted"><strong>Problem:</strong> scattered projects. <strong>Solution:</strong> API-first ecosystem with observability. <strong>Outcome:</strong> unified services and faster iterations.</p>
-            <div class="topics"><span>TypeScript</span><span>APIs</span><span>Cloud</span><span>Security</span></div>
-            <div class="case-actions"><a class="btn primary" href="https://grupodiced.com" target="_blank" rel="noreferrer">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/GrupoDiCed" target="_blank" rel="noreferrer">View Code</a></div>
-          </div>
-          <div class="case-media"><img src="assets/img/isotipo01.png" alt="GrupoDiCed branding"></div>
-        </article>
-        <article class="case">
-          <div>
-            <p class="label">AI-Driven Solutions</p>
-            <h3>Proyectos-ITLA</h3>
-            <p class="muted"><strong>Problem:</strong> academic work without standards. <strong>Solution:</strong> documented patterns and APIs. <strong>Outcome:</strong> demonstrable base for technical roles.</p>
-            <div class="topics"><span>C#</span><span>ASP.NET</span><span>APIs</span><span>Clean arch</span></div>
-            <div class="case-actions"><a class="btn primary" href="/projects/index.html">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/Proyectos-ITLA" target="_blank" rel="noreferrer">View Code</a></div>
-          </div>
-          <div class="case-media"><img src="assets/img/Logo01.png" alt="Proyectos ITLA"></div>
-        </article>
-        <article class="case">
-          <div>
-            <p class="label">Lab</p>
-            <h3>PersonalProjects</h3>
-            <p class="muted"><strong>Problem:</strong> need to test ideas fast. <strong>Solution:</strong> lab with APIs, DevOps, AI. <strong>Outcome:</strong> measurable POCs and handoffs.</p>
-            <div class="topics"><span>Python</span><span>DevOps</span><span>AI</span><span>APIs</span></div>
-            <div class="case-actions"><a class="btn primary" href="/projects/index.html">View Project</a><a class="btn ghost" href="https://github.com/luiscdano/PersonalProjects" target="_blank" rel="noreferrer">View Code</a></div>
-          </div>
-          <div class="case-media"><img src="assets/img/isotipo01.png" alt="Lab"></div>
-        </article>
-      </div>
+    <section class="panel" id="roadmap">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.roadmap.eyebrow">Growth Line</p><h2 data-i18n="kh.roadmap.title">Learning roadmap (public view)</h2></div></div>
+      <ul>
+        <li data-i18n="kh.roadmap.item1">Systems architecture fundamentals</li>
+        <li data-i18n="kh.roadmap.item2">Secure design practices</li>
+        <li data-i18n="kh.roadmap.item3">AI-assisted development flows</li>
+        <li data-i18n="kh.roadmap.item4">Cloud-native platforms</li>
+        <li data-i18n="kh.roadmap.item5">Performance and scalability engineering</li>
+      </ul>
+      <p class="muted" data-i18n="kh.roadmap.desc">This line shows where I’m headed, not just where I am.</p>
     </section>
 
-    <section id="services" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Services</p>
-          <h2>Technology solutions designed and delivered</h2>
-        </div>
-        <a class="btn ghost" href="#contact">Book a call</a>
+    <section class="panel" id="cta">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.final.eyebrow">Final CTA</p><h2 data-i18n="kh.final.title">Learn in public. Build with purpose. Share what matters.</h2></div></div>
+      <p class="muted" data-i18n="kh.final.sub">This hub is a living engineering notebook: study, curate, apply, and connect to real projects.</p>
+      <div class="cta">
+        <a class="btn primary" href="#updates" data-i18n="kh.final.cta1">Subscribe</a>
+        <a class="btn ghost" href="/projects/" data-i18n="kh.final.cta2">Follow progress</a>
+        <a class="btn ghost" href="#contribute" data-i18n="kh.final.cta3">Connect</a>
       </div>
-      <div class="services-grid">
-        <article class="service-card wide"><h3>Software Development</h3><p class="muted">Web platforms, mobile apps, APIs & backend, UI/UX.</p></article>
-        <article class="service-card wide"><h3>Cybersecurity</h3><p class="muted">Auth (JWT, roles), API security, data protection, arch reviews.</p></article>
-        <article class="service-card wide"><h3>Generative AI</h3><p class="muted">Assistants, automation tools, AI-driven features, learning platforms.</p></article>
-        <article class="service-card wide"><h3>How we work</h3><p class="muted">Discovery → Design → Development → Testing → Deployment → Support.</p></article>
-      </div>
+      <p class="muted" data-i18n="kh.final.invite">What would you like to see here? Suggest topics, videos, books, or courses. Your curiosity shapes this space.</p>
     </section>
 
-    <section id="knowledge" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Knowledge Hub</p>
-          <h2>A living library</h2>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card"><h3>Streams</h3><p class="muted">Software Engineering · Cybersecurity · Generative AI</p></article>
-        <article class="value-card"><h3>Types</h3><p class="muted">Articles · Videos · Guides · Resources · Labs</p></article>
-        <article class="value-card"><h3>Paths</h3><p class="muted">Beginner → Intermediate → Advanced</p></article>
-      </div>
-    </section>
-
-    <section id="voices" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Voices & Experiences</p>
-          <h2>Trust through real impact</h2>
-        </div>
-      </div>
-      <div class="testimonial-grid">
-        <blockquote class="testimonial"><p>“Structures complex systems and ships with a professional mindset.”</p><cite>ITLA Professor</cite></blockquote>
-        <blockquote class="testimonial"><p>“Delivers prototypes with security built-in and handoffs ready for teams.”</p><cite>Academic collaborator</cite></blockquote>
-      </div>
-    </section>
-
-    <section id="about" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">About</p>
-          <h2>The engineer and the platform</h2>
-        </div>
-      </div>
-      <div class="about-grid">
-        <div class="about-photo"><div class="photo-frame"><img src="assets/img/foto.luis.jpg" alt="Photo of Luis C. Dano" loading="lazy"></div></div>
-        <div class="about-copy">
-          <h3>Luis Emilio Cedano Martínez</h3>
-          <p class="muted">Founder & CTO. Software, security, AI. Building platforms with impact.</p>
-          <p>Vision: become a reference for digital innovation, education, and secure intelligent systems in the Dominican Republic and beyond.</p>
-          <p>Mission: build technology that helps people learn, create, and grow through secure, practical, intelligent platforms.</p>
-          <div class="chips"><span>C#/.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>GitHub Actions</span><span>Linux</span><span>Cloud</span><span>AI</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="panel contact">
-      <div class="two-col contact-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s collaborate, build, and learn together.</h2>
-          <p class="muted">Project requests, academic collaborations, consulting, or community feedback.</p>
-          <div class="cta">
-            <a class="btn primary" href="mailto:luiscdano@gmail.com">Email</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/luiscdano" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/luiscdano" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-        </div>
-        <form class="contact-form">
-          <label>Name<input type="text" name="nombre" placeholder="Your name"></label>
-          <label>Email<input type="email" name="email" placeholder="you@email.com"></label>
-          <label>Message<textarea name="mensaje" rows="4" placeholder="Tell me about the project"></textarea></label>
-          <button class="btn primary" type="submit">Send</button>
-        </form>
-      </div>
+    <section class="panel" id="sprints">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="kh.sprints.eyebrow">Learning Sprints</p><h2 data-i18n="kh.sprints.title">Strategic 12-book cycle</h2></div></div>
+      <ol>
+        <li data-i18n="kh.sprints.item1">Upload PDF / Book</li>
+        <li data-i18n="kh.sprints.item2">Create structured summary</li>
+        <li data-i18n="kh.sprints.item3">Add “My Comment”</li>
+        <li data-i18n="kh.sprints.item4">Link to a related Project</li>
+        <li data-i18n="kh.sprints.item5">Publish as Learning Sprint #X</li>
+      </ol>
+      <p class="muted" data-i18n="kh.sprints.desc">Connects theory, reflection, and real system building between Knowledge Hub and Projects.</p>
     </section>
   </main>
 
@@ -280,7 +194,6 @@
     <span class="dot"></span>
     <span>cmlayer.com</span>
   </footer>
-
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
