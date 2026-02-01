@@ -352,6 +352,7 @@
   strings.en['kh.library.eyebrow'] = 'Knowledge Library';
   strings.en['kh.library.title'] = 'Public learning archive';
   strings.en['kh.library.desc'] = 'PDF guides, books, and technical documents used in my learning sprints. Each file is paired with a summary, personal note, and a related project link.';
+  strings.en['kh.library.latest'] = 'Latest uploads';
   strings.en['kh.position.eyebrow'] = 'Positioning';
   strings.en['kh.position.title'] = 'A public space for learning';
   strings.en['kh.position.desc1'] = 'This hub documents what I study, watch, read, and reflect on while growing in software development, cybersecurity, and generative AI.';
@@ -432,6 +433,7 @@
   strings.es['kh.library.eyebrow'] = 'Biblioteca de conocimiento';
   strings.es['kh.library.title'] = 'Archivo público de aprendizaje';
   strings.es['kh.library.desc'] = 'PDF, libros y documentos técnicos usados en mis sprints de aprendizaje. Cada archivo tiene resumen, nota personal y enlace a proyecto.';
+  strings.es['kh.library.latest'] = 'Últimas subidas';
   strings.es['kh.position.eyebrow'] = 'Posicionamiento';
   strings.es['kh.position.title'] = 'Un espacio público de aprendizaje';
   strings.es['kh.position.desc1'] = 'Este hub documenta lo que estudio, veo, leo y reflexiono mientras crezco en software, ciberseguridad e IA generativa.';
