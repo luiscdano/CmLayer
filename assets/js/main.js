@@ -704,6 +704,227 @@
   strings.es['ve.cta.btn2'] = 'Colaborar';
   strings.es['ve.cta.btn3'] = 'Conectar';
 
+  // About
+  strings.en['about.hero.eyebrow'] = 'CmLayer — About';
+  strings.en['about.hero.title'] = 'Persona · Platform · Purpose';
+  strings.en['about.hero.sub'] = 'Where personal trajectory and tech vision become a learning and system-building ecosystem.';
+  strings.en['about.hero.cta1'] = 'View CV';
+  strings.en['about.hero.cta2'] = 'Explore Projects';
+  strings.en['about.hero.cta3'] = 'Meet CmLayer';
+
+  strings.en['about.who.eyebrow'] = 'Who I am';
+  strings.en['about.who.title'] = 'Professional profile';
+  strings.en['about.who.name'] = 'Luis Emilio Cedano Martínez';
+  strings.en['about.who.subtitle'] = 'Software Development Student | Engineer in training | Learning in public';
+  strings.en['about.who.desc'] = 'Software development student focused on system architecture, digital security, and AI automation. I build real projects as my learning method and document each step to turn experience into reusable knowledge.';
+  strings.en['about.who.focus1'] = 'Design and development of software systems';
+  strings.en['about.who.focus2'] = 'Foundations of applied cybersecurity';
+  strings.en['about.who.focus3'] = 'Integration of generative AI';
+  strings.en['about.who.focus4'] = 'Technical documentation and structured learning';
+
+  strings.en['about.traj.eyebrow'] = 'Trajectory & Achievements';
+  strings.en['about.traj.title'] = 'Academic and technical milestones';
+  strings.en['about.traj.academy.title'] = 'Academy';
+  strings.en['about.traj.academy.desc'] = 'Software Development student at ITLA.';
+  strings.en['about.traj.arch.title'] = 'Architecture';
+  strings.en['about.traj.arch.desc'] = 'Academic systems with layered architecture and APIs with persistence.';
+  strings.en['about.traj.domains.title'] = 'Live domains';
+  strings.en['about.traj.domains.desc'] = 'Learning and experimentation platforms online.';
+  strings.en['about.traj.kh.title'] = 'Knowledge Hub';
+  strings.en['about.traj.kh.desc'] = 'Public ecosystem of technical knowledge.';
+  strings.en['about.traj.personal.title'] = 'Personal achievements';
+  strings.en['about.traj.personal.desc'] = 'CmLayer as a learn-in-public space; projects integrating software, security, and AI; continuous documentation.';
+
+  strings.en['about.certs.eyebrow'] = 'Certifications & Training';
+  strings.en['about.certs.title'] = 'Technical formation';
+  strings.en['about.certs.item1'] = 'Object-Oriented Programming';
+  strings.en['about.certs.item2'] = 'Databases and SQL';
+  strings.en['about.certs.item3'] = 'Web Development and APIs';
+  strings.en['about.certs.item4'] = 'Version Control with Git & GitHub';
+  strings.en['about.certs.item5'] = 'Foundations of Cybersecurity';
+  strings.en['about.certs.item6'] = 'Intro to Generative AI';
+  strings.en['about.certs.note'] = 'Section ready to add downloadable, verifiable certificates (assets/certificates/).';
+
+  strings.en['about.cv.eyebrow'] = 'CV — Professional profile';
+  strings.en['about.cv.title'] = 'Summary';
+  strings.en['about.cv.desc'] = 'Software development student focused on system design, security by design, and AI-driven automation. Committed to continuous learning, technical documentation, and structured solutions.';
+  strings.en['about.cv.skills.title'] = 'Skills';
+  strings.en['about.cv.skills.desc'] = 'Backend/Frontend · Architecture · Git/CI-CD basics · App security · Databases · Automation/AI.';
+  strings.en['about.cv.lang.title'] = 'Languages';
+  strings.en['about.cv.lang.desc'] = 'Spanish (Native) · English (Intermediate)';
+  strings.en['about.cv.cta1'] = 'Download CV';
+  strings.en['about.cv.cta2'] = 'View Technical Profile';
+
+  strings.en['about.cmlayer.eyebrow'] = 'What is CmLayer';
+  strings.en['about.cmlayer.title'] = 'Platform identity';
+  strings.en['about.cmlayer.desc.title'] = 'CmLayer: An engineering ecosystem in the making';
+  strings.en['about.cmlayer.desc.body'] = 'Tech and educational platform that unites learning, experimentation, and real systems. A public lab with modern engineering practices.';
+  strings.en['about.cmlayer.desc.purpose'] = 'Purpose: turn technical knowledge into functional systems and visible professional growth.';
+
+  strings.en['about.vision.eyebrow'] = 'Vision · Mission · Objectives';
+  strings.en['about.vision.title'] = 'Direction';
+  strings.en['about.vision.v.title'] = 'Vision';
+  strings.en['about.vision.v.body'] = 'Make CmLayer a reference digital ecosystem for learning, designing, and building secure, intelligent software systems.';
+  strings.en['about.vision.m.title'] = 'Mission';
+  strings.en['about.vision.m.body'] = 'Develop platforms, projects, and resources that merge software, security, and generative AI under learn-in-public and continuous improvement.';
+  strings.en['about.vision.o.title'] = 'Objectives';
+  strings.en['about.vision.o1'] = 'Design systems with clear, scalable architecture';
+  strings.en['about.vision.o2'] = 'Embed security as a design principle';
+  strings.en['about.vision.o3'] = 'Use generative AI for automation and support';
+  strings.en['about.vision.o4'] = 'Build a public library of technical knowledge';
+  strings.en['about.vision.o5'] = 'Foster collaboration and technical feedback';
+
+  strings.en['about.tech.eyebrow'] = 'Tech focus';
+  strings.en['about.tech.title'] = 'CmLayer';
+  strings.en['about.tech.dev.title'] = '💻 Software Development';
+  strings.en['about.tech.dev.desc'] = 'Modular, maintainable, documented systems; emphasis on architecture, version control, structured deployment.';
+  strings.en['about.tech.sec.title'] = '🔐 Cybersecurity';
+  strings.en['about.tech.sec.desc'] = 'Access control, event logging, environment separation, and traceability from design.';
+  strings.en['about.tech.ai.title'] = '🤖 Generative AI';
+  strings.en['about.tech.ai.desc'] = 'AI as a support layer for automation, analysis, technical content generation, and dev assistance.';
+
+  strings.en['about.values.eyebrow'] = 'Values';
+  strings.en['about.values.title'] = 'CmLayer principles';
+  strings.en['about.values.v1'] = 'Transparency: learn and build in public';
+  strings.en['about.values.v2'] = 'Structure: prioritize design and documentation';
+  strings.en['about.values.v3'] = 'Responsibility: security and ethics in development';
+  strings.en['about.values.v4'] = 'Curiosity: constant exploration of new tech';
+  strings.en['about.values.v5'] = 'Collaboration: growth through feedback';
+
+  strings.en['about.policies.eyebrow'] = 'Policies & Principles';
+  strings.en['about.policies.title'] = 'Use and security';
+  strings.en['about.policies.item1'] = 'Responsible tech use: privacy, ethics, responsible AI.';
+  strings.en['about.policies.item2'] = 'Security by design: risks, access, traceability from the start.';
+  strings.en['about.policies.item3'] = 'Educational content: all material is for technical learning.';
+
+  strings.en['about.eco.eyebrow'] = 'CmLayer Ecosystem';
+  strings.en['about.eco.title'] = 'Integrated sections';
+  strings.en['about.eco.projects.title'] = 'Projects';
+  strings.en['about.eco.projects.desc'] = 'Systems and platforms in development.';
+  strings.en['about.eco.kh.title'] = 'Knowledge Hub';
+  strings.en['about.eco.kh.desc'] = 'Learning library and technical curation.';
+  strings.en['about.eco.voices.title'] = 'Voices & Experiences';
+  strings.en['about.eco.voices.desc'] = 'Reflections and feedback from the process.';
+  strings.en['about.eco.services.title'] = 'Services';
+  strings.en['about.eco.services.desc'] = 'Capabilities and technical collaboration.';
+
+  strings.en['about.cta.eyebrow'] = 'CTA';
+  strings.en['about.cta.title'] = 'Build Systems with Purpose';
+  strings.en['about.cta.sub'] = 'Learn, collaborate, or explore technology: CmLayer is an open space to grow in software, security, and AI.';
+  strings.en['about.cta.btn1'] = 'Connect';
+  strings.en['about.cta.btn2'] = 'Collaborate';
+  strings.en['about.cta.btn3'] = 'Explore Projects';
+
+  strings.es['about.hero.eyebrow'] = 'CmLayer — About';
+  strings.es['about.hero.title'] = 'Persona · Plataforma · Propósito';
+  strings.es['about.hero.sub'] = 'Donde la trayectoria personal y la visión tecnológica se convierten en un ecosistema de aprendizaje y construcción de sistemas.';
+  strings.es['about.hero.cta1'] = 'Ver CV';
+  strings.es['about.hero.cta2'] = 'Explorar Proyectos';
+  strings.es['about.hero.cta3'] = 'Conocer CmLayer';
+
+  strings.es['about.who.eyebrow'] = 'Quién soy';
+  strings.es['about.who.title'] = 'Perfil profesional';
+  strings.es['about.who.name'] = 'Luis Emilio Cedano Martínez';
+  strings.es['about.who.subtitle'] = 'Estudiante de Desarrollo de Software | Ingeniero en formación | Aprendiz en público';
+  strings.es['about.who.desc'] = 'Soy un estudiante de desarrollo de software con enfoque en arquitectura de sistemas, seguridad digital y automatización con inteligencia artificial. Construyo proyectos reales como método de aprendizaje y documento cada etapa para convertir la experiencia en conocimiento reutilizable.';
+  strings.es['about.who.focus1'] = 'Diseño y desarrollo de sistemas de software';
+  strings.es['about.who.focus2'] = 'Fundamentos de ciberseguridad aplicada';
+  strings.es['about.who.focus3'] = 'Integración de inteligencia artificial generativa';
+  strings.es['about.who.focus4'] = 'Documentación técnica y aprendizaje estructurado';
+
+  strings.es['about.traj.eyebrow'] = 'Trayectoria & Logros';
+  strings.es['about.traj.title'] = 'Hitos académicos y técnicos';
+  strings.es['about.traj.academy.title'] = 'Academia';
+  strings.es['about.traj.academy.desc'] = 'Estudiante de Desarrollo de Software en ITLA.';
+  strings.es['about.traj.arch.title'] = 'Arquitectura';
+  strings.es['about.traj.arch.desc'] = 'Sistemas académicos con arquitectura en capas y APIs con persistencia.';
+  strings.es['about.traj.domains.title'] = 'Dominios activos';
+  strings.es['about.traj.domains.desc'] = 'Plataformas de aprendizaje y experimentación publicadas.';
+  strings.es['about.traj.kh.title'] = 'Knowledge Hub';
+  strings.es['about.traj.kh.desc'] = 'Ecosistema público de conocimiento técnico.';
+  strings.es['about.traj.personal.title'] = 'Logros personales';
+  strings.es['about.traj.personal.desc'] = 'CmLayer como espacio de aprendizaje en público; proyectos integrando software, seguridad e IA; documentación continua.';
+
+  strings.es['about.certs.eyebrow'] = 'Certificaciones & Formación';
+  strings.es['about.certs.title'] = 'Formación técnica';
+  strings.es['about.certs.item1'] = 'Programación Orientada a Objetos';
+  strings.es['about.certs.item2'] = 'Bases de Datos y SQL';
+  strings.es['about.certs.item3'] = 'Desarrollo Web y APIs';
+  strings.es['about.certs.item4'] = 'Control de Versiones con Git & GitHub';
+  strings.es['about.certs.item5'] = 'Fundamentos de Ciberseguridad';
+  strings.es['about.certs.item6'] = 'Introducción a Inteligencia Artificial Generativa';
+  strings.es['about.certs.note'] = 'Sección preparada para integrar certificados descargables y verificables (carpeta assets/certificates/).';
+
+  strings.es['about.cv.eyebrow'] = 'CV — Perfil profesional';
+  strings.es['about.cv.title'] = 'Resumen';
+  strings.es['about.cv.desc'] = 'Estudiante de desarrollo de software con enfoque en diseño de sistemas, seguridad por diseño y automatización con IA. Orientado al aprendizaje continuo, la documentación técnica y la construcción de soluciones estructuradas.';
+  strings.es['about.cv.skills.title'] = 'Competencias';
+  strings.es['about.cv.skills.desc'] = 'Backend/Frontend · Arquitectura · Git/CI-CD básico · Seguridad de apps · Bases de datos · Automatización/IA.';
+  strings.es['about.cv.lang.title'] = 'Idiomas';
+  strings.es['about.cv.lang.desc'] = 'Español (Nativo) · Inglés (Intermedio)';
+  strings.es['about.cv.cta1'] = 'Descargar CV';
+  strings.es['about.cv.cta2'] = 'Ver Perfil Técnico';
+
+  strings.es['about.cmlayer.eyebrow'] = 'Qué es CmLayer';
+  strings.es['about.cmlayer.title'] = 'Identidad de plataforma';
+  strings.es['about.cmlayer.desc.title'] = 'CmLayer: Un ecosistema de ingeniería en construcción';
+  strings.es['about.cmlayer.desc.body'] = 'Plataforma tecnológica y educativa para unir aprendizaje, experimentación y sistemas reales. Laboratorio público con prácticas modernas de ingeniería.';
+  strings.es['about.cmlayer.desc.purpose'] = 'Propósito: Transformar conocimiento técnico en sistemas funcionales y crecimiento profesional visible.';
+
+  strings.es['about.vision.eyebrow'] = 'Visión · Misión · Objetivos';
+  strings.es['about.vision.title'] = 'Dirección';
+  strings.es['about.vision.v.title'] = 'Visión';
+  strings.es['about.vision.v.body'] = 'Convertir CmLayer en un ecosistema digital de referencia para el aprendizaje, diseño y construcción de sistemas de software seguros e inteligentes.';
+  strings.es['about.vision.m.title'] = 'Misión';
+  strings.es['about.vision.m.body'] = 'Desarrollar plataformas, proyectos y recursos que integren desarrollo de software, ciberseguridad e IA generativa bajo aprendizaje en público y mejora continua.';
+  strings.es['about.vision.o.title'] = 'Objetivos';
+  strings.es['about.vision.o1'] = 'Diseñar sistemas con arquitectura clara y escalable';
+  strings.es['about.vision.o2'] = 'Integrar seguridad como principio de diseño';
+  strings.es['about.vision.o3'] = 'Aplicar IA generativa como herramienta de automatización y soporte';
+  strings.es['about.vision.o4'] = 'Construir una biblioteca pública de conocimiento técnico';
+  strings.es['about.vision.o5'] = 'Fomentar la colaboración y el feedback técnico';
+
+  strings.es['about.tech.eyebrow'] = 'Enfoque tecnológico';
+  strings.es['about.tech.title'] = 'CmLayer';
+  strings.es['about.tech.dev.title'] = '💻 Desarrollo de Software';
+  strings.es['about.tech.dev.desc'] = 'Sistemas modulares, mantenibles y documentados; énfasis en arquitectura, control de versiones y despliegue estructurado.';
+  strings.es['about.tech.sec.title'] = '🔐 Ciberseguridad';
+  strings.es['about.tech.sec.desc'] = 'Control de acceso, registro de eventos, separación de entornos y trazabilidad desde el diseño.';
+  strings.es['about.tech.ai.title'] = '🤖 Inteligencia Artificial Generativa';
+  strings.es['about.tech.ai.desc'] = 'IA como capa de apoyo para automatización, análisis, generación de contenido técnico y asistencia en desarrollo.';
+
+  strings.es['about.values.eyebrow'] = 'Valores';
+  strings.es['about.values.title'] = 'Principios de CmLayer';
+  strings.es['about.values.v1'] = 'Transparencia: aprender y construir en público';
+  strings.es['about.values.v2'] = 'Estructura: priorizar diseño y documentación';
+  strings.es['about.values.v3'] = 'Responsabilidad: seguridad y ética en el desarrollo';
+  strings.es['about.values.v4'] = 'Curiosidad: exploración constante de nuevas tecnologías';
+  strings.es['about.values.v5'] = 'Colaboración: crecimiento a través del feedback';
+
+  strings.es['about.policies.eyebrow'] = 'Políticas & Principios';
+  strings.es['about.policies.title'] = 'Uso y seguridad';
+  strings.es['about.policies.item1'] = 'Uso responsable de tecnología: privacidad, ética, IA responsable.';
+  strings.es['about.policies.item2'] = 'Seguridad por diseño: riesgos, accesos y trazabilidad desde el inicio.';
+  strings.es['about.policies.item3'] = 'Contenido educativo: todo el material es para aprendizaje técnico.';
+
+  strings.es['about.eco.eyebrow'] = 'Ecosistema CmLayer';
+  strings.es['about.eco.title'] = 'Secciones integradas';
+  strings.es['about.eco.projects.title'] = 'Projects';
+  strings.es['about.eco.projects.desc'] = 'Sistemas y plataformas en desarrollo.';
+  strings.es['about.eco.kh.title'] = 'Knowledge Hub';
+  strings.es['about.eco.kh.desc'] = 'Biblioteca de aprendizaje y curaduría técnica.';
+  strings.es['about.eco.voices.title'] = 'Voices & Experiences';
+  strings.es['about.eco.voices.desc'] = 'Reflexiones y feedback del proceso.';
+  strings.es['about.eco.services.title'] = 'Services';
+  strings.es['about.eco.services.desc'] = 'Capacidades y colaboración técnica.';
+
+  strings.es['about.cta.eyebrow'] = 'CTA';
+  strings.es['about.cta.title'] = 'Construyamos Sistemas con Propósito';
+  strings.es['about.cta.sub'] = 'Aprender, colaborar o explorar tecnología: CmLayer es un espacio abierto para crecer en software, seguridad e IA.';
+  strings.es['about.cta.btn1'] = 'Conectar';
+  strings.es['about.cta.btn2'] = 'Colaborar';
+  strings.es['about.cta.btn3'] = 'Explorar Proyectos';
+
   function applyLang(lang){
     const dict = strings[lang] || strings.en;
     document.documentElement.lang = lang;
