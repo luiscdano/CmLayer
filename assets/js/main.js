@@ -1176,7 +1176,7 @@
     localStorage.setItem('lang', lang);
   }
 
-  const savedLang = localStorage.getItem('lang') || 'es';
+  const savedLang = localStorage.getItem('lang') || 'en';
   applyLang(savedLang);
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
