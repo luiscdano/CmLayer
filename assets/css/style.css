@@ -311,3 +311,37 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position:relative;
   padding-left:18px;
 }
+
+/* Badges for project states */
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.01em;
+  line-height:1.2;
+  border:1px solid var(--border);
+}
+.badge.building{background:rgba(49,213,255,0.12);color:#7ce0ff;border-color:rgba(49,213,255,0.4);}
+.badge.pilot{background:rgba(255,193,7,0.16);color:#ffd95c;border-color:rgba(255,193,7,0.35);}
+.badge.academic{background:rgba(123,97,255,0.12);color:#c1b3ff;border-color:rgba(123,97,255,0.35);}
+.badge.production{background:rgba(76,175,80,0.16);color:#b6f0b8;border-color:rgba(76,175,80,0.35);}
+
+.related-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:12px;
+  color:#9ab0d0;
+}
+.related-chip a{color:#7ce0ff;text-decoration:none;}
+.related-chip a:hover{text-decoration:underline;}
+
+.footer .release{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  font-size:12px;
+  color:#9ab0d0;
+}
