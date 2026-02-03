@@ -66,40 +66,24 @@
     </section>
 
     <section class="panel" id="positioning">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="ve.pos.eyebrow">Voices from the Journey</p><h2 data-i18n="ve.pos.title">What this section is</h2></div></div>
-      <p class="muted" data-i18n="ve.pos.desc1">Reflections, feedback, and experiences from people who interact with my projects, learning process, and technical work — classmates, collaborators, mentors, early users.</p>
-      <p data-i18n="ve.pos.principle"><strong>Principle:</strong> Every system teaches something. Every person leaves a trace.</p>
-      <p class="muted" data-i18n="ve.pos.note">No promises of “clients”; it promises learning, interaction, and real evolution.</p>
+      <div class="section-head"><div><p class="eyebrow" data-i18n="ve.pos.eyebrow">Feedback Loop</p><h2 data-i18n="ve.pos.title">Este ecosistema escucha y mejora con tu voz.</h2></div></div>
+      <p class="muted" data-i18n="ve.pos.desc1">Reflexiones propias y aportes externos sobre los sistemas en construcción. Sin promesas comerciales: solo aprendizaje, evidencia y mejora continua.</p>
+      <p class="muted" data-i18n="ve.pos.note">Las voces externas se publican solo con autorización y verificación.</p>
     </section>
 
     <section class="panel" id="my-voice">
       <div class="section-head"><div><p class="eyebrow" data-i18n="ve.my.eyebrow">My Voice</p><h2 data-i18n="ve.my.title">Engineering Journal</h2></div></div>
-      <p class="muted" data-i18n="ve.my.desc">Short entries documenting challenges, design decisions, and lessons learned while building systems and learning in public.</p>
       <div class="value-grid">
         <article class="value-card">
-          <h3 data-i18n="ve.my.sample.title">Sample entry</h3>
-          <p data-i18n="ve.my.sample.context"><strong>Context:</strong> API refactor with authentication.</p>
-          <p data-i18n="ve.my.sample.challenge"><strong>Challenge:</strong> Roles and scopes inconsistent.</p>
-          <p data-i18n="ve.my.sample.decision"><strong>Decision:</strong> Move auth to middleware + claim unit tests.</p>
-          <p data-i18n="ve.my.sample.result"><strong>Result:</strong> -30% 401/403 errors.</p>
-          <p data-i18n="ve.my.sample.lesson"><strong>Lesson:</strong> Design access contracts before coding endpoints.</p>
+          <h3 data-i18n="ve.my.sample.title">Entrada reciente</h3>
+          <p class="muted"><strong>Contexto:</strong> Refactor de auth en CmLayerBank.</p>
+          <p class="muted"><strong>Decisión:</strong> Middleware centralizado + pruebas de claims.</p>
+          <p class="muted"><strong>Resultado:</strong> -30% errores 401/403.</p>
+          <p class="muted"><strong>Lección:</strong> Definir contratos de acceso antes del código.</p>
         </article>
         <article class="value-card placeholder">
-          <p class="muted" data-i18n="ve.my.template.label">Template for next entries:</p>
-          <p class="tiny" data-i18n="ve.my.template.fields">Context · Challenge · Decision · Result · Lesson</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="panel" id="early-voices">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="ve.early.eyebrow">Early Voices</p><h2 data-i18n="ve.early.title">Collaborators & classmates</h2></div></div>
-      <div class="value-grid">
-        <article class="value-card">
-          <p data-i18n="ve.early.quote1">“Reviewed his API project and liked how he organized layers and docs.”</p>
-          <p class="tiny muted" data-i18n="ve.early.source1">— Student, Programming II</p>
-        </article>
-        <article class="value-card placeholder">
-          <p class="muted" data-i18n="ve.early.placeholder">Add new voices here as they come.</p>
+          <p class="muted" data-i18n="ve.my.template.label">Próxima entrada:</p>
+          <p class="tiny" data-i18n="ve.my.template.fields">Contexto · Desafío · Decisión · Resultado · Lección</p>
         </article>
       </div>
     </section>
@@ -109,26 +93,18 @@
       <div class="case-grid">
         <article class="case">
           <div>
-            <p class="label" data-i18n="ve.stories.s1.label">Layered architecture</p>
-            <h3 data-i18n="ve.stories.s1.title">My first structured system</h3>
-            <p class="muted" data-i18n="ve.stories.s1.desc">Going from console to API with domains, services, controllers forced clear boundaries.</p>
-            <div class="topics"><span>Clean arch</span><span>APIs</span><span>Testing</span></div>
-          </div>
-        </article>
-        <article class="case">
-          <div>
-            <p class="label" data-i18n="ve.stories.s2.label">Security</p>
-            <h3 data-i18n="ve.stories.s2.title">From CRUD to roles and access control</h3>
-            <p class="muted" data-i18n="ve.stories.s2.desc">Adding roles and JWT changed how I design data and flows; security shapes the interface.</p>
+            <p class="label">Identity & Roles · CmLayerBank</p>
+            <h3>De CRUD a control de acceso</h3>
+            <p class="muted">Diseñé roles/JWT y vi cómo seguridad cambia el modelo de datos y los flujos.</p>
             <div class="topics"><span>JWT</span><span>RBAC</span><span>API Security</span></div>
           </div>
         </article>
         <article class="case">
           <div>
-            <p class="label" data-i18n="ve.stories.s3.label">DevOps</p>
-            <h3 data-i18n="ve.stories.s3.title">What failed in my first cloud deploy</h3>
-            <p class="muted" data-i18n="ve.stories.s3.desc">Env vars and healthchecks misconfigured; learned to watch logs and readiness probes.</p>
-            <div class="topics"><span>Docker</span><span>Cloud</span><span>Observability</span></div>
+            <p class="label">Observability · CmLayer</p>
+            <h3>Logs antes que fallas</h3>
+            <p class="muted">Agregar trazas mínimas permitió reducir tiempo de depuración en despliegues.</p>
+            <div class="topics"><span>Logging</span><span>Tracing</span><span>CI/CD</span></div>
           </div>
         </article>
       </div>
@@ -136,7 +112,7 @@
 
     <section class="panel" id="feedback">
       <div class="section-head"><div><p class="eyebrow" data-i18n="ve.feedback.eyebrow">Feedback Loop</p><h2 data-i18n="ve.feedback.title">Leave Your Voice</h2></div></div>
-      <p class="muted" data-i18n="ve.feedback.desc">Share feedback or suggestions after viewing a project, guide, or system.</p>
+      <p class="muted" data-i18n="ve.feedback.desc">Comparte feedback o sugerencias después de ver un proyecto, guía o sistema. Se publica solo con tu autorización.</p>
       <div class="contact-grid">
         <div>
           <p class="muted" data-i18n="ve.feedback.side">Tell me what you saw/tested and what you think.</p>
@@ -145,6 +121,7 @@
           <label data-i18n="ve.feedback.name">Nombre (opcional)<input type="text" name="name" placeholder="Tu nombre"></label>
           <label data-i18n="ve.feedback.context">Contexto<input type="text" name="context" placeholder="¿Qué viste o probaste?"></label>
           <label data-i18n="ve.feedback.comment">Comentario<textarea name="comment" rows="4" placeholder="Feedback, sugerencias o reflexiones"></textarea></label>
+          <label class="tiny muted"><input type="checkbox" required> Autorizo uso de este feedback para mejorar y citarlo.</label>
           <button type="submit" class="btn primary" data-i18n="ve.feedback.submit">Enviar</button>
         </form>
       </div>
