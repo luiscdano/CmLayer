@@ -373,16 +373,23 @@
     const messageField = form.querySelector('[name="message"]')?.value?.trim() || "";
     const context = form.querySelector('[name="context"]')?.value?.trim() || "";
     const comment = form.querySelector('[name="comment"]')?.value?.trim() || "";
+    const type = form.querySelector('[name="type"]')?.value?.trim() || "";
+    const topic = form.querySelector('[name="topic"]')?.value?.trim() || "";
     const consent = Boolean(form.querySelector('[name="consent"]')?.checked);
     const source = form.dataset.source || window.location.pathname || "website";
 
-    let message = messageField;
-    if (!message) {
-      const parts = [];
-      if (context) parts.push(`Context: ${context}`);
-      if (comment) parts.push(comment);
-      message = parts.join("\n\n");
-    }
+    const metaLines = [];
+    if (type) metaLines.push(`Type: ${type}`);
+    if (topic) metaLines.push(`Topic: ${topic}`);
+    if (context) metaLines.push(`Context: ${context}`);
+
+    const baseMessage = messageField || comment || "";
+    const metaBlock = metaLines.join(" · ");
+    const message = metaBlock
+      ? baseMessage
+        ? `${metaBlock}\n\n${baseMessage}`
+        : metaBlock
+      : baseMessage;
 
     return {
       name,
@@ -438,15 +445,6 @@
       });
     });
 
-    document.querySelectorAll("[data-contact-form]").forEach((form) => {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const status = ensureFormStatus(form);
-        const submitBtn = form.querySelector("button[type=\"submit\"]");
-        status.textContent = t("form.sent", "Sent");
-        updateButton(submitBtn, t("form.sent", "Sent"), false);
-      });
-    });
   };
 
   const init = async () => {

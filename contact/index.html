@@ -78,7 +78,7 @@
       <div class="section-head"><div><p class="eyebrow" data-i18n="contact.form.eyebrow">Start the conversation</p><h2 data-i18n="contact.form.title">Main form</h2></div></div>
       <p class="muted" data-i18n="contact.form.note">Your message is read personally. CmLayer values clear and respectful technical conversations.</p>
       <div class="contact-grid">
-        <form class="contact-form" data-contact-form>
+        <form class="contact-form" data-feedback-form data-source="contact">
           <label data-i18n="contact.form.name">Name<input type="text" name="name" placeholder="Your name"></label>
           <label data-i18n="contact.form.email">Email<input type="email" name="email" placeholder="you@email.com" required></label>
           <label data-i18n="contact.form.type">Contact type<select name="type">
@@ -95,7 +95,7 @@
             <option data-i18n="contact.form.topic.opt.general" value="general">General</option>
           </select></label>
           <label data-i18n="contact.form.message">Message<textarea name="message" rows="4" placeholder="How can I help?" required></textarea></label>
-          <label class="tiny muted"><input type="checkbox" required> Autorizo el uso de estos datos para responder y mejorar CmLayer.</label>
+          <label class="tiny muted"><input type="checkbox" name="consent" required> Autorizo el uso de estos datos para responder y mejorar CmLayer.</label>
           <button type="submit" class="btn primary" data-i18n="contact.form.submit">Send Message</button>
           <p class="tiny muted form-status" data-form-status></p>
         </form>
