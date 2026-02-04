@@ -316,7 +316,7 @@
           <h3>${title}</h3>
           <p class="muted">${summary}</p>
           <p class="tiny muted">${escapeHtml(t("status.release.date", "Date"))}: ${date}</p>
-          <a class="btn ghost" href="/changelog/">${escapeHtml(
+          <a class="btn ghost" href="/voices-experiences/changelog/">${escapeHtml(
             t("status.release.link", "View changelog")
           )}</a>
         `;
