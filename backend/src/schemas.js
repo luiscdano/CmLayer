@@ -14,6 +14,9 @@ export const FeedbackInputSchema = z
     name: z.preprocess(emptyToUndefined, z.string().trim().min(1).max(120).optional()),
     email: z.preprocess(emptyToUndefined, z.string().email().max(200).optional()),
     message: z.string().trim().min(1).max(4000),
+    context: z.preprocess(emptyToUndefined, z.string().trim().max(300).optional()),
+    type: z.preprocess(emptyToUndefined, z.string().trim().max(80).optional()),
+    topic: z.preprocess(emptyToUndefined, z.string().trim().max(80).optional()),
     consent: z.boolean(),
     source: z.string().trim().max(200).optional()
   })

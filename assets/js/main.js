@@ -378,22 +378,14 @@
     const consent = Boolean(form.querySelector('[name="consent"]')?.checked);
     const source = form.dataset.source || window.location.pathname || "website";
 
-    const metaLines = [];
-    if (type) metaLines.push(`Type: ${type}`);
-    if (topic) metaLines.push(`Topic: ${topic}`);
-    if (context) metaLines.push(`Context: ${context}`);
-
-    const baseMessage = messageField || comment || "";
-    const metaBlock = metaLines.join(" · ");
-    const message = metaBlock
-      ? baseMessage
-        ? `${metaBlock}\n\n${baseMessage}`
-        : metaBlock
-      : baseMessage;
+    const message = messageField || comment || "";
 
     return {
       name,
       email: email || undefined,
+      type: type || undefined,
+      topic: topic || undefined,
+      context: context || undefined,
       message,
       consent,
       source
