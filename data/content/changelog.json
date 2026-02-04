@@ -4,7 +4,7 @@
     {
       "id": "cm-2026-02-04",
       "title": "CM-2026.02.04 — Release",
-      "summary": "Data-driven content for Projects/Services/Knowledge Hub, new Status page, i18n served via API, and backend endpoints for feedback + audit log.",
+      "summary": "Data-driven content for Projects/Services/Knowledge Hub, Status block in Voices & Experiences, i18n served via API, and backend endpoints for feedback + audit log.",
       "date": "2026-02-04",
       "tags": ["release"],
       "links": [

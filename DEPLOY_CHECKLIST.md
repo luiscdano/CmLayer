@@ -47,10 +47,9 @@ curl -s https://your-domain.com/admin/feedback -H 'x-admin-token: YOUR_TOKEN'
 - `/projects/` shows cards from JSON.
 - `/services/` renders service cards from JSON.
 - `/knowledge-hub/` renders library from JSON.
-- `/status/` shows health + latest release.
+- `/voices-experiences/` shows health + latest release (Status block).
 - Language toggle loads from `/api/i18n/:lang`.
 - Feedback form sends and shows success message.
 
 ## 6. Logging
 - Confirm `data/audit/audit-log.jsonl` is writing entries.
-
