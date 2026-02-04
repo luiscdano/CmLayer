@@ -1,0 +1,168 @@
+{
+  "updatedAt": "2026-02-04T18:09:33Z",
+  "items": [
+    {
+      "id": "cmlayer",
+      "label": "Technology Learning Framework",
+      "title": "CmLayer",
+      "badge": {
+        "text": "Building",
+        "variant": "building"
+      },
+      "description": "Modular environment for testing system structure, development pipelines, and service organization.",
+      "meta": [
+        {
+          "label": "Status",
+          "value": "Building"
+        },
+        {
+          "label": "Problem",
+          "value": "unificar estructura y CI para módulos"
+        },
+        {
+          "label": "Outcome (current)",
+          "value": "base modular con pipelines locales"
+        }
+      ],
+      "topics": ["Architecture", "Code org", "DevOps"],
+      "actions": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/luiscdano/CmLayer",
+          "style": "ghost"
+        }
+      ],
+      "statusNote": "Status: Active Learning",
+      "image": "/assets/img/isotipo01.png",
+      "imageAlt": "CmLayer"
+    },
+    {
+      "id": "cmlayerbank",
+      "label": "Secure Systems Playground",
+      "title": "CmLayerBank",
+      "badge": {
+        "text": "Building",
+        "variant": "building"
+      },
+      "description": "Financial-domain simulation to practice authentication, secure APIs, deployment workflows, and design patterns.",
+      "meta": [
+        {
+          "label": "Status",
+          "value": "Building"
+        },
+        {
+          "label": "Problem",
+          "value": "flujos financieros sin control de acceso granular"
+        },
+        {
+          "label": "Architecture",
+          "value": "API modular + JWT/RBAC + observabilidad básica"
+        },
+        {
+          "label": "Outcome (current)",
+          "value": "laboratorio con login/roles y trazas"
+        }
+      ],
+      "topics": ["Security", "Identity", "APIs", "Infrastructure"],
+      "actions": [
+        {
+          "label": "Website",
+          "url": "https://www.cmlayerbank.com",
+          "style": "primary"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/luiscdano/CmLayer",
+          "style": "ghost"
+        }
+      ],
+      "statusNote": "Status: Experimental",
+      "image": "/assets/img/isotipo02.png",
+      "imageAlt": "CmLayerBank"
+    },
+    {
+      "id": "grupodiced",
+      "label": "Business Systems Sandbox",
+      "title": "GrupoDiCed",
+      "badge": {
+        "text": "Pilot",
+        "variant": "pilot"
+      },
+      "description": "Platform to explore digital business systems, service structuring, and web integration.",
+      "meta": [
+        {
+          "label": "Status",
+          "value": "Pilot"
+        },
+        {
+          "label": "Problem",
+          "value": "vitrina básica sin integración"
+        },
+        {
+          "label": "Outcome (current)",
+          "value": "sitio informativo con ruta a servicios; próximo paso: auth ligera"
+        }
+      ],
+      "topics": ["Web systems", "Services", "Digital platforms"],
+      "actions": [
+        {
+          "label": "Website",
+          "url": "https://grupodiced.com/",
+          "style": "primary"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/luiscdano/GrupoDiCed",
+          "style": "ghost"
+        }
+      ],
+      "statusNote": "Status: Experimental",
+      "image": "/assets/img/isotipo01.png",
+      "imageAlt": "GrupoDiCed"
+    },
+    {
+      "id": "proyectos-itla",
+      "label": "Academic Engineering Portfolio",
+      "title": "Proyectos-ITLA",
+      "badge": {
+        "text": "Academic",
+        "variant": "academic"
+      },
+      "description": "Collection focused on programming patterns, data handling, APIs, and architecture fundamentals.",
+      "meta": [],
+      "topics": ["Software design", "Databases", "APIs", "Patterns"],
+      "actions": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/luiscdano/Proyectos-ITLA",
+          "style": "ghost"
+        }
+      ],
+      "statusNote": "Status: Academic",
+      "image": "/assets/img/Logo01.png",
+      "imageAlt": "Proyectos ITLA"
+    },
+    {
+      "id": "personal-projects",
+      "label": "Innovation & Experimentation Lab",
+      "title": "PersonalProjects",
+      "badge": {
+        "text": "Pilot",
+        "variant": "pilot"
+      },
+      "description": "Small prototypes to test ideas, tools, and new technologies in low-risk, high-learning settings.",
+      "meta": [],
+      "topics": ["Prototyping", "Automation", "AI Tools"],
+      "actions": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/luiscdano/PersonalProjects",
+          "style": "ghost"
+        }
+      ],
+      "statusNote": "Status: Ongoing",
+      "image": "/assets/img/isotipo01.png",
+      "imageAlt": "Lab"
+    }
+  ]
+}

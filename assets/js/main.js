@@ -1,1195 +1,461 @@
 (() => {
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  navToggle?.addEventListener('click', () => navLinks?.classList.toggle('open'));
-  navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  const apiBase = (window.CMLAYER_API_BASE || "").replace(/\/+$/, "");
+  const apiUrl = (path) => {
+    const normalized = path.startsWith("/") ? path : `/${path}`;
+    return `${apiBase}${normalized}`;
+  };
 
-  // Prevent form submit (no backend yet)
-  const form = document.querySelector('.contact-form');
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button');
-    if(btn){ btn.textContent = 'Sent'; btn.classList.add('sent'); }
-  });
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
 
-  // Simple i18n toggle (en default)
-  const strings = {
-    en: {
-      'nav.home': 'Home', 'nav.projects': 'Projects', 'nav.services': 'Services', 'nav.knowledge': 'Knowledge Hub', 'nav.voices': 'Voices & Experiences', 'nav.about': 'About', 'nav.contact': 'Contact',
-      'hero.tags': 'CmLayer is running · Systems · Security · Intelligence',
-      'hero.title': 'CmLayer is live.',
-      'hero.sub': 'A public lab to build software, design security, and integrate generative AI with an engineering mindset.',
-      'hero.cta.primary': 'Enter Projects',
-      'hero.cta.secondary': 'Open Knowledge Hub',
-      'hero.cta.tertiary': 'Join the Feedback Loop',
-      'hero.meta1': 'Learn in public', 'hero.meta2': 'Build with purpose', 'hero.meta3': 'Share what matters',
-      'hero.status': 'Status: Learning in Public · Modules: Projects | Services | Knowledge | Voices · Mode: Build',
-      'hero.roadmap.label': 'Current session', 'hero.roadmap.title': 'Live roadmap', 'hero.roadmap.updated': 'Updated: Feb 3, 2026',
-      'hero.roadmap.item1': 'CmLayerBank — active module',
-      'hero.roadmap.item2': 'Knowledge Hub — visual library (PDFs with cover)',
-      'hero.roadmap.item3': 'Feedback Loop — open for suggestions',
-      'hero.roadmap.item4': 'Next drop — Learning Sprint #1 published',
-      'map.eyebrow': 'System Map', 'map.title': 'System Map', 'map.sub': 'Explore CmLayer as a live system: each module connects to the next.', 'map.cta': 'Explore the map',
-      'map.projects.title': 'Projects', 'map.projects.desc': 'Systems in progress',
-      'map.services.title': 'Services', 'map.services.desc': 'Loaded capabilities',
-      'map.kh.title': 'Knowledge Hub', 'map.kh.desc': 'Learning flows',
-      'map.voices.title': 'Voices', 'map.voices.desc': 'Feedback loop',
-      'map.about.title': 'About', 'map.about.desc': 'System identity',
-      'map.contact.title': 'Contact', 'map.contact.desc': 'Open channel',
-      'pillars.eyebrow': 'Three Pillars', 'pillars.title': 'What CmLayer represents',
-      'pillars.card1.title': 'Software Systems', 'pillars.card1.desc': 'APIs, apps, and modular platforms with clear architecture and reproducible docs.',
-      'pillars.card2.title': 'Secure Platforms', 'pillars.card2.desc': 'Identity, access control, traceability, and risk-aware design from the start.',
-      'pillars.card3.title': 'AI-Driven Intelligence', 'pillars.card3.desc': 'Generative AI as an amplifier: automation, technical assistance, analysis, documentation.',
-      'active.eyebrow': 'Active Module', 'active.title': 'CmLayerBank', 'active.sub': 'Educational finance platform in development to practice architecture, security, and AI integration.',
-      'active.badge1': 'Building', 'active.badge2': 'Educational Lab', 'active.badge3': 'Secure-by-Design',
-      'active.capabilities.title': 'System Capabilities',
-      'active.cap1': 'Identity & Roles', 'active.cap2': 'Secure Flows', 'active.cap3': 'Observability (logs/trace)', 'active.cap4': 'AI-assisted workflows',
-      'active.cta1': 'View Case Study', 'active.cta2': 'Explore Repository', 'active.cta3': 'See all projects',
-      'services.eyebrow': 'System Capabilities', 'services.title': 'System Capabilities', 'services.sub': 'What CmLayer builds and how it is built.', 'services.cta': 'See Services',
-      'services.card1.title': 'Software Development', 'services.card1.desc': 'Design and build backend, frontend, and APIs with focus on architecture, testing, documentation, and deployment.',
-      'services.card2.title': 'Cybersecurity', 'services.card2.desc': 'Integrated security: identity, roles, audit, basic hardening, and environment separation.',
-      'services.card3.title': 'Generative AI', 'services.card3.desc': 'AI as support: automation, documentation generation, technical assistance, and analysis.',
-      'services.card4.title': 'How we work',
-      'services.steps.1': 'Problem: scope and success criteria',
-      'services.steps.2': 'Architecture: modular design + clear decisions',
-      'services.steps.3': 'Stack: chosen for cost, DX, and security',
-      'services.steps.4': 'Delivery: repo + docs + reproducible deploy',
-      'services.steps.5': 'Improve: retro + backlog + hardening',
-      'stack.eyebrow': 'Stack in use', 'stack.title': 'Stack in use', 'stack.sub': 'Languages and tools applied in projects and learning.',
-      'stack.langs.title': 'Languages', 'stack.langs.desc': 'Python · JavaScript · TypeScript · Java · C# · SQL',
-      'stack.tools.title': 'Tools', 'stack.tools.desc': 'GitHub · Docker · VS Code · Postman · Linux · CI/CD · Cloud · AI Tools',
-      'stack.cta.title': 'CTA', 'stack.cta.desc': 'View full stack',
-      'kh.eyebrow': 'Knowledge Hub', 'kh.title': 'Knowledge Hub', 'kh.sub': 'Visual library + learning in public.',
-      'kh.card1.title': 'Study Guide (PDF)', 'kh.card1.desc': 'PDFs with cover + summary + comment.',
-      'kh.card2.title': 'Video / Talk', 'kh.card2.desc': 'Thumbnail + takeaways + comment.',
-      'kh.card3.title': 'Course', 'kh.card3.desc': 'Cover + level + recommendation.',
-      'kh.timeline1': 'Tech Signals: News + monthly reflection',
-      'kh.timeline2': 'Learning Sprints: 1 resource → summary → comment → project',
-      'kh.cta': 'Explore Knowledge Hub',
-      'voices.eyebrow': 'Feedback Loop', 'voices.title': 'This ecosystem listens and improves with your voice.',
-      'voices.card1.title': 'My Voice (Engineering Journal)', 'voices.card1.desc': 'Decisions, challenges, and real lessons from the process.',
-      'voices.card2.title': 'Add Your Voice', 'voices.card2.desc': 'What would you like to see here? Suggestions, feedback, ideas.',
-      'voices.microcopy': 'External voices are published only with authorization and verification.',
-      'voices.cta': 'Add your voice',
-      'about.eyebrow': 'About CmLayer', 'about.title': 'A hybrid platform', 'about.sub': 'Systems building + public docs + continuous learning.',
-      'about.vision': 'Vision: Ecosystem of secure and intelligent systems.',
-      'about.mission': 'Mission: Build, learn, and share with an engineering mindset.',
-      'about.values': 'Values: Transparency · Structure · Responsibility · Curiosity · Collaboration.',
-      'about.cta': 'Meet CmLayer & Luis (About)',
-      'contact.eyebrow': 'Open Channel', 'contact.title': 'Collaboration, suggestions, or technical conversation.', 'contact.sub': 'I will reply personally. Clear and respectful messages.',
-      'contact.cta.primary': 'Send message', 'contact.cta.linkedin': 'LinkedIn', 'contact.cta.github': 'GitHub',
-      'contact.form.name': 'Name', 'contact.form.email': 'Email', 'contact.form.type': 'Type',
-      'contact.form.type.opt1': 'Collaboration', 'contact.form.type.opt2': 'Project', 'contact.form.type.opt3': 'Feedback', 'contact.form.type.opt4': 'Knowledge Hub', 'contact.form.type.opt5': 'Other',
-      'contact.form.topic': 'Topic',
-      'contact.form.topic.opt1': 'Software', 'contact.form.topic.opt2': 'Security', 'contact.form.topic.opt3': 'AI', 'contact.form.topic.opt4': 'General',
-      'contact.form.message': 'Message', 'contact.form.submit': 'Send',
-      'outro.eyebrow': 'Session Message', 'outro.title': 'Every system starts as a question.',
-      'outro.card1.title': 'Session Message', 'outro.card1.desc': 'Every system starts as a question. Every line of code is a hypothesis. CmLayer exists to test them in public.',
-      'outro.card2.title': 'Final line', 'outro.card2.desc': 'Learn in public. Build with purpose. Share what matters.', 'outro.cta': 'What would you like to see here?'
-    },
-    es: {
-      'nav.home': 'Inicio', 'nav.projects': 'Proyectos', 'nav.services': 'Servicios', 'nav.knowledge': 'Knowledge Hub', 'nav.voices': 'Voces & Experiencias', 'nav.about': 'Acerca', 'nav.contact': 'Contacto',
-      'hero.tags': 'CmLayer is running · Systems · Security · Intelligence',
-      'hero.title': 'CmLayer está en ejecución.',
-      'hero.sub': 'Un laboratorio público para construir software, diseñar seguridad e integrar IA generativa con mentalidad de ingeniería.',
-      'hero.cta.primary': 'Entrar a Projects',
-      'hero.cta.secondary': 'Abrir Knowledge Hub',
-      'hero.cta.tertiary': 'Unirme al Feedback Loop',
-      'hero.meta1': 'Aprender en público', 'hero.meta2': 'Construir con propósito', 'hero.meta3': 'Compartir lo que importa',
-      'hero.status': 'Status: Learning in Public · Modules: Projects | Services | Knowledge | Voices · Mode: Build',
-      'hero.roadmap.label': 'Sesión actual', 'hero.roadmap.title': 'Roadmap en vivo', 'hero.roadmap.updated': 'Actualizado: 3 feb 2026',
-      'hero.roadmap.item1': 'CmLayerBank — módulo activo',
-      'hero.roadmap.item2': 'Knowledge Hub — biblioteca visual (PDFs con portada)',
-      'hero.roadmap.item3': 'Feedback Loop — abierto para sugerencias',
-      'hero.roadmap.item4': 'Siguiente entrega — Sprint de aprendizaje #1 publicado',
-      'map.eyebrow': 'System Map', 'map.title': 'Mapa del Sistema', 'map.sub': 'Explora CmLayer como un sistema en vivo: cada módulo conecta con el siguiente.', 'map.cta': 'Explorar el mapa',
-      'map.projects.title': 'Projects', 'map.projects.desc': 'Sistemas en construcción',
-      'map.services.title': 'Services', 'map.services.desc': 'Capacidades cargadas',
-      'map.kh.title': 'Knowledge Hub', 'map.kh.desc': 'Flujos de aprendizaje',
-      'map.voices.title': 'Voices', 'map.voices.desc': 'Feedback loop',
-      'map.about.title': 'About', 'map.about.desc': 'Identidad del sistema',
-      'map.contact.title': 'Contact', 'map.contact.desc': 'Canal abierto',
-      'pillars.eyebrow': 'Tres Pilares', 'pillars.title': 'Qué representa CmLayer',
-      'pillars.card1.title': 'Software Systems', 'pillars.card1.desc': 'APIs, apps y plataformas modulares con arquitectura clara y documentación reproducible.',
-      'pillars.card2.title': 'Secure Platforms', 'pillars.card2.desc': 'Identidad, control de acceso, trazabilidad y diseño consciente del riesgo desde el inicio.',
-      'pillars.card3.title': 'AI-Driven Intelligence', 'pillars.card3.desc': 'IA generativa como amplificador: automatización, asistencia técnica, análisis y documentación.',
-      'active.eyebrow': 'Active Module', 'active.title': 'CmLayerBank', 'active.sub': 'Plataforma financiera educativa en desarrollo para practicar arquitectura, seguridad e integración de IA.',
-      'active.badge1': 'Building', 'active.badge2': 'Educational Lab', 'active.badge3': 'Secure-by-Design',
-      'active.capabilities.title': 'System Capabilities',
-      'active.cap1': 'Identity & Roles', 'active.cap2': 'Secure Flows', 'active.cap3': 'Observability (logs/trace)', 'active.cap4': 'AI-assisted workflows',
-      'active.cta1': 'Ver Caso de Estudio', 'active.cta2': 'Explorar Repositorio', 'active.cta3': 'Ver todos los proyectos',
-      'services.eyebrow': 'System Capabilities', 'services.title': 'Capacidades del Sistema', 'services.sub': 'Lo que CmLayer construye y cómo lo construye.', 'services.cta': 'Ver Services',
-      'services.card1.title': 'Desarrollo de Software', 'services.card1.desc': 'Diseño y construcción de backend, frontend y APIs con enfoque en arquitectura, pruebas, documentación y despliegue.',
-      'services.card2.title': 'Ciberseguridad', 'services.card2.desc': 'Seguridad integrada: identidad, roles, auditoría, hardening básico y separación de entornos.',
-      'services.card3.title': 'IA Generativa', 'services.card3.desc': 'IA como capa de apoyo: automatización, generación de documentación, asistencia técnica y análisis.',
-      'services.card4.title': 'Cómo trabajamos',
-      'services.steps.1': 'Problema: alcance y criterios de éxito',
-      'services.steps.2': 'Arquitectura: diseño modular + decisiones claras',
-      'services.steps.3': 'Stack: selección por costo, DX y seguridad',
-      'services.steps.4': 'Entrega: repo + docs + despliegue reproducible',
-      'services.steps.5': 'Mejora: retro + backlog + hardening',
-      'stack.eyebrow': 'Stack en uso', 'stack.title': 'Stack en uso', 'stack.sub': 'Lenguajes y herramientas aplicadas en proyectos y aprendizaje.',
-      'stack.langs.title': 'Lenguajes', 'stack.langs.desc': 'Python · JavaScript · TypeScript · Java · C# · SQL',
-      'stack.tools.title': 'Herramientas', 'stack.tools.desc': 'GitHub · Docker · VS Code · Postman · Linux · CI/CD · Cloud · AI Tools',
-      'stack.cta.title': 'CTA', 'stack.cta.desc': 'Ver stack completo',
-      'kh.eyebrow': 'Knowledge Hub', 'kh.title': 'Knowledge Hub', 'kh.sub': 'Biblioteca visual + aprendizaje en público.',
-      'kh.card1.title': 'Guía de Estudio (PDF)', 'kh.card1.desc': 'PDFs con portada + resumen + comentario.',
-      'kh.card2.title': 'Video / Talk', 'kh.card2.desc': 'Miniatura + takeaways + comentario.',
-      'kh.card3.title': 'Curso', 'kh.card3.desc': 'Portada + nivel + recomendación.',
-      'kh.timeline1': 'Tech Signals: Noticias + reflexión mensual',
-      'kh.timeline2': 'Learning Sprints: 1 recurso → resumen → comentario → proyecto',
-      'kh.cta': 'Explorar Knowledge Hub',
-      'voices.eyebrow': 'Feedback Loop', 'voices.title': 'Este ecosistema escucha y mejora con tu voz.',
-      'voices.card1.title': 'My Voice (Engineering Journal)', 'voices.card1.desc': 'Decisiones, retos y lecciones reales del proceso.',
-      'voices.card2.title': 'Add Your Voice', 'voices.card2.desc': '¿Qué te gustaría ver aquí? Sugerencias, feedback, ideas.',
-      'voices.microcopy': 'Las voces externas se publican solo con autorización y verificación.',
-      'voices.cta': 'Sumar tu voz',
-      'about.eyebrow': 'About CmLayer', 'about.title': 'Una plataforma híbrida', 'about.sub': 'Construcción de sistemas + documentación pública + aprendizaje continuo.',
-      'about.vision': 'Visión: Ecosistema de sistemas seguros e inteligentes.',
-      'about.mission': 'Misión: Construir, aprender y compartir con mentalidad de ingeniería.',
-      'about.values': 'Valores: Transparencia · Estructura · Responsabilidad · Curiosidad · Colaboración.',
-      'about.cta': 'Conocer CmLayer & Luis (About)',
-      'contact.eyebrow': 'Open Channel', 'contact.title': 'Colaboración, sugerencias o conversación técnica.', 'contact.sub': 'Responderé personalmente. Mensajes claros y respetuosos.',
-      'contact.cta.primary': 'Enviar mensaje', 'contact.cta.linkedin': 'LinkedIn', 'contact.cta.github': 'GitHub',
-      'contact.form.name': 'Nombre', 'contact.form.email': 'Email', 'contact.form.type': 'Tipo',
-      'contact.form.type.opt1': 'Colaboración', 'contact.form.type.opt2': 'Proyecto', 'contact.form.type.opt3': 'Feedback', 'contact.form.type.opt4': 'Knowledge Hub', 'contact.form.type.opt5': 'Otro',
-      'contact.form.topic': 'Tema',
-      'contact.form.topic.opt1': 'Software', 'contact.form.topic.opt2': 'Seguridad', 'contact.form.topic.opt3': 'IA', 'contact.form.topic.opt4': 'General',
-      'contact.form.message': 'Mensaje', 'contact.form.submit': 'Enviar',
-      'outro.eyebrow': 'Session Message', 'outro.title': 'Cada sistema empieza como una pregunta.',
-      'outro.card1.title': 'Session Message', 'outro.card1.desc': 'Cada sistema empieza como una pregunta. Cada línea de código es una hipótesis. CmLayer existe para probarlas en público.',
-      'outro.card2.title': 'Línea final', 'outro.card2.desc': 'Aprender en público. Construir con propósito. Compartir lo que importa.', 'outro.cta': '¿Qué te gustaría ver aquí?'
+  const state = {
+    lang: "en",
+    i18n: {}
+  };
+
+  const t = (key, fallback) => state.i18n[key] || fallback || "";
+
+  const fetchJson = async (path) => {
+    try {
+      const response = await fetch(apiUrl(path), {
+        headers: { Accept: "application/json" }
+      });
+      if (!response.ok) {
+        throw new Error(`Request failed: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      return null;
     }
   };
 
-  // Projects page specific strings
-  strings.en['projects.hero.title'] = 'From concept to deployment';
-  strings.en['projects.hero.sub'] = 'Designing, securing, and scaling real-world digital systems across software, security, and AI.';
-  strings.en['projects.cta.featured'] = 'View Featured Systems';
-  strings.en['projects.hero.sub2'] = 'Building systems, skills, and engineering mindset in public.';
-  strings.en['projects.position.eyebrow'] = 'Engineering in Progress';
-  strings.en['projects.position.title'] = 'Positioning Statement';
-  strings.en['projects.position.p1'] = 'This page documents my journey as a junior software engineer building real systems with a long-term, senior-level mindset. Every project here represents learning, experimentation, and structured growth across software development, cybersecurity, and generative AI.';
-  strings.en['projects.position.p2'] = 'Principle: I don’t claim mastery. I design for it.';
-  strings.en['projects.position.p3'] = 'This makes clear: I’m not selling seniority, but I do build with a professional vision.';
-  strings.en['projects.lanes.eyebrow'] = 'Three Lanes';
-  strings.en['projects.lanes.title'] = 'Learning Domains';
-  strings.en['projects.lanes.software.title'] = 'Software Systems';
-  strings.en['projects.lanes.software.desc'] = 'Learning to design systems, not just write code. Focus on architecture, modularity, clean structure, and reproducible workflows.';
-  strings.en['projects.lanes.secure.title'] = 'Secure Platforms';
-  strings.en['projects.lanes.secure.desc'] = 'Learning to build with security from day one: auth, access control, visibility, and safe deployment as design steps.';
-  strings.en['projects.lanes.ai.title'] = 'AI-Driven Solutions';
-  strings.en['projects.lanes.ai.desc'] = 'Learning how AI augments systems and people: generative and automation layers for productivity and understanding.';
-  strings.en['projects.featured.eyebrow'] = 'Learning Projects';
-  strings.en['projects.featured.title'] = 'Active Systems';
-  strings.en['projects.featured.sub'] = 'Projects as structured learning environments, not finished products.';
-  strings.en['projects.cmlayer.label'] = 'Technology Learning Framework';
-  strings.en['projects.cmlayer.desc'] = 'Modular environment for testing system structure, development pipelines, and service organization.';
-  strings.en['projects.cmlayer.status'] = 'Status: Active Learning';
-  strings.en['projects.bank.label'] = 'Secure Systems Playground';
-  strings.en['projects.bank.desc'] = 'Financial-domain simulation to practice authentication, secure APIs, deployment workflows, and design patterns.';
-  strings.en['projects.bank.status'] = 'Status: Experimental';
-  strings.en['projects.diced.label'] = 'Business Systems Sandbox';
-  strings.en['projects.diced.desc'] = 'Platform to explore digital business systems, service structuring, and web integration.';
-  strings.en['projects.diced.status'] = 'Status: Experimental';
-  strings.en['projects.itla.label'] = 'Academic Engineering Portfolio';
-  strings.en['projects.itla.desc'] = 'Collection focused on programming patterns, data handling, APIs, and architecture fundamentals.';
-  strings.en['projects.itla.status'] = 'Status: Academic';
-  strings.en['projects.personal.label'] = 'Innovation & Experimentation Lab';
-  strings.en['projects.personal.desc'] = 'Small prototypes to test ideas, tools, and new technologies in low-risk, high-learning settings.';
-  strings.en['projects.personal.status'] = 'Status: Ongoing';
-  strings.en['projects.github.eyebrow'] = 'Public Code';
-  strings.en['projects.github.title'] = 'Learning in the open';
-  strings.en['projects.github.sub'] = 'Direct link to active repos showing evolution through commits, refactors, experimentation.';
-  strings.en['projects.github.find.title'] = 'What you’ll find';
-  strings.en['projects.github.find.desc'] = 'Active repositories, languages and tools, update frequency, structure over time.';
-  strings.en['projects.github.philosophy.title'] = 'Philosophy';
-  strings.en['projects.github.philosophy.desc'] = 'Progress is more valuable than perfection.';
-  strings.en['projects.mindset.eyebrow'] = 'Engineering Mindset';
-  strings.en['projects.mindset.title'] = 'How I think about building systems';
-  strings.en['projects.mindset.software.title'] = 'Software Development';
-  strings.en['projects.mindset.software.desc'] = 'Every project is a system: structure, docs, and long-term improvement, even for small apps.';
-  strings.en['projects.mindset.security.title'] = 'Cybersecurity';
-  strings.en['projects.mindset.security.desc'] = 'Understand how systems fail: access, visibility, and control as part of responsible design.';
-  strings.en['projects.mindset.ai.title'] = 'Generative AI';
-  strings.en['projects.mindset.ai.desc'] = 'AI as assistant for learning, automation, and system understanding.';
-  strings.en['projects.mindset.core'] = 'Core Belief: good engineers grow in public, document thinking, and improve with every iteration.';
-  strings.en['projects.lifecycle.eyebrow'] = 'Learning Lifecycle';
-  strings.en['projects.lifecycle.title'] = 'How I build';
-  strings.en['projects.lifecycle.problem.title'] = 'Problem';
-  strings.en['projects.lifecycle.problem.desc'] = 'Define what I’m trying to learn, not just build.';
-  strings.en['projects.lifecycle.arch.title'] = 'Architecture';
-  strings.en['projects.lifecycle.arch.desc'] = 'Sketch structure, components, and flow before code.';
-  strings.en['projects.lifecycle.stack.title'] = 'Stack';
-  strings.en['projects.lifecycle.stack.desc'] = 'Choose tech that teaches industry standards and best practices.';
-  strings.en['projects.lifecycle.outcome.title'] = 'Outcome';
-  strings.en['projects.lifecycle.outcome.desc'] = 'Working systems with docs and repos for review and improvement.';
-  strings.en['projects.lifecycle.lessons.title'] = 'Lessons';
-  strings.en['projects.lifecycle.lessons.desc'] = 'Reflect on mistakes, refactors, and design changes for next iteration.';
-  strings.en['projects.stack.eyebrow'] = 'Tech Stack — Learning & Practice (2026)';
-  strings.en['projects.stack.title'] = 'Languages & Tools';
-  strings.en['projects.stack.lang.title'] = 'Languages I study and use';
-  strings.en['projects.stack.lang.desc'] = 'Python · JavaScript · TypeScript · Java · C# · SQL · Go · Rust';
-  strings.en['projects.stack.tools.title'] = 'Tools & platforms I practice with';
-  strings.en['projects.stack.tools.desc'] = 'GitHub · VS Code · Docker · CI/CD · Linux · Cloud · API testing · Databases · AI dev tools';
-  strings.en['projects.growth.eyebrow'] = 'Growth Indicators';
-  strings.en['projects.growth.title'] = 'Tracking progress over time';
-  strings.en['projects.growth.milestones.title'] = 'Learning milestones';
-  strings.en['projects.growth.milestones.desc'] = 'Systems designed and documented; repos maintained/refactored; domains explored (software, security, AI); academic & independent projects completed.';
-  strings.en['projects.final.eyebrow'] = 'Final Message';
-  strings.en['projects.final.title'] = 'Building the engineer I want to become.';
-  strings.en['projects.final.sub'] = 'CmLayer is my public workspace for learning, experimentation, and long-term system thinking.';
-  strings.en['projects.final.contact'] = 'Contact';
-  strings.en['projects.final.follow'] = 'Follow Progress';
-  strings.en['projects.final.collab'] = 'Collaborate';
-  strings.es['projects.hero.title'] = 'Del concepto al despliegue';
-  strings.es['projects.hero.sub'] = 'Diseñando, asegurando y escalando sistemas digitales reales en software, seguridad e IA.';
-  strings.es['projects.cta.featured'] = 'Ver sistemas destacados';
-  strings.es['projects.hero.sub2'] = 'Construyendo sistemas, habilidades y mentalidad de ingeniería en público.';
-  strings.es['projects.position.eyebrow'] = 'Ingeniería en progreso';
-  strings.es['projects.position.title'] = 'Declaración de posicionamiento';
-  strings.es['projects.position.p1'] = 'Esta página documenta mi camino como ingeniero de software junior construyendo sistemas reales con mentalidad de largo plazo. Cada proyecto representa aprendizaje, experimentación y crecimiento estructurado en desarrollo de software, ciberseguridad e IA generativa.';
-  strings.es['projects.position.p2'] = 'Principio: no afirmo maestría. Diseño para alcanzarla.';
-  strings.es['projects.position.p3'] = 'Queda claro: no vendo seniority, pero sí una visión profesional.';
-  strings.es['projects.lanes.eyebrow'] = 'Tres líneas';
-  strings.es['projects.lanes.title'] = 'Dominios de aprendizaje';
-  strings.es['projects.lanes.software.title'] = 'Software Systems';
-  strings.es['projects.lanes.software.desc'] = 'Aprender a diseñar sistemas, no solo código: arquitectura, modularidad, estructura limpia y flujos reproducibles.';
-  strings.es['projects.lanes.secure.title'] = 'Secure Platforms';
-  strings.es['projects.lanes.secure.desc'] = 'Aprender a construir con seguridad desde el día uno: auth, control de acceso, visibilidad y despliegue seguro.';
-  strings.es['projects.lanes.ai.title'] = 'AI-Driven Solutions';
-  strings.es['projects.lanes.ai.desc'] = 'Aprender cómo la IA potencia sistemas y personas: capas generativas y de automatización.';
-  strings.es['projects.featured.eyebrow'] = 'Proyectos de aprendizaje';
-  strings.es['projects.featured.title'] = 'Sistemas activos';
-  strings.es['projects.featured.sub'] = 'Proyectos como entornos de aprendizaje estructurado, no productos terminados.';
-  strings.es['projects.cmlayer.label'] = 'Marco de aprendizaje tecnológico';
-  strings.es['projects.cmlayer.desc'] = 'Entorno modular para probar estructura, pipelines y organización de servicios.';
-  strings.es['projects.cmlayer.status'] = 'Estatus: Aprendizaje activo';
-  strings.es['projects.bank.label'] = 'Laboratorio de sistemas seguros';
-  strings.es['projects.bank.desc'] = 'Simulación financiera para practicar autenticación, APIs seguras, despliegues y patrones.';
-  strings.es['projects.bank.status'] = 'Estatus: Experimental';
-  strings.es['projects.diced.label'] = 'Sandbox de sistemas de negocio';
-  strings.es['projects.diced.desc'] = 'Plataforma para explorar sistemas de negocio, servicios y web.';
-  strings.es['projects.diced.status'] = 'Estatus: Experimental';
-  strings.es['projects.itla.label'] = 'Portafolio académico de ingeniería';
-  strings.es['projects.itla.desc'] = 'Colección centrada en patrones, datos, APIs y fundamentos de arquitectura.';
-  strings.es['projects.itla.status'] = 'Estatus: Académico';
-  strings.es['projects.personal.label'] = 'Laboratorio de innovación y experimentación';
-  strings.es['projects.personal.desc'] = 'Pequeños prototipos para probar ideas, herramientas y tecnologías con alto aprendizaje.';
-  strings.es['projects.personal.status'] = 'Estatus: En curso';
-  strings.es['projects.github.eyebrow'] = 'Código público';
-  strings.es['projects.github.title'] = 'Aprendiendo en abierto';
-  strings.es['projects.github.sub'] = 'Enlace directo a repos activos mostrando evolución con commits, refactors y experimentos.';
-  strings.es['projects.github.find.title'] = 'Qué encontrarás';
-  strings.es['projects.github.find.desc'] = 'Repos activos, lenguajes y herramientas, frecuencia de actualización, estructura en el tiempo.';
-  strings.es['projects.github.philosophy.title'] = 'Filosofía';
-  strings.es['projects.github.philosophy.desc'] = 'El progreso vale más que la perfección.';
-  strings.es['projects.mindset.eyebrow'] = 'Mentalidad de ingeniería';
-  strings.es['projects.mindset.title'] = 'Cómo pienso al construir sistemas';
-  strings.es['projects.mindset.software.title'] = 'Desarrollo de software';
-  strings.es['projects.mindset.software.desc'] = 'Cada proyecto es un sistema: estructura, documentación y mejora continua, incluso en apps pequeñas.';
-  strings.es['projects.mindset.security.title'] = 'Ciberseguridad';
-  strings.es['projects.mindset.security.desc'] = 'Entender cómo fallan los sistemas: acceso, visibilidad y control como diseño responsable.';
-  strings.es['projects.mindset.ai.title'] = 'IA generativa';
-  strings.es['projects.mindset.ai.desc'] = 'IA como asistente para aprender, automatizar y entender sistemas.';
-  strings.es['projects.mindset.core'] = 'Creencia: los buenos ingenieros crecen en público, documentan su pensamiento y mejoran cada iteración.';
-  strings.es['projects.lifecycle.eyebrow'] = 'Ciclo de aprendizaje';
-  strings.es['projects.lifecycle.title'] = 'Cómo construyo';
-  strings.es['projects.lifecycle.problem.title'] = 'Problema';
-  strings.es['projects.lifecycle.problem.desc'] = 'Defino qué quiero aprender, no solo qué construir.';
-  strings.es['projects.lifecycle.arch.title'] = 'Arquitectura';
-  strings.es['projects.lifecycle.arch.desc'] = 'Dibujo estructura, componentes y flujo antes de codificar.';
-  strings.es['projects.lifecycle.stack.title'] = 'Stack';
-  strings.es['projects.lifecycle.stack.desc'] = 'Elijo tecnologías que enseñen estándares y buenas prácticas.';
-  strings.es['projects.lifecycle.outcome.title'] = 'Resultado';
-  strings.es['projects.lifecycle.outcome.desc'] = 'Sistemas funcionales con docs y repos para revisar y mejorar.';
-  strings.es['projects.lifecycle.lessons.title'] = 'Lecciones';
-  strings.es['projects.lifecycle.lessons.desc'] = 'Reflexiono sobre errores, refactors y cambios de diseño para la siguiente iteración.';
-  strings.es['projects.stack.eyebrow'] = 'Tech Stack — Aprendizaje y práctica (2026)';
-  strings.es['projects.stack.title'] = 'Lenguajes y herramientas';
-  strings.es['projects.stack.lang.title'] = 'Lenguajes que estudio y uso';
-  strings.es['projects.stack.lang.desc'] = 'Python · JavaScript · TypeScript · Java · C# · SQL · Go · Rust';
-  strings.es['projects.stack.tools.title'] = 'Herramientas y plataformas que practico';
-  strings.es['projects.stack.tools.desc'] = 'GitHub · VS Code · Docker · CI/CD · Linux · Cloud · Tests de API · Bases de datos · Herramientas de IA';
-  strings.es['projects.growth.eyebrow'] = 'Indicadores de crecimiento';
-  strings.es['projects.growth.title'] = 'Seguimiento del progreso en el tiempo';
-  strings.es['projects.growth.milestones.title'] = 'Hitos de aprendizaje';
-  strings.es['projects.growth.milestones.desc'] = 'Sistemas diseñados y documentados; repos mantenidos/refactorizados; dominios explorados (software, seguridad, IA); proyectos académicos e independientes completados.';
-  strings.es['projects.final.eyebrow'] = 'Mensaje final';
-  strings.es['projects.final.title'] = 'Construyendo el ingeniero que quiero ser.';
-  strings.es['projects.final.sub'] = 'CmLayer es mi espacio público para aprender, experimentar y pensar sistemas a largo plazo.';
-  strings.es['projects.final.contact'] = 'Contacto';
-  strings.es['projects.final.follow'] = 'Seguir progreso';
-  strings.es['projects.final.collab'] = 'Colaborar';
-
-  // Services page
-  strings.en['services.hero.eyebrow'] = 'System Capabilities';
-  strings.en['services.hero.title'] = 'What I build and how I build it';
-  strings.en['services.hero.sub'] = 'Evidence from live projects: auth/RBAC in CmLayerBank, pipelines in CmLayer, reproducible docs.';
-  strings.en['services.hero.cta1'] = 'Start a Project';
-  strings.en['services.hero.cta2'] = 'See deliverables';
-  strings.en['services.position.eyebrow'] = 'Services Positioning';
-  strings.en['services.position.title'] = 'Engineering Services in Progress';
-  strings.en['services.position.desc'] = 'Structured services backed by active projects: auth/roles, CI/CD, documentation, and reproducible deployment.';
-  strings.en['services.domains.eyebrow'] = 'Service Domains';
-  strings.en['services.domains.title'] = 'Aligned with Projects';
-  strings.en['services.domains.software.title'] = 'Software Development';
-  strings.en['services.domains.software.desc'] = 'Backends, frontends, and APIs with modular architecture, tests, and CI/CD (e.g., CmLayer pipeline).';
-  strings.en['services.domains.software.how'] = 'How I work: clean architecture and reproducibility over speed.';
-  strings.en['services.domains.cyber.title'] = 'Cybersecurity Foundations';
-  strings.en['services.domains.cyber.desc'] = 'Integrated security: identity, roles, audit, and environment separation.';
-  strings.en['services.domains.cyber.how'] = 'How I work: prevention by design, not as a patch.';
-  strings.en['services.domains.ai.title'] = 'Generative AI & Automation';
-  strings.en['services.domains.ai.desc'] = 'AI as a support layer: automation, technical docs, and assistants.';
-  strings.en['services.domains.ai.how'] = 'How I work: explainable AI with controls.';
-  strings.en['services.models.eyebrow'] = 'Service Models';
-  strings.en['services.models.title'] = 'How I work with others';
-  strings.en['services.models.learning.title'] = 'Learning-Based Projects';
-  strings.en['services.models.learning.desc'] = 'For academic teams, startups, and individuals who want to build while learning.';
-  strings.en['services.models.learning.best'] = 'Best for: students, early-stage ideas, prototypes.';
-  strings.en['services.models.proto.title'] = 'System Prototyping';
-  strings.en['services.models.proto.desc'] = 'Structured development of functional systems to validate architecture, workflows, and UX.';
-  strings.en['services.models.proto.best'] = 'Best for: MVPs and technical validation.';
-  strings.en['services.models.support.title'] = 'Technical Support & Improvement';
-  strings.en['services.models.support.desc'] = 'Helping existing systems become cleaner, safer, and more structured.';
-  strings.en['services.models.support.best'] = 'Best for: refactoring, documentation, system reviews.';
-  strings.en['services.delivery.eyebrow'] = 'Delivery Framework';
-  strings.en['services.delivery.title'] = 'Deliverables';
-  strings.en['services.delivery.discover.title'] = 'Problem';
-  strings.en['services.delivery.discover.desc'] = 'Scope and success criteria defined.';
-  strings.en['services.delivery.design.title'] = 'Architecture';
-  strings.en['services.delivery.design.desc'] = 'Diagram and recorded decisions.';
-  strings.en['services.delivery.build.title'] = 'Build';
-  strings.en['services.delivery.build.desc'] = 'Structured repo + basic tests.';
-  strings.en['services.delivery.review.title'] = 'Delivery';
-  strings.en['services.delivery.review.desc'] = 'Quick docs, scripts for reproducible deploy.';
-  strings.en['services.delivery.evolve.title'] = 'Improve';
-  strings.en['services.delivery.evolve.desc'] = 'Retro + backlog + hardening.';
-  strings.en['services.tech.eyebrow'] = 'Technology Scope';
-  strings.en['services.tech.title'] = 'Tools and platforms I work with';
-  strings.en['services.tech.lang.title'] = 'Languages';
-  strings.en['services.tech.lang.desc'] = 'Python · JavaScript · TypeScript · Java · C# · SQL';
-  strings.en['services.tech.tools.title'] = 'Platforms & Tools';
-  strings.en['services.tech.tools.desc'] = 'GitHub · VS Code · Docker · Linux · Cloud · API Testing · Databases · AI Tools';
-  strings.en['services.transparency.eyebrow'] = 'Transparency';
-  strings.en['services.transparency.title'] = 'My current level';
-  strings.en['services.transparency.desc'] = 'I work as a junior engineer with a structured, growth-oriented mindset. Projects follow professional standards, documentation, and architectural thinking, even while solutions evolve.';
-  strings.en['services.transparency.expect'] = 'Expect: Clear communication · Documented systems · Learning-driven improvement · Long-term technical vision.';
-  strings.en['services.use.eyebrow'] = 'Use Cases';
-  strings.en['services.use.title'] = 'Where these services fit';
-  strings.en['services.use.academic.title'] = 'Academic Systems';
-  strings.en['services.use.academic.desc'] = 'Student platforms, CRUD systems, APIs, architecture-based projects.';
-  strings.en['services.use.business.title'] = 'Business Platforms';
-  strings.en['services.use.business.desc'] = 'Web systems, internal tools, service-based digital platforms.';
-  strings.en['services.use.ai.title'] = 'AI-Assisted Tools';
-  strings.en['services.use.ai.desc'] = 'Automation scripts, learning copilots, smart interfaces.';
-  strings.en['services.growth.eyebrow'] = 'Growth Roadmap';
-  strings.en['services.growth.title'] = 'How services will evolve';
-  strings.en['services.growth.item1'] = 'Advanced security architecture';
-  strings.en['services.growth.item2'] = 'Cloud-native deployments';
-  strings.en['services.growth.item3'] = 'AI-driven system intelligence';
-  strings.en['services.growth.item4'] = 'Performance and scalability optimization';
-  strings.en['services.growth.desc'] = 'Roadmap reflects ongoing engineering development and future service expansion.';
-  strings.en['services.final.eyebrow'] = 'Call to Action';
-  strings.en['services.final.title'] = 'Build, learn, and improve together';
-  strings.en['services.final.sub'] = 'Whether it’s a prototype, academic system, or growing platform, CmLayer services evolve with the systems and the people behind them.';
-  strings.en['services.final.contact'] = 'Contact';
-  strings.en['services.final.collab'] = 'Collaborate';
-  strings.en['services.final.start'] = 'Start a Project';
-
-  strings.es['services.hero.eyebrow'] = 'System Capabilities';
-  strings.es['services.hero.title'] = 'Qué construyo y cómo lo construyo';
-  strings.es['services.hero.sub'] = 'Evidencia desde proyectos activos: auth/RBAC en CmLayerBank, pipelines en CmLayer, docs reproducibles.';
-  strings.es['services.hero.cta1'] = 'Iniciar un proyecto';
-  strings.es['services.hero.cta2'] = 'Ver entregables';
-  strings.es['services.position.eyebrow'] = 'Posicionamiento de servicios';
-  strings.es['services.position.title'] = 'Servicios de ingeniería en progreso';
-  strings.es['services.position.desc'] = 'Servicios respaldados por proyectos activos: auth/roles, CI/CD, documentación y despliegue reproducible.';
-  strings.es['services.domains.eyebrow'] = 'Dominios de servicio';
-  strings.es['services.domains.title'] = 'Alineados con Projects';
-  strings.es['services.domains.software.title'] = 'Desarrollo de software';
-  strings.es['services.domains.software.desc'] = 'Backends, frontends y APIs con arquitectura modular, tests y CI/CD (ej: pipeline de CmLayer).';
-  strings.es['services.domains.software.how'] = 'Cómo trabajo: arquitectura limpia y reproducibilidad sobre velocidad.';
-  strings.es['services.domains.cyber.title'] = 'Fundamentos de ciberseguridad';
-  strings.es['services.domains.cyber.desc'] = 'Seguridad integrada: identidad, roles, auditoría y separación de entornos.';
-  strings.es['services.domains.cyber.how'] = 'Cómo trabajo: prevención desde el diseño, no como parche.';
-  strings.es['services.domains.ai.title'] = 'IA generativa y automatización';
-  strings.es['services.domains.ai.desc'] = 'IA como capa de apoyo: automatización, documentación técnica y asistentes.';
-  strings.es['services.domains.ai.how'] = 'Cómo trabajo: IA explicable y con controles.';
-  strings.es['services.models.eyebrow'] = 'Modelos de servicio';
-  strings.es['services.models.title'] = 'Cómo trabajo con otros';
-  strings.es['services.models.learning.title'] = 'Proyectos basados en aprendizaje';
-  strings.es['services.models.learning.desc'] = 'Para equipos académicos, startups e individuos que quieren construir mientras aprenden.';
-  strings.es['services.models.learning.best'] = 'Ideal para: estudiantes, ideas tempranas, prototipos.';
-  strings.es['services.models.proto.title'] = 'Prototipado de sistemas';
-  strings.es['services.models.proto.desc'] = 'Desarrollo estructurado de sistemas funcionales para validar arquitectura, flujos y UX.';
-  strings.es['services.models.proto.best'] = 'Ideal para: MVP y validación técnica.';
-  strings.es['services.models.support.title'] = 'Soporte técnico y mejora';
-  strings.es['services.models.support.desc'] = 'Ayudar a que sistemas existentes sean más limpios, seguros y estructurados.';
-  strings.es['services.models.support.best'] = 'Ideal para: refactor, documentación, revisiones de sistema.';
-  strings.es['services.delivery.eyebrow'] = 'Marco de entrega';
-  strings.es['services.delivery.title'] = 'Entregables';
-  strings.es['services.delivery.discover.title'] = 'Problema';
-  strings.es['services.delivery.discover.desc'] = 'Alcance y criterios de éxito definidos.';
-  strings.es['services.delivery.design.title'] = 'Arquitectura';
-  strings.es['services.delivery.design.desc'] = 'Diagrama y decisiones registradas.';
-  strings.es['services.delivery.build.title'] = 'Build';
-  strings.es['services.delivery.build.desc'] = 'Repo estructurado + tests básicos.';
-  strings.es['services.delivery.review.title'] = 'Entrega';
-  strings.es['services.delivery.review.desc'] = 'Docs rápidas, scripts de deploy reproducible.';
-  strings.es['services.delivery.evolve.title'] = 'Mejora';
-  strings.es['services.delivery.evolve.desc'] = 'Retro + backlog + hardening.';
-  strings.es['services.tech.eyebrow'] = 'Alcance tecnológico';
-  strings.es['services.tech.title'] = 'Herramientas y plataformas con las que trabajo';
-  strings.es['services.tech.lang.title'] = 'Lenguajes';
-  strings.es['services.tech.lang.desc'] = 'Python · JavaScript · TypeScript · Java · C# · SQL';
-  strings.es['services.tech.tools.title'] = 'Plataformas y herramientas';
-  strings.es['services.tech.tools.desc'] = 'GitHub · VS Code · Docker · Linux · Cloud · Tests de API · Bases de datos · Herramientas de IA';
-  strings.es['services.transparency.eyebrow'] = 'Transparencia';
-  strings.es['services.transparency.title'] = 'Mi nivel actual';
-  strings.es['services.transparency.desc'] = 'Trabajo como ingeniero junior con mentalidad de crecimiento estructurado. Los proyectos siguen estándares profesionales, documentación y pensamiento arquitectónico, incluso mientras evolucionan.';
-  strings.es['services.transparency.expect'] = 'Espera: Comunicación clara · Sistemas documentados · Mejora basada en aprendizaje · Visión técnica a largo plazo.';
-  strings.es['services.use.eyebrow'] = 'Casos de uso';
-  strings.es['services.use.title'] = 'Dónde encajan estos servicios';
-  strings.es['services.use.academic.title'] = 'Sistemas académicos';
-  strings.es['services.use.academic.desc'] = 'Plataformas estudiantiles, CRUD, APIs y proyectos basados en arquitectura.';
-  strings.es['services.use.business.title'] = 'Plataformas de negocio';
-  strings.es['services.use.business.desc'] = 'Sistemas web, herramientas internas y plataformas de servicios digitales.';
-  strings.es['services.use.ai.title'] = 'Herramientas asistidas por IA';
-  strings.es['services.use.ai.desc'] = 'Scripts de automatización, copilotos de aprendizaje, interfaces inteligentes.';
-  strings.es['services.growth.eyebrow'] = 'Hoja de ruta de crecimiento';
-  strings.es['services.growth.title'] = 'Cómo evolucionarán los servicios';
-  strings.es['services.growth.item1'] = 'Arquitectura de seguridad avanzada';
-  strings.es['services.growth.item2'] = 'Despliegues cloud-native';
-  strings.es['services.growth.item3'] = 'Inteligencia de sistema impulsada por IA';
-  strings.es['services.growth.item4'] = 'Optimización de performance y escalabilidad';
-  strings.es['services.growth.desc'] = 'La hoja de ruta refleja el desarrollo de ingeniería en curso y la expansión futura de servicios.';
-  strings.es['services.final.eyebrow'] = 'Llamado a la acción';
-  strings.es['services.final.title'] = 'Construir, aprender y mejorar juntos';
-  strings.es['services.final.sub'] = 'Sea prototipo, sistema académico o plataforma en crecimiento, los servicios CmLayer evolucionan con los sistemas y las personas detrás de ellos.';
-  strings.es['services.final.contact'] = 'Contacto';
-  strings.es['services.final.collab'] = 'Colaborar';
-  strings.es['services.final.start'] = 'Iniciar un proyecto';
-
-  // Knowledge Hub
-  strings.en['kh.hero.eyebrow'] = 'CmLayer — Knowledge Hub';
-  strings.en['kh.hero.title'] = 'Explore what I study, read, and apply to real systems.';
-  strings.en['kh.hero.sub'] = 'Learn in public · Curated knowledge · Engineering mindset';
-  strings.en['kh.hero.cta1'] = 'Study Guides';
-  strings.en['kh.hero.cta2'] = 'Videos';
-  strings.en['kh.hero.cta3'] = 'Courses';
-  strings.en['kh.hero.cta4'] = 'News';
-  strings.en['kh.library.eyebrow'] = 'Study Guide Library';
-  strings.en['kh.library.title'] = 'Visual library of PDFs';
-  strings.en['kh.library.desc'] = 'All PDFs in one place. Each item includes a cover, summary, my comment, and a link to related projects. If it has no cover, it doesn’t get published.';
-  strings.en['kh.library.latest'] = 'Latest uploads';
-  strings.en['kh.library.explore'] = 'Explore';
-  strings.en['kh.library.card1.title'] = 'Study Path';
-  strings.en['kh.library.card1.cat'] = 'Category: Software';
-  strings.en['kh.library.card2.title'] = 'SQL Fundamentals Guide';
-  strings.en['kh.library.card2.cat'] = 'Category: Software';
-  strings.en['kh.library.card3.title'] = 'Python Quick Guide';
-  strings.en['kh.library.card3.cat'] = 'Category: Software';
-  strings.en['kh.library.card4.title'] = 'JavaScript Quick Guide';
-  strings.en['kh.library.card4.cat'] = 'Category: Software';
-  strings.en['kh.library.card5.title'] = 'Bash/Shell Quick Guide';
-  strings.en['kh.library.card5.cat'] = 'Category: Security';
-  strings.en['kh.library.card6.title'] = '200 Programming Terms';
-  strings.en['kh.library.card6.cat'] = 'Category: Software';
-  strings.en['kh.library.card7.title'] = 'Java Quick Guide';
-  strings.en['kh.library.card7.cat'] = 'Category: Software';
-  strings.en['kh.library.card8.title'] = 'Markdown Quick Guide';
-  strings.en['kh.library.card8.cat'] = 'Category: Software · Docs';
-  strings.en['kh.position.eyebrow'] = 'Positioning';
-  strings.en['kh.position.title'] = 'A public space for learning';
-  strings.en['kh.position.desc1'] = 'This hub documents what I study, watch, read, and reflect on while growing in software development, cybersecurity, and generative AI.';
-  strings.en['kh.position.desc2'] = 'It isn’t a library of final answers— it’s a record of continuous learning, curation, and applied thinking.';
-  strings.en['kh.position.principle'] = 'Principle: Knowledge grows when it is shared, questioned, and documented.';
-  strings.en['kh.weekly.eyebrow'] = 'Weekly Knowledge';
-  strings.en['kh.weekly.title'] = 'New material every week or biweekly';
-  strings.en['kh.weekly.video'] = '📺 Featured Video';
-  strings.en['kh.weekly.video.desc'] = 'Talks or tutorials on software, security, or AI.';
-  strings.en['kh.weekly.pdf'] = '📄 PDF Insight';
-  strings.en['kh.weekly.pdf.desc'] = 'Study guide, book chapter, or technical reference.';
-  strings.en['kh.weekly.course'] = '🔗 Course Link';
-  strings.en['kh.weekly.course.desc'] = 'Free or time-limited courses on trusted platforms.';
-  strings.en['kh.weekly.note'] = '🧠 Personal Note';
-  strings.en['kh.weekly.note.desc'] = 'Reflection and practical application.';
-  strings.en['kh.video.eyebrow'] = 'Featured Video';
-  strings.en['kh.video.title'] = 'Engineering talks & learning sessions';
-  strings.en['kh.video.template.title'] = 'Template';
-  strings.en['kh.video.template.desc'] = 'Title · Source · Topic · Why I chose it · Key points · My comment (connection to projects).';
-  strings.en['kh.videos.ai.title'] = 'AI in Modern Development';
-  strings.en['kh.videos.ai.desc'] = 'YouTube · Software · Why: AI as coding assistant, automation, docs & reviews.';
-  strings.en['kh.videos.sec.title'] = 'Security in the Age of AI';
-  strings.en['kh.videos.sec.desc'] = 'YouTube · Security · Why: identity, access, Zero Trust, AI in defense.';
-  strings.en['kh.videos.course1.title'] = 'Generative AI (Udemy)';
-  strings.en['kh.videos.course1.desc'] = 'LLMs, prompts, and practical automation/assistance cases.';
-  strings.en['kh.videos.course2.title'] = 'Complete Python 3 Course';
-  strings.en['kh.videos.course2.desc'] = 'Fundamentals, data structures, functions, basic automation.';
-  strings.en['kh.videos.view'] = 'View';
-  strings.en['kh.pdf.eyebrow'] = 'PDF & Book Series';
-  strings.en['kh.pdf.title'] = '12-book learning cycle (in progress)';
-  strings.en['kh.pdf.entry.title'] = 'Study Guide — Recommended learning path (MoureDev Pro)';
-  strings.en['kh.pdf.entry.focus'] = 'Focus: programming mindset, CLI, OOP, Git, databases, backend fundamentals.';
-  strings.en['kh.pdf.entry.summary'] = 'Summary: Structured roadmap from fundamentals to backend and community-driven growth.';
-  strings.en['kh.pdf.entry.comment'] = 'My comment: Structured progression beats random tool adoption; aligns with systems-first thinking.';
-  strings.en['kh.courses.eyebrow'] = 'Free Courses';
-  strings.en['kh.courses.title'] = 'Curated learning opportunities';
-  strings.en['kh.courses.platforms'] = 'Platforms';
-  strings.en['kh.courses.platforms.desc'] = 'Udemy · Coursera · edX · FreeCodeCamp · Official academies';
-  strings.en['kh.courses.template.title'] = 'Entry template';
-  strings.en['kh.courses.template.desc'] = 'Name · Platform · Level (Beginner/Intermediate/Advanced) · Why valuable · Recommendation.';
-  strings.en['kh.news.eyebrow'] = 'News & Updates';
-  strings.en['kh.news.title'] = 'Monthly tech brief';
-  strings.en['kh.news.item1.title'] = 'January 2026 — AI embedded in development environments';
-  strings.en['kh.news.item1.desc'] = 'Reflection: “AI shifts from feature to workflow layer.”';
-  strings.en['kh.news.item2.title'] = 'January 2026 — Zero Trust as modern standard';
-  strings.en['kh.news.item2.desc'] = 'Reflection: “Authentication, traceability, and control by design.”';
-  strings.en['kh.news.item3.title'] = 'January 2026 — DX as key metric';
-  strings.en['kh.news.item3.desc'] = 'Reflection: “Clean structure and docs rival speed.”';
-  strings.en['kh.reflection.eyebrow'] = 'Reflection Zone';
-  strings.en['kh.reflection.title'] = 'My learning notes';
-  strings.en['kh.reflection.desc'] = 'A journal of what I learned, what challenged me, and what I’ll explore next.';
-  strings.en['kh.reflection.template'] = 'Template: What I studied · What I understood · What still confuses me · How I’ll apply it.';
-  strings.en['kh.filters.eyebrow'] = 'Categories';
-  strings.en['kh.filters.title'] = 'Explore by domain';
-  strings.en['kh.filters.cat.software'] = 'Software Engineering';
-  strings.en['kh.filters.cat.security'] = 'Cybersecurity';
-  strings.en['kh.filters.cat.ai'] = 'Generative AI';
-  strings.en['kh.filters.cat.arch'] = 'Systems Architecture';
-  strings.en['kh.filters.cat.learning'] = 'Learning Methods';
-  strings.en['kh.filters.cat.tools'] = 'Tools & Platforms';
-  strings.en['kh.contrib.eyebrow'] = 'Contribution & Community';
-  strings.en['kh.contrib.title'] = 'Share knowledge, not just links';
-  strings.en['kh.contrib.desc'] = 'Visitors can suggest videos, articles, courses, or topics to explore. This hub grows through curiosity, collaboration, and constant learning.';
-  strings.en['kh.roadmap.eyebrow'] = 'Growth Line';
-  strings.en['kh.roadmap.title'] = 'Learning roadmap (public view)';
-  strings.en['kh.roadmap.item1'] = 'Systems architecture fundamentals';
-  strings.en['kh.roadmap.item2'] = 'Secure design practices';
-  strings.en['kh.roadmap.item3'] = 'AI-assisted development flows';
-  strings.en['kh.roadmap.item4'] = 'Cloud-native platforms';
-  strings.en['kh.roadmap.item5'] = 'Performance and scalability engineering';
-  strings.en['kh.roadmap.desc'] = 'This line shows where I’m headed, not just where I am.';
-  strings.en['kh.final.eyebrow'] = 'Final CTA';
-  strings.en['kh.final.title'] = 'Learn in public. Build with purpose. Share what matters.';
-  strings.en['kh.final.sub'] = 'This hub is a living engineering notebook: study, curate, apply, and connect to real projects.';
-  strings.en['kh.final.cta1'] = 'Subscribe';
-  strings.en['kh.final.cta2'] = 'Follow progress';
-  strings.en['kh.final.cta3'] = 'Connect';
-  strings.en['kh.final.invite'] = 'What would you like to see here? Suggest topics, videos, books, or courses. Your curiosity shapes this space.';
-  strings.en['kh.sprints.eyebrow'] = 'Learning Sprints';
-  strings.en['kh.sprints.title'] = 'Strategic 12-book cycle';
-  strings.en['kh.sprints.item1'] = 'Upload PDF / Book';
-  strings.en['kh.sprints.item2'] = 'Create structured summary';
-  strings.en['kh.sprints.item3'] = 'Add “My Comment”';
-  strings.en['kh.sprints.item4'] = 'Link to a related Project';
-  strings.en['kh.sprints.item5'] = 'Publish as Learning Sprint #X';
-  strings.en['kh.sprints.desc'] = 'Connects theory, reflection, and real system building between Knowledge Hub and Projects.';
-
-  strings.es['kh.hero.eyebrow'] = 'CmLayer — Knowledge Hub';
-  strings.es['kh.hero.title'] = 'Explora lo que estudio, leo y aplico en sistemas reales.';
-  strings.es['kh.hero.sub'] = 'Aprender en público · Conocimiento curado · Mentalidad de ingeniería';
-  strings.es['kh.hero.cta1'] = 'Guías de estudio';
-  strings.es['kh.hero.cta2'] = 'Videos';
-  strings.es['kh.hero.cta3'] = 'Cursos';
-  strings.es['kh.hero.cta4'] = 'Noticias';
-  strings.es['kh.library.eyebrow'] = 'Biblioteca de guías';
-  strings.es['kh.library.title'] = 'Librería visual de PDFs';
-  strings.es['kh.library.desc'] = 'Todos los PDFs en un solo lugar. Cada item incluye portada, resumen, mi comentario y enlace a proyectos. Sin portada, no se publica.';
-  strings.es['kh.library.latest'] = 'Últimas subidas';
-  strings.es['kh.library.explore'] = 'Explorar';
-  strings.es['kh.library.card1.title'] = 'Ruta de Estudio';
-  strings.es['kh.library.card1.cat'] = 'Categoría: Software';
-  strings.es['kh.library.card2.title'] = 'Guía de Fundamentos de SQL';
-  strings.es['kh.library.card2.cat'] = 'Categoría: Software';
-  strings.es['kh.library.card3.title'] = 'Guía Rápida de Python';
-  strings.es['kh.library.card3.cat'] = 'Categoría: Software';
-  strings.es['kh.library.card4.title'] = 'Guía Rápida de JavaScript';
-  strings.es['kh.library.card4.cat'] = 'Categoría: Software';
-  strings.es['kh.library.card5.title'] = 'Guía Rápida Bash/Shell';
-  strings.es['kh.library.card5.cat'] = 'Categoría: Seguridad';
-  strings.es['kh.library.card6.title'] = '200 Términos de Programación';
-  strings.es['kh.library.card6.cat'] = 'Categoría: Software';
-  strings.es['kh.library.card7.title'] = 'Guía Rápida de Java';
-  strings.es['kh.library.card7.cat'] = 'Categoría: Software';
-  strings.es['kh.library.card8.title'] = 'Guía Rápida de Markdown';
-  strings.es['kh.library.card8.cat'] = 'Categoría: Software · Docs';
-  strings.es['kh.position.eyebrow'] = 'Posicionamiento';
-  strings.es['kh.position.title'] = 'Un espacio público de aprendizaje';
-  strings.es['kh.position.desc1'] = 'Este hub documenta lo que estudio, veo, leo y reflexiono mientras crezco en software, ciberseguridad e IA generativa.';
-  strings.es['kh.position.desc2'] = 'No es una biblioteca de respuestas finales: es un registro de aprendizaje continuo, curaduría y pensamiento aplicado.';
-  strings.es['kh.position.principle'] = 'Principio: el conocimiento crece cuando se comparte, se cuestiona y se documenta.';
-  strings.es['kh.weekly.eyebrow'] = 'Publicaciones semanales';
-  strings.es['kh.weekly.title'] = 'Material nuevo semanal o quincenal';
-  strings.es['kh.weekly.video'] = '📺 Video Destacado';
-  strings.es['kh.weekly.video.desc'] = 'Charlas o tutoriales de software, seguridad o IA.';
-  strings.es['kh.weekly.pdf'] = '📄 PDF Insight';
-  strings.es['kh.weekly.pdf.desc'] = 'Guía de estudio, capítulo de libro o referencia técnica.';
-  strings.es['kh.weekly.course'] = '🔗 Enlace a Curso';
-  strings.es['kh.weekly.course.desc'] = 'Cursos gratuitos o de tiempo limitado en plataformas confiables.';
-  strings.es['kh.weekly.note'] = '🧠 Comentario Personal';
-  strings.es['kh.weekly.note.desc'] = 'Reflexión y aplicación práctica.';
-  strings.es['kh.video.eyebrow'] = 'Video destacado';
-  strings.es['kh.video.title'] = 'Charlas de ingeniería y sesiones de aprendizaje';
-  strings.es['kh.video.template.title'] = 'Plantilla';
-  strings.es['kh.video.template.desc'] = 'Título · Fuente · Tema · Por qué lo elegí · Puntos clave · Mi comentario (conexión con proyectos).';
-  strings.es['kh.videos.ai.title'] = 'IA en el desarrollo moderno';
-  strings.es['kh.videos.ai.desc'] = 'YouTube · Software · Por qué: IA como asistente de código, automatización, docs y revisiones.';
-  strings.es['kh.videos.sec.title'] = 'Seguridad en la era de la IA';
-  strings.es['kh.videos.sec.desc'] = 'YouTube · Seguridad · Por qué: identidad, acceso, Zero Trust, IA en defensa.';
-  strings.es['kh.videos.course1.title'] = 'IA Generativa (Udemy)';
-  strings.es['kh.videos.course1.desc'] = 'LLMs, prompts y casos prácticos de automatización y asistencia.';
-  strings.es['kh.videos.course2.title'] = 'Curso Completo de Python 3';
-  strings.es['kh.videos.course2.desc'] = 'Fundamentos, estructuras de datos, funciones, automatización básica.';
-  strings.es['kh.videos.view'] = 'Ver';
-  strings.es['kh.pdf.eyebrow'] = 'Serie de PDFs y libros';
-  strings.es['kh.pdf.title'] = 'Ciclo de 12 libros (en progreso)';
-  strings.es['kh.pdf.entry.title'] = 'Guía de estudio — Ruta recomendada (MoureDev Pro)';
-  strings.es['kh.pdf.entry.focus'] = 'Enfoque: mentalidad de programación, CLI, POO, Git, bases de datos, backend.';
-  strings.es['kh.pdf.entry.summary'] = 'Resumen: roadmap estructurado desde fundamentos hasta backend y crecimiento en comunidad.';
-  strings.es['kh.pdf.entry.comment'] = 'Mi comentario: la progresión estructurada supera la adopción aleatoria; se alinea con pensar en sistemas.';
-  strings.es['kh.courses.eyebrow'] = 'Cursos gratuitos';
-  strings.es['kh.courses.title'] = 'Oportunidades de aprendizaje curadas';
-  strings.es['kh.courses.platforms'] = 'Plataformas';
-  strings.es['kh.courses.platforms.desc'] = 'Udemy · Coursera · edX · FreeCodeCamp · Academias oficiales';
-  strings.es['kh.courses.template.title'] = 'Plantilla de entrada';
-  strings.es['kh.courses.template.desc'] = 'Nombre · Plataforma · Nivel (Principiante/Intermedio/Avanzado) · Por qué es valioso · Recomendación.';
-  strings.es['kh.news.eyebrow'] = 'Noticias y actualizaciones';
-  strings.es['kh.news.title'] = 'Resumen tecnológico mensual';
-  strings.es['kh.news.item1.title'] = 'Enero 2026 — IA integrada en entornos de desarrollo';
-  strings.es['kh.news.item1.desc'] = 'Reflexión: “La IA pasa de feature a capa de flujo de trabajo.”';
-  strings.es['kh.news.item2.title'] = 'Enero 2026 — Zero Trust como estándar moderno';
-  strings.es['kh.news.item2.desc'] = 'Reflexión: “Autenticación, trazabilidad y control desde el diseño.”';
-  strings.es['kh.news.item3.title'] = 'Enero 2026 — DX como métrica clave';
-  strings.es['kh.news.item3.desc'] = 'Reflexión: “Estructura limpia y documentación compiten con la velocidad.”';
-  strings.es['kh.reflection.eyebrow'] = 'Zona de reflexión';
-  strings.es['kh.reflection.title'] = 'Mis notas de aprendizaje';
-  strings.es['kh.reflection.desc'] = 'Diario de lo aprendido, retos y próximos pasos.';
-  strings.es['kh.reflection.template'] = 'Plantilla: Qué estudié · Qué entendí · Qué me confunde · Cómo lo aplicaré.';
-  strings.es['kh.filters.eyebrow'] = 'Categorías';
-  strings.es['kh.filters.title'] = 'Explorar por dominio';
-  strings.es['kh.filters.cat.software'] = 'Ingeniería de Software';
-  strings.es['kh.filters.cat.security'] = 'Ciberseguridad';
-  strings.es['kh.filters.cat.ai'] = 'IA Generativa';
-  strings.es['kh.filters.cat.arch'] = 'Arquitectura de Sistemas';
-  strings.es['kh.filters.cat.learning'] = 'Métodos de Aprendizaje';
-  strings.es['kh.filters.cat.tools'] = 'Herramientas y Plataformas';
-  strings.es['kh.contrib.eyebrow'] = 'Contribución y comunidad';
-  strings.es['kh.contrib.title'] = 'Comparte conocimiento, no solo enlaces';
-  strings.es['kh.contrib.desc'] = 'Los visitantes pueden sugerir videos, artículos, cursos o temas. Este hub crece con curiosidad y colaboración.';
-  strings.es['kh.roadmap.eyebrow'] = 'Línea de crecimiento';
-  strings.es['kh.roadmap.title'] = 'Hoja de ruta de aprendizaje (vista pública)';
-  strings.es['kh.roadmap.item1'] = 'Fundamentos de arquitectura de sistemas';
-  strings.es['kh.roadmap.item2'] = 'Prácticas de diseño seguro';
-  strings.es['kh.roadmap.item3'] = 'Flujos de desarrollo asistidos por IA';
-  strings.es['kh.roadmap.item4'] = 'Plataformas cloud nativas';
-  strings.es['kh.roadmap.item5'] = 'Ingeniería de rendimiento y escalabilidad';
-  strings.es['kh.roadmap.desc'] = 'Muestra hacia dónde voy, no solo dónde estoy.';
-  strings.es['kh.final.eyebrow'] = 'CTA final';
-  strings.es['kh.final.title'] = 'Aprender en público. Construir con propósito. Compartir lo que importa.';
-  strings.es['kh.final.sub'] = 'Hub como cuaderno vivo: estudiar, curar, aplicar y conectar con proyectos reales.';
-  strings.es['kh.final.cta1'] = 'Suscribirse';
-  strings.es['kh.final.cta2'] = 'Seguir progreso';
-  strings.es['kh.final.cta3'] = 'Conectar';
-  strings.es['kh.final.invite'] = '¿Qué te gustaría ver aquí? Sugiere temas, videos, libros o cursos. Tu curiosidad da forma a este espacio.';
-  strings.es['kh.sprints.eyebrow'] = 'Sprints de aprendizaje';
-  strings.es['kh.sprints.title'] = 'Ciclo estratégico de 12 libros';
-  strings.es['kh.sprints.item1'] = 'Subir PDF / Libro';
-  strings.es['kh.sprints.item2'] = 'Crear resumen estructurado';
-  strings.es['kh.sprints.item3'] = 'Agregar “Mi comentario”';
-  strings.es['kh.sprints.item4'] = 'Conectar con un Proyecto';
-  strings.es['kh.sprints.item5'] = 'Publicar como Sprint de aprendizaje #X';
-  strings.es['kh.sprints.desc'] = 'Conecta teoría, reflexión y construcción real entre Knowledge Hub y Projects.';
-
-  // Voices & Experiences
-  strings.en['ve.hero.eyebrow'] = 'CmLayer — Voices & Experiences';
-  strings.en['ve.hero.title'] = 'Reflections · Collaboration · Learning in Public';
-  strings.en['ve.hero.sub'] = 'A space for feedback, shared learning, and real-world engineering stories.';
-  strings.en['ve.hero.cta1'] = 'My Voice';
-  strings.en['ve.hero.cta2'] = 'Share feedback';
-
-  strings.en['ve.pos.eyebrow'] = 'Voices from the Journey';
-  strings.en['ve.pos.title'] = 'What this section is';
-  strings.en['ve.pos.desc1'] = 'Reflections, feedback, and experiences from people who interact with my projects, learning process, and technical work — classmates, collaborators, mentors, early users.';
-  strings.en['ve.pos.principle'] = 'Principle: Every system teaches something. Every person leaves a trace.';
-  strings.en['ve.pos.note'] = 'No promises of “clients”; it promises learning, interaction, and real evolution.';
-
-  strings.en['ve.my.eyebrow'] = 'My Voice';
-  strings.en['ve.my.title'] = 'Engineering Journal';
-  strings.en['ve.my.desc'] = 'Short entries documenting challenges, design decisions, and lessons learned while building systems and learning in public.';
-  strings.en['ve.my.sample.title'] = 'Sample entry';
-  strings.en['ve.my.sample.context'] = 'Context: API refactor with authentication.';
-  strings.en['ve.my.sample.challenge'] = 'Challenge: Roles and scopes inconsistent.';
-  strings.en['ve.my.sample.decision'] = 'Decision: Move auth to middleware + claim unit tests.';
-  strings.en['ve.my.sample.result'] = 'Result: -30% 401/403 errors.';
-  strings.en['ve.my.sample.lesson'] = 'Lesson: Design access contracts before coding endpoints.';
-  strings.en['ve.my.template.label'] = 'Template for next entries:';
-  strings.en['ve.my.template.fields'] = 'Context · Challenge · Decision · Result · Lesson';
-
-  strings.en['ve.early.eyebrow'] = 'Early Voices';
-  strings.en['ve.early.title'] = 'Collaborators & classmates';
-  strings.en['ve.early.quote1'] = '“Reviewed his API project and liked how he organized layers and docs.”';
-  strings.en['ve.early.source1'] = '— Student, Programming II';
-  strings.en['ve.early.placeholder'] = 'Add new voices here as they come.';
-
-  strings.en['ve.stories.eyebrow'] = 'Project Stories';
-  strings.en['ve.stories.title'] = 'System experiences';
-  strings.en['ve.stories.s1.label'] = 'Layered architecture';
-  strings.en['ve.stories.s1.title'] = 'My first structured system';
-  strings.en['ve.stories.s1.desc'] = 'Going from console to API with domains, services, controllers forced clear boundaries.';
-  strings.en['ve.stories.s2.label'] = 'Security';
-  strings.en['ve.stories.s2.title'] = 'From CRUD to roles and access control';
-  strings.en['ve.stories.s2.desc'] = 'Adding roles and JWT changed how I design data and flows; security shapes the interface.';
-  strings.en['ve.stories.s3.label'] = 'DevOps';
-  strings.en['ve.stories.s3.title'] = 'What failed in my first cloud deploy';
-  strings.en['ve.stories.s3.desc'] = 'Env vars and healthchecks misconfigured; learned to watch logs and readiness probes.';
-
-  strings.en['ve.feedback.eyebrow'] = 'Feedback Loop';
-  strings.en['ve.feedback.title'] = 'Leave Your Voice';
-  strings.en['ve.feedback.desc'] = 'Share feedback or suggestions after viewing a project, guide, or system.';
-  strings.en['ve.feedback.side'] = 'Tell me what you saw/tested and what you think.';
-  strings.en['ve.feedback.name'] = 'Name (optional)';
-  strings.en['ve.feedback.context'] = 'Context';
-  strings.en['ve.feedback.comment'] = 'Comment';
-  strings.en['ve.feedback.submit'] = 'Send';
-
-  strings.en['ve.milestones.eyebrow'] = 'Milestones';
-  strings.en['ve.milestones.title'] = 'Personal milestones';
-  strings.en['ve.milestones.item1'] = 'First API published';
-  strings.en['ve.milestones.item2'] = 'First live domain';
-  strings.en['ve.milestones.item3'] = 'First Learning Sprint published';
-  strings.en['ve.milestones.item4'] = 'First external feedback received';
-
-  strings.en['ve.cta.eyebrow'] = 'CTA';
-  strings.en['ve.cta.title'] = 'Add Your Voice to the Journey';
-  strings.en['ve.cta.sub'] = 'Whether you tested a project, read a guide, or explored a system — your perspective helps shape what comes next.';
-  strings.en['ve.cta.btn1'] = 'Share Feedback';
-  strings.en['ve.cta.btn2'] = 'Collaborate';
-  strings.en['ve.cta.btn3'] = 'Connect';
-
-  strings.es['ve.hero.eyebrow'] = 'CmLayer — Voces y Experiencias';
-  strings.es['ve.hero.title'] = 'Reflexiones · Colaboración · Aprendizaje en público';
-  strings.es['ve.hero.sub'] = 'Un espacio para feedback, aprendizaje compartido e historias de ingeniería reales.';
-  strings.es['ve.hero.cta1'] = 'Mi voz';
-  strings.es['ve.hero.cta2'] = 'Compartir feedback';
-
-  strings.es['ve.pos.eyebrow'] = 'Voces del camino';
-  strings.es['ve.pos.title'] = 'Qué es esta sección';
-  strings.es['ve.pos.desc1'] = 'Reflexiones, feedback y experiencias de personas que interactúan con mis proyectos, el proceso de aprendizaje y el trabajo técnico: compañeros, colaboradores, mentores, early users.';
-  strings.es['ve.pos.principle'] = 'Principio: Cada sistema enseña algo. Cada persona deja una huella.';
-  strings.es['ve.pos.note'] = 'No se prometen “clientes”; se promete aprendizaje, interacción y evolución real.';
-
-  strings.es['ve.my.eyebrow'] = 'Mi voz';
-  strings.es['ve.my.title'] = 'Diario de ingeniería';
-  strings.es['ve.my.desc'] = 'Entradas cortas sobre retos, decisiones de diseño y lecciones aprendidas mientras construyo y aprendo en público.';
-  strings.es['ve.my.sample.title'] = 'Entrada de ejemplo';
-  strings.es['ve.my.sample.context'] = 'Contexto: Refactor de API con autenticación.';
-  strings.es['ve.my.sample.challenge'] = 'Reto: Roles y scopes inconsistentes.';
-  strings.es['ve.my.sample.decision'] = 'Decisión: Auth en middleware + pruebas unitarias de claims.';
-  strings.es['ve.my.sample.result'] = 'Resultado: -30% errores 401/403.';
-  strings.es['ve.my.sample.lesson'] = 'Lección: Diseñar contratos de acceso antes de codear endpoints.';
-  strings.es['ve.my.template.label'] = 'Formato para próximas entradas:';
-  strings.es['ve.my.template.fields'] = 'Contexto · Reto · Decisión · Resultado · Lección';
-
-  strings.es['ve.early.eyebrow'] = 'Voces tempranas';
-  strings.es['ve.early.title'] = 'Colaboradores y compañeros';
-  strings.es['ve.early.quote1'] = '“Revisé su proyecto de API y me gustó cómo organizó las capas y la documentación.”';
-  strings.es['ve.early.source1'] = '— Estudiante, Programación II';
-  strings.es['ve.early.placeholder'] = 'Agrega nuevas voces a medida que lleguen.';
-
-  strings.es['ve.stories.eyebrow'] = 'Historias de proyecto';
-  strings.es['ve.stories.title'] = 'Experiencias con sistemas';
-  strings.es['ve.stories.s1.label'] = 'Arquitectura en capas';
-  strings.es['ve.stories.s1.title'] = 'Mi primer sistema estructurado';
-  strings.es['ve.stories.s1.desc'] = 'Pasar de consola a API con dominios, servicios y controladores obligó a pensar en límites claros.';
-  strings.es['ve.stories.s2.label'] = 'Seguridad';
-  strings.es['ve.stories.s2.title'] = 'De CRUD a roles y control de acceso';
-  strings.es['ve.stories.s2.desc'] = 'Añadir roles y JWT cambió cómo diseño datos y flujos; la seguridad define la interfaz.';
-  strings.es['ve.stories.s3.label'] = 'DevOps';
-  strings.es['ve.stories.s3.title'] = 'Lo que falló en mi primer deploy cloud';
-  strings.es['ve.stories.s3.desc'] = 'Variables de entorno y healthchecks mal configurados; aprendí a observar logs y probar readiness.';
-
-  strings.es['ve.feedback.eyebrow'] = 'Bucle de feedback';
-  strings.es['ve.feedback.title'] = 'Deja tu voz';
-  strings.es['ve.feedback.desc'] = 'Comparte feedback o sugerencias después de ver un proyecto, guía o sistema.';
-  strings.es['ve.feedback.side'] = 'Cuéntame qué viste/probaste y qué piensas.';
-  strings.es['ve.feedback.name'] = 'Nombre (opcional)';
-  strings.es['ve.feedback.context'] = 'Contexto';
-  strings.es['ve.feedback.comment'] = 'Comentario';
-  strings.es['ve.feedback.submit'] = 'Enviar';
-
-  strings.es['ve.milestones.eyebrow'] = 'Hitos';
-  strings.es['ve.milestones.title'] = 'Experiencias personales';
-  strings.es['ve.milestones.item1'] = 'Primera API publicada';
-  strings.es['ve.milestones.item2'] = 'Primer dominio activo';
-  strings.es['ve.milestones.item3'] = 'Primer Learning Sprint publicado';
-  strings.es['ve.milestones.item4'] = 'Primer feedback externo recibido';
-
-  strings.es['ve.cta.eyebrow'] = 'CTA';
-  strings.es['ve.cta.title'] = 'Suma tu voz al camino';
-  strings.es['ve.cta.sub'] = 'Si probaste un proyecto, leíste una guía o exploraste un sistema, tu perspectiva ayuda a definir lo que sigue.';
-  strings.es['ve.cta.btn1'] = 'Compartir feedback';
-  strings.es['ve.cta.btn2'] = 'Colaborar';
-  strings.es['ve.cta.btn3'] = 'Conectar';
-
-  // About
-  strings.en['about.hero.eyebrow'] = 'CmLayer — About';
-  strings.en['about.hero.title'] = 'Persona · Platform · Purpose';
-  strings.en['about.hero.sub'] = 'Where personal trajectory and tech vision become a learning and system-building ecosystem.';
-  strings.en['about.hero.cta1'] = 'View CV';
-  strings.en['about.hero.cta2'] = 'Explore Projects';
-  strings.en['about.hero.cta3'] = 'Meet CmLayer';
-
-  strings.en['about.who.eyebrow'] = 'Who I am';
-  strings.en['about.who.title'] = 'Professional profile';
-  strings.en['about.who.name'] = 'Luis Emilio Cedano Martínez';
-  strings.en['about.who.subtitle'] = 'Software Development Student | Engineer in training | Learning in public';
-  strings.en['about.who.desc'] = 'Software development student focused on system architecture, digital security, and AI automation. I build real projects as my learning method and document each step to turn experience into reusable knowledge.';
-  strings.en['about.who.focus1'] = 'Design and development of software systems';
-  strings.en['about.who.focus2'] = 'Foundations of applied cybersecurity';
-  strings.en['about.who.focus3'] = 'Integration of generative AI';
-  strings.en['about.who.focus4'] = 'Technical documentation and structured learning';
-
-  strings.en['about.traj.eyebrow'] = 'Trajectory & Achievements';
-  strings.en['about.traj.title'] = 'Academic and technical milestones';
-  strings.en['about.traj.academy.title'] = 'Academy';
-  strings.en['about.traj.academy.desc'] = 'Software Development student at ITLA.';
-  strings.en['about.traj.arch.title'] = 'Architecture';
-  strings.en['about.traj.arch.desc'] = 'Academic systems with layered architecture and APIs with persistence.';
-  strings.en['about.traj.domains.title'] = 'Live domains';
-  strings.en['about.traj.domains.desc'] = 'Learning and experimentation platforms online.';
-  strings.en['about.traj.kh.title'] = 'Knowledge Hub';
-  strings.en['about.traj.kh.desc'] = 'Public ecosystem of technical knowledge.';
-  strings.en['about.traj.personal.title'] = 'Personal achievements';
-  strings.en['about.traj.personal.desc'] = 'CmLayer as a learn-in-public space; projects integrating software, security, and AI; continuous documentation.';
-
-  strings.en['about.certs.eyebrow'] = 'Certifications & Training';
-  strings.en['about.certs.title'] = 'Technical formation';
-  strings.en['about.certs.item1'] = 'Object-Oriented Programming';
-  strings.en['about.certs.item2'] = 'Databases and SQL';
-  strings.en['about.certs.item3'] = 'Web Development and APIs';
-  strings.en['about.certs.item4'] = 'Version Control with Git & GitHub';
-  strings.en['about.certs.item5'] = 'Foundations of Cybersecurity';
-  strings.en['about.certs.item6'] = 'Intro to Generative AI';
-  strings.en['about.certs.note'] = 'Certificates and CV available for download.';
-  strings.en['about.certs.downloads'] = 'Downloads';
-  strings.en['about.certs.cv'] = 'CV (Spanish)';
-
-  strings.en['about.cv.eyebrow'] = 'CV — Professional profile';
-  strings.en['about.cv.title'] = 'Summary';
-  strings.en['about.cv.desc'] = 'Software development student focused on system design, security by design, and AI-driven automation. Committed to continuous learning, technical documentation, and structured solutions.';
-  strings.en['about.cv.skills.title'] = 'Skills';
-  strings.en['about.cv.skills.desc'] = 'Backend/Frontend · Architecture · Git/CI-CD basics · App security · Databases · Automation/AI.';
-  strings.en['about.cv.lang.title'] = 'Languages';
-  strings.en['about.cv.lang.desc'] = 'Spanish (Native) · English (Intermediate)';
-  strings.en['about.cv.cta1'] = 'Download CV';
-  strings.en['about.cv.cta2'] = 'View Technical Profile';
-
-  strings.en['about.cmlayer.eyebrow'] = 'What is CmLayer';
-  strings.en['about.cmlayer.title'] = 'Platform identity';
-  strings.en['about.cmlayer.desc.title'] = 'CmLayer: An engineering ecosystem in the making';
-  strings.en['about.cmlayer.desc.body'] = 'Tech and educational platform that unites learning, experimentation, and real systems. A public lab with modern engineering practices.';
-  strings.en['about.cmlayer.desc.purpose'] = 'Purpose: turn technical knowledge into functional systems and visible professional growth.';
-
-  strings.en['about.vision.eyebrow'] = 'Vision · Mission · Objectives';
-  strings.en['about.vision.title'] = 'Direction';
-  strings.en['about.vision.v.title'] = 'Vision';
-  strings.en['about.vision.v.body'] = 'Make CmLayer a reference digital ecosystem for learning, designing, and building secure, intelligent software systems.';
-  strings.en['about.vision.m.title'] = 'Mission';
-  strings.en['about.vision.m.body'] = 'Develop platforms, projects, and resources that merge software, security, and generative AI under learn-in-public and continuous improvement.';
-  strings.en['about.vision.o.title'] = 'Objectives';
-  strings.en['about.vision.o1'] = 'Design systems with clear, scalable architecture';
-  strings.en['about.vision.o2'] = 'Embed security as a design principle';
-  strings.en['about.vision.o3'] = 'Use generative AI for automation and support';
-  strings.en['about.vision.o4'] = 'Build a public library of technical knowledge';
-  strings.en['about.vision.o5'] = 'Foster collaboration and technical feedback';
-
-  strings.en['about.tech.eyebrow'] = 'Tech focus';
-  strings.en['about.tech.title'] = 'CmLayer';
-  strings.en['about.tech.dev.title'] = '💻 Software Development';
-  strings.en['about.tech.dev.desc'] = 'Modular, maintainable, documented systems; emphasis on architecture, version control, structured deployment.';
-  strings.en['about.tech.sec.title'] = '🔐 Cybersecurity';
-  strings.en['about.tech.sec.desc'] = 'Access control, event logging, environment separation, and traceability from design.';
-  strings.en['about.tech.ai.title'] = '🤖 Generative AI';
-  strings.en['about.tech.ai.desc'] = 'AI as a support layer for automation, analysis, technical content generation, and dev assistance.';
-
-  strings.en['about.values.eyebrow'] = 'Values';
-  strings.en['about.values.title'] = 'CmLayer principles';
-  strings.en['about.values.v1'] = 'Transparency: learn and build in public';
-  strings.en['about.values.v2'] = 'Structure: prioritize design and documentation';
-  strings.en['about.values.v3'] = 'Responsibility: security and ethics in development';
-  strings.en['about.values.v4'] = 'Curiosity: constant exploration of new tech';
-  strings.en['about.values.v5'] = 'Collaboration: growth through feedback';
-
-  strings.en['about.policies.eyebrow'] = 'Policies & Principles';
-  strings.en['about.policies.title'] = 'Use and security';
-  strings.en['about.policies.item1'] = 'Responsible tech use: privacy, ethics, responsible AI.';
-  strings.en['about.policies.item2'] = 'Security by design: risks, access, traceability from the start.';
-  strings.en['about.policies.item3'] = 'Educational content: all material is for technical learning.';
-
-  strings.en['about.eco.eyebrow'] = 'CmLayer Ecosystem';
-  strings.en['about.eco.title'] = 'Integrated sections';
-  strings.en['about.eco.projects.title'] = 'Projects';
-  strings.en['about.eco.projects.desc'] = 'Systems and platforms in development.';
-  strings.en['about.eco.kh.title'] = 'Knowledge Hub';
-  strings.en['about.eco.kh.desc'] = 'Learning library and technical curation.';
-  strings.en['about.eco.voices.title'] = 'Voices & Experiences';
-  strings.en['about.eco.voices.desc'] = 'Reflections and feedback from the process.';
-  strings.en['about.eco.services.title'] = 'Services';
-  strings.en['about.eco.services.desc'] = 'Capabilities and technical collaboration.';
-
-  strings.en['about.cta.eyebrow'] = 'CTA';
-  strings.en['about.cta.title'] = 'Build Systems with Purpose';
-  strings.en['about.cta.sub'] = 'Learn, collaborate, or explore technology: CmLayer is an open space to grow in software, security, and AI.';
-  strings.en['about.cta.btn1'] = 'Connect';
-  strings.en['about.cta.btn2'] = 'Collaborate';
-  strings.en['about.cta.btn3'] = 'Explore Projects';
-
-  strings.es['about.hero.eyebrow'] = 'CmLayer — About';
-  strings.es['about.hero.title'] = 'Persona · Plataforma · Propósito';
-  strings.es['about.hero.sub'] = 'Donde la trayectoria personal y la visión tecnológica se convierten en un ecosistema de aprendizaje y construcción de sistemas.';
-  strings.es['about.hero.cta1'] = 'Ver CV';
-  strings.es['about.hero.cta2'] = 'Explorar Proyectos';
-  strings.es['about.hero.cta3'] = 'Conocer CmLayer';
-
-  strings.es['about.who.eyebrow'] = 'Quién soy';
-  strings.es['about.who.title'] = 'Perfil profesional';
-  strings.es['about.who.name'] = 'Luis Emilio Cedano Martínez';
-  strings.es['about.who.subtitle'] = 'Estudiante de Desarrollo de Software | Ingeniero en formación | Aprendiz en público';
-  strings.es['about.who.desc'] = 'Soy un estudiante de desarrollo de software con enfoque en arquitectura de sistemas, seguridad digital y automatización con inteligencia artificial. Construyo proyectos reales como método de aprendizaje y documento cada etapa para convertir la experiencia en conocimiento reutilizable.';
-  strings.es['about.who.focus1'] = 'Diseño y desarrollo de sistemas de software';
-  strings.es['about.who.focus2'] = 'Fundamentos de ciberseguridad aplicada';
-  strings.es['about.who.focus3'] = 'Integración de inteligencia artificial generativa';
-  strings.es['about.who.focus4'] = 'Documentación técnica y aprendizaje estructurado';
-
-  strings.es['about.traj.eyebrow'] = 'Trayectoria & Logros';
-  strings.es['about.traj.title'] = 'Hitos académicos y técnicos';
-  strings.es['about.traj.academy.title'] = 'Academia';
-  strings.es['about.traj.academy.desc'] = 'Estudiante de Desarrollo de Software en ITLA.';
-  strings.es['about.traj.arch.title'] = 'Arquitectura';
-  strings.es['about.traj.arch.desc'] = 'Sistemas académicos con arquitectura en capas y APIs con persistencia.';
-  strings.es['about.traj.domains.title'] = 'Dominios activos';
-  strings.es['about.traj.domains.desc'] = 'Plataformas de aprendizaje y experimentación publicadas.';
-  strings.es['about.traj.kh.title'] = 'Knowledge Hub';
-  strings.es['about.traj.kh.desc'] = 'Ecosistema público de conocimiento técnico.';
-  strings.es['about.traj.personal.title'] = 'Logros personales';
-  strings.es['about.traj.personal.desc'] = 'CmLayer como espacio de aprendizaje en público; proyectos integrando software, seguridad e IA; documentación continua.';
-
-  strings.es['about.certs.eyebrow'] = 'Certificaciones & Formación';
-  strings.es['about.certs.title'] = 'Formación técnica';
-  strings.es['about.certs.item1'] = 'Programación Orientada a Objetos';
-  strings.es['about.certs.item2'] = 'Bases de Datos y SQL';
-  strings.es['about.certs.item3'] = 'Desarrollo Web y APIs';
-  strings.es['about.certs.item4'] = 'Control de Versiones con Git & GitHub';
-  strings.es['about.certs.item5'] = 'Fundamentos de Ciberseguridad';
-  strings.es['about.certs.item6'] = 'Introducción a Inteligencia Artificial Generativa';
-  strings.es['about.certs.note'] = 'Certificados y CV disponibles para descarga.';
-  strings.es['about.certs.downloads'] = 'Descargas';
-  strings.es['about.certs.cv'] = 'CV (Español)';
-
-  strings.es['about.cv.eyebrow'] = 'CV — Perfil profesional';
-  strings.es['about.cv.title'] = 'Resumen';
-  strings.es['about.cv.desc'] = 'Estudiante de desarrollo de software con enfoque en diseño de sistemas, seguridad por diseño y automatización con IA. Orientado al aprendizaje continuo, la documentación técnica y la construcción de soluciones estructuradas.';
-  strings.es['about.cv.skills.title'] = 'Competencias';
-  strings.es['about.cv.skills.desc'] = 'Backend/Frontend · Arquitectura · Git/CI-CD básico · Seguridad de apps · Bases de datos · Automatización/IA.';
-  strings.es['about.cv.lang.title'] = 'Idiomas';
-  strings.es['about.cv.lang.desc'] = 'Español (Nativo) · Inglés (Intermedio)';
-  strings.es['about.cv.cta1'] = 'Descargar CV';
-  strings.es['about.cv.cta2'] = 'Ver Perfil Técnico';
-
-  strings.es['about.cmlayer.eyebrow'] = 'Qué es CmLayer';
-  strings.es['about.cmlayer.title'] = 'Identidad de plataforma';
-  strings.es['about.cmlayer.desc.title'] = 'CmLayer: Un ecosistema de ingeniería en construcción';
-  strings.es['about.cmlayer.desc.body'] = 'Plataforma tecnológica y educativa para unir aprendizaje, experimentación y sistemas reales. Laboratorio público con prácticas modernas de ingeniería.';
-  strings.es['about.cmlayer.desc.purpose'] = 'Propósito: Transformar conocimiento técnico en sistemas funcionales y crecimiento profesional visible.';
-
-  strings.es['about.vision.eyebrow'] = 'Visión · Misión · Objetivos';
-  strings.es['about.vision.title'] = 'Dirección';
-  strings.es['about.vision.v.title'] = 'Visión';
-  strings.es['about.vision.v.body'] = 'Convertir CmLayer en un ecosistema digital de referencia para el aprendizaje, diseño y construcción de sistemas de software seguros e inteligentes.';
-  strings.es['about.vision.m.title'] = 'Misión';
-  strings.es['about.vision.m.body'] = 'Desarrollar plataformas, proyectos y recursos que integren desarrollo de software, ciberseguridad e IA generativa bajo aprendizaje en público y mejora continua.';
-  strings.es['about.vision.o.title'] = 'Objetivos';
-  strings.es['about.vision.o1'] = 'Diseñar sistemas con arquitectura clara y escalable';
-  strings.es['about.vision.o2'] = 'Integrar seguridad como principio de diseño';
-  strings.es['about.vision.o3'] = 'Aplicar IA generativa como herramienta de automatización y soporte';
-  strings.es['about.vision.o4'] = 'Construir una biblioteca pública de conocimiento técnico';
-  strings.es['about.vision.o5'] = 'Fomentar la colaboración y el feedback técnico';
-
-  strings.es['about.tech.eyebrow'] = 'Enfoque tecnológico';
-  strings.es['about.tech.title'] = 'CmLayer';
-  strings.es['about.tech.dev.title'] = '💻 Desarrollo de Software';
-  strings.es['about.tech.dev.desc'] = 'Sistemas modulares, mantenibles y documentados; énfasis en arquitectura, control de versiones y despliegue estructurado.';
-  strings.es['about.tech.sec.title'] = '🔐 Ciberseguridad';
-  strings.es['about.tech.sec.desc'] = 'Control de acceso, registro de eventos, separación de entornos y trazabilidad desde el diseño.';
-  strings.es['about.tech.ai.title'] = '🤖 Inteligencia Artificial Generativa';
-  strings.es['about.tech.ai.desc'] = 'IA como capa de apoyo para automatización, análisis, generación de contenido técnico y asistencia en desarrollo.';
-
-  strings.es['about.values.eyebrow'] = 'Valores';
-  strings.es['about.values.title'] = 'Principios de CmLayer';
-  strings.es['about.values.v1'] = 'Transparencia: aprender y construir en público';
-  strings.es['about.values.v2'] = 'Estructura: priorizar diseño y documentación';
-  strings.es['about.values.v3'] = 'Responsabilidad: seguridad y ética en el desarrollo';
-  strings.es['about.values.v4'] = 'Curiosidad: exploración constante de nuevas tecnologías';
-  strings.es['about.values.v5'] = 'Colaboración: crecimiento a través del feedback';
-
-  strings.es['about.policies.eyebrow'] = 'Políticas & Principios';
-  strings.es['about.policies.title'] = 'Uso y seguridad';
-  strings.es['about.policies.item1'] = 'Uso responsable de tecnología: privacidad, ética, IA responsable.';
-  strings.es['about.policies.item2'] = 'Seguridad por diseño: riesgos, accesos y trazabilidad desde el inicio.';
-  strings.es['about.policies.item3'] = 'Contenido educativo: todo el material es para aprendizaje técnico.';
-
-  strings.es['about.eco.eyebrow'] = 'Ecosistema CmLayer';
-  strings.es['about.eco.title'] = 'Secciones integradas';
-  strings.es['about.eco.projects.title'] = 'Projects';
-  strings.es['about.eco.projects.desc'] = 'Sistemas y plataformas en desarrollo.';
-  strings.es['about.eco.kh.title'] = 'Knowledge Hub';
-  strings.es['about.eco.kh.desc'] = 'Biblioteca de aprendizaje y curaduría técnica.';
-  strings.es['about.eco.voices.title'] = 'Voices & Experiences';
-  strings.es['about.eco.voices.desc'] = 'Reflexiones y feedback del proceso.';
-  strings.es['about.eco.services.title'] = 'Services';
-  strings.es['about.eco.services.desc'] = 'Capacidades y colaboración técnica.';
-
-  strings.es['about.cta.eyebrow'] = 'CTA';
-  strings.es['about.cta.title'] = 'Construyamos Sistemas con Propósito';
-  strings.es['about.cta.sub'] = 'Aprender, colaborar o explorar tecnología: CmLayer es un espacio abierto para crecer en software, seguridad e IA.';
-  strings.es['about.cta.btn1'] = 'Conectar';
-  strings.es['about.cta.btn2'] = 'Colaborar';
-  strings.es['about.cta.btn3'] = 'Explorar Proyectos';
-
-  // Contact
-  strings.en['contact.hero.eyebrow'] = 'CmLayer — Contact';
-  strings.en['contact.hero.title'] = 'Connect · Collaborate · Build';
-  strings.en['contact.hero.sub'] = 'A meeting point for ideas, projects, and technical learning.';
-  strings.en['contact.hero.cta1'] = 'Send Message';
-  strings.en['contact.hero.cta2'] = 'Collaborate';
-  strings.en['contact.hero.cta3'] = 'Suggest Content';
-  strings.en['contact.guide.eyebrow'] = 'What to contact here';
-  strings.en['contact.guide.title'] = 'Quick guide';
-  strings.en['contact.guide.dev.title'] = 'Software Development';
-  strings.en['contact.guide.dev.desc'] = 'Academic/personal collaborations; architecture review; APIs, backend, frontend, automation.';
-  strings.en['contact.guide.sec.title'] = 'Cybersecurity';
-  strings.en['contact.guide.sec.desc'] = 'Basic secure design review; access control, logging, best practices; learning resources.';
-  strings.en['contact.guide.ai.title'] = 'Generative AI';
-  strings.en['contact.guide.ai.desc'] = 'Integrate AI in projects; assistants, automation, LLM workflows; edu tool ideas.';
-  strings.en['contact.form.eyebrow'] = 'Start the conversation';
-  strings.en['contact.form.title'] = 'Main form';
-  strings.en['contact.form.note'] = 'Your message is read personally. CmLayer values clear and respectful technical conversations.';
-  strings.en['contact.form.name'] = 'Name';
-  strings.en['contact.form.email'] = 'Email';
-  strings.en['contact.form.type'] = 'Contact type';
-  strings.en['contact.form.topic'] = 'Topic';
-  strings.en['contact.form.message'] = 'Message';
-  strings.en['contact.form.submit'] = 'Send Message';
-  strings.en['contact.form.type.opt.colab'] = 'Collaboration';
-  strings.en['contact.form.type.opt.project'] = 'Project';
-  strings.en['contact.form.type.opt.feedback'] = 'Feedback';
-  strings.en['contact.form.type.opt.knowledge'] = 'Knowledge';
-  strings.en['contact.form.type.opt.other'] = 'Other';
-  strings.en['contact.form.topic.opt.software'] = 'Software';
-  strings.en['contact.form.topic.opt.security'] = 'Security';
-  strings.en['contact.form.topic.opt.ai'] = 'AI';
-  strings.en['contact.form.topic.opt.general'] = 'General';
-  strings.en['contact.routes.title'] = 'Contact routes';
-  strings.en['contact.routes.email'] = 'For formal messages, proposals, or documented technical collaboration.';
-  strings.en['contact.routes.platforms'] = 'Code review, issues, and technical networking.';
-  strings.en['contact.eco.eyebrow'] = 'Ecosystem connection';
-  strings.en['contact.eco.title'] = 'How your message integrates';
-  strings.en['contact.eco.item1'] = 'Content or learning → Knowledge Hub';
-  strings.en['contact.eco.item2'] = 'Technical collaboration → Projects / Services';
-  strings.en['contact.eco.item3'] = 'Feedback or experiences → Voices & Experiences';
-  strings.en['contact.principles.eyebrow'] = 'Communication principles';
-  strings.en['contact.principles.title'] = 'Interaction code';
-  strings.en['contact.principles.item1'] = 'Respect and technical clarity';
-  strings.en['contact.principles.item2'] = 'Focus on learning and building';
-  strings.en['contact.principles.item3'] = 'Basic privacy and confidentiality';
-  strings.en['contact.principles.item4'] = 'Responsible use of shared information';
-  strings.en['contact.cta.eyebrow'] = 'CTA';
-  strings.en['contact.cta.title'] = 'Your voice can build something bigger';
-  strings.en['contact.cta.sub'] = 'Idea, comment, or line of code—each message is a chance to learn and improve a system.';
-  strings.en['contact.cta.btn1'] = 'Send Message';
-  strings.en['contact.cta.btn2'] = 'Connect';
-  strings.en['contact.cta.btn3'] = 'Explore CmLayer';
-
-  strings.es['contact.hero.eyebrow'] = 'CmLayer — Contacto';
-  strings.es['contact.hero.title'] = 'Conectar · Colaborar · Construir';
-  strings.es['contact.hero.sub'] = 'Un punto de encuentro para ideas, proyectos y aprendizaje técnico.';
-  strings.es['contact.hero.cta1'] = 'Enviar Mensaje';
-  strings.es['contact.hero.cta2'] = 'Colaborar';
-  strings.es['contact.hero.cta3'] = 'Sugerir Contenido';
-  strings.es['contact.guide.eyebrow'] = 'Qué puedes contactar aquí';
-  strings.es['contact.guide.title'] = 'Guía rápida';
-  strings.es['contact.guide.dev.title'] = 'Desarrollo de Software';
-  strings.es['contact.guide.dev.desc'] = 'Colaboraciones académicas o personales; revisión de arquitectura; APIs, backend, frontend y automatización.';
-  strings.es['contact.guide.sec.title'] = 'Ciberseguridad';
-  strings.es['contact.guide.sec.desc'] = 'Revisión básica de diseño seguro; control de acceso, registros y buenas prácticas; recursos de aprendizaje.';
-  strings.es['contact.guide.ai.title'] = 'IA Generativa';
-  strings.es['contact.guide.ai.desc'] = 'Integrar IA en proyectos; asistentes, automatización y flujos con LLMs; ideas para herramientas educativas.';
-  strings.es['contact.form.eyebrow'] = 'Inicia la conversación';
-  strings.es['contact.form.title'] = 'Formulario principal';
-  strings.es['contact.form.note'] = 'Tu mensaje será leído personalmente. CmLayer prioriza conversaciones técnicas claras y respetuosas.';
-  strings.es['contact.form.name'] = 'Nombre';
-  strings.es['contact.form.email'] = 'Correo electrónico';
-  strings.es['contact.form.type'] = 'Tipo de contacto';
-  strings.es['contact.form.topic'] = 'Tema';
-  strings.es['contact.form.message'] = 'Mensaje';
-  strings.es['contact.form.submit'] = 'Enviar Mensaje';
-  strings.es['contact.form.type.opt.colab'] = 'Colaboración';
-  strings.es['contact.form.type.opt.project'] = 'Proyecto';
-  strings.es['contact.form.type.opt.feedback'] = 'Feedback';
-  strings.es['contact.form.type.opt.knowledge'] = 'Conocimiento';
-  strings.es['contact.form.type.opt.other'] = 'Otro';
-  strings.es['contact.form.topic.opt.software'] = 'Software';
-  strings.es['contact.form.topic.opt.security'] = 'Seguridad';
-  strings.es['contact.form.topic.opt.ai'] = 'IA';
-  strings.es['contact.form.topic.opt.general'] = 'General';
-  strings.es['contact.routes.title'] = 'Rutas de contacto';
-  strings.es['contact.routes.email'] = 'Para mensajes formales, propuestas o colaboración técnica documentada.';
-  strings.es['contact.routes.platforms'] = 'Revisión de código, issues y networking técnico.';
-  strings.es['contact.eco.eyebrow'] = 'Conexión con el ecosistema';
-  strings.es['contact.eco.title'] = 'Cómo se integra tu mensaje';
-  strings.es['contact.eco.item1'] = 'Contenido o aprendizaje → Knowledge Hub';
-  strings.es['contact.eco.item2'] = 'Colaboración técnica → Projects / Services';
-  strings.es['contact.eco.item3'] = 'Feedback o experiencias → Voices & Experiences';
-  strings.es['contact.principles.eyebrow'] = 'Principios de comunicación';
-  strings.es['contact.principles.title'] = 'Código de interacción';
-  strings.es['contact.principles.item1'] = 'Respeto y claridad técnica';
-  strings.es['contact.principles.item2'] = 'Enfoque en aprendizaje y construcción';
-  strings.es['contact.principles.item3'] = 'Privacidad y confidencialidad básica';
-  strings.es['contact.principles.item4'] = 'Uso responsable de la información compartida';
-  strings.es['contact.cta.eyebrow'] = 'CTA';
-  strings.es['contact.cta.title'] = 'Tu voz puede construir algo más grande';
-  strings.es['contact.cta.sub'] = 'Idea, comentario o línea de código: cada mensaje es una oportunidad para aprender y mejorar un sistema.';
-  strings.es['contact.cta.btn1'] = 'Enviar Mensaje';
-  strings.es['contact.cta.btn2'] = 'Conectar';
-  strings.es['contact.cta.btn3'] = 'Explorar CmLayer';
-  function applyLang(lang){
-    const dict = strings[lang] || strings.en;
-    document.documentElement.lang = lang;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if(dict[key]) el.textContent = dict[key];
+  const setActiveLangButtons = (lang) => {
+    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
     });
-    document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-    localStorage.setItem('lang', lang);
-  }
+  };
 
-  const savedLang = localStorage.getItem('lang') || 'en';
-  applyLang(savedLang);
-  document.querySelectorAll('.lang-switch button').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-  });
+  const applyLang = (lang, dict) => {
+    state.lang = lang;
+    state.i18n = dict || {};
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (state.i18n[key]) {
+        el.textContent = state.i18n[key];
+      }
+    });
+    setActiveLangButtons(lang);
+    localStorage.setItem("lang", lang);
+  };
 
-  // Active nav highlight by path
-  const path = window.location.pathname.replace(/\/+$/,'');
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    const href = a.getAttribute('href').replace(/\/+$/,'');
-    if (href && href !== '' && path === href) {
-      a.classList.add('active');
-    } else if (href === '' || href === '/') {
-      if (path === '') a.classList.add('active');
+  const initI18n = async () => {
+    const savedLang = localStorage.getItem("lang") || "en";
+    const dict = await fetchJson(`/api/i18n/${savedLang}`);
+    if (dict) {
+      applyLang(savedLang, dict);
+      return;
     }
-  });
+    const fallback = await fetchJson("/api/i18n/en");
+    if (fallback) {
+      applyLang("en", fallback);
+    }
+  };
+
+  const initLangSwitch = () => {
+    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const lang = btn.dataset.lang || "en";
+        const dict = await fetchJson(`/api/i18n/${lang}`);
+        if (dict) {
+          applyLang(lang, dict);
+        }
+      });
+    });
+  };
+
+  const formatUptime = (seconds) => {
+    if (!Number.isFinite(seconds)) return "—";
+    const mins = Math.floor(seconds / 60);
+    const hours = Math.floor(mins / 60);
+    const days = Math.floor(hours / 24);
+    if (days > 0) return `${days}d ${hours % 24}h`;
+    if (hours > 0) return `${hours}h ${mins % 60}m`;
+    if (mins > 0) return `${mins}m`;
+    return `${seconds}s`;
+  };
+
+  const formatTimestamp = (value) => {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value || "—";
+    return date.toLocaleString();
+  };
+
+  const renderProjects = async () => {
+    const container = document.querySelector("[data-projects]");
+    if (!container) return;
+
+    const payload = await fetchJson("/api/projects");
+    const items = payload?.items || [];
+
+    if (!items.length) {
+      container.innerHTML = `<article class="case"><div><p class="muted">${escapeHtml(
+        t("projects.empty", "No projects yet.")
+      )}</p></div></article>`;
+      return;
+    }
+
+    const cards = items
+      .map((item) => {
+        const label = escapeHtml(item.label || "");
+        const title = escapeHtml(item.title || "");
+        const description = escapeHtml(item.description || "");
+        const badge = item.badge
+          ? `<span class="badge ${escapeHtml(item.badge.variant || "")}">${escapeHtml(
+              item.badge.text
+            )}</span>`
+          : "";
+        const meta = Array.isArray(item.meta)
+          ? item.meta
+              .map(
+                (entry) =>
+                  `<strong>${escapeHtml(entry.label)}:</strong> ${escapeHtml(entry.value)}`
+              )
+              .join(" · ")
+          : "";
+        const metaBlock = meta
+          ? `<p class="tiny muted">${meta}</p>`
+          : "";
+        const topics = Array.isArray(item.topics)
+          ? `<div class="topics">${item.topics
+              .map((topic) => `<span>${escapeHtml(topic)}</span>`)
+              .join("")}</div>`
+          : "";
+        const actions = Array.isArray(item.actions)
+          ? `<div class="case-actions">${item.actions
+              .map((action) => {
+                const style = action.style === "primary" ? "primary" : "ghost";
+                return `<a class="btn ${style}" href="${escapeHtml(
+                  action.url
+                )}" target="_blank" rel="noreferrer">${escapeHtml(action.label)}</a>`;
+              })
+              .join("")}</div>`
+          : "";
+        const statusNote = item.statusNote
+          ? `<p class="tiny muted">${escapeHtml(item.statusNote)}</p>`
+          : "";
+        const image = item.image
+          ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(
+              item.imageAlt || item.title || ""
+            )}">`
+          : `<span class="muted">${escapeHtml(t("projects.noimage", "No image"))}</span>`;
+
+        return `
+          <article class="case">
+            <div>
+              <p class="label">${label}</p>
+              <h3>${title}</h3>
+              ${badge}
+              <p class="muted">${description}</p>
+              ${metaBlock}
+              ${topics}
+              ${actions}
+              ${statusNote}
+            </div>
+            <div class="case-media">${image}</div>
+          </article>
+        `;
+      })
+      .join("");
+
+    container.innerHTML = cards;
+  };
+
+  const renderServices = async () => {
+    const container = document.querySelector("[data-services]");
+    if (!container) return;
+
+    const payload = await fetchJson("/api/services");
+    const items = payload?.items || [];
+
+    if (!items.length) {
+      container.innerHTML = `<article class="service-card"><p class="muted">${escapeHtml(
+        t("services.empty", "No services yet.")
+      )}</p></article>`;
+      return;
+    }
+
+    container.innerHTML = items
+      .map((item) => {
+        const bullets = Array.isArray(item.bullets)
+          ? `<ul>${item.bullets
+              .map((bullet) => `<li>${escapeHtml(bullet)}</li>`)
+              .join("")}</ul>`
+          : "";
+        const how = item.how
+          ? `<p class="muted">${escapeHtml(item.how)}</p>`
+          : "";
+
+        return `
+          <article class="service-card">
+            <h3>${escapeHtml(item.title || "")}</h3>
+            <p class="muted">${escapeHtml(item.description || "")}</p>
+            ${bullets}
+            ${how}
+          </article>
+        `;
+      })
+      .join("");
+  };
+
+  const renderKnowledge = async () => {
+    const container = document.querySelector("[data-knowledge]");
+    if (!container) return;
+
+    const payload = await fetchJson("/api/knowledge");
+    const items = payload?.items || [];
+
+    if (!items.length) {
+      container.innerHTML = `<article class="cover-card"><p class="muted">${escapeHtml(
+        t("kh.empty", "No knowledge items yet.")
+      )}</p></article>`;
+      return;
+    }
+
+    const categoryLabel = t("kh.library.category.label", "Category");
+
+    container.innerHTML = items
+      .map((item) => {
+        const cover = item.coverImage
+          ? `<img class="cover-img" src="${escapeHtml(
+              item.coverImage
+            )}" alt="${escapeHtml(item.coverAlt || item.title || "")}" loading="lazy" />`
+          : `<div class="cover"><div class="cover-meta">${escapeHtml(
+              item.category || ""
+            )}</div><div class="cover-title">${escapeHtml(
+              item.title || ""
+            )}</div><div class="cover-brand">CmLayer</div></div>`;
+
+        return `
+          <article class="cover-card">
+            ${cover}
+            <h3>${escapeHtml(item.title || "")}</h3>
+            <p class="muted">${escapeHtml(categoryLabel)}: ${escapeHtml(
+          item.category || ""
+        )}</p>
+            <p class="tiny">${escapeHtml(item.summary || "")}</p>
+            <p class="tiny">${escapeHtml(item.comment || "")}</p>
+            <p class="tiny">${escapeHtml(item.project || "")}</p>
+            <div class="case-actions">
+              <a class="btn primary" href="${escapeHtml(
+                item.link
+              )}">${escapeHtml(item.linkLabel || "Explore")}</a>
+            </div>
+          </article>
+        `;
+      })
+      .join("");
+  };
+
+  const renderStatus = async () => {
+    const metrics = document.querySelector("[data-status-metrics]");
+    const release = document.querySelector("[data-status-release]");
+    if (!metrics && !release) return;
+
+    const payload = await fetchJson("/api/status");
+    if (!payload) {
+      if (metrics) {
+        metrics.innerHTML = `<article class="value-card"><p class="muted">${escapeHtml(
+          t("status.error", "Status unavailable.")
+        )}</p></article>`;
+      }
+      if (release) {
+        release.innerHTML = `<p class="muted">${escapeHtml(
+          t("status.release.empty", "No releases yet.")
+        )}</p>`;
+      }
+      return;
+    }
+
+    const health = payload.health || {};
+    const ok = Boolean(health.ok);
+
+    if (metrics) {
+      const badgeClass = ok ? "production" : "pilot";
+      metrics.innerHTML = [
+        `<article class="value-card"><h3>${escapeHtml(
+          t("status.metrics.state", "State")
+        )}</h3><p class="muted"><span class="badge ${badgeClass}">${escapeHtml(
+          ok ? t("status.ok", "Operational") : t("status.down", "Degraded")
+        )}</span></p></article>`,
+        `<article class="value-card"><h3>${escapeHtml(
+          t("status.metrics.updated", "Last check")
+        )}</h3><p class="muted">${escapeHtml(
+          formatTimestamp(health.timestamp)
+        )}</p></article>`,
+        `<article class="value-card"><h3>${escapeHtml(
+          t("status.metrics.uptime", "Uptime")
+        )}</h3><p class="muted">${escapeHtml(
+          formatUptime(health.uptimeSeconds)
+        )}</p></article>`
+      ].join("");
+    }
+
+    if (release) {
+      if (payload.latestRelease) {
+        const latest = payload.latestRelease;
+        const title = escapeHtml(latest.title || t("status.release.title", "Latest release"));
+        const summary = escapeHtml(latest.summary || "");
+        const date = escapeHtml(latest.date || "");
+        release.innerHTML = `
+          <h3>${title}</h3>
+          <p class="muted">${summary}</p>
+          <p class="tiny muted">${escapeHtml(t("status.release.date", "Date"))}: ${date}</p>
+          <a class="btn ghost" href="/changelog/">${escapeHtml(
+            t("status.release.link", "View changelog")
+          )}</a>
+        `;
+      } else {
+        release.innerHTML = `<p class="muted">${escapeHtml(
+          t("status.release.empty", "No releases yet.")
+        )}</p>`;
+      }
+    }
+  };
+
+  const initNav = () => {
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    navToggle?.addEventListener("click", () => navLinks?.classList.toggle("open"));
+    navLinks?.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => navLinks.classList.remove("open"))
+    );
+
+    const path = window.location.pathname.replace(/\/+$/, "") || "/";
+    document.querySelectorAll(".nav-links a").forEach((a) => {
+      const href = a.getAttribute("href").replace(/\/+$/, "");
+      if (href && href !== "" && path === href) {
+        a.classList.add("active");
+      } else if (href === "" || href === "/") {
+        if (path === "/") a.classList.add("active");
+      }
+    });
+  };
+
+  const ensureFormStatus = (form) => {
+    let status = form.querySelector("[data-form-status]");
+    if (!status) {
+      status = document.createElement("p");
+      status.className = "tiny muted form-status";
+      status.setAttribute("data-form-status", "");
+      form.appendChild(status);
+    }
+    return status;
+  };
+
+  const updateButton = (button, label, disabled) => {
+    if (!button) return;
+    if (!button.dataset.defaultText) {
+      button.dataset.defaultText = button.textContent || "";
+    }
+    button.textContent = label;
+    button.disabled = Boolean(disabled);
+  };
+
+  const buildFeedbackPayload = (form) => {
+    const name = form.querySelector('[name="name"]')?.value?.trim() || "";
+    const email = form.querySelector('[name="email"]')?.value?.trim() || "";
+    const messageField = form.querySelector('[name="message"]')?.value?.trim() || "";
+    const context = form.querySelector('[name="context"]')?.value?.trim() || "";
+    const comment = form.querySelector('[name="comment"]')?.value?.trim() || "";
+    const consent = Boolean(form.querySelector('[name="consent"]')?.checked);
+    const source = form.dataset.source || window.location.pathname || "website";
+
+    let message = messageField;
+    if (!message) {
+      const parts = [];
+      if (context) parts.push(`Context: ${context}`);
+      if (comment) parts.push(comment);
+      message = parts.join("\n\n");
+    }
+
+    return {
+      name,
+      email: email || undefined,
+      message,
+      consent,
+      source
+    };
+  };
+
+  const initForms = () => {
+    document.querySelectorAll("[data-feedback-form]").forEach((form) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const status = ensureFormStatus(form);
+        const submitBtn = form.querySelector("button[type=\"submit\"]");
+        status.textContent = "";
+
+        const payload = buildFeedbackPayload(form);
+        if (!payload.consent) {
+          status.textContent = t("form.consent", "Consent is required.");
+          updateButton(submitBtn, t("form.sent", "Sent"), false);
+          return;
+        }
+        if (!payload.message) {
+          status.textContent = t("form.required", "Please complete required fields.");
+          updateButton(submitBtn, t("form.sent", "Sent"), false);
+          return;
+        }
+
+        updateButton(submitBtn, t("form.sending", "Sending..."), true);
+
+        try {
+          const response = await fetch(apiUrl("/api/feedback"), {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          if (!response.ok) {
+            throw new Error(`Request failed: ${response.status}`);
+          }
+          status.textContent = t("form.success", "Thanks! Feedback received.");
+          form.reset();
+          updateButton(submitBtn, t("form.sent", "Sent"), false);
+        } catch (error) {
+          status.textContent = t("form.error", "Could not send. Try again.");
+          updateButton(
+            submitBtn,
+            submitBtn?.dataset.defaultText || t("form.sent", "Sent"),
+            false
+          );
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-contact-form]").forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const status = ensureFormStatus(form);
+        const submitBtn = form.querySelector("button[type=\"submit\"]");
+        status.textContent = t("form.sent", "Sent");
+        updateButton(submitBtn, t("form.sent", "Sent"), false);
+      });
+    });
+  };
+
+  const init = async () => {
+    initNav();
+    initForms();
+    await initI18n();
+    initLangSwitch();
+    await Promise.all([renderProjects(), renderServices(), renderKnowledge(), renderStatus()]);
+  };
+
+  init();
 })();

@@ -1,0 +1,101 @@
+{
+  "updatedAt": "2026-02-04T18:09:33Z",
+  "items": [
+    {
+      "id": "ruta-estudio",
+      "title": "Ruta de Estudio",
+      "category": "Software",
+      "summary": "Resumen: roadmap de fundamentos a backend.",
+      "comment": "Comentario: usado como guía base en CmLayer.",
+      "project": "Proyecto vinculado: CmLayer (estructura).",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/ruta-estudio.png",
+      "coverAlt": "Ruta de Estudio",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Estudio.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "fundamentos-sql",
+      "title": "Guía de Fundamentos de SQL",
+      "category": "Software",
+      "summary": "Resumen: conceptos y queries básicas.",
+      "comment": "Comentario: base para modelos en CmLayerBank.",
+      "project": "Proyecto vinculado: CmLayerBank (datos).",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/fundamentos-sql.png",
+      "coverAlt": "Guía de Fundamentos de SQL",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20de%20Fundamentos%20de%20SQL%20y%20bases%20de%20datos.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "python-quick-guide",
+      "title": "Guía Rápida Python",
+      "category": "Software",
+      "summary": "Resumen: sintaxis esencial y ejemplos.",
+      "comment": "Comentario: usado en scripts de automatización.",
+      "project": "Proyecto vinculado: PersonalProjects (scripts).",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/python-basics.png",
+      "coverAlt": "Guía Rápida Python",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20Python.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "javascript-quick-guide",
+      "title": "Guía Rápida JavaScript",
+      "category": "Software",
+      "summary": "Resumen: fundamentos JS/DOM.",
+      "comment": "Comentario: soporte para front de CmLayer.",
+      "project": "Proyecto vinculado: CmLayer (UI).",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/javascript-basics.png",
+      "coverAlt": "Guía Rápida JavaScript",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20JavaScript.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "bash-shell",
+      "title": "Guía Rápida Bash/Shell",
+      "category": "Seguridad",
+      "summary": "Resumen: comandos base, pipes y scripts.",
+      "comment": "Comentario: se usa en pipelines locales.",
+      "project": "Proyecto vinculado: CmLayer (CI local).",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/bash-shell.png",
+      "coverAlt": "Guía Rápida Bash/Shell",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20Bash:Shell.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "terminos-200",
+      "title": "200 Términos de Programación",
+      "category": "Software",
+      "summary": "Resumen: glosario rápido para repasar.",
+      "comment": "Comentario: referencia cruzada en Knowledge Hub.",
+      "project": "Proyecto vinculado: CmLayer (docs).",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/terminos-200.png",
+      "coverAlt": "200 Términos de Programación",
+      "link": "/knowledge-hub/knowledge-pdfs/Los%20200%20Terminos%20m%C3%A1s%20Usados%20en%20Programaci%C3%B3n.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "java-quick-guide",
+      "title": "Guía Rápida Java",
+      "category": "Software",
+      "summary": "Resumen: sintaxis y OOP en Java.",
+      "comment": "Comentario: base para ejercicios académicos.",
+      "project": "Proyecto vinculado: Proyectos-ITLA.",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/java-basics.png",
+      "coverAlt": "Guía Rápida Java",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20Fundamentos%20en%20Java.pdf",
+      "linkLabel": "Explorar"
+    },
+    {
+      "id": "markdown-quick-guide",
+      "title": "Guía Rápida Markdown",
+      "category": "Software · Docs",
+      "summary": "Resumen: sintaxis markdown esencial.",
+      "comment": "Comentario: usada en documentación de proyectos.",
+      "project": "Proyecto vinculado: CmLayer docs.",
+      "coverImage": "/knowledge-hub/knowledge-pdfs/covers/markdown.png",
+      "coverAlt": "Guía Rápida Markdown",
+      "link": "/knowledge-hub/knowledge-pdfs/Gu%C3%ADa%20R%C3%A1pida%20de%20MarkDown.pdf",
+      "linkLabel": "Explorar"
+    }
+  ]
+}

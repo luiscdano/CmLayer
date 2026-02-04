@@ -44,6 +44,7 @@
         <a data-i18n="nav.voices" class="active" href="/voices-experiences/">Voices & Experiences</a>
         <a data-i18n="nav.about" href="/about/">About</a>
         <a data-i18n="nav.contact" href="/contact/">Contact</a>
+        <a data-i18n="nav.status" href="/status/">Status</a>
       </nav>
       <div class="lang-switch">
         <button data-lang="en" class="active">🇺🇸 EN</button>
@@ -117,12 +118,13 @@
         <div>
           <p class="muted" data-i18n="ve.feedback.side">Tell me what you saw/tested and what you think.</p>
         </div>
-        <form class="contact-form" action="mailto:luiscdano@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" data-feedback-form data-source="voices-experiences">
           <label data-i18n="ve.feedback.name">Nombre (opcional)<input type="text" name="name" placeholder="Tu nombre"></label>
           <label data-i18n="ve.feedback.context">Contexto<input type="text" name="context" placeholder="¿Qué viste o probaste?"></label>
-          <label data-i18n="ve.feedback.comment">Comentario<textarea name="comment" rows="4" placeholder="Feedback, sugerencias o reflexiones"></textarea></label>
-          <label class="tiny muted"><input type="checkbox" required> Autorizo uso de este feedback para mejorar y citarlo.</label>
+          <label data-i18n="ve.feedback.comment">Comentario<textarea name="comment" rows="4" placeholder="Feedback, sugerencias o reflexiones" required></textarea></label>
+          <label class="tiny muted"><input type="checkbox" name="consent" required> Autorizo uso de este feedback para mejorar y citarlo.</label>
           <button type="submit" class="btn primary" data-i18n="ve.feedback.submit">Enviar</button>
+          <p class="tiny muted form-status" data-form-status></p>
         </form>
       </div>
     </section>
@@ -155,6 +157,7 @@
     <span class="dot"></span>
     <span class="release">Release: CM-2026.02.04 · Env: Production · <a href="/changelog/">/changelog</a></span>
   </footer>
+  <script src="/assets/js/config.js?v=20260204" defer></script>
   <script src="/assets/js/main.js?v=20260204" defer></script>
 </body>
 </html>

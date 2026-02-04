@@ -1,0 +1,17 @@
+{
+  "updatedAt": "2026-02-04T18:09:33Z",
+  "items": [
+    {
+      "id": "cm-2026-02-04",
+      "title": "CM-2026.02.04 — Release",
+      "summary": "Data-driven content for Projects/Services/Knowledge Hub, new Status page, i18n served via API, and backend endpoints for feedback + audit log.",
+      "date": "2026-02-04",
+      "tags": ["release"],
+      "links": [
+        { "label": "Changelog", "url": "/changelog/" }
+      ],
+      "createdAt": "2026-02-04T18:09:33Z",
+      "updatedAt": "2026-02-04T18:09:33Z"
+    }
+  ]
+}

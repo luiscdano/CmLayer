@@ -24,6 +24,7 @@
         <a href="/voices-experiences/" data-i18n="nav.voices">Voices & Experiences</a>
         <a href="/about/" data-i18n="nav.about">About</a>
         <a href="/contact/" data-i18n="nav.contact">Contact</a>
+        <a href="/status/" data-i18n="nav.status">Status</a>
       </nav>
       <div class="lang-switch">
         <button data-lang="en" class="active">🇺🇸 EN</button>
@@ -52,41 +53,8 @@
 
     <section class="panel" id="domains">
       <div class="section-head"><div><p class="eyebrow" data-i18n="services.domains.eyebrow">Service Domains</p><h2 data-i18n="services.domains.title">Aligned with Projects</h2></div></div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3 data-i18n="services.domains.software.title">Software Development</h3>
-          <p class="muted" data-i18n="services.domains.software.desc">Backends, frontends y APIs con arquitectura modular, tests y CI/CD (ej: CmLayer pipeline).</p>
-          <ul>
-            <li>Diseño de APIs y dominio</li>
-            <li>Modelado de datos y CRUD</li>
-            <li>Repos estructurados + docs</li>
-            <li>Despliegue reproducible</li>
-          </ul>
-          <p class="muted" data-i18n="services.domains.software.how"><strong>How I work:</strong> arquitectura limpia y reproducibilidad sobre velocidad.</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="services.domains.cyber.title">Cybersecurity Foundations</h3>
-          <p class="muted" data-i18n="services.domains.cyber.desc">Seguridad integrada: identidad, roles, auditoría, separación de entornos.</p>
-          <ul>
-            <li>Auth/JWT/RBAC</li>
-            <li>Buenas prácticas de API</li>
-            <li>Separación dev/test/prod</li>
-            <li>Logging y trazas mínimas</li>
-            <li>Revisiones orientadas a riesgo</li>
-          </ul>
-          <p class="muted" data-i18n="services.domains.cyber.how"><strong>How I work:</strong> prevención desde diseño, no como parche.</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="services.domains.ai.title">Generative AI & Automation</h3>
-          <p class="muted" data-i18n="services.domains.ai.desc">IA como capa de apoyo: automatización, documentación técnica y asistentes.</p>
-          <ul>
-            <li>Features asistidas (chat/QA interno)</li>
-            <li>Automatización de flujos</li>
-            <li>Copilots internos y tooling</li>
-            <li>Documentación generativa</li>
-          </ul>
-          <p class="muted" data-i18n="services.domains.ai.how"><strong>How I work:</strong> IA explicable y con controles.</p>
-        </article>
+      <div class="services-grid" id="services-domains" data-services>
+        <article class="service-card"><p class="muted" data-i18n="services.loading">Loading services...</p></article>
       </div>
     </section>
 
@@ -180,6 +148,7 @@
     <span class="dot"></span>
     <span class="release">Release: CM-2026.02.04 · Env: Production · <a href="/changelog/">/changelog</a></span>
   </footer>
+  <script src="/assets/js/config.js?v=20260204" defer></script>
   <script src="/assets/js/main.js?v=20260204" defer></script>
 </body>
 </html>

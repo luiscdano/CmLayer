@@ -1,0 +1,42 @@
+{
+  "updatedAt": "2026-02-04T18:09:33Z",
+  "items": [
+    {
+      "id": "software",
+      "title": "Software Development",
+      "description": "Backends, frontends and APIs with modular architecture, tests, and CI/CD.",
+      "bullets": [
+        "Diseño de APIs y dominio",
+        "Modelado de datos y CRUD",
+        "Repos estructurados + docs",
+        "Despliegue reproducible"
+      ],
+      "how": "How I work: arquitectura limpia y reproducibilidad sobre velocidad."
+    },
+    {
+      "id": "cybersecurity",
+      "title": "Cybersecurity Foundations",
+      "description": "Seguridad integrada: identidad, roles, auditoría, separación de entornos.",
+      "bullets": [
+        "Auth/JWT/RBAC",
+        "Buenas prácticas de API",
+        "Separación dev/test/prod",
+        "Logging y trazas mínimas",
+        "Revisiones orientadas a riesgo"
+      ],
+      "how": "How I work: prevención desde diseño, no como parche."
+    },
+    {
+      "id": "ai",
+      "title": "Generative AI & Automation",
+      "description": "IA como capa de apoyo: automatización, documentación técnica y asistentes.",
+      "bullets": [
+        "Features asistidas (chat/QA interno)",
+        "Automatización de flujos",
+        "Copilots internos y tooling",
+        "Documentación generativa"
+      ],
+      "how": "How I work: IA explicable y con controles."
+    }
+  ]
+}

@@ -15,12 +15,13 @@
       <a class="brand" href="/"><img src="/assets/img/Logo01.png" alt="CmLayer" class="brand-mark" /></a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a href="/projects/">Projects</a>
-        <a href="/services/">Services</a>
-        <a href="/knowledge-hub/">Knowledge Hub</a>
-        <a href="/voices-experiences/">Voices & Experiences</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+        <a data-i18n="nav.projects" href="/projects/">Projects</a>
+        <a data-i18n="nav.services" href="/services/">Services</a>
+        <a data-i18n="nav.knowledge" href="/knowledge-hub/">Knowledge Hub</a>
+        <a data-i18n="nav.voices" href="/voices-experiences/">Voices & Experiences</a>
+        <a data-i18n="nav.about" href="/about/">About</a>
+        <a data-i18n="nav.contact" href="/contact/">Contact</a>
+        <a data-i18n="nav.status" href="/status/">Status</a>
       </nav>
     </div>
   </header>
@@ -30,13 +31,11 @@
     <article class="value-card">
       <h3>CM-2026.02.04 — Release</h3>
       <ul class="muted">
-        <li>Home: System Map, Active Module, System Capabilities, Stack, Feedback Loop.</li>
-        <li>Projects: estados con badges + outcomes; cache-bust.</li>
-        <li>Knowledge Hub: plantilla de recurso con Resumen/Comentario/Proyecto vinculado.</li>
-        <li>Voices: Feedback Loop con consentimiento y mailto.</li>
-        <li>Contact: checkbox de privacidad; tiempo de respuesta.</li>
-        <li>Services: copy alineado a capacidades y entregables.</li>
-        <li>Footer: release y env.</li>
+        <li>API ligera: endpoints públicos, admin con token y audit log.</li>
+        <li>Projects/Services/Knowledge Hub: contenido data-driven desde /api.</li>
+        <li>Status page: health + último release desde /api/status.</li>
+        <li>i18n: strings servidas por JSON desde /api/i18n.</li>
+        <li>Footer: release y env alineados en páginas clave.</li>
       </ul>
       <p class="tiny muted">Estado: Production · Fecha: 2026-02-04</p>
     </article>
@@ -57,6 +56,7 @@
     <span class="dot"></span>
     <span class="release">Release: CM-2026.02.04 · Env: Production · <a href="/changelog/">/changelog</a></span>
   </footer>
+  <script src="/assets/js/config.js?v=20260204" defer></script>
   <script src="/assets/js/main.js?v=20260204" defer></script>
 </body>
 </html>
