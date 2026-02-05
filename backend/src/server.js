@@ -120,6 +120,30 @@ export const buildServer = async () => {
     normalizeCollection(await readCollection(dataDir, "changelog"))
   );
 
+  app.get("/api/voices", async () => {
+    const feedbackData = normalizeCollection(
+      await readCollection(dataDir, "feedback")
+    );
+    const items = feedbackData.items
+      .filter((item) => item.status === "Published" && item.consent)
+      .map((item) => ({
+        id: item.id,
+        name: item.name || "Anonymous",
+        message: item.message,
+        context: item.context || null,
+        type: item.type || null,
+        topic: item.topic || null,
+        source: item.source || null,
+        publishedAt: item.publishedAt || item.updatedAt || item.createdAt
+      }));
+
+    return {
+      updatedAt: feedbackData.updatedAt,
+      total: items.length,
+      items
+    };
+  });
+
   app.get("/api/i18n/:lang", async (request, reply) => {
     const lang = request.params?.lang;
     if (!lang || !["en", "es"].includes(lang)) {
@@ -162,6 +186,8 @@ export const buildServer = async () => {
       type: input.type || null,
       topic: input.topic || null,
       context: input.context || null,
+      budget: input.budget || null,
+      timeline: input.timeline || null,
       message: input.message,
       consent: input.consent,
       source: input.source || null,

@@ -5,18 +5,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CmLayer — Contact</title>
   <meta name="description" content="Conectar · Colaborar · Construir. Punto de encuentro para ideas, proyectos y aprendizaje técnico en CmLayer." />
+  <meta name="robots" content="index, follow" />
   <meta property="og:title" content="CmLayer — Contact" />
   <meta property="og:description" content="Conectar · Colaborar · Construir" />
   <meta property="og:url" content="https://cmlayer.com/contact/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
+  <meta property="og:site_name" content="CmLayer" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://cmlayer.com/contact/" />
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/img/isotipo02.png" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260204" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260205" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "CmLayer Contact",
+    "url": "https://cmlayer.com/contact/",
+    "about": {
+      "@type": "Person",
+      "name": "Luis Emilio Cedano"
+    }
+  }
+  </script>
 </head>
 <body>
   <div class="bg-grid"></div>
@@ -78,23 +95,23 @@
       <p class="muted" data-i18n="contact.form.note">Your message is read personally. CmLayer values clear and respectful technical conversations.</p>
       <div class="contact-grid">
         <form class="contact-form" data-feedback-form data-source="contact">
-          <label data-i18n="contact.form.name">Name<input type="text" name="name" placeholder="Your name"></label>
-          <label data-i18n="contact.form.email">Email<input type="email" name="email" placeholder="you@email.com" required></label>
-          <label data-i18n="contact.form.type">Contact type<select name="type">
+          <label><span data-i18n="contact.form.name">Name</span><input type="text" name="name" placeholder="Your name"></label>
+          <label><span data-i18n="contact.form.email">Email</span><input type="email" name="email" placeholder="you@email.com" required></label>
+          <label><span data-i18n="contact.form.type">Contact type</span><select name="type">
             <option data-i18n="contact.form.type.opt.colab" value="colab">Collaboration</option>
             <option data-i18n="contact.form.type.opt.project" value="project">Project</option>
             <option data-i18n="contact.form.type.opt.feedback" value="feedback">Feedback</option>
             <option data-i18n="contact.form.type.opt.knowledge" value="knowledge">Knowledge</option>
             <option data-i18n="contact.form.type.opt.other" value="other">Other</option>
           </select></label>
-          <label data-i18n="contact.form.topic">Topic<select name="topic">
+          <label><span data-i18n="contact.form.topic">Topic</span><select name="topic">
             <option data-i18n="contact.form.topic.opt.software" value="software">Software</option>
             <option data-i18n="contact.form.topic.opt.security" value="security">Security</option>
             <option data-i18n="contact.form.topic.opt.ai" value="ai">AI</option>
             <option data-i18n="contact.form.topic.opt.general" value="general">General</option>
           </select></label>
-          <label data-i18n="contact.form.message">Message<textarea name="message" rows="4" placeholder="How can I help?" required></textarea></label>
-          <label class="tiny muted"><input type="checkbox" name="consent" required> Autorizo el uso de estos datos para responder y mejorar CmLayer.</label>
+          <label><span data-i18n="contact.form.message">Message</span><textarea name="message" rows="4" placeholder="How can I help?" required></textarea></label>
+          <label class="tiny muted"><input type="checkbox" name="consent" required> <span data-i18n="form.consent.label">Autorizo el uso de estos datos para responder y mejorar CmLayer.</span></label>
           <button type="submit" class="btn primary" data-i18n="contact.form.submit">Send Message</button>
           <p class="tiny muted form-status" data-form-status></p>
         </form>
@@ -143,9 +160,10 @@
     <span class="dot"></span>
     <span>cmlayer.com</span>
     <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.04 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
+    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
-  <script src="/assets/js/config.js?v=20260204" defer></script>
-  <script src="/assets/js/main.js?v=20260204" defer></script>
+  <script src="/assets/js/config.js?v=20260205" defer></script>
+  <script src="/assets/js/analytics.js?v=20260205" defer></script>
+  <script src="/assets/js/main.js?v=20260205" defer></script>
 </body>
 </html>

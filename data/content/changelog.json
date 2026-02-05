@@ -1,14 +1,40 @@
 {
-  "updatedAt": "2026-02-04T18:09:33Z",
+  "updatedAt": "2026-02-05T00:45:50.005Z",
   "items": [
+    {
+      "id": "cm-2026-02-05",
+      "title": "CM-2026.02.05 — Release",
+      "summary": "SEO + analytics layer (GA4 + event tracking), feedback publishing + /api/voices, services packages + briefs, Knowledge Hub contribution form, and planning/maintenance docs.",
+      "date": "2026-02-05",
+      "tags": [
+        "release",
+        "seo",
+        "analytics",
+        "conversion",
+        "voices"
+      ],
+      "links": [
+        {
+          "label": "Changelog",
+          "url": "/voices-experiences/changelog/"
+        }
+      ],
+      "createdAt": "2026-02-05T00:45:50.005Z",
+      "updatedAt": "2026-02-05T00:45:50.005Z"
+    },
     {
       "id": "cm-2026-02-04",
       "title": "CM-2026.02.04 — Release",
       "summary": "Data-driven content for Projects/Services/Knowledge Hub, Status block in Voices & Experiences, i18n served via API, and backend endpoints for feedback + audit log.",
       "date": "2026-02-04",
-      "tags": ["release"],
+      "tags": [
+        "release"
+      ],
       "links": [
-        { "label": "Changelog", "url": "/voices-experiences/changelog/" }
+        {
+          "label": "Changelog",
+          "url": "/voices-experiences/changelog/"
+        }
       ],
       "createdAt": "2026-02-04T18:09:33Z",
       "updatedAt": "2026-02-04T18:09:33Z"

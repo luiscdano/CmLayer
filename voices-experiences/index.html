@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CmLayer — Voices & Experiences</title>
   <meta name="description" content="CmLayer Voices & Experiences: reflections, feedback, and learning-in-public stories around software, security, and AI." />
+  <meta name="robots" content="index, follow" />
   <meta property="og:title" content="CmLayer — Voices & Experiences" />
   <meta property="og:description" content="Reflections, collaboration, and learning in public." />
   <meta property="og:url" content="https://cmlayer.com/voices-experiences/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
+  <meta property="og:site_name" content="CmLayer" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://cmlayer.com/voices-experiences/" />
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/img/isotipo02.png" />
+  <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260204" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260205" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -121,6 +126,14 @@
       </div>
     </section>
 
+    <section class="panel" id="community-voices">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="ve.voices.eyebrow">Community Voices</p><h2 data-i18n="ve.voices.title">Feedback publicado</h2></div></div>
+      <p class="muted" data-i18n="ve.voices.sub">Testimonios verificados que ayudan a mejorar el ecosistema.</p>
+      <div class="testimonial-grid" data-voices>
+        <p class="muted" data-i18n="ve.voices.empty">Aún no hay feedback publicado.</p>
+      </div>
+    </section>
+
     <section class="panel" id="feedback">
       <div class="section-head"><div><p class="eyebrow" data-i18n="ve.feedback.eyebrow">Feedback Loop</p><h2 data-i18n="ve.feedback.title">Leave Your Voice</h2></div></div>
       <p class="muted" data-i18n="ve.feedback.desc">Comparte feedback o sugerencias después de ver un proyecto, guía o sistema. Se publica solo con tu autorización.</p>
@@ -129,10 +142,10 @@
           <p class="muted" data-i18n="ve.feedback.side">Tell me what you saw/tested and what you think.</p>
         </div>
         <form class="contact-form" data-feedback-form data-source="voices-experiences">
-          <label data-i18n="ve.feedback.name">Nombre (opcional)<input type="text" name="name" placeholder="Tu nombre"></label>
-          <label data-i18n="ve.feedback.context">Contexto<input type="text" name="context" placeholder="¿Qué viste o probaste?"></label>
-          <label data-i18n="ve.feedback.comment">Comentario<textarea name="comment" rows="4" placeholder="Feedback, sugerencias o reflexiones" required></textarea></label>
-          <label class="tiny muted"><input type="checkbox" name="consent" required> Autorizo uso de este feedback para mejorar y citarlo.</label>
+          <label><span data-i18n="ve.feedback.name">Nombre (opcional)</span><input type="text" name="name" placeholder="Tu nombre"></label>
+          <label><span data-i18n="ve.feedback.context">Contexto</span><input type="text" name="context" placeholder="¿Qué viste o probaste?"></label>
+          <label><span data-i18n="ve.feedback.comment">Comentario</span><textarea name="comment" rows="4" placeholder="Feedback, sugerencias o reflexiones" required></textarea></label>
+          <label class="tiny muted"><input type="checkbox" name="consent" required> <span data-i18n="ve.feedback.consent">Autorizo uso de este feedback para mejorar y citarlo.</span></label>
           <button type="submit" class="btn primary" data-i18n="ve.feedback.submit">Enviar</button>
           <p class="tiny muted form-status" data-form-status></p>
         </form>
@@ -165,9 +178,10 @@
     <span class="dot"></span>
     <span>cmlayer.com</span>
     <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.04 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
+    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
-  <script src="/assets/js/config.js?v=20260204" defer></script>
-  <script src="/assets/js/main.js?v=20260204" defer></script>
+  <script src="/assets/js/config.js?v=20260205" defer></script>
+  <script src="/assets/js/analytics.js?v=20260205" defer></script>
+  <script src="/assets/js/main.js?v=20260205" defer></script>
 </body>
 </html>

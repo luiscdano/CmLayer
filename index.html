@@ -6,27 +6,35 @@
   <title>CmLayer — Sistemas, Seguridad e Inteligencia en Acción</title>
   <meta name="description" content="CmLayer es un ecosistema para construir, aprender y documentar tecnología en público: software, seguridad e inteligencia artificial." />
   <meta name="keywords" content="software, ciberseguridad, inteligencia artificial, CmLayer, Luis Emilio Cedano, arquitectura de sistemas" />
+  <meta name="robots" content="index, follow" />
   <meta property="og:title" content="CmLayer" />
   <meta property="og:description" content="Sistemas, seguridad e inteligencia: construir, aprender y documentar tecnología en público." />
   <meta property="og:url" content="https://cmlayer.com" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
+  <meta property="og:site_name" content="CmLayer" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://cmlayer.com/" />
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/img/isotipo02.png" />
   <link rel="manifest" href="/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20260204" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260205" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Luis Emilio Cedano",
+    "@type": "WebSite",
+    "name": "CmLayer",
     "url": "https://cmlayer.com",
-    "jobTitle": "Founder & CTO | Software, Security, AI",
-    "sameAs": ["https://github.com/luiscdano", "https://www.linkedin.com/in/luiscdano"]
+    "publisher": {
+      "@type": "Person",
+      "name": "Luis Emilio Cedano",
+      "jobTitle": "Founder & CTO | Software, Security, AI",
+      "sameAs": ["https://github.com/luiscdano", "https://www.linkedin.com/in/luiscdano"]
+    }
   }
   </script>
 </head>
@@ -81,7 +89,7 @@
           <li data-i18n="hero.roadmap.item3">Feedback Loop — abierto para sugerencias</li>
           <li data-i18n="hero.roadmap.item4">Siguiente entrega — Sprint de aprendizaje #1 publicado</li>
         </ul>
-        <p class="tiny" data-i18n="hero.roadmap.updated">Actualizado: Feb 3, 2026</p>
+        <p class="tiny" data-i18n="hero.roadmap.updated">Actualizado: Feb 5, 2026</p>
       </div>
     </section>
 
@@ -279,6 +287,15 @@
           <p class="muted" data-i18n="voices.card2.desc">¿Qué te gustaría ver aquí? Sugerencias, feedback, ideas.</p>
         </article>
       </div>
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="voices.testimonials.eyebrow">Voces recientes</p>
+          <h3 data-i18n="voices.testimonials.title">Evidencia de feedback</h3>
+        </div>
+      </div>
+      <div class="testimonial-grid" data-voices>
+        <p class="muted" data-i18n="voices.empty">Aún no hay voces publicadas.</p>
+      </div>
       <p class="muted" data-i18n="voices.microcopy">Las voces externas se publican solo con autorización y verificación.</p>
       <div class="cta">
         <a class="btn primary" href="/voices-experiences/" data-i18n="voices.cta">Sumar tu voz</a>
@@ -315,28 +332,26 @@
             <a class="btn ghost" href="https://github.com/luiscdano" target="_blank" rel="noreferrer" data-i18n="contact.cta.github">GitHub</a>
           </div>
         </div>
-        <form class="contact-form">
-          <label><span data-i18n="contact.form.name">Nombre</span><input type="text" name="nombre" placeholder="Tu nombre"></label>
-          <label><span data-i18n="contact.form.email">Email</span><input type="email" name="email" placeholder="tu@email.com"></label>
-          <label><span data-i18n="contact.form.type">Tipo</span>
-            <select name="tipo">
-              <option data-i18n="contact.form.type.opt1">Colaboración</option>
-              <option data-i18n="contact.form.type.opt2">Proyecto</option>
-              <option data-i18n="contact.form.type.opt3">Feedback</option>
-              <option data-i18n="contact.form.type.opt4">Knowledge Hub</option>
-              <option data-i18n="contact.form.type.opt5">Otro</option>
-            </select>
-          </label>
-          <label><span data-i18n="contact.form.topic">Tema</span>
-            <select name="tema">
-              <option data-i18n="contact.form.topic.opt1">Software</option>
-              <option data-i18n="contact.form.topic.opt2">Seguridad</option>
-              <option data-i18n="contact.form.topic.opt3">IA</option>
-              <option data-i18n="contact.form.topic.opt4">General</option>
-            </select>
-          </label>
-          <label><span data-i18n="contact.form.message">Mensaje</span><textarea name="mensaje" rows="4" placeholder="Cuéntame sobre el proyecto o idea"></textarea></label>
+        <form class="contact-form" data-feedback-form data-source="home">
+          <label><span data-i18n="contact.form.name">Nombre</span><input type="text" name="name" placeholder="Tu nombre"></label>
+          <label><span data-i18n="contact.form.email">Email</span><input type="email" name="email" placeholder="tu@email.com" required></label>
+          <label><span data-i18n="contact.form.type">Tipo</span><select name="type">
+            <option data-i18n="contact.form.type.opt1" value="colab">Colaboración</option>
+            <option data-i18n="contact.form.type.opt2" value="project">Proyecto</option>
+            <option data-i18n="contact.form.type.opt3" value="feedback">Feedback</option>
+            <option data-i18n="contact.form.type.opt4" value="knowledge">Knowledge Hub</option>
+            <option data-i18n="contact.form.type.opt5" value="other">Otro</option>
+          </select></label>
+          <label><span data-i18n="contact.form.topic">Tema</span><select name="topic">
+            <option data-i18n="contact.form.topic.opt1" value="software">Software</option>
+            <option data-i18n="contact.form.topic.opt2" value="security">Seguridad</option>
+            <option data-i18n="contact.form.topic.opt3" value="ai">IA</option>
+            <option data-i18n="contact.form.topic.opt4" value="general">General</option>
+          </select></label>
+          <label><span data-i18n="contact.form.message">Mensaje</span><textarea name="message" rows="4" placeholder="Cuéntame sobre el proyecto o idea" required></textarea></label>
+          <label class="tiny muted"><input type="checkbox" name="consent" required> <span data-i18n="form.consent.label">Autorizo el uso de estos datos para responder y mejorar CmLayer.</span></label>
           <button class="btn primary" type="submit" data-i18n="contact.form.submit">Enviar</button>
+          <p class="tiny muted form-status" data-form-status></p>
         </form>
       </div>
     </section>
@@ -367,10 +382,11 @@
     <span class="dot"></span>
     <span>cmlayer.com</span>
     <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.04 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
+    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
 
-  <script src="/assets/js/config.js?v=20260204" defer></script>
-  <script src="/assets/js/main.js?v=20260204" defer></script>
+  <script src="/assets/js/config.js?v=20260205" defer></script>
+  <script src="/assets/js/analytics.js?v=20260205" defer></script>
+  <script src="/assets/js/main.js?v=20260205" defer></script>
 </body>
 </html>

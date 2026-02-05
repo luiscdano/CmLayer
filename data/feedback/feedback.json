@@ -1,4 +1,22 @@
 {
-  "updatedAt": "2026-02-04T18:09:33Z",
-  "items": []
+  "updatedAt": "2026-02-05T00:36:51.136Z",
+  "items": [
+    {
+      "id": "f6d9b34a-682f-4e46-b811-aebf93d3899f",
+      "status": "Published",
+      "name": "Camilo Bretón",
+      "email": null,
+      "type": "feedback",
+      "topic": "projects",
+      "context": "CmLayerBank — flujo de autenticación",
+      "message": "Probé el flujo de autenticación en CmLayerBank y se nota la estructura por capas. La doc me ayudó a entender roles y permisos rápido.",
+      "consent": true,
+      "source": "manual",
+      "createdAt": "2026-02-05T00:36:51.136Z",
+      "updatedAt": "2026-02-05T00:36:51.136Z",
+      "approvedAt": "2026-02-05T00:36:51.136Z",
+      "publishedAt": "2026-02-05T00:36:51.136Z",
+      "notes": []
+    }
+  ]
 }

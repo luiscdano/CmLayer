@@ -1,42 +1,42 @@
 {
-  "updatedAt": "2026-02-04T18:09:33Z",
+  "updatedAt": "2026-02-05T00:45:40.879Z",
   "items": [
     {
       "id": "software",
       "title": "Software Development",
-      "description": "Backends, frontends and APIs with modular architecture, tests, and CI/CD.",
+      "description": "Sistemas web con arquitectura modular, tests básicos y despliegue reproducible.",
       "bullets": [
-        "Diseño de APIs y dominio",
-        "Modelado de datos y CRUD",
-        "Repos estructurados + docs",
-        "Despliegue reproducible"
+        "Arquitectura modular + APIs claras",
+        "Frontend funcional con UX básica",
+        "Tests básicos + CI/CD",
+        "Documentación + despliegue reproducible"
       ],
-      "how": "How I work: arquitectura limpia y reproducibilidad sobre velocidad."
+      "how": "Cómo trabajo: arquitectura limpia y reproducibilidad sobre velocidad."
     },
     {
       "id": "cybersecurity",
       "title": "Cybersecurity Foundations",
-      "description": "Seguridad integrada: identidad, roles, auditoría, separación de entornos.",
+      "description": "Seguridad integrada desde el diseño: identidad, roles, auditoría y riesgos.",
       "bullets": [
         "Auth/JWT/RBAC",
-        "Buenas prácticas de API",
-        "Separación dev/test/prod",
-        "Logging y trazas mínimas",
-        "Revisiones orientadas a riesgo"
+        "Roles y permisos",
+        "Logging y auditoría",
+        "Revisión de riesgos",
+        "Buenas prácticas de API"
       ],
-      "how": "How I work: prevención desde diseño, no como parche."
+      "how": "Cómo trabajo: prevención desde diseño, no como parche."
     },
     {
       "id": "ai",
       "title": "Generative AI & Automation",
-      "description": "IA como capa de apoyo: automatización, documentación técnica y asistentes.",
+      "description": "IA aplicada como soporte: automatización, documentación y copilots internos.",
       "bullets": [
-        "Features asistidas (chat/QA interno)",
+        "Asistentes internos (chat/QA)",
         "Automatización de flujos",
-        "Copilots internos y tooling",
+        "Tooling y copilots",
         "Documentación generativa"
       ],
-      "how": "How I work: IA explicable y con controles."
+      "how": "Cómo trabajo: IA explicable y con controles."
     }
   ]
 }

@@ -19,6 +19,11 @@
   };
 
   const t = (key, fallback) => state.i18n[key] || fallback || "";
+  const trackEvent = (name, params = {}) => {
+    if (typeof window.cmlayerTrack === "function") {
+      window.cmlayerTrack(name, params);
+    }
+  };
 
   const fetchJson = async (path) => {
     try {
@@ -262,6 +267,36 @@
       .join("");
   };
 
+  const renderVoices = async () => {
+    const containers = document.querySelectorAll("[data-voices]");
+    if (!containers.length) return;
+
+    const payload = await fetchJson("/api/voices");
+    const items = payload?.items || [];
+
+    const html = items.length
+      ? items
+          .map((item) => {
+            const name = escapeHtml(item.name || t("voices.anonymous", "Anonymous"));
+            const context = item.context
+              ? ` · ${escapeHtml(item.context)}`
+              : "";
+            const message = escapeHtml(item.message || "");
+            return `
+              <figure class="testimonial">
+                <blockquote>${message}</blockquote>
+                <cite>— ${name}${context}</cite>
+              </figure>
+            `;
+          })
+          .join("")
+      : `<p class="muted">${escapeHtml(t("voices.empty", "No voices yet."))}</p>`;
+
+    containers.forEach((container) => {
+      container.innerHTML = html;
+    });
+  };
+
   const renderStatus = async () => {
     const metrics = document.querySelector("[data-status-metrics]");
     const release = document.querySelector("[data-status-release]");
@@ -347,6 +382,25 @@
     });
   };
 
+  const initTracking = () => {
+    document.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+      if (!link) return;
+      if (!link.classList.contains("btn") && link.dataset.track !== "true") return;
+
+      const href = link.getAttribute("href") || "";
+      const label = link.dataset.trackLabel || link.textContent?.trim() || "CTA";
+      const isExternal =
+        /^https?:\\/\\//i.test(href) && !href.includes(window.location.host);
+
+      trackEvent(isExternal ? "outbound_click" : "cta_click", {
+        label,
+        href,
+        location: window.location.pathname
+      });
+    });
+  };
+
   const ensureFormStatus = (form) => {
     let status = form.querySelector("[data-form-status]");
     if (!status) {
@@ -373,6 +427,8 @@
     const messageField = form.querySelector('[name="message"]')?.value?.trim() || "";
     const context = form.querySelector('[name="context"]')?.value?.trim() || "";
     const comment = form.querySelector('[name="comment"]')?.value?.trim() || "";
+    const budget = form.querySelector('[name="budget"]')?.value?.trim() || "";
+    const timeline = form.querySelector('[name="timeline"]')?.value?.trim() || "";
     const type = form.querySelector('[name="type"]')?.value?.trim() || "";
     const topic = form.querySelector('[name="topic"]')?.value?.trim() || "";
     const consent = Boolean(form.querySelector('[name="consent"]')?.checked);
@@ -386,6 +442,8 @@
       type: type || undefined,
       topic: topic || undefined,
       context: context || undefined,
+      budget: budget || undefined,
+      timeline: timeline || undefined,
       message,
       consent,
       source
@@ -403,14 +461,22 @@
         const payload = buildFeedbackPayload(form);
         if (!payload.consent) {
           status.textContent = t("form.consent", "Consent is required.");
+          trackEvent("form_error", { reason: "consent", source: payload.source });
           updateButton(submitBtn, t("form.sent", "Sent"), false);
           return;
         }
         if (!payload.message) {
           status.textContent = t("form.required", "Please complete required fields.");
+          trackEvent("form_error", { reason: "required", source: payload.source });
           updateButton(submitBtn, t("form.sent", "Sent"), false);
           return;
         }
+
+        trackEvent("form_submit", {
+          source: payload.source,
+          type: payload.type,
+          topic: payload.topic
+        });
 
         updateButton(submitBtn, t("form.sending", "Sending..."), true);
 
@@ -424,10 +490,16 @@
             throw new Error(`Request failed: ${response.status}`);
           }
           status.textContent = t("form.success", "Thanks! Feedback received.");
+          trackEvent("form_success", {
+            source: payload.source,
+            type: payload.type,
+            topic: payload.topic
+          });
           form.reset();
           updateButton(submitBtn, t("form.sent", "Sent"), false);
         } catch (error) {
           status.textContent = t("form.error", "Could not send. Try again.");
+          trackEvent("form_error", { reason: "network", source: payload.source });
           updateButton(
             submitBtn,
             submitBtn?.dataset.defaultText || t("form.sent", "Sent"),
@@ -441,10 +513,17 @@
 
   const init = async () => {
     initNav();
+    initTracking();
     initForms();
     await initI18n();
     initLangSwitch();
-    await Promise.all([renderProjects(), renderServices(), renderKnowledge(), renderStatus()]);
+    await Promise.all([
+      renderProjects(),
+      renderServices(),
+      renderKnowledge(),
+      renderStatus(),
+      renderVoices()
+    ]);
   };
 
   init();

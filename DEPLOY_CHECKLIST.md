@@ -19,7 +19,13 @@
 - If backend is a different domain, set:
   - `window.CMLAYER_API_BASE = "https://api.your-domain.com";`
 
-## 4. Endpoint smoke tests
+## 4. Analytics config
+- In `assets/js/config.js`, set:
+  - `window.CMLAYER_ANALYTICS.provider = "ga4"`
+  - `window.CMLAYER_ANALYTICS.ga4.measurementId = "G-XXXXXXXXXX"`
+- If using Plausible, set `provider = "plausible"` and `plausible.domain`.
+
+## 5. Endpoint smoke tests
 Run after deploy (replace domain):
 
 ```
@@ -29,6 +35,7 @@ curl -s https://your-domain.com/api/projects
 curl -s https://your-domain.com/api/services
 curl -s https://your-domain.com/api/knowledge
 curl -s https://your-domain.com/api/i18n/en
+curl -s https://your-domain.com/api/voices
 ```
 
 Feedback test:
@@ -43,7 +50,7 @@ Admin check (replace token):
 curl -s https://your-domain.com/admin/feedback -H 'x-admin-token: YOUR_TOKEN'
 ```
 
-## 5. UI verification
+## 6. UI verification
 - `/projects/` shows cards from JSON.
 - `/services/` renders service cards from JSON.
 - `/knowledge-hub/` renders library from JSON.
@@ -51,6 +58,20 @@ curl -s https://your-domain.com/admin/feedback -H 'x-admin-token: YOUR_TOKEN'
 - `/voices-experiences/changelog/` shows release history.
 - Language toggle loads from `/api/i18n/:lang`.
 - Feedback form sends and shows success message.
+- Home contact form sends and shows success message.
+- Services project brief form sends and shows success message.
+- Knowledge Hub suggestion form sends and shows success message.
+- Voices sections show published feedback from `/api/voices`.
 
-## 6. Logging
+## 7. SEO & indexing
+- `robots.txt` reachable.
+- `sitemap.xml` reachable and valid.
+- Canonical tags present on all pages.
+- Submit sitemap to Google Search Console.
+
+## 8. Analytics
+- GA4 loads and shows page_view + CTA events.
+- Track `cta_click`, `outbound_click`, `form_submit`, `form_success`, `form_error`.
+
+## 9. Logging
 - Confirm `data/audit/audit-log.jsonl` is writing entries.

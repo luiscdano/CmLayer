@@ -30,8 +30,9 @@ Public
 4. `GET /api/services`
 5. `GET /api/knowledge`
 6. `GET /api/changelog`
-7. `GET /api/i18n/:lang`
-8. `POST /api/feedback`
+7. `GET /api/voices`
+8. `GET /api/i18n/:lang`
+9. `POST /api/feedback`
 
 Admin (header `x-admin-token`)
 
@@ -48,6 +49,8 @@ Admin (header `x-admin-token`)
   "name": "Jane",
   "email": "jane@example.com",
   "message": "Great work.",
+  "budget": "1k-3k",
+  "timeline": "2-4 weeks",
   "consent": true,
   "source": "site-footer"
 }
