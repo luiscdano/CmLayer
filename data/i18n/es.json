@@ -698,5 +698,7 @@
   "home.saas.services.card2.title": "Analítica de Datos",
   "home.saas.services.card2.desc": "Insights, dashboards y pipelines de datos para decisiones estratégicas y operativas.",
   "home.saas.services.card3.title": "Soluciones Cloud",
-  "home.saas.services.card3.desc": "Infraestructura segura, automatización y despliegues resilientes para equipos modernos."
+  "home.saas.services.card3.desc": "Infraestructura segura, automatización y despliegues resilientes para equipos modernos.",
+  "home.saas.mid.titleA": "Preparando",
+  "home.saas.mid.titleB": "empresas."
 }
