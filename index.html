@@ -19,10 +19,10 @@
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/img/isotipo02.png" />
   <link rel="manifest" href="/manifest.json" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260306" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260306-2" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,22 +38,19 @@
   }
   </script>
 </head>
-<body class="home-cosmic">
-  <div class="bg-grid"></div>
-
+<body class="home-sunset">
   <header class="topbar">
-    <div class="topbar-inner">
+    <div class="topbar-inner container">
       <a class="brand" href="/">
         <img src="assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
       </a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a data-i18n="nav.projects" href="/projects/">Proyectos</a>
-        <a data-i18n="nav.services" href="/services/">Servicios</a>
-        <a data-i18n="nav.knowledge" href="/knowledge-hub/">Knowledge Hub</a>
-        <a data-i18n="nav.voices" href="/voices-experiences/">Voces & Experiencias</a>
-        <a data-i18n="nav.about" href="/about/">Acerca</a>
-        <a data-i18n="nav.contact" href="/contact/">Contacto</a>
+        <a data-i18n="nav.home" href="/">Home</a>
+        <a data-i18n="nav.about" href="/about/">About</a>
+        <a data-i18n="nav.services" href="/services/">Services</a>
+        <a data-i18n="nav.blog" href="/knowledge-hub/">Blog</a>
+        <a data-i18n="nav.contact" href="/contact/">Contact</a>
       </nav>
       <div class="lang-switch">
         <button data-lang="en" class="active">🇺🇸 EN</button>
@@ -62,96 +59,87 @@
     </div>
   </header>
 
-  <main class="home-main">
-    <section id="home" class="hero hero-cosmic">
-      <div class="hero__text">
-        <p class="eyebrow" data-i18n="hero.tags">CmLayer is running · Systems · Security · Intelligence</p>
-        <h1 data-i18n="hero.title">CmLayer está en ejecución.</h1>
-        <p class="lede" data-i18n="hero.sub">Un laboratorio público para construir software, diseñar seguridad e integrar IA generativa con mentalidad de ingeniería.</p>
-        <div class="cta">
-          <a class="btn primary" href="/projects/" data-i18n="hero.cta.primary">Entrar a Projects</a>
-          <a class="btn ghost" href="/services/" data-i18n="services.cta">Ver Services</a>
-        </div>
-        <div class="meta">
-          <span class="tag" data-i18n="hero.meta1">Aprender en público</span>
-          <span class="tag" data-i18n="hero.meta2">Construir con propósito</span>
-          <span class="tag" data-i18n="hero.meta3">Compartir lo que importa</span>
-        </div>
-      </div>
-      <div class="hero-stack-wrap" aria-label="CmLayer architecture layers">
-        <div class="layer-stack">
-          <article class="stack-layer layer-one">
-            <h3>Applications</h3>
-            <p>Digital products</p>
-          </article>
-          <article class="stack-layer layer-two">
-            <h3>AI Services</h3>
-            <p>Automation & copilots</p>
-          </article>
-          <article class="stack-layer layer-three">
-            <h3>Data Platform</h3>
-            <p>Pipelines and analytics</p>
-          </article>
-          <article class="stack-layer layer-four">
-            <h3>Cloud Infrastructure</h3>
-            <p>Secure and scalable core</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="home-section">
-      <div class="section-head centered">
-        <div>
-          <p class="eyebrow" data-i18n="services.eyebrow">System Capabilities</p>
-          <h2 data-i18n="services.title">Capacidades del Sistema</h2>
-          <p class="muted" data-i18n="services.sub">Lo que CmLayer construye y cómo lo construye.</p>
-        </div>
-      </div>
-      <div class="service-showcase">
-        <article class="service-card feature-card">
-          <div class="feature-icon">
-            <img src="/assets/img/isotipo02.png" alt="Software engineering icon" loading="lazy" />
+  <main class="landing-main">
+    <section id="home" class="hero-sunset">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 data-i18n="home.saas.title">Innovative Layered Solutions</h1>
+          <p data-i18n="home.saas.sub">Build and scale with our cutting-edge technology platform.</p>
+          <div class="hero-actions">
+            <a class="hero-btn hero-btn-primary" href="/contact/" data-i18n="home.saas.cta.primary">Get Started</a>
+            <a class="hero-btn hero-btn-secondary" href="/services/" data-i18n="home.saas.cta.secondary">Learn More</a>
           </div>
-          <h3 data-i18n="services.card1.title">Desarrollo de Software</h3>
-          <p class="muted" data-i18n="services.card1.desc">Diseño y construcción de backend, frontend y APIs con enfoque en arquitectura, pruebas, documentación y despliegue.</p>
-        </article>
-        <article class="service-card feature-card">
-          <div class="feature-icon feature-icon-brain" aria-hidden="true">AI</div>
-          <h3 data-i18n="services.card3.title">IA Generativa</h3>
-          <p class="muted" data-i18n="services.card3.desc">IA como capa de apoyo: automatización, generación de documentación, asistencia técnica y análisis.</p>
-        </article>
-        <article class="service-card feature-card">
-          <div class="feature-icon feature-icon-cloud" aria-hidden="true">Cloud</div>
-          <h3 data-i18n="services.card2.title">Ciberseguridad</h3>
-          <p class="muted" data-i18n="services.card2.desc">Seguridad integrada: identidad, roles, auditoría, hardening básico y separación de entornos.</p>
-        </article>
+        </div>
+
+        <aside class="hero-visual" aria-label="CmLayer platform focus">
+          <div class="visual-card">
+            <span class="visual-badge" data-i18n="home.saas.visual.badge">AI + Cloud Platform</span>
+            <ul>
+              <li><span class="visual-dot"></span><span data-i18n="home.saas.visual.item1">Software Engineering at enterprise scale</span></li>
+              <li><span class="visual-dot"></span><span data-i18n="home.saas.visual.item2">Cloud Infrastructure with secure architecture</span></li>
+              <li><span class="visual-dot"></span><span data-i18n="home.saas.visual.item3">Data and AI systems for intelligent operations</span></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="wave-container" aria-hidden="true">
+        <svg class="waves" viewBox="0 0 3200 220" preserveAspectRatio="none">
+          <path class="wave wave1" d="M0 118 C150 68 350 168 500 118 C650 68 850 168 1000 118 C1150 68 1350 168 1500 118 C1650 68 1850 168 2000 118 C2150 68 2350 168 2500 118 C2650 68 2850 168 3000 118 C3070 100 3140 95 3200 118 L3200 220 L0 220 Z"></path>
+          <path class="wave wave2" d="M0 138 C160 104 340 188 500 146 C660 104 840 188 1000 146 C1160 104 1340 188 1500 146 C1660 104 1840 188 2000 146 C2160 104 2340 188 2500 146 C2660 104 2840 188 3000 146 C3070 132 3140 125 3200 146 L3200 220 L0 220 Z"></path>
+          <path class="wave wave3" d="M0 162 C180 132 320 206 500 174 C680 132 820 206 1000 174 C1180 132 1320 206 1500 174 C1680 132 1820 206 2000 174 C2180 132 2320 206 2500 174 C2680 132 2820 206 3000 174 C3070 166 3140 160 3200 174 L3200 220 L0 220 Z"></path>
+        </svg>
       </div>
     </section>
 
-    <section id="stack" class="trusted-tech">
-      <div class="section-head centered trusted-head">
-        <div>
-          <p class="eyebrow" data-i18n="stack.eyebrow">Stack en uso</p>
-          <h2 data-i18n="stack.title">Stack en uso</h2>
+    <section class="cta-section">
+      <div class="container cta-inner">
+        <h2 data-i18n="home.saas.mid.title">Preparing enterprises.</h2>
+        <p data-i18n="home.saas.mid.sub">Build and scale with our cutting-edge technology platform.</p>
+        <div class="cta-actions">
+          <a class="hero-btn hero-btn-primary" href="/contact/" data-i18n="home.saas.cta.primary">Get Started</a>
+          <a class="hero-btn hero-btn-secondary" href="/services/" data-i18n="home.saas.cta.secondary">Learn More</a>
         </div>
       </div>
-      <div class="tech-list" aria-label="Trusted technologies">
-        <span>Python</span>
-        <span>.NET</span>
-        <span>Docker</span>
-        <span>Kubernetes</span>
-        <span>AWS</span>
-      </div>
     </section>
 
-    <section id="contact" class="home-cta">
-      <p class="eyebrow" data-i18n="projects.final.eyebrow">Mensaje final</p>
-      <h2 data-i18n="projects.final.title">Construyendo el ingeniero que quiero ser.</h2>
-      <p class="muted" data-i18n="projects.final.sub">CmLayer es mi espacio público para aprender, experimentar y pensar sistemas a largo plazo.</p>
-      <div class="cta">
-        <a class="btn primary" href="/contact/" data-i18n="contact.cta.primary">Enviar mensaje</a>
-        <a class="btn ghost" href="/projects/" data-i18n="projects.final.follow">Seguir progreso</a>
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="services-head">
+          <h2 data-i18n="home.saas.services.title">Our Services</h2>
+        </div>
+
+        <div class="services-grid-clean">
+          <article class="service-clean card-software">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <rect x="12" y="12" width="40" height="12" rx="4" fill="currentColor" opacity="0.95"/>
+              <rect x="16" y="28" width="32" height="10" rx="3" fill="currentColor" opacity="0.78"/>
+              <rect x="20" y="42" width="24" height="8" rx="3" fill="currentColor" opacity="0.62"/>
+            </svg>
+            <h3 data-i18n="home.saas.services.card1.title">Custom Software</h3>
+            <p data-i18n="home.saas.services.card1.desc">Design and delivery of scalable platforms, APIs and enterprise-grade applications.</p>
+          </article>
+
+          <article class="service-clean card-analytics">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <rect x="8" y="8" width="48" height="48" rx="12" fill="#ffffff" opacity="0.75"/>
+              <path d="M18 42L27 31L35 37L46 23" stroke="#1F3C6D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="46" cy="23" r="4" fill="#1F3C6D"/>
+            </svg>
+            <h3 data-i18n="home.saas.services.card2.title">Data Analytics</h3>
+            <p data-i18n="home.saas.services.card2.desc">Insights, dashboards and data pipelines that support strategic and operational decisions.</p>
+          </article>
+
+          <article class="service-clean card-cloud">
+            <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+              <path d="M22 47H45C52 47 56 43 56 37C56 31.5 52 27.3 46.2 27.1C44.6 20.8 39.7 17 33.3 17C26.1 17 20.5 21.8 19.2 28.4C14.1 29.2 10 33.4 10 38.4C10 43.2 13.7 47 18.5 47H22Z" fill="#1F3C6D"/>
+              <path d="M31.5 31V41" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round"/>
+              <path d="M27 35.5L31.5 31L36 35.5" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 data-i18n="home.saas.services.card3.title">Cloud Solutions</h3>
+            <p data-i18n="home.saas.services.card3.desc">Secure infrastructure, automation and resilient deployment patterns for modern teams.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
@@ -161,7 +149,7 @@
     <span class="dot"></span>
     <span>cmlayer.com</span>
     <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
+    <span class="release">Release: CM-2026.03.06 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
 
   <script src="/assets/js/config.js?v=20260205" defer></script>
