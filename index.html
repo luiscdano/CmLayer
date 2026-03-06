@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260205" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260306" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,7 +38,7 @@
   }
   </script>
 </head>
-<body>
+<body class="home-cosmic">
   <div class="bg-grid"></div>
 
   <header class="topbar">
@@ -62,317 +62,96 @@
     </div>
   </header>
 
-  <main>
-    <section id="home" class="hero">
+  <main class="home-main">
+    <section id="home" class="hero hero-cosmic">
       <div class="hero__text">
         <p class="eyebrow" data-i18n="hero.tags">CmLayer is running · Systems · Security · Intelligence</p>
         <h1 data-i18n="hero.title">CmLayer está en ejecución.</h1>
         <p class="lede" data-i18n="hero.sub">Un laboratorio público para construir software, diseñar seguridad e integrar IA generativa con mentalidad de ingeniería.</p>
         <div class="cta">
           <a class="btn primary" href="/projects/" data-i18n="hero.cta.primary">Entrar a Projects</a>
-          <a class="btn ghost" href="/knowledge-hub/" data-i18n="hero.cta.secondary">Abrir Knowledge Hub</a>
-          <a class="btn link" href="/voices-experiences/" data-i18n="hero.cta.tertiary">Unirme al Feedback Loop</a>
+          <a class="btn ghost" href="/services/" data-i18n="services.cta">Ver Services</a>
         </div>
         <div class="meta">
           <span class="tag" data-i18n="hero.meta1">Aprender en público</span>
           <span class="tag" data-i18n="hero.meta2">Construir con propósito</span>
           <span class="tag" data-i18n="hero.meta3">Compartir lo que importa</span>
         </div>
-        <p class="status-bar" data-i18n="hero.status">Status: Learning in Public · Modules: Projects | Services | Knowledge | Voices · Mode: Build</p>
       </div>
-      <div class="hero__card">
-        <p class="label" data-i18n="hero.roadmap.label">Sesión actual</p>
-        <h3 data-i18n="hero.roadmap.title">Roadmap en vivo</h3>
-        <ul>
-          <li data-i18n="hero.roadmap.item1">CmLayerBank — módulo activo</li>
-          <li data-i18n="hero.roadmap.item2">Knowledge Hub — biblioteca visual (PDFs con portada)</li>
-          <li data-i18n="hero.roadmap.item3">Feedback Loop — abierto para sugerencias</li>
-          <li data-i18n="hero.roadmap.item4">Siguiente entrega — Sprint de aprendizaje #1 publicado</li>
-        </ul>
-        <p class="tiny" data-i18n="hero.roadmap.updated">Actualizado: Feb 5, 2026</p>
+      <div class="hero-stack-wrap" aria-label="CmLayer architecture layers">
+        <div class="layer-stack">
+          <article class="stack-layer layer-one">
+            <h3>Applications</h3>
+            <p>Digital products</p>
+          </article>
+          <article class="stack-layer layer-two">
+            <h3>AI Services</h3>
+            <p>Automation & copilots</p>
+          </article>
+          <article class="stack-layer layer-three">
+            <h3>Data Platform</h3>
+            <p>Pipelines and analytics</p>
+          </article>
+          <article class="stack-layer layer-four">
+            <h3>Cloud Infrastructure</h3>
+            <p>Secure and scalable core</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="map" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="map.eyebrow">System Map</p>
-          <h2 data-i18n="map.title">Mapa del Sistema</h2>
-          <p class="muted" data-i18n="map.sub">Explora CmLayer como un sistema en vivo: cada módulo conecta con el siguiente.</p>
-        </div>
-        <a class="btn ghost" href="#map" data-i18n="map.cta">Explorar el mapa</a>
-      </div>
-      <div class="value-grid map-grid">
-        <a class="value-card" href="/projects/">
-          <h3 data-i18n="map.projects.title">Projects</h3>
-          <p class="muted" data-i18n="map.projects.desc">Sistemas en construcción</p>
-        </a>
-        <a class="value-card" href="/services/">
-          <h3 data-i18n="map.services.title">Services</h3>
-          <p class="muted" data-i18n="map.services.desc">Capacidades cargadas</p>
-        </a>
-        <a class="value-card" href="/knowledge-hub/">
-          <h3 data-i18n="map.kh.title">Knowledge Hub</h3>
-          <p class="muted" data-i18n="map.kh.desc">Flujos de aprendizaje</p>
-        </a>
-        <a class="value-card" href="/voices-experiences/">
-          <h3 data-i18n="map.voices.title">Voices</h3>
-          <p class="muted" data-i18n="map.voices.desc">Feedback loop</p>
-        </a>
-        <a class="value-card" href="/about/">
-          <h3 data-i18n="map.about.title">About</h3>
-          <p class="muted" data-i18n="map.about.desc">Identidad del sistema</p>
-        </a>
-        <a class="value-card" href="/contact/">
-          <h3 data-i18n="map.contact.title">Contact</h3>
-          <p class="muted" data-i18n="map.contact.desc">Canal abierto</p>
-        </a>
-      </div>
-    </section>
-
-    <section id="pillars" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="pillars.eyebrow">Tres Pilares</p>
-          <h2 data-i18n="pillars.title">Qué representa CmLayer</h2>
-        </div>
-      </div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3 data-i18n="pillars.card1.title">Software Systems</h3>
-          <p class="muted" data-i18n="pillars.card1.desc">APIs, apps y plataformas modulares con arquitectura clara y documentación reproducible.</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="pillars.card2.title">Secure Platforms</h3>
-          <p class="muted" data-i18n="pillars.card2.desc">Identidad, control de acceso, trazabilidad y diseño consciente del riesgo desde el inicio.</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="pillars.card3.title">AI-Driven Intelligence</h3>
-          <p class="muted" data-i18n="pillars.card3.desc">IA generativa como amplificador: automatización, asistencia técnica, análisis y documentación.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="active" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="active.eyebrow">Active Module</p>
-          <h2 data-i18n="active.title">CmLayerBank</h2>
-          <p class="muted" data-i18n="active.sub">Plataforma financiera educativa en desarrollo para practicar arquitectura, seguridad e integración de IA.</p>
-        </div>
-        <div class="badges">
-          <span class="tag" data-i18n="active.badge1">Building</span>
-          <span class="tag" data-i18n="active.badge2">Educational Lab</span>
-          <span class="tag" data-i18n="active.badge3">Secure-by-Design</span>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card">
-          <h3 data-i18n="active.capabilities.title">System Capabilities</h3>
-          <ul class="muted">
-            <li data-i18n="active.cap1">Identity & Roles</li>
-            <li data-i18n="active.cap2">Secure Flows</li>
-            <li data-i18n="active.cap3">Observability (logs/trace)</li>
-            <li data-i18n="active.cap4">AI-assisted workflows</li>
-          </ul>
-          <div class="case-actions">
-            <a class="btn primary" href="https://www.cmlayerbank.com" target="_blank" rel="noreferrer" data-i18n="active.cta1">Ver Caso de Estudio</a>
-            <a class="btn ghost" href="https://github.com/luiscdano/CmLayer" target="_blank" rel="noreferrer" data-i18n="active.cta2">Explorar Repositorio</a>
-            <a class="btn link" href="/projects/" data-i18n="active.cta3">Ver todos los proyectos</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="stack" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="stack.eyebrow">Stack en uso</p>
-          <h2 data-i18n="stack.title">Stack en uso</h2>
-          <p class="muted" data-i18n="stack.sub">Lenguajes y herramientas aplicadas en proyectos y aprendizaje.</p>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="stack.langs.title">Lenguajes</h3><p class="muted" data-i18n="stack.langs.desc">Python · JavaScript · TypeScript · Java · C# · SQL</p></article>
-        <article class="value-card"><h3 data-i18n="stack.tools.title">Herramientas</h3><p class="muted" data-i18n="stack.tools.desc">GitHub · Docker · VS Code · Postman · Linux · CI/CD · Cloud · AI Tools</p></article>
-        <article class="value-card"><h3 data-i18n="stack.cta.title">CTA</h3><p class="muted" data-i18n="stack.cta.desc">Ver stack completo</p></article>
-      </div>
-    </section>
-
-    <section id="projects" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="projects.eyebrow">Proyecto Destacado</p>
-          <h2 data-i18n="projects.title">CmLayerBank</h2>
-          <p class="muted" data-i18n="projects.sub">Plataforma financiera educativa en desarrollo con seguridad por diseño y arquitectura modular.</p>
-        </div>
-        <a class="btn ghost" href="/projects/" data-i18n="projects.cta.all">Ver todos los proyectos</a>
-      </div>
-      <div class="case-grid">
-        <article class="case">
-          <div>
-            <p class="label" data-i18n="projects.case.label">Fintech · Seguridad</p>
-            <h3 data-i18n="projects.case.title">CmLayerBank</h3>
-            <p class="muted" data-i18n="projects.case.desc">Laboratorio de sistemas bancarios digitales para explorar autenticación, roles, control de acceso y asistencia con IA en flujos financieros.</p>
-            <div class="topics"><span>.NET</span><span>Node.js</span><span>Docker</span><span>PostgreSQL</span><span>JWT</span><span>CI/CD</span></div>
-            <div class="case-actions"><a class="btn primary" href="https://www.cmlayerbank.com" target="_blank" rel="noreferrer" data-i18n="projects.case.cta1">Ver caso de estudio</a><a class="btn ghost" href="https://github.com/luiscdano/CmLayer" target="_blank" rel="noreferrer" data-i18n="projects.case.cta2">Explorar repositorio</a></div>
-          </div>
-          <div class="case-media"><img src="/assets/img/isotipo02.png" alt="CmLayerBank branding"></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="services" class="panel">
-      <div class="section-head">
+    <section id="services" class="home-section">
+      <div class="section-head centered">
         <div>
           <p class="eyebrow" data-i18n="services.eyebrow">System Capabilities</p>
           <h2 data-i18n="services.title">Capacidades del Sistema</h2>
           <p class="muted" data-i18n="services.sub">Lo que CmLayer construye y cómo lo construye.</p>
         </div>
-        <a class="btn ghost" href="#contact" data-i18n="services.cta">Ver Services</a>
       </div>
-      <div class="services-grid">
-        <article class="service-card wide"><h3 data-i18n="services.card1.title">Desarrollo de Software</h3><p class="muted" data-i18n="services.card1.desc">Diseño y construcción de backend, frontend y APIs con enfoque en arquitectura, pruebas, documentación y despliegue.</p></article>
-        <article class="service-card wide"><h3 data-i18n="services.card2.title">Ciberseguridad</h3><p class="muted" data-i18n="services.card2.desc">Seguridad integrada: identidad, roles, auditoría, hardening básico y separación de entornos.</p></article>
-        <article class="service-card wide"><h3 data-i18n="services.card3.title">IA Generativa</h3><p class="muted" data-i18n="services.card3.desc">IA como capa de apoyo: automatización, generación de documentación, asistencia técnica y análisis.</p></article>
-        <article class="service-card wide">
-          <h3 data-i18n="services.card4.title">Cómo trabajamos</h3>
-          <ul class="muted checklist">
-            <li data-i18n="services.steps.1">Problema: alcance y criterios de éxito</li>
-            <li data-i18n="services.steps.2">Arquitectura: diseño modular + decisiones claras</li>
-            <li data-i18n="services.steps.3">Stack: selección por costo, DX y seguridad</li>
-            <li data-i18n="services.steps.4">Entrega: repo + docs + despliegue reproducible</li>
-            <li data-i18n="services.steps.5">Mejora: retro + backlog + hardening</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="knowledge" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="kh.eyebrow">Knowledge Hub</p>
-          <h2 data-i18n="kh.title">Biblioteca visual + aprendizaje en público</h2>
-          <p class="muted" data-i18n="kh.sub">Biblioteca visual + aprendizaje en público.</p>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="kh.card1.title">Guía de Estudio (PDF)</h3><p class="muted" data-i18n="kh.card1.desc">PDFs con portada + resumen + comentario.</p></article>
-        <article class="value-card"><h3 data-i18n="kh.card2.title">Video / Talk</h3><p class="muted" data-i18n="kh.card2.desc">Miniatura + takeaways + comentario.</p></article>
-        <article class="value-card"><h3 data-i18n="kh.card3.title">Curso</h3><p class="muted" data-i18n="kh.card3.desc">Portada + nivel + recomendación.</p></article>
-      </div>
-      <div class="mini-timeline">
-        <p class="muted" data-i18n="kh.timeline1">Tech Signals: Noticias + reflexión mensual</p>
-        <p class="muted" data-i18n="kh.timeline2">Learning Sprints: 1 recurso → resumen → comentario → proyecto</p>
-      </div>
-      <div class="cta">
-        <a class="btn primary" href="/knowledge-hub/" data-i18n="kh.cta">Explorar Knowledge Hub</a>
-      </div>
-    </section>
-
-    <section id="voices" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="voices.eyebrow">Feedback Loop</p>
-          <h2 data-i18n="voices.title">Este ecosistema escucha y mejora con tu voz.</h2>
-        </div>
-      </div>
-      <div class="value-grid">
-        <article class="value-card">
-          <h3 data-i18n="voices.card1.title">My Voice (Engineering Journal)</h3>
-          <p class="muted" data-i18n="voices.card1.desc">Decisiones, retos y lecciones reales del proceso.</p>
-        </article>
-        <article class="value-card">
-          <h3 data-i18n="voices.card2.title">Add Your Voice</h3>
-          <p class="muted" data-i18n="voices.card2.desc">¿Qué te gustaría ver aquí? Sugerencias, feedback, ideas.</p>
-        </article>
-      </div>
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="voices.testimonials.eyebrow">Voces recientes</p>
-          <h3 data-i18n="voices.testimonials.title">Evidencia de feedback</h3>
-        </div>
-      </div>
-      <div class="testimonial-grid" data-voices>
-        <p class="muted" data-i18n="voices.empty">Aún no hay voces publicadas.</p>
-      </div>
-      <p class="muted" data-i18n="voices.microcopy">Las voces externas se publican solo con autorización y verificación.</p>
-      <div class="cta">
-        <a class="btn primary" href="/voices-experiences/" data-i18n="voices.cta">Sumar tu voz</a>
-      </div>
-    </section>
-
-    <section id="about" class="panel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow" data-i18n="about.eyebrow">About CmLayer</p>
-          <h2 data-i18n="about.title">Una plataforma híbrida</h2>
-          <p class="muted" data-i18n="about.sub">Construcción de sistemas + documentación pública + aprendizaje continuo.</p>
-        </div>
-      </div>
-      <div class="about-copy solo">
-        <ul class="muted bullet">
-          <li data-i18n="about.vision">Visión: Ecosistema de sistemas seguros e inteligentes.</li>
-          <li data-i18n="about.mission">Misión: Construir, aprender y compartir con mentalidad de ingeniería.</li>
-          <li data-i18n="about.values">Valores: Transparencia · Estructura · Responsabilidad · Curiosidad · Colaboración.</li>
-        </ul>
-        <a class="btn ghost" href="/about/" data-i18n="about.cta">Conocer CmLayer & Luis (About)</a>
-      </div>
-    </section>
-
-    <section id="contact" class="panel contact">
-      <div class="two-col contact-grid">
-        <div>
-          <p class="eyebrow" data-i18n="contact.eyebrow">Open Channel</p>
-          <h2 data-i18n="contact.title">Colaboración, sugerencias o conversación técnica.</h2>
-          <p class="muted" data-i18n="contact.sub">Responderé personalmente. Mensajes claros y respetuosos.</p>
-          <div class="cta">
-            <a class="btn primary" href="mailto:luiscdano@gmail.com" data-i18n="contact.cta.primary">Enviar mensaje</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/luiscdano" target="_blank" rel="noreferrer" data-i18n="contact.cta.linkedin">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/luiscdano" target="_blank" rel="noreferrer" data-i18n="contact.cta.github">GitHub</a>
+      <div class="service-showcase">
+        <article class="service-card feature-card">
+          <div class="feature-icon">
+            <img src="/assets/img/isotipo02.png" alt="Software engineering icon" loading="lazy" />
           </div>
-        </div>
-        <form class="contact-form" data-feedback-form data-source="home">
-          <label><span data-i18n="contact.form.name">Nombre</span><input type="text" name="name" placeholder="Tu nombre"></label>
-          <label><span data-i18n="contact.form.email">Email</span><input type="email" name="email" placeholder="tu@email.com" required></label>
-          <label><span data-i18n="contact.form.type">Tipo</span><select name="type">
-            <option data-i18n="contact.form.type.opt1" value="colab">Colaboración</option>
-            <option data-i18n="contact.form.type.opt2" value="project">Proyecto</option>
-            <option data-i18n="contact.form.type.opt3" value="feedback">Feedback</option>
-            <option data-i18n="contact.form.type.opt4" value="knowledge">Knowledge Hub</option>
-            <option data-i18n="contact.form.type.opt5" value="other">Otro</option>
-          </select></label>
-          <label><span data-i18n="contact.form.topic">Tema</span><select name="topic">
-            <option data-i18n="contact.form.topic.opt1" value="software">Software</option>
-            <option data-i18n="contact.form.topic.opt2" value="security">Seguridad</option>
-            <option data-i18n="contact.form.topic.opt3" value="ai">IA</option>
-            <option data-i18n="contact.form.topic.opt4" value="general">General</option>
-          </select></label>
-          <label><span data-i18n="contact.form.message">Mensaje</span><textarea name="message" rows="4" placeholder="Cuéntame sobre el proyecto o idea" required></textarea></label>
-          <label class="tiny muted"><input type="checkbox" name="consent" required> <span data-i18n="form.consent.label">Autorizo el uso de estos datos para responder y mejorar CmLayer.</span></label>
-          <button class="btn primary" type="submit" data-i18n="contact.form.submit">Enviar</button>
-          <p class="tiny muted form-status" data-form-status></p>
-        </form>
+          <h3 data-i18n="services.card1.title">Desarrollo de Software</h3>
+          <p class="muted" data-i18n="services.card1.desc">Diseño y construcción de backend, frontend y APIs con enfoque en arquitectura, pruebas, documentación y despliegue.</p>
+        </article>
+        <article class="service-card feature-card">
+          <div class="feature-icon feature-icon-brain" aria-hidden="true">AI</div>
+          <h3 data-i18n="services.card3.title">IA Generativa</h3>
+          <p class="muted" data-i18n="services.card3.desc">IA como capa de apoyo: automatización, generación de documentación, asistencia técnica y análisis.</p>
+        </article>
+        <article class="service-card feature-card">
+          <div class="feature-icon feature-icon-cloud" aria-hidden="true">Cloud</div>
+          <h3 data-i18n="services.card2.title">Ciberseguridad</h3>
+          <p class="muted" data-i18n="services.card2.desc">Seguridad integrada: identidad, roles, auditoría, hardening básico y separación de entornos.</p>
+        </article>
       </div>
     </section>
 
-    <section id="despedida" class="panel">
-      <div class="section-head">
+    <section id="stack" class="trusted-tech">
+      <div class="section-head centered trusted-head">
         <div>
-          <p class="eyebrow" data-i18n="outro.eyebrow">Session Message</p>
-          <h2 data-i18n="outro.title">Cada sistema empieza como una pregunta.</h2>
+          <p class="eyebrow" data-i18n="stack.eyebrow">Stack en uso</p>
+          <h2 data-i18n="stack.title">Stack en uso</h2>
         </div>
       </div>
-      <div class="value-grid">
-        <article class="value-card">
-          <h3 data-i18n="outro.card1.title">Session Message</h3>
-          <p class="muted" data-i18n="outro.card1.desc">Cada sistema empieza como una pregunta. Cada línea de código es una hipótesis. CmLayer existe para probarlas en público.</p>
-        </article>
-        <article class="value-card">
-          <h3 data-i18n="outro.card2.title">Línea final</h3>
-          <p class="muted" data-i18n="outro.card2.desc">Aprender en público. Construir con propósito. Compartir lo que importa.</p>
-          <a class="btn link" href="/voices-experiences/" data-i18n="outro.cta">¿Qué te gustaría ver aquí?</a>
-        </article>
+      <div class="tech-list" aria-label="Trusted technologies">
+        <span>Python</span>
+        <span>.NET</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>AWS</span>
+      </div>
+    </section>
+
+    <section id="contact" class="home-cta">
+      <p class="eyebrow" data-i18n="projects.final.eyebrow">Mensaje final</p>
+      <h2 data-i18n="projects.final.title">Construyendo el ingeniero que quiero ser.</h2>
+      <p class="muted" data-i18n="projects.final.sub">CmLayer es mi espacio público para aprender, experimentar y pensar sistemas a largo plazo.</p>
+      <div class="cta">
+        <a class="btn primary" href="/contact/" data-i18n="contact.cta.primary">Enviar mensaje</a>
+        <a class="btn ghost" href="/projects/" data-i18n="projects.final.follow">Seguir progreso</a>
       </div>
     </section>
   </main>
