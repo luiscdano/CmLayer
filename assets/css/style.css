@@ -419,13 +419,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .home-sunset .topbar-inner {
-  min-height: 88px;
+  min-height: 92px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 14px;
 }
 
@@ -436,17 +436,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .home-sunset .brand-lockup {
-  gap: 8px;
-  padding: 10px 14px 10px 10px;
-  border-radius: 3px;
-  background: rgba(242, 227, 208, 0.1);
-  border: 1px solid rgba(242, 227, 208, 0.2);
-  backdrop-filter: blur(2px);
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .home-sunset .brand-icon-wrap {
-  width: 42px;
-  height: 42px;
+  width: 55px;
+  height: 55px;
   display: grid;
   place-items: center;
 }
@@ -481,12 +480,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 36px;
-  padding: 13px 22px;
-  border-radius: 3px;
-  background: rgba(242, 227, 208, 0.1);
-  border: 1px solid rgba(242, 227, 208, 0.2);
-  backdrop-filter: blur(2px);
+  gap: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .home-sunset .nav-links a {
@@ -541,30 +539,29 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 8px;
+  margin-left: 14px;
 }
 
 .home-sunset .lang-world {
-  width: 54px;
-  height: 54px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 3px;
-  border: 1px solid rgba(242, 227, 208, 0.24);
-  background: rgba(242, 227, 208, 0.1);
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .home-sunset .lang-world:hover {
-  background: rgba(242, 227, 208, 0.18);
-  border-color: rgba(242, 227, 208, 0.36);
+  opacity: 0.82;
 }
 
 .home-sunset .lang-world svg {
-  width: 37px;
-  height: 37px;
+  width: 42px;
+  height: 42px;
   fill: none;
   stroke: var(--primary-3);
   stroke-width: 1.7;
@@ -825,80 +822,102 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   fill: var(--section-nude);
 }
 
-.cta-section {
+.intro-profile {
+  position: relative;
   background: var(--section-nude);
-  padding: 72px 0 86px;
+  padding: 34px 0 86px;
+  overflow: visible;
+  z-index: 3;
 }
 
-.cta-inner {
-  text-align: left;
-  animation: fadeUp 0.7s ease 0.08s both;
+.intro-profile-inner {
+  position: relative;
+  min-height: 468px;
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  align-items: end;
+  column-gap: clamp(24px, 5vw, 56px);
 }
 
-.cta-title {
+.intro-profile-media {
+  position: relative;
+  align-self: end;
+}
+
+.intro-profile-media img {
+  width: min(100%, 360px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.intro-profile-copy {
+  position: relative;
+  align-self: center;
+  padding-right: 28px;
+  padding-bottom: 16px;
+}
+
+.intro-profile-title {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 10px;
-  font-size: clamp(40px, 4.6vw, 56px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-}
-
-.cta-title span:first-child {
-  color: var(--palette-orange);
-}
-
-.cta-title span:last-child {
-  color: var(--primary-3);
-}
-
-.cta-inner p {
-  margin: 14px 0 0;
-  max-width: 700px;
-  font-size: 20px;
-  color: var(--text-muted);
-}
-
-.cta-actions {
-  margin-top: 26px;
-  display: flex;
   gap: 14px;
-  flex-wrap: wrap;
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
 }
 
-.cta-actions .hero-btn {
-  min-width: 128px;
-  padding: 12px 24px;
-  border-radius: 10px;
-  font-size: 15px;
+.intro-profile-title .intro-accent {
+  color: var(--palette-orange);
+  font-size: clamp(58px, 6.6vw, 98px);
 }
 
-.cta-actions .hero-btn-primary {
-  background: var(--palette-orange);
-  color: #ffffff;
-  box-shadow: none;
-}
-
-.cta-actions .hero-btn-primary:hover {
-  background: #c98733;
-}
-
-.cta-actions .hero-btn-secondary {
-  background: transparent;
-  border: 1.5px solid #cfb89a;
+.intro-profile-title span:last-child {
   color: var(--primary-3);
+  font-size: clamp(52px, 5.6vw, 80px);
 }
 
-.cta-actions .hero-btn-secondary:hover {
-  background: #ffffff;
+.intro-profile-copy p {
+  margin: 18px 0 0;
+  max-width: 840px;
+  color: var(--primary-3);
+  font-size: clamp(24px, 1.85vw, 42px);
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.intro-quote {
+  position: absolute;
+  font-family: "Poppins", "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 0.75;
+  pointer-events: none;
+}
+
+.intro-quote-open {
+  top: 18px;
+  left: 30px;
+  color: var(--primary-3);
+  font-size: clamp(148px, 10vw, 198px);
+  opacity: 0.95;
+}
+
+.intro-quote-close {
+  right: 48px;
+  bottom: -70px;
+  color: var(--palette-orange);
+  font-size: clamp(168px, 11vw, 224px);
+  z-index: 11;
 }
 
 .services-section {
+  position: relative;
+  z-index: 1;
   background: var(--section-soft);
-  padding: 64px 0 92px;
+  padding: 72px 0 92px;
 }
 
 .services-head {
@@ -1047,12 +1066,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .home-sunset .brand-lockup {
-    padding: 9px 12px 9px 9px;
+    padding: 0;
   }
 
   .home-sunset .brand-icon-wrap {
-    width: 38px;
-    height: 38px;
+    width: 50px;
+    height: 50px;
   }
 
   .home-sunset .brand-wordmark {
@@ -1060,8 +1079,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .home-sunset .nav-links {
-    gap: 24px;
-    padding: 11px 16px;
+    gap: 28px;
+    padding: 0;
   }
 
   .home-sunset .nav-links a {
@@ -1069,13 +1088,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .home-sunset .lang-world {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
   }
 
   .home-sunset .lang-world svg {
-    width: 31px;
-    height: 31px;
+    width: 38px;
+    height: 38px;
   }
 
   .hero-copy h1 {
@@ -1109,6 +1128,43 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     width: clamp(424px, 34vw, 560px);
   }
 
+  .intro-profile {
+    padding: 28px 0 80px;
+  }
+
+  .intro-profile-inner {
+    min-height: 418px;
+    grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+    column-gap: 26px;
+  }
+
+  .intro-profile-media img {
+    width: min(100%, 290px);
+  }
+
+  .intro-profile-title .intro-accent {
+    font-size: clamp(48px, 6vw, 74px);
+  }
+
+  .intro-profile-title span:last-child {
+    font-size: clamp(42px, 5vw, 64px);
+  }
+
+  .intro-profile-copy p {
+    font-size: clamp(18px, 1.92vw, 28px);
+  }
+
+  .intro-quote-open {
+    left: 18px;
+    font-size: clamp(122px, 9vw, 168px);
+  }
+
+  .intro-quote-close {
+    right: 30px;
+    bottom: -56px;
+    font-size: clamp(144px, 10.3vw, 186px);
+  }
+
   .services-grid-clean {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1126,12 +1182,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .home-sunset .brand-lockup {
-    padding: 8px 10px 8px 8px;
+    padding: 0;
   }
 
   .home-sunset .brand-icon-wrap {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
   }
 
   .home-sunset .brand-wordmark {
@@ -1148,13 +1204,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .home-sunset .lang-world {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .home-sunset .lang-world svg {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
   }
 
   .home-sunset .lang-options {
@@ -1220,16 +1276,6 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     display: none;
   }
 
-  .cta-actions {
-    gap: 12px;
-  }
-
-  .hero-btn {
-    width: 100%;
-    padding: 13px 18px;
-    font-size: 15px;
-  }
-
   .wave-container {
     bottom: 30px;
   }
@@ -1244,17 +1290,57 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     height: 82px;
   }
 
-  .cta-section {
-    padding: 60px 0 72px;
+  .intro-profile {
+    padding: 22px 0 74px;
   }
 
-  .cta-title {
-    font-size: clamp(32px, 10vw, 42px);
-    gap: 6px;
+  .intro-profile-inner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
   }
 
-  .cta-inner p {
-    font-size: 18px;
+  .intro-profile-media {
+    justify-self: center;
+  }
+
+  .intro-profile-media img {
+    width: min(76vw, 320px);
+  }
+
+  .intro-profile-copy {
+    padding-right: 0;
+    padding-bottom: 8px;
+  }
+
+  .intro-profile-title {
+    gap: 8px;
+  }
+
+  .intro-profile-title .intro-accent {
+    font-size: clamp(36px, 11vw, 54px);
+  }
+
+  .intro-profile-title span:last-child {
+    font-size: clamp(32px, 9vw, 48px);
+  }
+
+  .intro-profile-copy p {
+    margin-top: 14px;
+    font-size: clamp(17px, 4.8vw, 25px);
+    line-height: 1.4;
+  }
+
+  .intro-quote-open {
+    top: -6px;
+    left: 10px;
+    font-size: clamp(84px, 17vw, 116px);
+  }
+
+  .intro-quote-close {
+    right: 10px;
+    bottom: -42px;
+    font-size: clamp(98px, 19vw, 132px);
   }
 
   .services-section {
@@ -1267,8 +1353,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-sunset .hero-copy,
-  .home-sunset .cta-inner {
+  .home-sunset .hero-copy {
     animation: none !important;
   }
 

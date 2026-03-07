@@ -705,5 +705,8 @@
   "home.saas.services.card3.title": "Soluciones Cloud",
   "home.saas.services.card3.desc": "Infraestructura segura, automatización y despliegues resilientes para equipos modernos.",
   "home.saas.mid.titleA": "Preparando",
-  "home.saas.mid.titleB": "empresas."
+  "home.saas.mid.titleB": "empresas.",
+  "home.saas.profile.titleA": "Hola soy",
+  "home.saas.profile.titleB": "Luis Emilio Cedano",
+  "home.saas.profile.sub": "Estudiante de Desarrollo de Software | Ingeniero en formación | Aprendiz en público. Soy un estudiante de desarrollo de software con enfoque en arquitectura de sistemas, seguridad digital y automatización con inteligencia artificial. Construyo proyectos reales como método de aprendizaje y documento cada etapa para convertir la experiencia en conocimiento reutilizable."
 }
