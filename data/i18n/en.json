@@ -708,5 +708,7 @@
   "home.saas.mid.titleB": "enterprises.",
   "home.saas.profile.titleA": "Hello, I am",
   "home.saas.profile.titleB": "Luis Emilio Cedano",
-  "home.saas.profile.sub": "Software Development student | Engineer in progress | Learning in public. I am a software development student focused on systems architecture, digital security, and AI-powered automation. I build real projects as a learning method and document every stage to turn experience into reusable knowledge."
+  "home.saas.profile.sub": "Software Development student | Engineer in progress | Learning in public. I am a software development student focused on systems architecture, digital security, and AI-powered automation. I build real projects as a learning method and document every stage to turn experience into reusable knowledge.",
+  "home.saas.profile.ctaProjects": "Projects",
+  "home.saas.profile.ctaAbout": "About"
 }
