@@ -710,5 +710,16 @@
   "home.saas.profile.titleB": "Luis Emilio Cedano",
   "home.saas.profile.sub": "Estudiante de Desarrollo de Software | Ingeniero en formación | Aprendiz en público. Soy un estudiante de desarrollo de software con enfoque en arquitectura de sistemas, seguridad digital y automatización con inteligencia artificial. Construyo proyectos reales como método de aprendizaje y documento cada etapa para convertir la experiencia en conocimiento reutilizable.",
   "home.saas.profile.ctaProjects": "Proyectos",
-  "home.saas.profile.ctaAbout": "Sobre"
+  "home.saas.profile.ctaAbout": "Sobre",
+  "home.cap.titleA": "Capacidades de",
+  "home.cap.titleB": "Ingeniería",
+  "home.cap.card1.title": "Software a la Medida y APIs",
+  "home.cap.card1.desc": "Diseño y desarrollo de soluciones de software escalables, APIs REST y sistemas backend usando arquitecturas modernas y prácticas de código limpio.",
+  "home.cap.card1.tech": "• Java • C# / .NET • Python • SQL • REST APIs",
+  "home.cap.card2.title": "Aplicaciones Web",
+  "home.cap.card2.desc": "Desarrollo de aplicaciones web responsivas y plataformas interactivas utilizando tecnologías frontend modernas e integraciones backend optimizadas.",
+  "home.cap.card2.tech": "• HTML5 • CSS3 • JavaScript • Bootstrap • APIs • PHP",
+  "home.cap.card3.title": "Cloud, Soluciones DevOps, Infraestructura Inteligente",
+  "home.cap.card3.desc": "Despliegue, automatización y monitoreo de aplicaciones usando prácticas DevOps modernas, infraestructura cloud y arquitecturas seguras. Integración de capacidades impulsadas por IA y buenas prácticas de ciberseguridad para asegurar sistemas escalables y resilientes.",
+  "home.cap.card3.tech": "• GitHub • Docker • CI/CD • Linux • Cloud deployments • AI APIs • Secure architectures"
 }

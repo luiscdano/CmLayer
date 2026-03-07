@@ -710,5 +710,16 @@
   "home.saas.profile.titleB": "Luis Emilio Cedano",
   "home.saas.profile.sub": "Software Development student | Engineer in progress | Learning in public. I am a software development student focused on systems architecture, digital security, and AI-powered automation. I build real projects as a learning method and document every stage to turn experience into reusable knowledge.",
   "home.saas.profile.ctaProjects": "Projects",
-  "home.saas.profile.ctaAbout": "About"
+  "home.saas.profile.ctaAbout": "About",
+  "home.cap.titleA": "Engineering",
+  "home.cap.titleB": "Capabilities",
+  "home.cap.card1.title": "Custom Software & APIs",
+  "home.cap.card1.desc": "Design and development of scalable software solutions, REST APIs and backend systems using modern architectures and clean code practices.",
+  "home.cap.card1.tech": "• Java • C# / .NET • Python • SQL • REST APIs",
+  "home.cap.card2.title": "Web Applications",
+  "home.cap.card2.desc": "Development of responsive web applications and interactive platforms using modern frontend technologies and optimized backend integrations.",
+  "home.cap.card2.tech": "• HTML5 • CSS3 • JavaScript • Bootstrap • APIs • PHP",
+  "home.cap.card3.title": "Cloud, DevOps Solutions, Intelligent Infrastructure",
+  "home.cap.card3.desc": "Deployment, automation and monitoring of applications using modern DevOps practices, cloud infrastructure and secure architectures. Integration of AI-powered capabilities and cybersecurity best practices to ensure scalable and resilient systems.",
+  "home.cap.card3.tech": "• GitHub • Docker • CI/CD • Linux • Cloud deployments • AI APIs • Secure architectures"
 }
