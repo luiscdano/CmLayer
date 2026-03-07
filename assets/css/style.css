@@ -498,12 +498,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .hero-sunset {
   position: relative;
-  min-height: 85vh;
+  min-height: 68vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 116px;
-  padding-bottom: 230px;
+  padding-top: 106px;
+  padding-bottom: 188px;
   background: linear-gradient(
     180deg,
     var(--palette-orange) 0%,
@@ -529,7 +529,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .hero-layer-stack {
   position: absolute;
-  inset: 58px -6% 150px;
+  inset: 56px -6% 126px;
   pointer-events: none;
   z-index: 2;
 }
@@ -548,26 +548,27 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .band-a {
   fill: rgba(242, 227, 208, 0.36);
-  animation: bandDriftA 22s ease-in-out infinite alternate;
+  animation: bandDriftA 34s ease-in-out infinite alternate;
 }
 
 .band-b {
   fill: rgba(232, 181, 110, 0.42);
-  animation: bandDriftB 26s ease-in-out infinite alternate;
+  animation: bandDriftB 40s ease-in-out infinite alternate;
 }
 
 .band-c {
   fill: rgba(217, 147, 59, 0.34);
-  animation: bandDriftA 28s ease-in-out infinite alternate;
+  animation: bandDriftA 44s ease-in-out infinite alternate;
 }
 
 .band-d {
   fill: rgba(111, 126, 136, 0.34);
-  animation: bandDriftB 32s ease-in-out infinite alternate;
+  animation: bandDriftB 48s ease-in-out infinite alternate;
 }
 
 .home-sunset .hero-inner {
   width: 100%;
+  max-width: 900px;
   position: relative;
   z-index: 4;
 }
@@ -592,14 +593,6 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   font-size: 20px;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.9);
-}
-
-.hero-actions {
-  margin-top: 28px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
 .hero-btn {
@@ -641,7 +634,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 42px;
+  bottom: 36px;
   width: 100%;
   overflow: hidden;
   line-height: 0;
@@ -650,30 +643,26 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .waves {
   display: block;
-  width: 230%;
+  width: 100%;
   min-width: 2000px;
-  height: 228px;
+  height: 212px;
 }
 
 .wave {
-  transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
-.wave1 {
+.wave1 path {
   fill: var(--primary-2);
-  animation: waveMove 12s linear infinite;
 }
 
-.wave2 {
+.wave2 path {
   fill: #2b5475;
-  animation: waveMove 18s linear infinite;
   opacity: 0.72;
 }
 
-.wave3 {
+.wave3 path {
   fill: var(--primary-3);
-  animation: waveMove 25s linear infinite;
   opacity: 0.54;
 }
 
@@ -879,21 +868,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   color: #5c6674;
 }
 
-@keyframes waveMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1600px);
-  }
-}
-
 @keyframes bandDriftA {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-44px);
+    transform: translateX(-18px);
   }
 }
 
@@ -902,7 +882,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(38px);
+    transform: translateX(16px);
   }
 }
 
@@ -927,8 +907,9 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .hero-sunset {
-    padding-top: 112px;
-    padding-bottom: 208px;
+    min-height: 64vh;
+    padding-top: 102px;
+    padding-bottom: 168px;
   }
 
   .services-grid-clean {
@@ -976,13 +957,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .hero-sunset {
-    min-height: 82vh;
-    padding-top: 108px;
-    padding-bottom: 172px;
+    min-height: 60vh;
+    padding-top: 100px;
+    padding-bottom: 150px;
   }
 
   .hero-layer-stack {
-    inset: 90px -10% 132px;
+    inset: 84px -10% 112px;
   }
 
   .hero-copy h1 {
@@ -995,7 +976,6 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     max-width: 340px;
   }
 
-  .hero-actions,
   .cta-actions {
     gap: 12px;
   }
@@ -1007,13 +987,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .wave-container {
-    bottom: 40px;
+    bottom: 30px;
   }
 
   .waves {
-    width: 290%;
+    width: 180%;
     min-width: 1800px;
-    height: 176px;
+    height: 160px;
   }
 
   .hero-cutoff svg {
