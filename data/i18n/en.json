@@ -713,6 +713,7 @@
   "home.saas.profile.ctaAbout": "About",
   "home.cap.titleA": "Engineering",
   "home.cap.titleB": "Capabilities",
+  "home.cap.subtitle": "Building scalable software, intelligent systems and secure cloud infrastructure.",
   "home.cap.card1.title": "Custom Software & APIs",
   "home.cap.card1.desc": "Design and development of scalable software solutions, REST APIs and backend systems using modern architectures and clean code practices.",
   "home.cap.card1.tech": "• Java • C# / .NET • Python • SQL • REST APIs",
