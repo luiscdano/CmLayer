@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260307-7" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260307-9" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,20 +42,42 @@
 <body class="home-sunset theme-night">
   <header class="topbar">
     <div class="topbar-inner container">
-      <a class="brand" href="/">
-        <img src="assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
+      <a class="brand brand-lockup" href="/" aria-label="CmLayer">
+        <span class="brand-icon-wrap" aria-hidden="true">
+          <img src="/assets/img/isotipo02.png" alt="" class="brand-isotipo" loading="eager" />
+        </span>
+        <span class="brand-wordmark"><span class="cm">Cm</span><span class="layer">Layer</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a data-i18n="nav.home" href="/">Home</a>
-        <a data-i18n="nav.about" href="/about/">About</a>
-        <a data-i18n="nav.services" href="/services/">Services</a>
-        <a data-i18n="nav.blog" href="/knowledge-hub/">Blog</a>
-        <a data-i18n="nav.contact" href="/contact/">Contact</a>
+        <a data-i18n="nav.top.projects" href="/projects/">Proyectos</a>
+        <a data-i18n="nav.top.about" href="/about/">Sobre</a>
+        <a data-i18n="nav.top.services" href="/services/">Servicios</a>
+        <a data-i18n="nav.top.knowledge" href="/knowledge-hub/">Conocimiento</a>
+        <a data-i18n="nav.top.contact" href="/contact/">Contacto</a>
       </nav>
-      <div class="lang-switch">
-        <button data-lang="en" class="active">🇺🇸 EN</button>
-        <button data-lang="es">🇩🇴 ES</button>
+      <div class="lang-switch" aria-label="Language selector">
+        <button
+          class="lang-world"
+          type="button"
+          aria-label="Select language"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="lang-options"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.8 2.5 2.8 15.5 0 18"></path>
+            <path d="M12 3c-2.8 2.5-2.8 15.5 0 18"></path>
+            <path d="M5.3 6.8c2.1 1.5 11.3 1.5 13.4 0"></path>
+            <path d="M5.3 17.2c2.1-1.5 11.3-1.5 13.4 0"></path>
+          </svg>
+        </button>
+        <div id="lang-options" class="lang-options">
+          <button data-lang="es" class="active" type="button">ES</button>
+          <button data-lang="en" type="button">EN</button>
+        </div>
       </div>
     </div>
   </header>
@@ -79,7 +101,7 @@
       </div>
 
       <div class="hero-isotipo" aria-hidden="true">
-        <img src="/assets/img/isotipo01.png" alt="" loading="lazy" />
+        <img src="/assets/img/isotipo01.png" alt="" loading="eager" decoding="sync" />
       </div>
 
       <div class="wave-container" aria-hidden="true">
@@ -174,6 +196,6 @@
 
   <script src="/assets/js/config.js?v=20260205" defer></script>
   <script src="/assets/js/analytics.js?v=20260205" defer></script>
-  <script src="/assets/js/main.js?v=20260205" defer></script>
+  <script src="/assets/js/main.js?v=20260307-3" defer></script>
 </body>
 </html>

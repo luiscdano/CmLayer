@@ -412,53 +412,92 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 0;
+  padding-top: 20px;
   background: transparent;
   border-bottom: 0;
   backdrop-filter: none;
 }
 
 .home-sunset .topbar-inner {
-  min-height: 101px;
+  min-height: 88px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
+  gap: 14px;
 }
 
 .home-sunset .brand {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
 }
 
-.home-sunset .brand-mark {
-  width: 200px;
-  height: 48px;
+.home-sunset .brand-lockup {
+  gap: 8px;
+  padding: 10px 14px 10px 10px;
+  border-radius: 3px;
+  background: rgba(242, 227, 208, 0.1);
+  border: 1px solid rgba(242, 227, 208, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.home-sunset .brand-icon-wrap {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+}
+
+.home-sunset .brand-isotipo {
+  width: 100%;
+  height: 100%;
   display: block;
-  object-fit: cover;
-  object-position: left center;
+  object-fit: contain;
   filter: brightness(0) invert(1);
-  transform: none;
+}
+
+.home-sunset .brand-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.home-sunset .brand-wordmark .cm {
+  color: var(--primary-3);
+}
+
+.home-sunset .brand-wordmark .layer {
+  color: #ffffff;
 }
 
 .home-sunset .nav-links {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 36px;
+  padding: 13px 22px;
+  border-radius: 3px;
+  background: rgba(242, 227, 208, 0.1);
+  border: 1px solid rgba(242, 227, 208, 0.2);
+  backdrop-filter: blur(2px);
 }
 
 .home-sunset .nav-links a {
   position: relative;
   padding: 0;
   font-family: "Poppins", "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 17px;
   color: #ffffff;
   opacity: 1;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .home-sunset .nav-links a:hover {
@@ -485,15 +524,93 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .home-sunset .nav-toggle {
   display: none;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(242, 227, 208, 0.18);
+  border: 1px solid rgba(242, 227, 208, 0.34);
   color: #ffffff;
-  padding: 8px 10px;
+  font-size: 22px;
+  line-height: 1;
+  padding: 0;
   border-radius: 10px;
 }
 
 .home-sunset .lang-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.home-sunset .lang-world {
+  width: 54px;
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: 1px solid rgba(242, 227, 208, 0.24);
+  background: rgba(242, 227, 208, 0.1);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.home-sunset .lang-world:hover {
+  background: rgba(242, 227, 208, 0.18);
+  border-color: rgba(242, 227, 208, 0.36);
+}
+
+.home-sunset .lang-world svg {
+  width: 37px;
+  height: 37px;
+  fill: none;
+  stroke: var(--primary-3);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-sunset .lang-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 72px;
   display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(242, 227, 208, 0.35);
+  background: rgba(22, 63, 84, 0.94);
+  box-shadow: 0 12px 24px rgba(14, 24, 34, 0.26);
+  z-index: 30;
+}
+
+.home-sunset .lang-switch.open .lang-options {
+  display: flex;
+}
+
+.home-sunset .lang-options button {
+  border: 1px solid rgba(242, 227, 208, 0.3);
+  background: transparent;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-family: "Poppins", "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.home-sunset .lang-options button:hover {
+  background: rgba(242, 227, 208, 0.14);
+}
+
+.home-sunset .lang-options button.active {
+  background: rgba(242, 227, 208, 0.24);
+  border-color: rgba(242, 227, 208, 0.5);
 }
 
 .hero-sunset {
@@ -921,17 +1038,44 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 @media (max-width: 1080px) {
-  .home-sunset .topbar-inner {
-    min-height: 94px;
+  .home-sunset .topbar {
+    padding-top: 16px;
   }
 
-  .home-sunset .brand-mark {
-    width: 188px;
-    height: 45px;
+  .home-sunset .topbar-inner {
+    min-height: 82px;
+  }
+
+  .home-sunset .brand-lockup {
+    padding: 9px 12px 9px 9px;
+  }
+
+  .home-sunset .brand-icon-wrap {
+    width: 38px;
+    height: 38px;
+  }
+
+  .home-sunset .brand-wordmark {
+    font-size: 21px;
+  }
+
+  .home-sunset .nav-links {
+    gap: 24px;
+    padding: 11px 16px;
   }
 
   .home-sunset .nav-links a {
     font-size: 16px;
+  }
+
+  .home-sunset .lang-world {
+    width: 48px;
+    height: 48px;
+  }
+
+  .home-sunset .lang-world svg {
+    width: 31px;
+    height: 31px;
   }
 
   .hero-copy h1 {
@@ -971,13 +1115,27 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 @media (max-width: 720px) {
-  .home-sunset .topbar-inner {
-    min-height: 84px;
+  .home-sunset .topbar {
+    padding-top: 12px;
   }
 
-  .home-sunset .brand-mark {
-    width: 150px;
-    height: 36px;
+  .home-sunset .topbar-inner {
+    min-height: 74px;
+    padding: 0 18px;
+    gap: 10px;
+  }
+
+  .home-sunset .brand-lockup {
+    padding: 8px 10px 8px 8px;
+  }
+
+  .home-sunset .brand-icon-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  .home-sunset .brand-wordmark {
+    font-size: 18px;
   }
 
   .home-sunset .nav-toggle {
@@ -985,20 +1143,39 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     margin-left: auto;
   }
 
+  .home-sunset .lang-switch {
+    margin-left: 6px;
+  }
+
+  .home-sunset .lang-world {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-sunset .lang-world svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-sunset .lang-options {
+    top: calc(100% + 6px);
+  }
+
   .home-sunset .nav-links {
     position: absolute;
-    right: 24px;
-    top: 72px;
+    right: 18px;
+    top: 74px;
     margin-left: 0;
-    min-width: 200px;
+    min-width: 220px;
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
-    padding: 16px;
-    border-radius: 14px;
-    background: rgba(24, 53, 105, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: rgba(22, 63, 84, 0.97);
+    border: 1px solid rgba(242, 227, 208, 0.3);
+    backdrop-filter: none;
   }
 
   .home-sunset .nav-links.open {

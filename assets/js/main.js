@@ -40,7 +40,7 @@
   };
 
   const setActiveLangButtons = (lang) => {
-    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+    document.querySelectorAll(".lang-switch [data-lang]").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === lang);
     });
   };
@@ -60,26 +60,63 @@
   };
 
   const initI18n = async () => {
-    const savedLang = localStorage.getItem("lang") || "en";
-    const dict = await fetchJson(`/api/i18n/${savedLang}`);
-    if (dict) {
-      applyLang(savedLang, dict);
-      return;
-    }
-    const fallback = await fetchJson("/api/i18n/en");
-    if (fallback) {
-      applyLang("en", fallback);
+    const defaultLang = "es";
+    const savedLang = localStorage.getItem("lang") || defaultLang;
+    const candidates = [...new Set([savedLang, defaultLang, "en"])];
+
+    for (const lang of candidates) {
+      const dict = await fetchJson(`/api/i18n/${lang}`);
+      if (dict) {
+        applyLang(lang, dict);
+        return;
+      }
     }
   };
 
   const initLangSwitch = () => {
-    document.querySelectorAll(".lang-switch button").forEach((btn) => {
-      btn.addEventListener("click", async () => {
-        const lang = btn.dataset.lang || "en";
-        const dict = await fetchJson(`/api/i18n/${lang}`);
-        if (dict) {
-          applyLang(lang, dict);
+    document.querySelectorAll(".lang-switch").forEach((switcher) => {
+      const trigger = switcher.querySelector(".lang-world");
+      const langButtons = Array.from(switcher.querySelectorAll("[data-lang]"));
+      if (!langButtons.length) return;
+
+      const closeOptions = () => {
+        switcher.classList.remove("open");
+        if (trigger) {
+          trigger.setAttribute("aria-expanded", "false");
         }
+      };
+
+      if (trigger) {
+        trigger.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const nextState = !switcher.classList.contains("open");
+          switcher.classList.toggle("open", nextState);
+          trigger.setAttribute("aria-expanded", nextState ? "true" : "false");
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!switcher.contains(event.target)) {
+            closeOptions();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeOptions();
+          }
+        });
+      }
+
+      langButtons.forEach((btn) => {
+        btn.addEventListener("click", async (event) => {
+          event.stopPropagation();
+          const lang = btn.dataset.lang || "es";
+          const dict = await fetchJson(`/api/i18n/${lang}`);
+          if (dict) {
+            applyLang(lang, dict);
+            closeOptions();
+          }
+        });
       });
     });
   };
@@ -391,7 +428,7 @@
       const href = link.getAttribute("href") || "";
       const label = link.dataset.trackLabel || link.textContent?.trim() || "CTA";
       const isExternal =
-        /^https?:\\/\\//i.test(href) && !href.includes(window.location.host);
+        /^https?:\/\//i.test(href) && !href.includes(window.location.host);
 
       trackEvent(isExternal ? "outbound_click" : "cta_click", {
         label,
