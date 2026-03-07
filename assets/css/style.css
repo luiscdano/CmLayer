@@ -604,14 +604,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .hero-isotipo {
   position: absolute;
   right: clamp(-24px, 2vw, 94px);
-  top: clamp(62px, 13vh, 146px);
+  top: clamp(50px, 11vh, 134px);
   z-index: 4;
   pointer-events: none;
-  transform: translate(10%, -8%);
+  transform: translate(10%, -10%);
 }
 
 .hero-isotipo img {
-  width: clamp(665px, 39vw, 817px);
+  width: clamp(632px, 37vw, 776px);
   height: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -957,12 +957,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .hero-isotipo {
     right: clamp(-20px, 1vw, 40px);
-    top: clamp(110px, 20vh, 178px);
-    transform: translate(10%, -8%);
+    top: clamp(98px, 18vh, 166px);
+    transform: translate(10%, -10%);
   }
 
   .hero-isotipo img {
-    width: clamp(446px, 36vw, 589px);
+    width: clamp(424px, 34vw, 560px);
   }
 
   .services-grid-clean {
