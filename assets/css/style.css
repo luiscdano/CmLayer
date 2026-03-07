@@ -548,22 +548,22 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .band-a {
   fill: rgba(242, 227, 208, 0.36);
-  animation: bandDriftA 34s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .band-b {
   fill: rgba(232, 181, 110, 0.42);
-  animation: bandDriftB 40s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .band-c {
   fill: rgba(217, 147, 59, 0.34);
-  animation: bandDriftA 44s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .band-d {
   fill: rgba(111, 126, 136, 0.34);
-  animation: bandDriftB 48s ease-in-out infinite alternate;
+  animation: none;
 }
 
 .home-sunset .hero-inner {
@@ -580,7 +580,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   max-width: 640px;
   margin-top: 52px;
   margin-left: -16px;
-  animation: fadeUp 0.8s ease both;
+  animation: none;
 }
 
 .hero-copy h1 {
@@ -593,7 +593,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .hero-copy p {
-  margin: 20px 0 0;
+  margin: 12px 0 0;
   max-width: none;
   font-size: 20px;
   line-height: 1.45;
@@ -607,10 +607,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   top: clamp(86px, 16vh, 170px);
   z-index: 4;
   pointer-events: none;
+  transform: translate(10%, -5%);
 }
 
 .hero-isotipo img {
-  width: clamp(760px, 44vw, 940px);
+  width: clamp(700px, 41vw, 860px);
   height: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -957,10 +958,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .hero-isotipo {
     right: clamp(-20px, 1vw, 40px);
     top: clamp(136px, 24vh, 194px);
+    transform: translate(10%, -5%);
   }
 
   .hero-isotipo img {
-    width: clamp(510px, 42vw, 680px);
+    width: clamp(470px, 38vw, 620px);
   }
 
   .services-grid-clean {
