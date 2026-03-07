@@ -876,12 +876,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .intro-profile-title .intro-accent {
   color: var(--palette-orange);
-  font-size: clamp(52px, 5vw, 72px);
+  font-size: clamp(53px, 5vw, 73px);
+  margin-left: -7px;
 }
 
 .intro-profile-title span:last-child {
   color: var(--primary-3);
   font-size: clamp(48px, 4.4vw, 66px);
+  margin-left: 10px;
 }
 
 .intro-profile-copy p {
@@ -891,6 +893,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   font-size: clamp(17px, 1.42vw, 22px);
   font-weight: 600;
   line-height: 1.32;
+  padding-left: 10px;
 }
 
 .intro-profile-actions {
