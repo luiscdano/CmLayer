@@ -1718,12 +1718,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-card-yeya {
-  margin-top: 24px;
-  gap: 12px;
+  margin-top: 40px;
+  gap: 6px;
 }
 
 .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
-  gap: 22px;
+  gap: 10px;
 }
 
 .projects-page .projects-progress-card-katherine {
@@ -2460,12 +2460,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card-yeya {
-    margin-top: 20px;
-    gap: 10px;
+    margin-top: 28px;
+    gap: 6px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
-    gap: 14px;
+    gap: 10px;
   }
 
   .projects-page .projects-progress-card-katherine {
@@ -2978,12 +2978,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card-yeya {
-    margin-top: 14px;
-    gap: 8px;
+    margin-top: 18px;
+    gap: 6px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
-    gap: 8px;
+    gap: 6px;
   }
 
   .projects-page .projects-progress-card-katherine {
