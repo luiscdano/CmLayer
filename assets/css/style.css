@@ -1717,6 +1717,26 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   margin-bottom: 0 !important;
 }
 
+.projects-page .projects-progress-card-yeya {
+  margin-top: 0;
+}
+
+.projects-page .projects-progress-card-katherine {
+  margin-top: 58px;
+}
+
+.projects-page .projects-progress-logo-yeya {
+  max-width: 448px;
+}
+
+.projects-page .projects-progress-logo-katherine {
+  max-width: 476px;
+}
+
+.projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
+  font-size: clamp(50px, 4.5vw, 70px);
+}
+
 .projects-page .project-blueprint {
   background: var(--section-nude);
   padding: 86px 0 82px;
@@ -2426,6 +2446,26 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     margin-bottom: 7px !important;
   }
 
+  .projects-page .projects-progress-card-yeya {
+    margin-top: 0;
+  }
+
+  .projects-page .projects-progress-card-katherine {
+    margin-top: 46px;
+  }
+
+  .projects-page .projects-progress-logo-yeya {
+    max-width: 320px;
+  }
+
+  .projects-page .projects-progress-logo-katherine {
+    max-width: 360px;
+  }
+
+  .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
+    font-size: clamp(40px, 4vw, 54px);
+  }
+
   .projects-page .projects-grid-modern {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
@@ -2909,6 +2949,23 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-line-bank {
     margin-bottom: 6px !important;
+  }
+
+  .projects-page .projects-progress-card-yeya {
+    margin-top: 0;
+  }
+
+  .projects-page .projects-progress-card-katherine {
+    margin-top: 34px;
+  }
+
+  .projects-page .projects-progress-logo-yeya,
+  .projects-page .projects-progress-logo-katherine {
+    max-width: 250px;
+  }
+
+  .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
+    font-size: clamp(34px, 10vw, 46px);
   }
 
   .projects-page .project-blueprint {
