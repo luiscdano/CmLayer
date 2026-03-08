@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CmLayer — Projects</title>
-  <meta name="description" content="Proyectos CmLayer: sistemas en construcción que muestran arquitectura, seguridad e IA aplicada con enfoque de aprendizaje público." />
+  <title>CmLayer — Proyectos</title>
+  <meta name="description" content="Portafolio tecnológico de CmLayer: soluciones y plataformas desarrolladas para construir sistemas digitales seguros, escalables e inteligentes." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="CmLayer — Projects" />
-  <meta property="og:description" content="Sistemas en construcción: aprendizaje, arquitectura y seguridad en proyectos reales." />
+  <meta property="og:title" content="CmLayer — Proyectos" />
+  <meta property="og:description" content="Soluciones y plataformas desarrolladas para construir sistemas digitales seguros, escalables e inteligentes." />
   <meta property="og:url" content="https://cmlayer.com/projects/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
@@ -18,7 +18,10 @@
   <link rel="icon" href="/assets/img/isotipo01.png" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/img/isotipo02.png" />
   <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260205" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260307-25" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,162 +35,163 @@
   }
   </script>
 </head>
-<body>
-  <div class="bg-grid"></div>
+<body class="home-sunset theme-night projects-page">
   <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/">
-        <img src="/assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
+    <div class="topbar-inner container">
+      <a class="brand brand-lockup" href="/" aria-label="CmLayer Home">
+        <span class="brand-icon-wrap" aria-hidden="true">
+          <img src="/assets/img/isotipo02.png" alt="" class="brand-isotipo" loading="eager" />
+        </span>
+        <span class="brand-wordmark"><span class="cm">Cm</span><span class="layer">Layer</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a href="/projects/" data-i18n="nav.projects">Projects</a>
-        <a href="/services/" data-i18n="nav.services">Services</a>
-        <a href="/knowledge-hub/" data-i18n="nav.knowledge">Knowledge Hub</a>
-        <a href="/voices-experiences/" data-i18n="nav.voices">Voices & Experiences</a>
-        <a href="/about/" data-i18n="nav.about">About</a>
-        <a href="/contact/" data-i18n="nav.contact">Contact</a>
+        <a data-i18n="nav.top.projects" href="/projects/">Proyectos</a>
+        <a data-i18n="nav.top.about" href="/about/">Sobre</a>
+        <a data-i18n="nav.top.services" href="/services/">Servicios</a>
+        <a data-i18n="nav.top.knowledge" href="/knowledge-hub/">Conocimiento</a>
+        <a data-i18n="nav.top.contact" href="/contact/">Contacto</a>
       </nav>
-      <div class="lang-switch">
-        <button data-lang="en" class="active">🇺🇸 EN</button>
-        <button data-lang="es">🇩🇴 ES</button>
+      <div class="lang-switch" aria-label="Language selector">
+        <button
+          class="lang-world"
+          type="button"
+          aria-label="Select language"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="lang-options"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.8 2.5 2.8 15.5 0 18"></path>
+            <path d="M12 3c-2.8 2.5-2.8 15.5 0 18"></path>
+            <path d="M5.3 6.8c2.1 1.5 11.3 1.5 13.4 0"></path>
+            <path d="M5.3 17.2c2.1-1.5 11.3-1.5 13.4 0"></path>
+          </svg>
+        </button>
+        <div id="lang-options" class="lang-options">
+          <button data-lang="es" class="active" type="button">ES</button>
+          <button data-lang="en" type="button">EN</button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero__text">
-        <p class="eyebrow" data-i18n="projects.hero.eyebrow">CmLayer — Projects</p>
-        <h1 data-i18n="projects.hero.title">From concept to deployment</h1>
-        <p class="lede" data-i18n="projects.hero.sub2">Building systems, skills, and engineering mindset in public.</p>
-        <div class="cta">
-          <a class="btn primary" href="#featured" data-i18n="projects.cta.featured">View Featured Systems</a>
+  <main class="landing-main">
+    <section class="projects-hero-sunset">
+      <div class="projects-hero-layer-stack" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none">
+          <path class="projects-band band-a" d="M0 240 C290 192 520 300 760 268 C980 238 1220 154 1600 188 L1600 314 L0 314 Z"></path>
+          <path class="projects-band band-b" d="M0 330 C250 286 520 386 760 344 C1010 304 1280 254 1600 280 L1600 420 L0 440 Z"></path>
+          <path class="projects-band band-c" d="M0 432 C280 386 530 486 770 458 C1030 424 1280 372 1600 398 L1600 536 L0 556 Z"></path>
+          <path class="projects-band band-d" d="M0 528 C260 500 520 602 760 582 C1010 552 1300 516 1600 540 L1600 676 L0 694 Z"></path>
+        </svg>
+      </div>
+
+      <div class="container projects-hero-inner">
+        <div class="projects-hero-copy">
+          <p class="projects-hero-kicker" data-i18n="projects.hero.kicker">CmLayer Portfolio</p>
+          <h1 data-i18n="projects.hero.title">Proyectos</h1>
+          <p data-i18n="projects.hero.sub">Soluciones y plataformas desarrolladas para construir sistemas digitales seguros, escalables e inteligentes.</p>
+          <a class="hero-btn hero-btn-primary" href="#projects-portfolio" data-i18n="projects.cta.featured">Ver proyectos</a>
+        </div>
+      </div>
+
+      <div class="projects-wave-container" aria-hidden="true">
+        <svg class="projects-waves" viewBox="0 0 3200 220" preserveAspectRatio="none">
+          <g class="projects-wave projects-wave1">
+            <path d="M0 120 C160 66 340 170 500 120 C660 66 840 170 1000 120 C1160 66 1340 170 1500 120 C1660 66 1840 170 2000 120 C2160 66 2340 170 2500 120 C2660 66 2840 170 3000 120 C3070 100 3140 96 3200 120 L3200 220 L0 220 Z"></path>
+            <path d="M0 120 C160 66 340 170 500 120 C660 66 840 170 1000 120 C1160 66 1340 170 1500 120 C1660 66 1840 170 2000 120 C2160 66 2340 170 2500 120 C2660 66 2840 170 3000 120 C3070 100 3140 96 3200 120 L3200 220 L0 220 Z" transform="translate(3200 0)"></path>
+            <animateTransform attributeName="transform" type="translate" from="0 0" to="-3200 0" dur="170s" repeatCount="indefinite" />
+          </g>
+          <g class="projects-wave projects-wave2">
+            <path d="M0 148 C180 118 320 198 500 170 C680 118 820 198 1000 170 C1180 118 1320 198 1500 170 C1680 118 1820 198 2000 170 C2180 118 2320 198 2500 170 C2680 118 2820 198 3000 170 C3070 162 3140 156 3200 170 L3200 220 L0 220 Z"></path>
+            <path d="M0 148 C180 118 320 198 500 170 C680 118 820 198 1000 170 C1180 118 1320 198 1500 170 C1680 118 1820 198 2000 170 C2180 118 2320 198 2500 170 C2680 118 2820 198 3000 170 C3070 162 3140 156 3200 170 L3200 220 L0 220 Z" transform="translate(3200 0)"></path>
+            <animateTransform attributeName="transform" type="translate" from="0 0" to="-3200 0" dur="240s" repeatCount="indefinite" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="projects-portfolio" id="projects-portfolio">
+      <div class="container">
+        <div class="projects-section-head">
+          <h2 data-i18n="projects.grid.title">Engineering Capabilities in Motion</h2>
+          <p data-i18n="projects.grid.sub">Cada tarjeta resume una solución: problema, stack, arquitectura y decisiones de implementación.</p>
+        </div>
+
+        <div class="projects-grid-modern" data-projects>
+          <article class="case project-card project-card-loading">
+            <div>
+              <p class="muted" data-i18n="projects.loading">Cargando proyectos...</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="panel" id="positioning">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.position.eyebrow">Engineering in Progress</p><h2 data-i18n="projects.position.title">Positioning Statement</h2></div></div>
-      <p class="muted" data-i18n="projects.position.p1">This page documents my journey as a junior software engineer building real systems with a long-term, senior-level mindset. Every project here represents learning, experimentation, and structured growth across software development, cybersecurity, and generative AI.</p>
-      <p data-i18n="projects.position.p2"><strong>Principle:</strong> I don’t claim mastery. I design for it.</p>
-      <p class="muted" data-i18n="projects.position.p3">This makes clear: I’m not selling seniority, but I do build with a professional vision.</p>
-    </section>
+    <section class="project-blueprint" id="project-blueprint">
+      <div class="container">
+        <div class="projects-section-head">
+          <h2 data-i18n="projects.blueprint.title">Detalle técnico del proyecto</h2>
+          <p data-i18n="projects.blueprint.sub">Selecciona “Arquitectura” en cualquier tarjeta para ver este bloque con enfoque técnico.</p>
+        </div>
 
-    <section class="panel" id="lanes">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.lanes.eyebrow">Three Lanes</p><h2 data-i18n="projects.lanes.title">Learning Domains</h2></div></div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3 data-i18n="projects.lanes.software.title">Software Systems</h3>
-          <p class="muted" data-i18n="projects.lanes.software.desc">Learning to design systems, not just write code. Focus on architecture, modularity, clean structure, and reproducible workflows.</p>
-          <ul>
-            <li>Modular backend systems</li>
-            <li>Web and API platforms</li>
-            <li>Academic & enterprise applications</li>
-            <li>DevOps-enabled pipelines</li>
-          </ul>
+        <article class="blueprint-shell" data-project-blueprint>
+          <header class="blueprint-header">
+            <div>
+              <p class="blueprint-kicker" data-i18n="projects.blueprint.kicker">Project View</p>
+              <h3 data-blueprint-name>Proyecto</h3>
+              <p data-blueprint-description>Selecciona un proyecto para ver su descripción técnica.</p>
+            </div>
+            <span class="blueprint-status" data-blueprint-status data-i18n="projects.blueprint.status.default">Estado: Activo</span>
+          </header>
+
+          <div class="blueprint-diagram" data-blueprint-diagram>
+            <div class="diagram-node">Cliente</div>
+            <div class="diagram-node">API</div>
+            <div class="diagram-node">Datos</div>
+          </div>
+
+          <div class="blueprint-grid">
+            <article class="blueprint-block">
+              <h4 data-i18n="projects.blueprint.arch.title">Arquitectura del sistema</h4>
+              <p data-blueprint-architecture>Arquitectura modular en evolución.</p>
+            </article>
+
+            <article class="blueprint-block">
+              <h4 data-i18n="projects.blueprint.tech.title">Tecnologías utilizadas</h4>
+              <ul class="blueprint-list blueprint-tags" data-blueprint-technologies>
+                <li>Stack</li>
+              </ul>
+            </article>
+
+            <article class="blueprint-block">
+              <h4 data-i18n="projects.blueprint.features.title">Funcionalidades principales</h4>
+              <ul class="blueprint-list" data-blueprint-features>
+                <li>Funcionalidades en documentación.</li>
+              </ul>
+            </article>
+
+            <article class="blueprint-block">
+              <h4 data-i18n="projects.blueprint.challenges.title">Desafíos técnicos</h4>
+              <ul class="blueprint-list" data-blueprint-challenges>
+                <li>Desafíos técnicos en revisión.</li>
+              </ul>
+            </article>
+          </div>
         </article>
-        <article class="service-card">
-          <h3 data-i18n="projects.lanes.secure.title">Secure Platforms</h3>
-          <p class="muted" data-i18n="projects.lanes.secure.desc">Learning to build with security from day one: auth, access control, visibility, and safe deployment as design steps.</p>
-          <ul>
-            <li>Authentication & RBAC</li>
-            <li>Secure API design</li>
-            <li>Infrastructure hardening</li>
-            <li>Monitoring & logging</li>
-            <li>Risk-aware architectures</li>
-          </ul>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="projects.lanes.ai.title">AI-Driven Solutions</h3>
-          <p class="muted" data-i18n="projects.lanes.ai.desc">Learning how AI augments systems and people: generative and automation layers for productivity and understanding.</p>
-          <ul>
-            <li>AI-assisted platforms</li>
-            <li>Intelligent automation</li>
-            <li>Decision models</li>
-            <li>Digital agents / copilots</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="panel" id="featured">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.featured.eyebrow">Learning Projects</p><h2 data-i18n="projects.featured.title">Active Systems</h2><p class="muted" data-i18n="projects.featured.sub">Projects as structured learning environments, not finished products.</p></div></div>
-      <div class="case-grid" id="projects-list" data-projects>
-        <article class="case"><div><p class="muted" data-i18n="projects.loading">Loading projects...</p></div></article>
-      </div>
-    </section>
-
-    <section class="panel" id="github">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.github.eyebrow">Public Code</p><h2 data-i18n="projects.github.title">Learning in the open</h2><p class="muted" data-i18n="projects.github.sub">Direct link to active repos showing evolution through commits, refactors, experimentation.</p></div></div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="projects.github.find.title">What you’ll find</h3><p class="muted" data-i18n="projects.github.find.desc">Active repositories, languages and tools, update frequency, structure over time.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.github.philosophy.title">Philosophy</h3><p class="muted" data-i18n="projects.github.philosophy.desc">Progress is more valuable than perfection.</p></article>
-      </div>
-    </section>
-
-    <section class="panel" id="philosophy">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.mindset.eyebrow">Engineering Mindset</p><h2 data-i18n="projects.mindset.title">How I think about building systems</h2></div></div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="projects.mindset.software.title">Software Development</h3><p class="muted" data-i18n="projects.mindset.software.desc">Every project is a system: structure, docs, and long-term improvement, even for small apps.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.mindset.security.title">Cybersecurity</h3><p class="muted" data-i18n="projects.mindset.security.desc">Understand how systems fail: access, visibility, and control as part of responsible design.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.mindset.ai.title">Generative AI</h3><p class="muted" data-i18n="projects.mindset.ai.desc">AI as assistant for learning, automation, and system understanding.</p></article>
-      </div>
-      <p class="muted" data-i18n="projects.mindset.core">Core Belief: good engineers grow in public, document thinking, and improve with every iteration.</p>
-    </section>
-
-    <section class="panel" id="lifecycle-detail">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.lifecycle.eyebrow">Learning Lifecycle</p><h2 data-i18n="projects.lifecycle.title">How I build</h2></div></div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="projects.lifecycle.problem.title">Problem</h3><p class="muted" data-i18n="projects.lifecycle.problem.desc">Define what I’m trying to learn, not just build.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.lifecycle.arch.title">Architecture</h3><p class="muted" data-i18n="projects.lifecycle.arch.desc">Sketch structure, components, and flow before code.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.lifecycle.stack.title">Stack</h3><p class="muted" data-i18n="projects.lifecycle.stack.desc">Choose tech that teaches industry standards and best practices.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.lifecycle.outcome.title">Outcome</h3><p class="muted" data-i18n="projects.lifecycle.outcome.desc">Working systems with docs and repos for review and improvement.</p></article>
-        <article class="value-card"><h3 data-i18n="projects.lifecycle.lessons.title">Lessons</h3><p class="muted" data-i18n="projects.lifecycle.lessons.desc">Reflect on mistakes, refactors, and design changes for next iteration.</p></article>
-      </div>
-    </section>
-
-    <section class="panel" id="stack-radar">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.stack.eyebrow">Tech Stack — Learning & Practice (2026)</p><h2 data-i18n="projects.stack.title">Languages & Tools</h2></div></div>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3 data-i18n="projects.stack.lang.title">Languages I study and use</h3>
-          <p class="muted" data-i18n="projects.stack.lang.desc">Python · JavaScript · TypeScript · Java · C# · SQL · Go · Rust</p>
-        </article>
-        <article class="service-card">
-          <h3 data-i18n="projects.stack.tools.title">Tools & platforms I practice with</h3>
-          <p class="muted" data-i18n="projects.stack.tools.desc">GitHub · VS Code · Docker · CI/CD · Linux · Cloud · API testing · Databases · AI dev tools</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="panel" id="metrics">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.growth.eyebrow">Growth Indicators</p><h2 data-i18n="projects.growth.title">Tracking progress over time</h2></div></div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="projects.growth.milestones.title">Learning milestones</h3><p class="muted" data-i18n="projects.growth.milestones.desc">Systems designed and documented; repos maintained/refactored; domains explored (software, security, AI); academic & independent projects completed.</p></article>
-      </div>
-    </section>
-
-    <section class="panel" id="cta">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="projects.final.eyebrow">Final Message</p><h2 data-i18n="projects.final.title">Building the engineer I want to become.</h2></div></div>
-      <p class="muted" data-i18n="projects.final.sub">CmLayer is my public workspace for learning, experimentation, and long-term system thinking.</p>
-      <div class="cta">
-        <a class="btn primary" href="/contact/" data-i18n="projects.final.contact">Contact</a>
-        <a class="btn ghost" href="/projects/" data-i18n="projects.final.follow">Follow Progress</a>
-        <a class="btn ghost" href="/services/" data-i18n="projects.final.collab">Collaborate</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <span>© 2026 CmLayer · Luis Emilio Cedano</span>
-    <span class="dot"></span>
-    <span>cmlayer.com</span>
-    <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
+
   <script src="/assets/js/config.js?v=20260205" defer></script>
   <script src="/assets/js/analytics.js?v=20260205" defer></script>
-  <script src="/assets/js/main.js?v=20260205" defer></script>
+  <script src="/assets/js/main.js?v=20260307-4" defer></script>
 </body>
 </html>

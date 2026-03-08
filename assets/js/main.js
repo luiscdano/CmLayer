@@ -114,6 +114,7 @@
           const dict = await fetchJson(`/api/i18n/${lang}`);
           if (dict) {
             applyLang(lang, dict);
+            await refreshDynamicSections();
             closeOptions();
           }
         });
@@ -138,6 +139,203 @@
     return date.toLocaleString();
   };
 
+  const getProjectMetaValue = (item, keyFragment) => {
+    if (!Array.isArray(item?.meta)) return "";
+    const key = String(keyFragment || "").toLowerCase();
+    const found = item.meta.find((entry) =>
+      String(entry?.label || "").toLowerCase().includes(key)
+    );
+    return found?.value ? String(found.value) : "";
+  };
+
+  const createProjectActionSet = (item) => {
+    const sourceActions = Array.isArray(item?.actions) ? item.actions : [];
+    const repository = sourceActions.find((action) =>
+      /repo/i.test(String(action?.label || ""))
+    );
+    const nonRepo = sourceActions.filter(
+      (action) => !/repo/i.test(String(action?.label || ""))
+    );
+    const view =
+      nonRepo.find(
+        (action) =>
+          action?.style === "primary" ||
+          /(site|web|demo|project|view|ver)/i.test(String(action?.label || ""))
+      ) || nonRepo[0];
+
+    const actions = [];
+    if (view?.url) {
+      actions.push({
+        type: "view",
+        style: "primary",
+        label: t("projects.card.action.view", "Ver proyecto"),
+        url: view.url
+      });
+    }
+    actions.push({
+      type: "architecture",
+      style: "ghost",
+      label: t("projects.card.action.arch", "Arquitectura"),
+      url: "#project-blueprint"
+    });
+    if (repository?.url) {
+      actions.push({
+        type: "repository",
+        style: "ghost",
+        label: t("projects.card.action.repo", "Repositorio"),
+        url: repository.url
+      });
+    }
+    return actions;
+  };
+
+  const buildProjectDiagram = (item) => {
+    const projectName = escapeHtml(item?.title || t("projects.blueprint.project", "Proyecto"));
+    return `
+      <p class="diagram-project">${projectName}</p>
+      <div class="diagram-layers">
+        <div class="diagram-node">${escapeHtml(t("projects.blueprint.diagram.client", "Cliente"))}</div>
+        <div class="diagram-arrow">→</div>
+        <div class="diagram-node">${escapeHtml(t("projects.blueprint.diagram.api", "API / Servicios"))}</div>
+        <div class="diagram-arrow">→</div>
+        <div class="diagram-node">${escapeHtml(t("projects.blueprint.diagram.data", "Datos / Observabilidad"))}</div>
+      </div>
+    `;
+  };
+
+  const renderProjectBlueprint = (item) => {
+    const root = document.querySelector("[data-project-blueprint]");
+    if (!root || !item) return;
+
+    const titleEl = root.querySelector("[data-blueprint-name]");
+    const descriptionEl = root.querySelector("[data-blueprint-description]");
+    const statusEl = root.querySelector("[data-blueprint-status]");
+    const architectureEl = root.querySelector("[data-blueprint-architecture]");
+    const techEl = root.querySelector("[data-blueprint-technologies]");
+    const featuresEl = root.querySelector("[data-blueprint-features]");
+    const challengesEl = root.querySelector("[data-blueprint-challenges]");
+    const diagramEl = root.querySelector("[data-blueprint-diagram]");
+
+    const statusValue = getProjectMetaValue(item, "status");
+    const problemValue = getProjectMetaValue(item, "problem");
+    const architectureValue =
+      getProjectMetaValue(item, "architecture") ||
+      getProjectMetaValue(item, "outcome") ||
+      t(
+        "projects.blueprint.arch.fallback",
+        "Arquitectura modular por capas con enfoque en seguridad, trazabilidad y escalabilidad."
+      );
+    const outcomeValue = getProjectMetaValue(item, "outcome");
+
+    const technologies =
+      Array.isArray(item.techStack) && item.techStack.length
+        ? item.techStack
+        : Array.isArray(item.topics) && item.topics.length
+          ? item.topics
+          : [t("projects.blueprint.tech.fallback", "Stack en definición")];
+    const features =
+      Array.isArray(item.features) && item.features.length
+        ? item.features
+        : Array.isArray(item.topics) && item.topics.length
+          ? item.topics.slice(0, 4).map((topic) => `${t("projects.blueprint.feature.prefix", "Capa")}: ${topic}`)
+          : [t("projects.blueprint.features.fallback", "Funcionalidades en documentación")];
+    const challenges =
+      Array.isArray(item.challenges) && item.challenges.length
+        ? item.challenges
+        : [
+            problemValue ||
+              t(
+                "projects.blueprint.challenges.fallback",
+                "Definir alcance técnico, riesgos y controles de implementación."
+              ),
+            outcomeValue
+              ? `${t("projects.blueprint.challenges.outcome", "Resultado actual")}: ${outcomeValue}`
+              : ""
+          ].filter(Boolean);
+
+    if (titleEl) titleEl.textContent = item.title || t("projects.blueprint.project", "Proyecto");
+    if (descriptionEl) {
+      descriptionEl.textContent =
+        item.description || t("projects.blueprint.description.fallback", "Descripción técnica en proceso.");
+    }
+    if (statusEl) {
+      statusEl.textContent = statusValue
+        ? `${t("projects.blueprint.status", "Estado")}: ${statusValue}`
+        : t("projects.blueprint.status.default", "Estado: Activo");
+    }
+    if (architectureEl) architectureEl.textContent = architectureValue;
+    if (diagramEl) diagramEl.innerHTML = buildProjectDiagram(item);
+    if (techEl) {
+      techEl.innerHTML = technologies
+        .map((technology) => `<li>${escapeHtml(technology)}</li>`)
+        .join("");
+    }
+    if (featuresEl) {
+      featuresEl.innerHTML = features
+        .map((feature) => `<li>${escapeHtml(feature)}</li>`)
+        .join("");
+    }
+    if (challengesEl) {
+      challengesEl.innerHTML = challenges
+        .map((challenge) => `<li>${escapeHtml(challenge)}</li>`)
+        .join("");
+    }
+  };
+
+  const initProjectBlueprint = (container, items) => {
+    const root = document.querySelector("[data-project-blueprint]");
+    if (!root || !container || !Array.isArray(items) || !items.length) return;
+
+    const byId = new Map(
+      items.map((item, index) => [
+        String(item?.id || `project-${index + 1}`),
+        item
+      ])
+    );
+
+    const setActiveCard = (projectId) => {
+      container.querySelectorAll(".project-card").forEach((card) => {
+        card.classList.toggle("active", card.dataset.projectId === projectId);
+      });
+    };
+
+    const selectProject = (projectId, updateUrl = false) => {
+      const selected = byId.get(String(projectId)) || items[0];
+      if (!selected) return;
+      const selectedId = String(selected?.id || "");
+
+      renderProjectBlueprint(selected);
+      setActiveCard(selectedId);
+
+      if (updateUrl && selectedId) {
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set("focus", selectedId);
+        window.history.replaceState(
+          {},
+          "",
+          `${nextUrl.pathname}?${nextUrl.searchParams.toString()}#project-blueprint`
+        );
+      }
+    };
+
+    container.querySelectorAll("[data-project-architecture]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        const projectId = trigger.getAttribute("data-project-architecture");
+        selectProject(projectId, true);
+        document
+          .getElementById("project-blueprint")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
+    const requestedFocus = new URLSearchParams(window.location.search).get("focus");
+    const initialId = requestedFocus && byId.has(requestedFocus)
+      ? requestedFocus
+      : String(items[0]?.id || `project-1`);
+    selectProject(initialId, false);
+  };
+
   const renderProjects = async () => {
     const container = document.querySelector("[data-projects]");
     if (!container) return;
@@ -146,14 +344,15 @@
     const items = payload?.items || [];
 
     if (!items.length) {
-      container.innerHTML = `<article class="case"><div><p class="muted">${escapeHtml(
+      container.innerHTML = `<article class="case project-card"><div><p class="muted">${escapeHtml(
         t("projects.empty", "No projects yet.")
       )}</p></div></article>`;
       return;
     }
 
     const cards = items
-      .map((item) => {
+      .map((item, index) => {
+        const projectId = String(item?.id || `project-${index + 1}`);
         const label = escapeHtml(item.label || "");
         const title = escapeHtml(item.title || "");
         const description = escapeHtml(item.description || "");
@@ -164,6 +363,7 @@
           : "";
         const meta = Array.isArray(item.meta)
           ? item.meta
+              .slice(0, 2)
               .map(
                 (entry) =>
                   `<strong>${escapeHtml(entry.label)}:</strong> ${escapeHtml(entry.value)}`
@@ -171,51 +371,57 @@
               .join(" · ")
           : "";
         const metaBlock = meta
-          ? `<p class="tiny muted">${meta}</p>`
+          ? `<p class="project-meta-line">${meta}</p>`
           : "";
-        const topics = Array.isArray(item.topics)
-          ? `<div class="topics">${item.topics
+        const topics = Array.isArray(item.topics) && item.topics.length
+          ? `<div class="project-stack">${item.topics
               .map((topic) => `<span>${escapeHtml(topic)}</span>`)
               .join("")}</div>`
           : "";
-        const actions = Array.isArray(item.actions)
-          ? `<div class="case-actions">${item.actions
+        const actionSet = createProjectActionSet(item);
+        const actions = actionSet.length
+          ? `<div class="project-actions">${actionSet
               .map((action) => {
+                if (action.type === "architecture") {
+                  return `<a class="btn ghost" href="#project-blueprint" data-project-architecture="${escapeHtml(
+                    projectId
+                  )}">${escapeHtml(action.label)}</a>`;
+                }
                 const style = action.style === "primary" ? "primary" : "ghost";
+                const target = /^https?:\/\//i.test(action.url || "")
+                  ? ` target="_blank" rel="noreferrer"`
+                  : "";
                 return `<a class="btn ${style}" href="${escapeHtml(
                   action.url
-                )}" target="_blank" rel="noreferrer">${escapeHtml(action.label)}</a>`;
+                )}"${target}>${escapeHtml(action.label)}</a>`;
               })
               .join("")}</div>`
           : "";
         const statusNote = item.statusNote
-          ? `<p class="tiny muted">${escapeHtml(item.statusNote)}</p>`
+          ? `<p class="project-meta-line">${escapeHtml(item.statusNote)}</p>`
           : "";
-        const image = item.image
-          ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(
-              item.imageAlt || item.title || ""
-            )}">`
-          : `<span class="muted">${escapeHtml(t("projects.noimage", "No image"))}</span>`;
 
         return `
-          <article class="case">
+          <article class="case project-card" data-project-id="${escapeHtml(
+            projectId
+          )}" style="--card-index:${index}">
             <div>
-              <p class="label">${label}</p>
+              <p class="project-label">${label}</p>
               <h3>${title}</h3>
               ${badge}
-              <p class="muted">${description}</p>
+              <p class="project-description">${description}</p>
               ${metaBlock}
               ${topics}
               ${actions}
               ${statusNote}
             </div>
-            <div class="case-media">${image}</div>
           </article>
         `;
       })
       .join("");
 
     container.innerHTML = cards;
+    initProjectBlueprint(container, items);
   };
 
   const renderServices = async () => {
@@ -400,6 +606,15 @@
     }
   };
 
+  const refreshDynamicSections = async () =>
+    Promise.all([
+      renderProjects(),
+      renderServices(),
+      renderKnowledge(),
+      renderStatus(),
+      renderVoices()
+    ]);
+
   const initNav = () => {
     const navToggle = document.querySelector(".nav-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -554,13 +769,7 @@
     initForms();
     await initI18n();
     initLangSwitch();
-    await Promise.all([
-      renderProjects(),
-      renderServices(),
-      renderKnowledge(),
-      renderStatus(),
-      renderVoices()
-    ]);
+    await refreshDynamicSections();
   };
 
   init();
