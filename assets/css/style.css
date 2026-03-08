@@ -778,7 +778,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position: absolute;
   right: clamp(-24px, 2vw, 94px);
   top: clamp(50px, 11vh, 134px);
-  z-index: 4;
+  z-index: 7;
   pointer-events: none;
   transform: translate(10%, -10%);
 }
