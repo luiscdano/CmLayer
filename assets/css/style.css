@@ -1478,7 +1478,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-title {
-  margin: 0 0 20px;
+  margin: 0 0 40px;
   color: #d7923c;
   font-size: clamp(46px, 5.25vw, 74px);
   line-height: 1.01;
@@ -1505,6 +1505,25 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   box-shadow: none;
 }
 
+.projects-page .projects-progress-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-page .projects-progress-logo-link {
+  display: inline-flex;
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.projects-page .projects-progress-logo-link:hover {
+  transform: translateY(-5px) scale(1.01);
+  filter: drop-shadow(0 10px 18px rgba(16, 36, 54, 0.16));
+}
+
+.projects-page .projects-progress-logo-link:active {
+  transform: translateY(-2px) scale(0.995);
+}
+
 .projects-page .projects-progress-logo-wrap {
   display: flex;
   align-items: flex-start;
@@ -1528,7 +1547,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-copy h3 {
   margin: 0 0 14px;
   color: var(--primary-3);
-  font-size: clamp(56px, 5.05vw, 80px);
+  font-size: clamp(50px, 4.7vw, 74px);
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
@@ -1536,16 +1555,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-description {
   margin: 0;
   color: rgba(22, 63, 84, 0.88);
-  font-size: clamp(21px, 1.95vw, 31px);
+  font-size: clamp(19px, 1.7vw, 27px);
   line-height: 1.35;
   font-weight: 600;
   max-width: 780px;
 }
 
 .projects-page .projects-progress-line {
-  margin: 10px 0 0 !important;
+  margin: 8px 0 0 !important;
   color: var(--primary-3);
-  font-size: clamp(19px, 1.62vw, 25px);
+  font-size: clamp(19px, 1.7vw, 27px);
   line-height: 1.32;
   font-weight: 600;
   display: flex;
@@ -1567,6 +1586,10 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-label {
   font-weight: 700;
   color: var(--primary-3);
+}
+
+.projects-page .projects-progress-line-side {
+  max-width: 520px;
 }
 
 .projects-page .projects-progress-link {
@@ -2192,6 +2215,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-title {
+    margin-bottom: 30px;
     font-size: clamp(38px, 5vw, 56px);
   }
 
@@ -2213,16 +2237,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-copy h3 {
-    font-size: clamp(40px, 4.5vw, 54px);
+    font-size: clamp(36px, 4.1vw, 50px);
   }
 
   .projects-page .projects-progress-description {
-    font-size: clamp(18px, 2vw, 26px);
+    font-size: clamp(16px, 1.85vw, 24px);
     max-width: 650px;
   }
 
   .projects-page .projects-progress-line {
-    font-size: clamp(17px, 1.66vw, 22px);
+    font-size: clamp(16px, 1.85vw, 24px);
     margin-top: 8px !important;
   }
 
@@ -2627,17 +2651,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-copy h3 {
-    font-size: clamp(32px, 9.6vw, 44px);
+    font-size: clamp(30px, 8.9vw, 40px);
   }
 
   .projects-page .projects-progress-description {
-    font-size: clamp(17px, 4.8vw, 22px);
+    font-size: clamp(16px, 4.4vw, 20px);
     line-height: 1.4;
     max-width: none;
   }
 
   .projects-page .projects-progress-line {
-    font-size: clamp(16px, 4.3vw, 20px);
+    font-size: clamp(16px, 4.4vw, 20px);
     line-height: 1.38;
     margin-top: 7px !important;
   }
