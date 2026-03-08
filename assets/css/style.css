@@ -1659,6 +1659,64 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   max-width: 540px;
 }
 
+.projects-page .projects-progress-card-bank {
+  margin-top: 62px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.projects-page .projects-progress-top-bank {
+  display: grid;
+  grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.projects-page .projects-progress-side-bank {
+  align-items: flex-start;
+}
+
+.projects-page .projects-progress-logo-wrap-bank {
+  justify-content: flex-start;
+  padding-top: 6px;
+}
+
+.projects-page .projects-progress-logo-bank {
+  max-width: 418px;
+}
+
+.projects-page .projects-progress-copy-bank {
+  padding-top: 0;
+}
+
+.projects-page .projects-progress-copy-bank h3 {
+  margin: 0 0 12px;
+  font-size: clamp(54px, 4.8vw, 76px);
+  line-height: 1.04;
+}
+
+.projects-page .projects-progress-description-bank {
+  margin-bottom: 18px;
+  max-width: none;
+}
+
+.projects-page .projects-progress-description-bank:last-of-type {
+  margin-bottom: 0;
+}
+
+.projects-page .projects-progress-meta-bank {
+  width: 100%;
+}
+
+.projects-page .projects-progress-line-bank {
+  margin: 0 0 8px !important;
+}
+
+.projects-page .projects-progress-line-bank:last-child {
+  margin-bottom: 0 !important;
+}
+
 .projects-page .project-blueprint {
   background: var(--section-nude);
   padding: 86px 0 82px;
@@ -2337,6 +2395,37 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     max-width: 410px;
   }
 
+  .projects-page .projects-progress-card-bank {
+    margin-top: 48px;
+    gap: 18px;
+  }
+
+  .projects-page .projects-progress-top-bank {
+    grid-template-columns: minmax(210px, 320px) minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .projects-page .projects-progress-logo-wrap-bank {
+    padding-top: 4px;
+  }
+
+  .projects-page .projects-progress-logo-bank {
+    max-width: 320px;
+  }
+
+  .projects-page .projects-progress-copy-bank h3 {
+    margin-bottom: 12px;
+    font-size: clamp(40px, 4.2vw, 56px);
+  }
+
+  .projects-page .projects-progress-description-bank {
+    margin-bottom: 12px;
+  }
+
+  .projects-page .projects-progress-line-bank {
+    margin-bottom: 7px !important;
+  }
+
   .projects-page .projects-grid-modern {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
@@ -2780,6 +2869,46 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-logo-dr {
     max-width: 300px;
+  }
+
+  .projects-page .projects-progress-card-bank {
+    margin-top: 34px;
+    gap: 12px;
+  }
+
+  .projects-page .projects-progress-top-bank {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .projects-page .projects-progress-side-bank {
+    order: 1;
+    align-items: flex-start;
+  }
+
+  .projects-page .projects-progress-copy-bank {
+    order: 2;
+  }
+
+  .projects-page .projects-progress-logo-wrap-bank {
+    padding-top: 0;
+  }
+
+  .projects-page .projects-progress-logo-bank {
+    max-width: 250px;
+  }
+
+  .projects-page .projects-progress-copy-bank h3 {
+    font-size: clamp(34px, 10vw, 46px);
+    margin-bottom: 10px;
+  }
+
+  .projects-page .projects-progress-description-bank {
+    margin-bottom: 10px;
+  }
+
+  .projects-page .projects-progress-line-bank {
+    margin-bottom: 6px !important;
   }
 
   .projects-page .project-blueprint {
