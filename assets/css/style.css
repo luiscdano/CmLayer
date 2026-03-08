@@ -1252,12 +1252,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-hero-layer-stack {
-  display: none;
+  position: absolute;
+  inset: 56px -6% 126px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .projects-page .projects-hero-layer-stack svg {
-  width: 108%;
+  width: 112%;
   height: 100%;
+  display: block;
   transform: translateX(-4%);
 }
 
@@ -1266,22 +1270,22 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-band.band-a {
-  fill: rgba(248, 228, 198, 0.34);
+  fill: rgba(242, 227, 208, 0.4);
   animation: none;
 }
 
 .projects-page .projects-band.band-b {
-  fill: rgba(236, 172, 93, 0.4);
+  fill: rgba(232, 181, 110, 0.44);
   animation: none;
 }
 
 .projects-page .projects-band.band-c {
-  fill: rgba(216, 140, 56, 0.34);
+  fill: rgba(217, 147, 59, 0.36);
   animation: none;
 }
 
 .projects-page .projects-band.band-d {
-  fill: rgba(196, 118, 46, 0.3);
+  fill: rgba(179, 118, 66, 0.34);
   animation: none;
 }
 
@@ -1949,7 +1953,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    display: none;
+    inset: 78px -4% 102px;
   }
 
   .projects-page .projects-hero-inner {
@@ -2293,7 +2297,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    display: none;
+    inset: 72px -8% 96px;
   }
 
   .projects-page .projects-hero-inner {
@@ -2451,4 +2455,10 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .project-card:hover {
     transform: none !important;
   }
+}
+
+footer.footer {
+  background: #1f5f74 !important;
+  color: #e4f0f8 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
