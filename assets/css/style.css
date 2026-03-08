@@ -1465,7 +1465,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position: relative;
   z-index: 1;
   background: var(--section-soft);
-  padding: 126px 0 72px;
+  padding: 126px 0 52px;
 }
 
 .projects-page .projects-portfolio .container {
@@ -1497,7 +1497,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-card {
   display: grid;
   grid-template-columns: minmax(320px, 520px) minmax(0, 1fr);
-  gap: 34px;
+  gap: 20px;
   align-items: start;
   padding: 0;
   border: 0;
@@ -1529,7 +1529,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   align-items: flex-start;
   justify-content: flex-start;
   min-height: auto;
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 .projects-page .projects-progress-logo {
@@ -1541,7 +1541,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-copy {
-  padding-top: 10px;
+  padding-top: 4px;
 }
 
 .projects-page .projects-progress-copy h3 {
@@ -1555,7 +1555,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-description {
   margin: 0;
   color: rgba(22, 63, 84, 0.88);
-  font-size: clamp(19px, 1.7vw, 27px);
+  font-size: clamp(17px, 1.45vw, 23px);
   line-height: 1.35;
   font-weight: 600;
   max-width: 780px;
@@ -1564,7 +1564,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-line {
   margin: 8px 0 0 !important;
   color: var(--primary-3);
-  font-size: clamp(19px, 1.7vw, 27px);
+  font-size: clamp(17px, 1.45vw, 23px);
   line-height: 1.32;
   font-weight: 600;
   display: flex;
@@ -2218,7 +2218,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-portfolio {
-    padding-top: 110px;
+    padding: 108px 0 48px;
   }
 
   .projects-page .projects-progress-title {
@@ -2228,7 +2228,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-card {
     grid-template-columns: minmax(200px, 300px) 1fr;
-    gap: 20px;
+    gap: 14px;
   }
 
   .projects-page .projects-progress-logo-wrap {
@@ -2240,7 +2240,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-copy {
-    padding-top: 4px;
+    padding-top: 0;
   }
 
   .projects-page .projects-progress-copy h3 {
@@ -2248,12 +2248,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-description {
-    font-size: clamp(16px, 1.85vw, 24px);
+    font-size: clamp(15px, 1.6vw, 21px);
     max-width: 650px;
   }
 
   .projects-page .projects-progress-line {
-    font-size: clamp(16px, 1.85vw, 24px);
+    font-size: clamp(15px, 1.6vw, 21px);
     margin-top: 8px !important;
   }
 
@@ -2631,7 +2631,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-portfolio {
-    padding: 72px 0 54px;
+    padding: 70px 0 44px;
   }
 
   .projects-page .projects-progress-block {
@@ -2662,13 +2662,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-description {
-    font-size: clamp(16px, 4.4vw, 20px);
+    font-size: clamp(15px, 4vw, 18px);
     line-height: 1.4;
     max-width: none;
   }
 
   .projects-page .projects-progress-line {
-    font-size: clamp(16px, 4.4vw, 20px);
+    font-size: clamp(15px, 4vw, 18px);
     line-height: 1.38;
     margin-top: 7px !important;
   }
