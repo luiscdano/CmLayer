@@ -933,14 +933,26 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .intro-btn-projects {
   border-color: #d7923c;
-  color: var(--primary-3);
+  color: #1f3c6d;
   background: transparent;
 }
 
 .intro-btn-about {
   border-color: var(--primary-3);
-  color: var(--palette-orange);
+  color: #d7923c;
   background: transparent;
+}
+
+.intro-btn-projects:visited,
+.intro-btn-projects:hover,
+.intro-btn-projects:active {
+  color: #1f3c6d;
+}
+
+.intro-btn-about:visited,
+.intro-btn-about:hover,
+.intro-btn-about:active {
+  color: #d7923c;
 }
 
 .intro-quote {
