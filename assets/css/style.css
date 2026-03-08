@@ -1486,12 +1486,34 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-card {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) 1fr;
+  gap: 24px;
+  align-items: start;
   padding: 22px;
   border-radius: 20px;
   border: 1px solid rgba(16, 36, 54, 0.1);
   background: linear-gradient(160deg, #f8efe4 0%, #f0e4d6 100%);
   box-shadow: 0 12px 26px rgba(16, 36, 54, 0.09);
+}
+
+.projects-page .projects-progress-logo-wrap {
+  border-radius: 16px;
+  border: 1px solid rgba(16, 36, 54, 0.1);
+  background: #ffffff;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+
+.projects-page .projects-progress-logo {
+  width: 100%;
+  max-width: 170px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .projects-page .projects-progress-copy h3 {
@@ -2169,7 +2191,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card {
+    grid-template-columns: minmax(148px, 190px) 1fr;
+    gap: 18px;
     padding: 18px;
+  }
+
+  .projects-page .projects-progress-logo-wrap {
+    min-height: 150px;
+  }
+
+  .projects-page .projects-progress-logo {
+    max-width: 146px;
   }
 
   .projects-page .projects-progress-copy h3 {
@@ -2566,7 +2598,18 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
     padding: 16px;
+  }
+
+  .projects-page .projects-progress-logo-wrap {
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .projects-page .projects-progress-logo {
+    max-width: 164px;
   }
 
   .projects-page .projects-progress-copy h3 {
