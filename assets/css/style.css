@@ -1254,11 +1254,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-hero-layer-stack {
-  display: none;
+  position: absolute;
+  inset: 56px -6% 126px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .projects-page .projects-hero-layer-stack svg {
-  display: none;
+  width: 112%;
+  height: 100%;
+  display: block;
+  transform: translateX(-4%);
 }
 
 .projects-page .projects-band {
@@ -1351,7 +1357,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-intro-note {
   position: relative;
   background: var(--section-nude);
-  padding: 30px 0 20px;
+  padding: 30px 0 54px;
   overflow: visible;
   z-index: 2;
 }
@@ -2007,7 +2013,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    display: none;
+    inset: 78px -4% 102px;
   }
 
   .projects-page .projects-hero-inner {
@@ -2035,7 +2041,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-intro-note {
-    padding: 22px 0 18px;
+    padding: 22px 0 44px;
   }
 
   .projects-page .projects-intro-note-inner {
@@ -2371,7 +2377,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    display: none;
+    inset: 72px -8% 96px;
   }
 
   .projects-page .projects-hero-inner {
@@ -2402,7 +2408,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-intro-note {
-    padding: 18px 0 12px;
+    padding: 18px 0 20px;
   }
 
   .projects-page .projects-intro-note-inner {
@@ -2433,7 +2439,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-note-actions {
     position: static;
     transform: none;
-    margin-top: 14px;
+    margin-top: 24px;
     justify-content: flex-start;
     gap: 12px;
     padding-left: 18px;
