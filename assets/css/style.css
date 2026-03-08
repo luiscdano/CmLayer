@@ -749,23 +749,26 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .hero-copy {
-  max-width: 640px;
-  margin-top: 52px;
+  max-width: 760px;
+  margin-top: 34px;
   margin-left: -16px;
   animation: none;
 }
 
 .hero-copy h1 {
   margin: 0;
-  font-size: 65px;
+  font-size: 63px;
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 1.06;
+  letter-spacing: -0.026em;
+  text-wrap: balance;
   color: #ffffff;
+  max-width: 760px;
+  min-height: 2.15em;
 }
 
 .hero-copy p {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   max-width: none;
   font-size: 20px;
   line-height: 1.45;
@@ -1729,6 +1732,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .hero-copy h1 {
     font-size: 48px;
+    min-height: auto;
   }
 
   .hero-copy p {
