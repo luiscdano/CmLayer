@@ -784,7 +784,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .hero-isotipo img {
-  width: clamp(632px, 37vw, 776px);
+  width: clamp(600px, 35.2vw, 736px);
   height: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -1757,7 +1757,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .hero-isotipo img {
-    width: clamp(424px, 34vw, 560px);
+    width: clamp(402px, 32.4vw, 532px);
   }
 
   .intro-profile {
