@@ -1350,7 +1350,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-intro-note {
   position: relative;
   background: var(--section-nude);
-  padding: 52px 0 28px;
+  padding: 44px 0 20px;
   overflow: visible;
   z-index: 2;
 }
@@ -1363,7 +1363,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-note-copy {
-  margin-top: clamp(58px, 6.3vw, 96px);
+  margin-top: clamp(10px, 1.5vw, 22px);
 }
 
 .projects-page .projects-note-copy p {
@@ -1387,7 +1387,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-note-quote-open {
-  top: 10px;
+  top: -8px;
   left: 28px;
   width: clamp(74px, 5vw, 104px);
   z-index: 2;
@@ -1401,11 +1401,64 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   z-index: 4;
 }
 
+.projects-page .projects-note-actions {
+  position: absolute;
+  left: 56%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  z-index: 20;
+}
+
+.projects-page .projects-note-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 182px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-family: "Manrope", "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.projects-page .projects-note-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.projects-page .projects-note-btn-repo {
+  background: #1f5f74;
+  border-color: #1f5f74;
+  color: #d7923c;
+}
+
+.projects-page .projects-note-btn-services {
+  background: #d7923c;
+  border-color: #d7923c;
+  color: #1f3c6d;
+}
+
+.projects-page .projects-note-btn:visited,
+.projects-page .projects-note-btn:hover,
+.projects-page .projects-note-btn:active {
+  color: inherit;
+}
+
 .projects-page .projects-portfolio {
   position: relative;
   z-index: 1;
   background: var(--section-soft);
-  padding: 94px 0 72px;
+  padding: 126px 0 72px;
 }
 
 .projects-page .projects-portfolio .container {
@@ -1975,7 +2028,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-intro-note {
-    padding: 44px 0 24px;
+    padding: 36px 0 18px;
   }
 
   .projects-page .projects-intro-note-inner {
@@ -1983,7 +2036,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-copy {
-    margin-top: clamp(44px, 5.5vw, 72px);
+    margin-top: clamp(8px, 1.4vw, 18px);
   }
 
   .projects-page .projects-note-copy p {
@@ -1993,6 +2046,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-quote-open {
+    top: -2px;
     left: 16px;
     width: clamp(64px, 6.8vw, 88px);
   }
@@ -2002,8 +2056,20 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     width: clamp(68px, 7.2vw, 94px);
   }
 
+  .projects-page .projects-note-actions {
+    left: 52%;
+    gap: 14px;
+  }
+
+  .projects-page .projects-note-btn {
+    min-width: 160px;
+    height: 46px;
+    padding: 0 16px;
+    font-size: 15px;
+  }
+
   .projects-page .projects-portfolio {
-    padding-top: 88px;
+    padding-top: 110px;
   }
 
   .projects-page .projects-grid-modern {
@@ -2320,7 +2386,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-intro-note {
-    padding: 34px 0 22px;
+    padding: 30px 0 16px;
   }
 
   .projects-page .projects-intro-note-inner {
@@ -2328,7 +2394,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-copy {
-    margin-top: 32px;
+    margin-top: 6px;
   }
 
   .projects-page .projects-note-copy p {
@@ -2338,7 +2404,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-quote-open {
-    top: 8px;
+    top: -4px;
     left: 8px;
     width: clamp(56px, 12vw, 76px);
   }
@@ -2348,8 +2414,21 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     width: clamp(58px, 12.4vw, 80px);
   }
 
+  .projects-page .projects-note-actions {
+    left: 50%;
+    gap: 10px;
+  }
+
+  .projects-page .projects-note-btn {
+    min-width: 136px;
+    height: 42px;
+    padding: 0 12px;
+    font-size: 13px;
+    border-width: 2px;
+  }
+
   .projects-page .projects-portfolio {
-    padding: 82px 0 54px;
+    padding: 102px 0 54px;
   }
 
   .projects-page .project-blueprint {
