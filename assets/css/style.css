@@ -1226,17 +1226,19 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 /* Projects module aligned with Home visual language */
 .projects-page .projects-hero-sunset {
   position: relative;
-  min-height: 64vh;
-  padding-top: 118px;
-  padding-bottom: 110px;
+  min-height: 68vh;
+  padding-top: 106px;
+  padding-bottom: 188px;
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    #e8ae67 0%,
-    #e3a257 28%,
-    #d7923f 58%,
-    #cc8335 82%,
-    #c5792f 100%
+    var(--palette-orange) 0%,
+    #e2a05a 20%,
+    #cd8d52 40%,
+    #b1805f 56%,
+    #90817f 74%,
+    var(--primary-2) 90%,
+    var(--primary) 100%
   );
 }
 
@@ -1252,17 +1254,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-hero-layer-stack {
-  position: absolute;
-  inset: 56px -6% 126px;
-  pointer-events: none;
-  z-index: 2;
+  display: none;
 }
 
 .projects-page .projects-hero-layer-stack svg {
-  width: 112%;
-  height: 100%;
-  display: block;
-  transform: translateX(-4%);
+  display: none;
 }
 
 .projects-page .projects-band {
@@ -1291,16 +1287,18 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-hero-inner {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   width: 100%;
   max-width: none;
   margin: 0;
   padding-left: clamp(112px, 9vw, 160px);
-  padding-right: clamp(24px, 7vw, 112px);
+  padding-right: clamp(260px, 30vw, 460px);
 }
 
 .projects-page .projects-hero-copy {
-  max-width: 940px;
+  max-width: 760px;
+  margin-top: 24px;
+  margin-left: -16px;
 }
 
 .projects-page .projects-hero-kicker {
@@ -1315,17 +1313,20 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-hero-copy h1 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(42px, 5.8vw, 70px);
-  line-height: 1.04;
-  letter-spacing: -0.03em;
+  font-size: 63px;
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.026em;
+  max-width: 760px;
 }
 
 .projects-page .projects-hero-copy p {
-  margin: 14px 0 0;
+  margin: 8px 0 0;
   color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(14px, 1.35vw, 18px);
-  line-height: 1.38;
-  max-width: 920px;
+  font-size: 20px;
+  line-height: 1.45;
+  white-space: normal;
+  max-width: 760px;
 }
 
 .projects-page .projects-hero-cutoff {
@@ -1333,14 +1334,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   left: 0;
   right: 0;
   bottom: -1px;
-  z-index: 4;
+  z-index: 6;
   line-height: 0;
 }
 
 .projects-page .projects-hero-cutoff svg {
   display: block;
   width: 100%;
-  height: 98px;
+  height: 92px;
 }
 
 .projects-page .projects-hero-cutoff path {
@@ -1350,7 +1351,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-intro-note {
   position: relative;
   background: var(--section-nude);
-  padding: 44px 0 20px;
+  padding: 30px 0 20px;
   overflow: visible;
   z-index: 2;
 }
@@ -1359,11 +1360,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position: relative;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 18px 28px 10px 126px;
+  padding: 8px 28px 10px 126px;
 }
 
 .projects-page .projects-note-copy {
-  margin-top: clamp(10px, 1.5vw, 22px);
+  margin-top: 0;
 }
 
 .projects-page .projects-note-copy p {
@@ -1387,7 +1388,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-note-quote-open {
-  top: -8px;
+  top: -24px;
   left: 28px;
   width: clamp(74px, 5vw, 104px);
   z-index: 2;
@@ -1422,7 +1423,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   height: 52px;
   padding: 0 24px;
   border-radius: 999px;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   font-family: "Manrope", "Inter", sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -1437,13 +1438,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-note-btn-repo {
-  background: #1f5f74;
+  background: transparent;
   border-color: #1f5f74;
   color: #d7923c;
 }
 
 .projects-page .projects-note-btn-services {
-  background: #d7923c;
+  background: transparent;
   border-color: #d7923c;
   color: #1f3c6d;
 }
@@ -2001,26 +2002,32 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-hero-sunset {
     min-height: 64vh;
-    padding-top: 104px;
-    padding-bottom: 100px;
+    padding-top: 102px;
+    padding-bottom: 168px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    inset: 78px -4% 102px;
+    display: none;
   }
 
   .projects-page .projects-hero-inner {
     padding-left: clamp(54px, 7vw, 92px);
-    padding-right: 24px;
+    padding-right: clamp(220px, 25vw, 360px);
+  }
+
+  .projects-page .projects-hero-copy {
+    margin-left: 0;
   }
 
   .projects-page .projects-hero-copy h1 {
-    font-size: clamp(36px, 6.9vw, 52px);
+    font-size: 48px;
+    min-height: auto;
   }
 
   .projects-page .projects-hero-copy p {
-    font-size: clamp(13px, 2.05vw, 16px);
-    max-width: 680px;
+    font-size: 19px;
+    max-width: 560px;
+    white-space: normal;
   }
 
   .projects-page .projects-hero-cutoff svg {
@@ -2028,7 +2035,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-intro-note {
-    padding: 36px 0 18px;
+    padding: 22px 0 18px;
   }
 
   .projects-page .projects-intro-note-inner {
@@ -2036,7 +2043,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-copy {
-    margin-top: clamp(8px, 1.4vw, 18px);
+    margin-top: 0;
   }
 
   .projects-page .projects-note-copy p {
@@ -2046,7 +2053,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-quote-open {
-    top: -2px;
+    top: -14px;
     left: 16px;
     width: clamp(64px, 6.8vw, 88px);
   }
@@ -2066,6 +2073,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     height: 46px;
     padding: 0 16px;
     font-size: 15px;
+    border-width: 2px;
   }
 
   .projects-page .projects-portfolio {
@@ -2357,13 +2365,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-sunset {
-    min-height: 58vh;
-    padding-top: 94px;
-    padding-bottom: 88px;
+    min-height: 60vh;
+    padding-top: 100px;
+    padding-bottom: 150px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    inset: 72px -8% 96px;
+    display: none;
   }
 
   .projects-page .projects-hero-inner {
@@ -2371,14 +2379,22 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     padding-right: 36px;
   }
 
+  .projects-page .projects-hero-copy {
+    margin-top: 16px;
+    margin-left: 0;
+  }
+
   .projects-page .projects-hero-copy h1 {
-    font-size: clamp(31px, 9vw, 40px);
+    font-size: 36px;
+    max-width: 340px;
   }
 
   .projects-page .projects-hero-copy p {
-    margin-top: 14px;
-    font-size: 13px;
-    line-height: 1.38;
+    margin-top: 8px;
+    font-size: 18px;
+    max-width: 340px;
+    line-height: 1.45;
+    white-space: normal;
   }
 
   .projects-page .projects-hero-cutoff svg {
@@ -2386,15 +2402,15 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-intro-note {
-    padding: 30px 0 16px;
+    padding: 18px 0 12px;
   }
 
   .projects-page .projects-intro-note-inner {
-    padding: 8px 18px 8px 70px;
+    padding: 6px 18px 8px 64px;
   }
 
   .projects-page .projects-note-copy {
-    margin-top: 6px;
+    margin-top: -4px;
   }
 
   .projects-page .projects-note-copy p {
@@ -2404,7 +2420,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-quote-open {
-    top: -4px;
+    top: -12px;
     left: 8px;
     width: clamp(56px, 12vw, 76px);
   }
@@ -2415,20 +2431,24 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-note-actions {
-    left: 50%;
-    gap: 10px;
+    position: static;
+    transform: none;
+    margin-top: 14px;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-left: 18px;
   }
 
   .projects-page .projects-note-btn {
-    min-width: 136px;
-    height: 42px;
-    padding: 0 12px;
-    font-size: 13px;
-    border-width: 2px;
+    min-width: 146px;
+    height: 50px;
+    padding: 0 18px;
+    font-size: 16px;
+    border-width: 3px;
   }
 
   .projects-page .projects-portfolio {
-    padding: 102px 0 54px;
+    padding: 72px 0 54px;
   }
 
   .projects-page .project-blueprint {
