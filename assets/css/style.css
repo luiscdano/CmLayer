@@ -750,7 +750,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .hero-copy {
   max-width: 760px;
-  margin-top: 34px;
+  margin-top: 24px;
   margin-left: -16px;
   animation: none;
 }
@@ -761,10 +761,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.026em;
-  text-wrap: balance;
   color: #ffffff;
   max-width: 760px;
-  min-height: 2.15em;
 }
 
 .hero-copy p {

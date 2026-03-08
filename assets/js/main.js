@@ -5,6 +5,15 @@
     return `${apiBase}${normalized}`;
   };
 
+  const getLocalFallbackPath = (path) => {
+    const normalized = path.startsWith("/") ? path : `/${path}`;
+    const i18nMatch = normalized.match(/^\/api\/i18n\/(es|en)$/);
+    if (i18nMatch) {
+      return `/data/i18n/${i18nMatch[1]}.json`;
+    }
+    return "";
+  };
+
   const escapeHtml = (value) =>
     String(value ?? "")
       .replace(/&/g, "&amp;")
@@ -26,17 +35,28 @@
   };
 
   const fetchJson = async (path) => {
-    try {
-      const response = await fetch(apiUrl(path), {
-        headers: { Accept: "application/json" }
-      });
-      if (!response.ok) {
-        throw new Error(`Request failed: ${response.status}`);
-      }
-      return await response.json();
-    } catch (error) {
-      return null;
+    const normalized = path.startsWith("/") ? path : `/${path}`;
+    const fallbackPath = getLocalFallbackPath(normalized);
+    const candidates = [apiUrl(normalized)];
+    if (fallbackPath) {
+      candidates.push(fallbackPath);
     }
+
+    for (const endpoint of candidates) {
+      try {
+        const response = await fetch(endpoint, {
+          headers: { Accept: "application/json" }
+        });
+        if (!response.ok) {
+          continue;
+        }
+        return await response.json();
+      } catch (error) {
+        continue;
+      }
+    }
+
+    return null;
   };
 
   const setActiveLangButtons = (lang) => {
@@ -49,6 +69,7 @@
     state.lang = lang;
     state.i18n = dict || {};
     document.documentElement.lang = lang;
+    document.body?.setAttribute("data-lang", lang);
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
       if (state.i18n[key]) {
