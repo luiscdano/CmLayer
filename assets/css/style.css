@@ -1723,7 +1723,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-progress-heading-row {
   display: inline-flex;
-  align-items: baseline;
+  align-items: flex-end;
   gap: 8px;
   flex-wrap: nowrap;
   margin-bottom: 12px;
@@ -1751,7 +1751,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   line-height: 1;
   flex: 0 0 auto;
   position: static;
-  margin-bottom: 0.08em;
+  margin-bottom: 2px;
   transition: background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -2713,13 +2713,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     gap: 8px;
     margin-bottom: 10px;
     width: max-content;
+    align-items: flex-end;
   }
 
   .projects-page .projects-more-btn {
     height: 24px;
     padding: 0 9px;
     font-size: 10px;
-    margin-bottom: 0.08em;
+    margin-bottom: 2px;
   }
 
   .projects-page .projects-more-panel {
