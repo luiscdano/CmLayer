@@ -854,11 +854,38 @@
     });
   };
 
+  const initProjectsLabDeck = () => {
+    const cards = Array.from(document.querySelectorAll("[data-lab-card]"));
+    if (!cards.length) return;
+
+    const activate = (cardToActivate) => {
+      cards.forEach((card) => {
+        const isActive = card === cardToActivate;
+        card.classList.toggle("is-front", isActive);
+        card.setAttribute("aria-expanded", isActive ? "true" : "false");
+      });
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        activate(card);
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activate(card);
+        }
+      });
+    });
+  };
+
   const init = async () => {
     initNav();
     initTracking();
     initForms();
     initProjectMorePanels();
+    initProjectsLabDeck();
     await initI18n();
     initLangSwitch();
     await refreshDynamicSections();
