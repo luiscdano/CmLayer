@@ -1512,12 +1512,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-progress-logo-link {
   display: inline-flex;
-  transition: transform 0.22s ease, filter 0.22s ease;
+  transition: transform 0.22s ease;
 }
 
 .projects-page .projects-progress-logo-link:hover {
   transform: translateY(-5px) scale(1.01);
-  filter: drop-shadow(0 10px 18px rgba(215, 146, 60, 0.24));
 }
 
 .projects-page .projects-progress-logo-link:active {
@@ -1530,6 +1529,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   justify-content: flex-start;
   min-height: auto;
   padding-top: 6px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .projects-page .projects-progress-logo {
@@ -1538,6 +1539,21 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   height: auto;
   object-fit: contain;
   display: block;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  transition: filter 0.22s ease;
+  will-change: filter;
+}
+
+.projects-page .projects-progress-logo-link:hover .projects-progress-logo {
+  /* Shadow tracks PNG alpha for a floating contour effect */
+  filter: drop-shadow(0 10px 18px rgba(215, 146, 60, 0.26))
+    drop-shadow(0 0 10px rgba(215, 146, 60, 0.18));
+}
+
+.projects-page .projects-progress-logo-link:active .projects-progress-logo {
+  filter: drop-shadow(0 6px 12px rgba(215, 146, 60, 0.22));
 }
 
 .projects-page .projects-progress-copy {
