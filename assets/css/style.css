@@ -2043,17 +2043,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-tools-strip {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 16px;
+  justify-content: center;
+  gap: 38px;
 }
 
 .projects-page .projects-tools-icons {
-  flex: 1 1 auto;
-  min-width: 0;
+  flex: 0 0 auto;
+  min-width: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(14px, 2.1vw, 30px);
+  justify-content: center;
+  gap: 16px;
 }
 
 .projects-page .projects-tools-title {
@@ -2107,13 +2107,21 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-post-tools-white {
-  background: var(--section-soft);
-  min-height: 36px;
+  background: var(--section-nude);
+  min-height: 22px;
 }
 
 .projects-page .projects-lab {
-  background: var(--section-soft);
-  padding: 36px 0 68px;
+  background: var(--section-nude);
+  padding: 0 0 72px;
+}
+
+.projects-page .projects-lab-panel {
+  background: #ffffff;
+  border: 1px solid rgba(21, 62, 84, 0.11);
+  border-radius: 34px;
+  box-shadow: 0 16px 34px rgba(12, 34, 48, 0.09);
+  padding: clamp(24px, 3vw, 42px);
 }
 
 .projects-page .projects-lab-heading {
@@ -2135,15 +2143,15 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-lab-deck {
   position: relative;
-  min-height: 660px;
-  margin-top: 30px;
+  min-height: 730px;
+  margin-top: 36px;
 }
 
 .projects-page .projects-lab-card {
   position: absolute;
-  width: min(30vw, 380px);
-  min-height: 320px;
-  padding: 22px 24px;
+  width: min(28vw, 350px);
+  min-height: 300px;
+  padding: 20px 22px;
   border-radius: 56px;
   border: 2px solid var(--lab-border, rgba(0, 0, 0, 0.2));
   box-shadow: 0 8px 18px rgba(13, 33, 46, 0.14);
@@ -2234,29 +2242,29 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-lab-card-automation {
-  top: 24px;
-  left: 8%;
+  top: 30px;
+  left: 7%;
   --lab-rot: -0.4deg;
   --lab-z: 6;
 }
 
 .projects-page .projects-lab-card-devops {
-  top: 24px;
-  right: 8%;
+  top: 30px;
+  right: 7%;
   --lab-rot: 0.35deg;
   --lab-z: 5;
 }
 
 .projects-page .projects-lab-card-infra {
-  top: 196px;
-  left: 27%;
+  top: 258px;
+  left: 24%;
   --lab-rot: 0.22deg;
   --lab-z: 7;
 }
 
 .projects-page .projects-lab-card-ai {
-  top: 196px;
-  right: 18%;
+  top: 258px;
+  right: 15%;
   --lab-rot: -0.24deg;
   --lab-z: 8;
 }
@@ -3081,12 +3089,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-strip {
-    gap: 12px;
-    justify-content: flex-start;
+    gap: 28px;
+    justify-content: center;
   }
 
   .projects-page .projects-tools-icons {
-    justify-content: space-between;
+    justify-content: center;
     gap: 12px;
   }
 
@@ -3109,11 +3117,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-post-tools-white {
-    min-height: 30px;
+    min-height: 20px;
   }
 
   .projects-page .projects-lab {
-    padding: 28px 0 50px;
+    padding: 0 0 52px;
+  }
+
+  .projects-page .projects-lab-panel {
+    border-radius: 28px;
+    padding: 24px;
   }
 
   .projects-page .projects-lab-heading {
@@ -3125,13 +3138,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-deck {
-    min-height: 580px;
-    margin-top: 20px;
+    min-height: 640px;
+    margin-top: 26px;
   }
 
   .projects-page .projects-lab-card {
-    width: min(34vw, 340px);
-    min-height: 292px;
+    width: min(31vw, 320px);
+    min-height: 272px;
     padding: 18px 20px;
     border-radius: 44px;
   }
@@ -3156,23 +3169,23 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-card-automation {
-    left: 4%;
-    top: 20px;
+    left: 3%;
+    top: 24px;
   }
 
   .projects-page .projects-lab-card-devops {
-    right: 4%;
-    top: 20px;
+    right: 3%;
+    top: 24px;
   }
 
   .projects-page .projects-lab-card-infra {
-    left: 22%;
-    top: 176px;
+    left: 21%;
+    top: 224px;
   }
 
   .projects-page .projects-lab-card-ai {
-    right: 14%;
-    top: 176px;
+    right: 12%;
+    top: 224px;
   }
 
   .projects-page .projects-grid-modern {
@@ -3797,15 +3810,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-strip {
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-direction: column;
   }
 
   .projects-page .projects-tools-icons {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 12px;
+    width: auto;
+    max-width: 100%;
+    justify-content: center;
+    gap: 10px;
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 2px;
@@ -3830,11 +3845,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-post-tools-white {
-    min-height: 24px;
+    min-height: 16px;
   }
 
   .projects-page .projects-lab {
-    padding: 20px 0 30px;
+    padding: 0 0 32px;
+  }
+
+  .projects-page .projects-lab-panel {
+    border-radius: 22px;
+    padding: 18px 14px;
   }
 
   .projects-page .projects-lab-heading {
@@ -3847,9 +3867,9 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-lab-deck {
     min-height: auto;
-    margin-top: 14px;
+    margin-top: 16px;
     display: grid;
-    gap: 12px;
+    gap: 18px;
   }
 
   .projects-page .projects-lab-card {

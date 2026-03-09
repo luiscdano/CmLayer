@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260309-54" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260309-55" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -98,26 +98,6 @@
 
       <div class="projects-hero-isotipo hero-isotipo" aria-hidden="true">
         <img src="/assets/img/isotipo01.png" alt="" loading="eager" decoding="sync" />
-      </div>
-
-      <div class="wave-container" aria-hidden="true">
-        <svg class="waves" viewBox="0 0 3200 220" preserveAspectRatio="none">
-          <g class="wave wave1">
-            <path d="M0 118 C150 68 350 168 500 118 C650 68 850 168 1000 118 C1150 68 1350 168 1500 118 C1650 68 1850 168 2000 118 C2150 68 2350 168 2500 118 C2650 68 2850 168 3000 118 C3070 100 3140 95 3200 118 L3200 220 L0 220 Z"></path>
-            <path d="M0 118 C150 68 350 168 500 118 C650 68 850 168 1000 118 C1150 68 1350 168 1500 118 C1650 68 1850 168 2000 118 C2150 68 2350 168 2500 118 C2650 68 2850 168 3000 118 C3070 100 3140 95 3200 118 L3200 220 L0 220 Z" transform="translate(3200 0)"></path>
-            <animateTransform attributeName="transform" type="translate" from="0 0" to="-3200 0" dur="160s" repeatCount="indefinite" />
-          </g>
-          <g class="wave wave2">
-            <path d="M0 138 C160 104 340 188 500 146 C660 104 840 188 1000 146 C1160 104 1340 188 1500 146 C1660 104 1840 188 2000 146 C2160 104 2340 188 2500 146 C2660 104 2840 188 3000 146 C3070 132 3140 125 3200 146 L3200 220 L0 220 Z"></path>
-            <path d="M0 138 C160 104 340 188 500 146 C660 104 840 188 1000 146 C1160 104 1340 188 1500 146 C1660 104 1840 188 2000 146 C2160 104 2340 188 2500 146 C2660 104 2840 188 3000 146 C3070 132 3140 125 3200 146 L3200 220 L0 220 Z" transform="translate(3200 0)"></path>
-            <animateTransform attributeName="transform" type="translate" from="0 0" to="-3200 0" dur="220s" repeatCount="indefinite" />
-          </g>
-          <g class="wave wave3">
-            <path d="M0 162 C180 132 320 206 500 174 C680 132 820 206 1000 174 C1180 132 1320 206 1500 174 C1680 132 1820 206 2000 174 C2180 132 2320 206 2500 174 C2680 132 2820 206 3000 174 C3070 166 3140 160 3200 174 L3200 220 L0 220 Z"></path>
-            <path d="M0 162 C180 132 320 206 500 174 C680 132 820 206 1000 174 C1180 132 1320 206 1500 174 C1680 132 1820 206 2000 174 C2180 132 2320 206 2500 174 C2680 132 2820 206 3000 174 C3070 166 3140 160 3200 174 L3200 220 L0 220 Z" transform="translate(3200 0)"></path>
-            <animateTransform attributeName="transform" type="translate" from="0 0" to="-3200 0" dur="280s" repeatCount="indefinite" />
-          </g>
-        </svg>
       </div>
 
       <div class="projects-hero-cutoff" aria-hidden="true">
@@ -485,73 +465,75 @@
 
     <section class="projects-lab" id="projects-lab">
       <div class="container">
-        <h2 class="projects-lab-heading" data-i18n="projects.lab.title">Laboratorio</h2>
-        <p class="projects-lab-subtitle" data-i18n="projects.lab.subtitle">Donde las ideas evolucionan en herramientas experimentales, sistemas y tecnologías emergentes.</p>
+        <div class="projects-lab-panel">
+          <h2 class="projects-lab-heading" data-i18n="projects.lab.title">Laboratorio</h2>
+          <p class="projects-lab-subtitle" data-i18n="projects.lab.subtitle">Donde las ideas evolucionan en herramientas experimentales, sistemas y tecnologías emergentes.</p>
 
-        <div class="projects-lab-deck">
-          <article
-            class="projects-lab-card projects-lab-card-blue projects-lab-card-automation is-front"
-            data-lab-card
-            tabindex="0"
-            role="button"
-            aria-expanded="true"
-          >
-            <h3 data-i18n="projects.lab.automation.title">Automation Tools</h3>
-            <ul class="projects-lab-list">
-              <li data-i18n="projects.lab.automation.p1">DeployFlow Automator</li>
-              <li data-i18n="projects.lab.automation.p2">Task Runner Console</li>
-              <li data-i18n="projects.lab.automation.p3">Audit Log Stream</li>
-            </ul>
-            <p class="projects-lab-details" data-i18n="projects.lab.automation.details">Scripts y utilidades para automatizar tareas repetitivas de despliegue, validación y mantenimiento operativo.</p>
-          </article>
+          <div class="projects-lab-deck">
+            <article
+              class="projects-lab-card projects-lab-card-blue projects-lab-card-automation is-front"
+              data-lab-card
+              tabindex="0"
+              role="button"
+              aria-expanded="true"
+            >
+              <h3 data-i18n="projects.lab.automation.title">Automation Tools</h3>
+              <ul class="projects-lab-list">
+                <li data-i18n="projects.lab.automation.p1">DeployFlow Automator</li>
+                <li data-i18n="projects.lab.automation.p2">Task Runner Console</li>
+                <li data-i18n="projects.lab.automation.p3">Audit Log Stream</li>
+              </ul>
+              <p class="projects-lab-details" data-i18n="projects.lab.automation.details">Scripts y utilidades para automatizar tareas repetitivas de despliegue, validación y mantenimiento operativo.</p>
+            </article>
 
-          <article
-            class="projects-lab-card projects-lab-card-orange projects-lab-card-devops"
-            data-lab-card
-            tabindex="0"
-            role="button"
-            aria-expanded="false"
-          >
-            <h3 data-i18n="projects.lab.devops.title">DevOps Pipelines</h3>
-            <ul class="projects-lab-list">
-              <li data-i18n="projects.lab.devops.p1">CI/CD Multi-Stage</li>
-              <li data-i18n="projects.lab.devops.p2">Release Guardrails</li>
-              <li data-i18n="projects.lab.devops.p3">Infra as Code Workflow</li>
-            </ul>
-            <p class="projects-lab-details" data-i18n="projects.lab.devops.details">Flujos de entrega continua con pruebas, controles de calidad y despliegues seguros para múltiples entornos.</p>
-          </article>
+            <article
+              class="projects-lab-card projects-lab-card-orange projects-lab-card-devops"
+              data-lab-card
+              tabindex="0"
+              role="button"
+              aria-expanded="false"
+            >
+              <h3 data-i18n="projects.lab.devops.title">DevOps Pipelines</h3>
+              <ul class="projects-lab-list">
+                <li data-i18n="projects.lab.devops.p1">CI/CD Multi-Stage</li>
+                <li data-i18n="projects.lab.devops.p2">Release Guardrails</li>
+                <li data-i18n="projects.lab.devops.p3">Infra as Code Workflow</li>
+              </ul>
+              <p class="projects-lab-details" data-i18n="projects.lab.devops.details">Flujos de entrega continua con pruebas, controles de calidad y despliegues seguros para múltiples entornos.</p>
+            </article>
 
-          <article
-            class="projects-lab-card projects-lab-card-orange projects-lab-card-infra"
-            data-lab-card
-            tabindex="0"
-            role="button"
-            aria-expanded="false"
-          >
-            <h3 data-i18n="projects.lab.infra.title">Infrastructure Projects</h3>
-            <ul class="projects-lab-list">
-              <li data-i18n="projects.lab.infra.p1">Edge Cluster Blueprint</li>
-              <li data-i18n="projects.lab.infra.p2">Service Mesh Sandbox</li>
-              <li data-i18n="projects.lab.infra.p3">Observability Core</li>
-            </ul>
-            <p class="projects-lab-details" data-i18n="projects.lab.infra.details">Diseños y prototipos de infraestructura escalable, segura y orientada a disponibilidad y monitoreo continuo.</p>
-          </article>
+            <article
+              class="projects-lab-card projects-lab-card-orange projects-lab-card-infra"
+              data-lab-card
+              tabindex="0"
+              role="button"
+              aria-expanded="false"
+            >
+              <h3 data-i18n="projects.lab.infra.title">Infrastructure Projects</h3>
+              <ul class="projects-lab-list">
+                <li data-i18n="projects.lab.infra.p1">Edge Cluster Blueprint</li>
+                <li data-i18n="projects.lab.infra.p2">Service Mesh Sandbox</li>
+                <li data-i18n="projects.lab.infra.p3">Observability Core</li>
+              </ul>
+              <p class="projects-lab-details" data-i18n="projects.lab.infra.details">Diseños y prototipos de infraestructura escalable, segura y orientada a disponibilidad y monitoreo continuo.</p>
+            </article>
 
-          <article
-            class="projects-lab-card projects-lab-card-blue projects-lab-card-ai"
-            data-lab-card
-            tabindex="0"
-            role="button"
-            aria-expanded="false"
-          >
-            <h3 data-i18n="projects.lab.ai.title">AI Experiments</h3>
-            <ul class="projects-lab-list">
-              <li data-i18n="projects.lab.ai.p1">Prompt Router Lab</li>
-              <li data-i18n="projects.lab.ai.p2">Vision QA Assistant</li>
-              <li data-i18n="projects.lab.ai.p3">Anomaly Insight Bot</li>
-            </ul>
-            <p class="projects-lab-details" data-i18n="projects.lab.ai.details">Experimentos de IA para clasificación contextual, asistencia automatizada y detección de patrones en datos reales.</p>
-          </article>
+            <article
+              class="projects-lab-card projects-lab-card-blue projects-lab-card-ai"
+              data-lab-card
+              tabindex="0"
+              role="button"
+              aria-expanded="false"
+            >
+              <h3 data-i18n="projects.lab.ai.title">AI Experiments</h3>
+              <ul class="projects-lab-list">
+                <li data-i18n="projects.lab.ai.p1">Prompt Router Lab</li>
+                <li data-i18n="projects.lab.ai.p2">Vision QA Assistant</li>
+                <li data-i18n="projects.lab.ai.p3">Anomaly Insight Bot</li>
+              </ul>
+              <p class="projects-lab-details" data-i18n="projects.lab.ai.details">Experimentos de IA para clasificación contextual, asistencia automatizada y detección de patrones en datos reales.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
