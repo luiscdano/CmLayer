@@ -1724,25 +1724,29 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-progress-heading-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 10px;
+  flex-wrap: nowrap;
   margin-bottom: 12px;
 }
 
 .projects-page .projects-progress-heading-row h3 {
   margin: 0 !important;
+  min-width: 0;
+  flex: 0 1 auto;
 }
 
 .projects-page .projects-more-btn {
   border: 1px solid transparent;
   border-radius: 999px;
-  height: 42px;
-  padding: 0 16px;
+  height: 30px;
+  padding: 0 12px;
   font-family: "Manrope", "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: -0.01em;
   cursor: pointer;
+  line-height: 1;
+  flex: 0 0 auto;
   transition: transform 0.18s ease, filter 0.18s ease, background-color 0.18s ease;
 }
 
@@ -2656,14 +2660,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-heading-row {
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 10px;
   }
 
   .projects-page .projects-more-btn {
-    height: 38px;
-    padding: 0 14px;
-    font-size: 15px;
+    height: 28px;
+    padding: 0 11px;
+    font-size: 12px;
   }
 
   .projects-page .projects-more-panel {
@@ -3226,12 +3230,13 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-progress-heading-row {
     gap: 8px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
   }
 
   .projects-page .projects-more-btn {
-    height: 35px;
-    padding: 0 12px;
-    font-size: 14px;
+    height: 28px;
+    padding: 0 10px;
+    font-size: 12px;
   }
 
   .projects-page .projects-more-panel {
