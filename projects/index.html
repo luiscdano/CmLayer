@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260308-47" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260308-48" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -432,59 +432,38 @@
       </div>
     </section>
 
-    <section class="project-blueprint" id="project-blueprint">
+    <section class="projects-tools-band" aria-label="Herramientas utilizadas">
       <div class="container">
-        <div class="projects-section-head">
-          <h2 data-i18n="projects.blueprint.title">Detalle técnico del proyecto</h2>
-          <p data-i18n="projects.blueprint.sub">Selecciona “Arquitectura” en cualquier tarjeta para ver este bloque con enfoque técnico.</p>
+        <div class="projects-tools-strip" role="list">
+          <div class="projects-tool-item" role="listitem">
+            <img src="/assets/img/mysql.png?v=20260309-01" alt="MySQL" loading="lazy" decoding="async" />
+            <span>[ MySQL ]</span>
+          </div>
+          <div class="projects-tool-item" role="listitem">
+            <img src="/assets/img/docker.png?v=20260309-01" alt="Docker" loading="lazy" decoding="async" />
+            <span>[ Docker ]</span>
+          </div>
+          <div class="projects-tool-item" role="listitem">
+            <img src="/assets/img/github.png?v=20260309-01" alt="GitHub" loading="lazy" decoding="async" />
+            <span>[ GitHub ]</span>
+          </div>
+          <div class="projects-tool-item" role="listitem">
+            <img src="/assets/img/vscode.svg.png?v=20260309-01" alt="VSCode" loading="lazy" decoding="async" />
+            <span>[ VSCode ]</span>
+          </div>
+          <div class="projects-tool-item" role="listitem">
+            <img src="/assets/img/cloudflare.png?v=20260309-01" alt="Cloudflare" loading="lazy" decoding="async" />
+            <span>[ Cloudflare ]</span>
+          </div>
+          <div class="projects-tool-item" role="listitem">
+            <img src="/assets/img/digitalocean.png?v=20260309-01" alt="DigitalOcean" loading="lazy" decoding="async" />
+            <span>[ DigitalOcean ]</span>
+          </div>
         </div>
-
-        <article class="blueprint-shell" data-project-blueprint>
-          <header class="blueprint-header">
-            <div>
-              <p class="blueprint-kicker" data-i18n="projects.blueprint.kicker">Project View</p>
-              <h3 data-blueprint-name>Proyecto</h3>
-              <p data-blueprint-description>Selecciona un proyecto para ver su descripción técnica.</p>
-            </div>
-            <span class="blueprint-status" data-blueprint-status data-i18n="projects.blueprint.status.default">Estado: Activo</span>
-          </header>
-
-          <div class="blueprint-diagram" data-blueprint-diagram>
-            <div class="diagram-node">Cliente</div>
-            <div class="diagram-node">API</div>
-            <div class="diagram-node">Datos</div>
-          </div>
-
-          <div class="blueprint-grid">
-            <article class="blueprint-block">
-              <h4 data-i18n="projects.blueprint.arch.title">Arquitectura del sistema</h4>
-              <p data-blueprint-architecture>Arquitectura modular en evolución.</p>
-            </article>
-
-            <article class="blueprint-block">
-              <h4 data-i18n="projects.blueprint.tech.title">Tecnologías utilizadas</h4>
-              <ul class="blueprint-list blueprint-tags" data-blueprint-technologies>
-                <li>Stack</li>
-              </ul>
-            </article>
-
-            <article class="blueprint-block">
-              <h4 data-i18n="projects.blueprint.features.title">Funcionalidades principales</h4>
-              <ul class="blueprint-list" data-blueprint-features>
-                <li>Funcionalidades en documentación.</li>
-              </ul>
-            </article>
-
-            <article class="blueprint-block">
-              <h4 data-i18n="projects.blueprint.challenges.title">Desafíos técnicos</h4>
-              <ul class="blueprint-list" data-blueprint-challenges>
-                <li>Desafíos técnicos en revisión.</li>
-              </ul>
-            </article>
-          </div>
-        </article>
       </div>
     </section>
+
+    <section class="projects-post-tools-white" aria-hidden="true"></section>
   </main>
 
   <footer class="footer">

@@ -2004,6 +2004,49 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   white-space: nowrap;
 }
 
+.projects-page .projects-tools-band {
+  background: var(--section-nude);
+  padding: 28px 0 24px;
+  border-top: 1px solid rgba(21, 62, 84, 0.08);
+}
+
+.projects-page .projects-tools-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 26px;
+}
+
+.projects-page .projects-tool-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-3);
+  font-size: clamp(16px, 1.2vw, 20px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.projects-page .projects-tool-item img {
+  height: 46px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.projects-page .projects-tool-item:hover img {
+  opacity: 1;
+}
+
+.projects-page .projects-post-tools-white {
+  background: #ffffff;
+  min-height: 52px;
+}
+
 .projects-page .project-blueprint {
   background: var(--section-nude);
   padding: 86px 0 82px;
@@ -2819,6 +2862,28 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     white-space: nowrap;
   }
 
+  .projects-page .projects-tools-band {
+    padding: 22px 0 20px;
+  }
+
+  .projects-page .projects-tools-strip {
+    gap: 10px 20px;
+  }
+
+  .projects-page .projects-tool-item {
+    gap: 8px;
+    font-size: clamp(15px, 1.45vw, 18px);
+  }
+
+  .projects-page .projects-tool-item img {
+    height: 44px;
+    max-width: 106px;
+  }
+
+  .projects-page .projects-post-tools-white {
+    min-height: 42px;
+  }
+
   .projects-page .projects-grid-modern {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
@@ -3434,6 +3499,29 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
     font-size: clamp(34px, 10vw, 46px);
     white-space: normal;
+  }
+
+  .projects-page .projects-tools-band {
+    padding: 18px 0 16px;
+  }
+
+  .projects-page .projects-tools-strip {
+    justify-content: flex-start;
+    gap: 10px 14px;
+  }
+
+  .projects-page .projects-tool-item {
+    gap: 7px;
+    font-size: 14px;
+  }
+
+  .projects-page .projects-tool-item img {
+    height: 40px;
+    max-width: 92px;
+  }
+
+  .projects-page .projects-post-tools-white {
+    min-height: 36px;
   }
 
   .projects-page .project-blueprint {
