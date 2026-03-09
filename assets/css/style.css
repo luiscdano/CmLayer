@@ -1719,12 +1719,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-progress-card-yeya {
   margin-top: 40px;
-  gap: 6px;
+  gap: 18px;
 }
 
 .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
   grid-template-columns: minmax(250px, 388px) minmax(0, 1fr);
-  gap: 0;
+  gap: 8%;
 }
 
 .projects-page .projects-progress-card-yeya .projects-progress-copy-bank {
@@ -1736,7 +1736,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-card-yeya .projects-progress-meta-bank {
-  margin-top: -16px;
+  margin-top: 8px;
 }
 
 .projects-page .projects-progress-card-katherine {
@@ -2482,12 +2482,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-card-yeya {
     margin-top: 28px;
-    gap: 6px;
+    gap: 14px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
     grid-template-columns: minmax(190px, 300px) minmax(0, 1fr);
-    gap: 0;
+    gap: 6%;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-copy-bank {
@@ -2499,7 +2499,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-meta-bank {
-    margin-top: -10px;
+    margin-top: 6px;
   }
 
   .projects-page .projects-progress-card-katherine {
@@ -3021,11 +3021,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-card-yeya {
     margin-top: 18px;
-    gap: 6px;
+    gap: 10px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
-    gap: 4px;
+    gap: 10px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-copy-bank,
@@ -3034,7 +3034,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-meta-bank {
-    margin-top: 0;
+    margin-top: 4px;
   }
 
   .projects-page .projects-progress-card-katherine {
