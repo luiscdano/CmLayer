@@ -1517,7 +1517,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-progress-logo-link:hover {
   transform: translateY(-5px) scale(1.01);
-  filter: drop-shadow(0 10px 18px rgba(16, 36, 54, 0.16));
+  filter: drop-shadow(0 10px 18px rgba(215, 146, 60, 0.24));
 }
 
 .projects-page .projects-progress-logo-link:active {
