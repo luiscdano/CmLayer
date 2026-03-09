@@ -1745,12 +1745,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-progress-card-katherine .projects-progress-top-bank {
   grid-template-columns: minmax(0, 1fr) minmax(390px, 560px);
-  gap: 12px;
+  gap: 8%;
 }
 
 .projects-page .projects-progress-card-katherine .projects-progress-side-bank {
   align-items: flex-end;
-  margin-left: 10%;
+  margin-left: 0;
   margin-top: 14%;
 }
 
@@ -1763,7 +1763,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-logo-katherine {
-  max-width: 452px;
+  max-width: 500px;
 }
 
 .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
@@ -2508,12 +2508,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-card-katherine .projects-progress-top-bank {
     grid-template-columns: minmax(0, 1fr) minmax(250px, 380px);
-    gap: 10px;
+    gap: 6%;
   }
 
   .projects-page .projects-progress-card-katherine .projects-progress-side-bank {
     align-items: flex-end;
-    margin-left: 8%;
+    margin-left: 0;
     margin-top: 12%;
   }
 
@@ -2526,7 +2526,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-logo-katherine {
-    max-width: 350px;
+    max-width: 385px;
   }
 
   .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
@@ -3062,7 +3062,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-logo-katherine {
-    max-width: 270px;
+    max-width: 297px;
   }
 
   .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
