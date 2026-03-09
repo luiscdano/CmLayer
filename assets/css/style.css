@@ -2018,15 +2018,33 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   gap: 12px 26px;
 }
 
+.projects-page .projects-tools-title {
+  margin: 0 20px 0 0;
+  min-width: 230px;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.projects-page .projects-tools-title-top {
+  color: var(--palette-orange);
+  font-size: clamp(32px, 2.35vw, 44px);
+  font-weight: 800;
+}
+
+.projects-page .projects-tools-title-bottom {
+  color: var(--primary-3);
+  font-size: clamp(52px, 3.65vw, 70px);
+  font-weight: 800;
+}
+
 .projects-page .projects-tool-item {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--primary-3);
-  font-size: clamp(16px, 1.2vw, 20px);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1;
+  justify-content: center;
+  line-height: 0;
 }
 
 .projects-page .projects-tool-item img {
@@ -2034,12 +2052,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   width: auto;
   max-width: 120px;
   object-fit: contain;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
+  opacity: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+  transform: translateY(0) scale(1);
+  transition: transform 0.26s ease, filter 0.26s ease;
+  will-change: transform, filter;
 }
 
 .projects-page .projects-tool-item:hover img {
-  opacity: 1;
+  transform: translateY(-6px) scale(1.055);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08))
+    drop-shadow(0 0 11px rgba(31, 60, 109, 0.35));
 }
 
 .projects-page .projects-post-tools-white {
@@ -2868,11 +2891,20 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-tools-strip {
     gap: 10px 20px;
+    justify-content: center;
   }
 
-  .projects-page .projects-tool-item {
-    gap: 8px;
-    font-size: clamp(15px, 1.45vw, 18px);
+  .projects-page .projects-tools-title {
+    min-width: 188px;
+    margin-right: 14px;
+  }
+
+  .projects-page .projects-tools-title-top {
+    font-size: clamp(26px, 2.4vw, 34px);
+  }
+
+  .projects-page .projects-tools-title-bottom {
+    font-size: clamp(42px, 3.7vw, 56px);
   }
 
   .projects-page .projects-tool-item img {
@@ -3510,9 +3542,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     gap: 10px 14px;
   }
 
-  .projects-page .projects-tool-item {
-    gap: 7px;
-    font-size: 14px;
+  .projects-page .projects-tools-title {
+    min-width: 100%;
+    margin: 0 0 6px;
+  }
+
+  .projects-page .projects-tools-title-top {
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .projects-page .projects-tools-title-bottom {
+    font-size: clamp(34px, 10vw, 44px);
   }
 
   .projects-page .projects-tool-item img {
@@ -3611,6 +3651,15 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .tech-icons .tech-icon:hover {
+    transform: none !important;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08)) !important;
+  }
+
+  .projects-page .projects-tool-item img {
+    transition: none !important;
+  }
+
+  .projects-page .projects-tool-item:hover img {
     transform: none !important;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08)) !important;
   }
