@@ -1263,10 +1263,10 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-hero-layer-stack svg {
-  width: 112%;
+  width: 108%;
   height: 100%;
   display: block;
-  transform: translateX(-4%);
+  transform: translateX(-2%);
 }
 
 .projects-page .projects-band {
@@ -1686,8 +1686,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-progress-top-bank {
   display: grid;
-  grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
-  gap: 36px;
+  grid-template-columns: minmax(255px, 366px) minmax(0, 1fr);
+  gap: 30px;
   align-items: start;
 }
 
@@ -1701,7 +1701,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-logo-bank {
-  max-width: 376px;
+  max-width: 320px;
 }
 
 .projects-page .projects-progress-copy-bank {
@@ -1843,7 +1843,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-more-panel-title {
   margin: 0;
   color: var(--primary-3);
-  font-size: clamp(24px, 2vw, 34px);
+  font-size: 14pt;
   line-height: 1.08;
   letter-spacing: -0.015em;
 }
@@ -1855,7 +1855,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-more-block h4 {
   margin: 0 0 6px;
   color: var(--primary-3);
-  font-size: clamp(18px, 1.5vw, 23px);
+  font-size: 14pt;
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
@@ -1863,7 +1863,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-more-block p {
   margin: 0;
   color: rgba(22, 63, 84, 0.88);
-  font-size: clamp(15px, 1.18vw, 18px);
+  font-size: 12pt;
   line-height: 1.42;
   font-weight: 600;
 }
@@ -1880,29 +1880,50 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-more-field-label {
   margin: 0;
   color: var(--primary-3);
-  font-size: 15px;
+  font-size: 12pt;
   font-weight: 700;
 }
 
 .projects-page .projects-more-stars {
   margin-top: 6px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .projects-page .projects-more-star {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  color: #d7923c;
-  font-size: 14px;
+  justify-content: center;
+  color: rgba(29, 80, 109, 0.28);
+  font-size: 22px;
+  line-height: 1;
   font-weight: 700;
+  cursor: pointer;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.projects-page .projects-more-star.is-active {
+  color: #d7923c;
+}
+
+.projects-page .projects-more-star:hover {
+  transform: translateY(-1px);
 }
 
 .projects-page .projects-more-star input {
+  position: absolute;
+  inset: 0;
+  width: 1px;
+  height: 1px;
   margin: 0;
-  accent-color: #d7923c;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.projects-page .projects-more-star span:last-child {
+  display: none;
 }
 
 .projects-page .projects-more-comment {
@@ -1913,7 +1934,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   background: rgba(255, 255, 255, 0.54);
   color: var(--primary-3);
   font-family: "Manrope", "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 12pt;
   font-weight: 600;
   line-height: 1.42;
   padding: 10px 12px;
@@ -1934,7 +1955,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   background: rgba(215, 146, 60, 0.36);
   color: var(--primary-3);
   font-family: "Manrope", "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 12pt;
   font-weight: 800;
   cursor: pointer;
 }
@@ -1957,7 +1978,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
-  grid-template-columns: minmax(250px, 388px) minmax(0, 1fr);
+  grid-template-columns: minmax(212px, 330px) minmax(0, 1fr);
   gap: 8%;
 }
 
@@ -1978,7 +1999,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-card-katherine .projects-progress-top-bank {
-  grid-template-columns: minmax(0, 1fr) minmax(390px, 560px);
+  grid-template-columns: minmax(0, 1fr) minmax(359px, 515px);
   gap: 8%;
 }
 
@@ -1994,11 +2015,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-progress-logo-yeya {
-  max-width: 418px;
+  max-width: 355px;
 }
 
 .projects-page .projects-progress-logo-katherine {
-  max-width: 500px;
+  max-width: 460px;
 }
 
 .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
@@ -2008,7 +2029,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-tools-band {
   background: var(--section-nude);
-  padding: 28px 0 24px;
+  padding: 20px 0 16px;
   border-top: 1px solid rgba(21, 62, 84, 0.08);
 }
 
@@ -2021,13 +2042,16 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-tools-title {
-  margin: 0 20px 0 0;
-  min-width: 230px;
-  display: flex;
-  flex-direction: column;
-  line-height: 0.94;
+  margin: 0 14px 0 0;
+  min-width: auto;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+  line-height: 1;
   letter-spacing: -0.02em;
   text-align: left;
+  white-space: nowrap;
 }
 
 .projects-page .projects-tools-title-top {
@@ -2068,37 +2092,46 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-post-tools-white {
-  background: #ffffff;
-  min-height: 52px;
+  background: var(--section-soft);
+  min-height: 36px;
 }
 
 .projects-page .projects-lab {
-  background: #d2d8de;
+  background: var(--section-soft);
   padding: 36px 0 68px;
 }
 
 .projects-page .projects-lab-heading {
   margin: 0;
   color: var(--primary-3);
-  font-size: clamp(56px, 5.4vw, 94px);
-  line-height: 0.96;
+  font-size: 28pt;
+  line-height: 1.02;
   letter-spacing: -0.025em;
+}
+
+.projects-page .projects-lab-subtitle {
+  margin: 8px 0 0;
+  max-width: 980px;
+  color: var(--primary-3);
+  font-size: 13pt;
+  line-height: 1.45;
+  font-weight: 600;
 }
 
 .projects-page .projects-lab-deck {
   position: relative;
-  min-height: 620px;
-  margin-top: 26px;
+  min-height: 660px;
+  margin-top: 30px;
 }
 
 .projects-page .projects-lab-card {
   position: absolute;
-  width: min(32vw, 420px);
+  width: min(30vw, 380px);
   min-height: 320px;
   padding: 22px 24px;
   border-radius: 56px;
   border: 2px solid var(--lab-border, rgba(0, 0, 0, 0.2));
-  box-shadow: 0 14px 28px rgba(13, 33, 46, 0.2);
+  box-shadow: 0 8px 18px rgba(13, 33, 46, 0.14);
   cursor: pointer;
   transform: translateY(0) rotate(var(--lab-rot, 0deg));
   transform-origin: center center;
@@ -2109,8 +2142,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-lab-card h3 {
   margin: 0;
   color: var(--lab-title, var(--primary-3));
-  font-size: clamp(34px, 2.7vw, 52px);
-  line-height: 0.94;
+  font-size: 24pt;
+  line-height: 1.02;
   letter-spacing: -0.015em;
 }
 
@@ -2126,8 +2159,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   position: relative;
   padding-left: 32px;
   color: var(--lab-copy, rgba(255, 255, 255, 0.95));
-  font-size: clamp(17px, 1.35vw, 22px);
-  line-height: 1.2;
+  font-size: 13pt;
+  line-height: 1.28;
   font-weight: 700;
 }
 
@@ -2145,7 +2178,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-lab-details {
   margin: 12px 0 0;
   color: var(--lab-copy, rgba(255, 255, 255, 0.94));
-  font-size: clamp(14px, 1.08vw, 17px);
+  font-size: 13pt;
   line-height: 1.4;
   font-weight: 600;
   max-height: 0;
@@ -2162,7 +2195,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-lab-card.is-front {
   z-index: 24;
   transform: translateY(-14px) rotate(0deg) scale(1.02);
-  box-shadow: 0 20px 34px rgba(13, 33, 46, 0.28);
+  box-shadow: 0 12px 24px rgba(13, 33, 46, 0.18);
 }
 
 .projects-page .projects-lab-card.is-front .projects-lab-details {
@@ -2175,40 +2208,40 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   --lab-border: #d89f50;
   --lab-title: #e0a34f;
   --lab-copy: #f5ede3;
-  background: #3f647a;
+  background: rgba(63, 100, 122, 0.82);
 }
 
 .projects-page .projects-lab-card-orange {
   --lab-border: #1f536f;
   --lab-title: #1d516d;
   --lab-copy: #174760;
-  background: #d7a054;
+  background: rgba(215, 160, 84, 0.78);
 }
 
 .projects-page .projects-lab-card-automation {
-  top: 28px;
-  left: 12%;
+  top: 24px;
+  left: 8%;
   --lab-rot: -0.4deg;
   --lab-z: 6;
 }
 
 .projects-page .projects-lab-card-devops {
-  top: 30px;
-  right: 4%;
+  top: 24px;
+  right: 8%;
   --lab-rot: 0.35deg;
   --lab-z: 5;
 }
 
 .projects-page .projects-lab-card-infra {
-  top: 176px;
-  left: 25%;
+  top: 196px;
+  left: 27%;
   --lab-rot: 0.22deg;
   --lab-z: 7;
 }
 
 .projects-page .projects-lab-card-ai {
-  top: 182px;
-  right: 16%;
+  top: 196px;
+  right: 18%;
   --lab-rot: -0.24deg;
   --lab-z: 8;
 }
@@ -2897,7 +2930,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-top-bank {
-    grid-template-columns: minmax(210px, 320px) minmax(0, 1fr);
+    grid-template-columns: minmax(180px, 272px) minmax(0, 1fr);
     gap: 20px;
   }
 
@@ -2906,12 +2939,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-logo-bank {
-    max-width: 288px;
+    max-width: 245px;
   }
 
   .projects-page .projects-progress-copy-bank h3 {
     margin-bottom: 12px;
-    font-size: clamp(40px, 4.2vw, 56px);
+    font-size: 24pt;
   }
 
   .projects-page .projects-progress-description-bank {
@@ -2954,15 +2987,15 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-more-panel-title {
-    font-size: clamp(22px, 2.1vw, 30px);
+    font-size: 14pt;
   }
 
   .projects-page .projects-more-block h4 {
-    font-size: clamp(17px, 1.65vw, 21px);
+    font-size: 14pt;
   }
 
   .projects-page .projects-more-block p {
-    font-size: clamp(14px, 1.4vw, 17px);
+    font-size: 12pt;
   }
 
   .projects-page .projects-more-comment {
@@ -2979,7 +3012,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
-    grid-template-columns: minmax(190px, 300px) minmax(0, 1fr);
+    grid-template-columns: minmax(162px, 255px) minmax(0, 1fr);
     gap: 6%;
   }
 
@@ -3000,7 +3033,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-card-katherine .projects-progress-top-bank {
-    grid-template-columns: minmax(0, 1fr) minmax(250px, 380px);
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 350px);
     gap: 6%;
   }
 
@@ -3016,11 +3049,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-logo-yeya {
-    max-width: 320px;
+    max-width: 272px;
   }
 
   .projects-page .projects-progress-logo-katherine {
-    max-width: 385px;
+    max-width: 354px;
   }
 
   .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
@@ -3029,7 +3062,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-band {
-    padding: 22px 0 20px;
+    padding: 16px 0 12px;
   }
 
   .projects-page .projects-tools-strip {
@@ -3038,8 +3071,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-title {
-    min-width: 188px;
-    margin-right: 14px;
+    min-width: auto;
+    margin-right: 10px;
   }
 
   .projects-page .projects-tools-title-top {
@@ -3056,15 +3089,19 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-post-tools-white {
-    min-height: 42px;
+    min-height: 30px;
   }
 
   .projects-page .projects-lab {
-    padding: 30px 0 54px;
+    padding: 28px 0 50px;
   }
 
   .projects-page .projects-lab-heading {
-    font-size: clamp(52px, 6.2vw, 78px);
+    font-size: 28pt;
+  }
+
+  .projects-page .projects-lab-subtitle {
+    font-size: 13pt;
   }
 
   .projects-page .projects-lab-deck {
@@ -3073,14 +3110,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-card {
-    width: min(38vw, 360px);
+    width: min(34vw, 340px);
     min-height: 292px;
     padding: 18px 20px;
     border-radius: 44px;
   }
 
   .projects-page .projects-lab-card h3 {
-    font-size: clamp(30px, 3.3vw, 44px);
+    font-size: 24pt;
   }
 
   .projects-page .projects-lab-list {
@@ -3090,7 +3127,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-lab-list li {
     padding-left: 26px;
-    font-size: clamp(15px, 1.45vw, 19px);
+    font-size: 13pt;
   }
 
   .projects-page .projects-lab-list li::before {
@@ -3099,23 +3136,23 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-card-automation {
-    left: 6%;
-    top: 24px;
+    left: 4%;
+    top: 20px;
   }
 
   .projects-page .projects-lab-card-devops {
-    right: 2%;
-    top: 28px;
+    right: 4%;
+    top: 20px;
   }
 
   .projects-page .projects-lab-card-infra {
-    left: 19%;
-    top: 164px;
+    left: 22%;
+    top: 176px;
   }
 
   .projects-page .projects-lab-card-ai {
-    right: 11%;
-    top: 170px;
+    right: 14%;
+    top: 176px;
   }
 
   .projects-page .projects-grid-modern {
@@ -3587,11 +3624,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-progress-logo-bank {
-    max-width: 225px;
+    max-width: 191px;
   }
 
   .projects-page .projects-progress-copy-bank h3 {
-    font-size: clamp(34px, 10vw, 46px);
+    font-size: 24pt;
     margin-bottom: 10px;
   }
 
@@ -3645,7 +3682,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-more-panel-title {
-    font-size: clamp(19px, 5.2vw, 24px);
+    font-size: 14pt;
   }
 
   .projects-page .projects-more-block + .projects-more-block {
@@ -3653,11 +3690,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-more-block h4 {
-    font-size: 16px;
+    font-size: 14pt;
   }
 
   .projects-page .projects-more-block p {
-    font-size: 14px;
+    font-size: 12pt;
     line-height: 1.4;
   }
 
@@ -3666,17 +3703,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-more-star {
-    font-size: 13px;
+    font-size: 18px;
   }
 
   .projects-page .projects-more-comment {
     min-height: 72px;
-    font-size: 13px;
+    font-size: 12pt;
   }
 
   .projects-page .projects-more-submit {
     height: 32px;
-    font-size: 13px;
+    font-size: 12pt;
   }
 
   .projects-page .projects-progress-line-bank {
@@ -3723,20 +3760,20 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-progress-logo-yeya,
   .projects-page .projects-progress-logo-katherine {
-    max-width: 250px;
+    max-width: 213px;
   }
 
   .projects-page .projects-progress-logo-katherine {
-    max-width: 297px;
+    max-width: 273px;
   }
 
   .projects-page .projects-progress-card-katherine .projects-progress-copy-bank h3 {
-    font-size: clamp(34px, 10vw, 46px);
+    font-size: 24pt;
     white-space: normal;
   }
 
   .projects-page .projects-tools-band {
-    padding: 18px 0 16px;
+    padding: 12px 0 10px;
   }
 
   .projects-page .projects-tools-strip {
@@ -3745,8 +3782,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-title {
-    min-width: 100%;
-    margin: 0 0 6px;
+    min-width: auto;
+    margin: 0 8px 0 0;
   }
 
   .projects-page .projects-tools-title-top {
@@ -3763,15 +3800,19 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-post-tools-white {
-    min-height: 36px;
+    min-height: 24px;
   }
 
   .projects-page .projects-lab {
-    padding: 22px 0 34px;
+    padding: 20px 0 30px;
   }
 
   .projects-page .projects-lab-heading {
-    font-size: clamp(44px, 12vw, 62px);
+    font-size: 28pt;
+  }
+
+  .projects-page .projects-lab-subtitle {
+    font-size: 13pt;
   }
 
   .projects-page .projects-lab-deck {
@@ -3795,7 +3836,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-card h3 {
-    font-size: clamp(26px, 8vw, 34px);
+    font-size: 24pt;
   }
 
   .projects-page .projects-lab-list {
@@ -3805,7 +3846,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-lab-list li {
     padding-left: 22px;
-    font-size: 15px;
+    font-size: 13pt;
   }
 
   .projects-page .projects-lab-list li::before {
@@ -3814,7 +3855,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-details {
-    font-size: 13px;
+    font-size: 13pt;
   }
 
   .projects-page .projects-lab-card.is-front {

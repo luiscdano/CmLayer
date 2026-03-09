@@ -854,6 +854,65 @@
     });
   };
 
+  const initProjectRatingStars = () => {
+    const groups = Array.from(document.querySelectorAll(".projects-more-stars"));
+    if (!groups.length) return;
+
+    groups.forEach((group) => {
+      const stars = Array.from(group.querySelectorAll(".projects-more-star"));
+      if (!stars.length) return;
+
+      const getStarValue = (star) =>
+        Number(star.querySelector('input[type="radio"]')?.value || 0);
+
+      const paint = (value) => {
+        stars.forEach((star) => {
+          star.classList.toggle("is-active", getStarValue(star) <= value);
+        });
+      };
+
+      let selectedValue = Number(
+        group.querySelector('input[type="radio"]:checked')?.value || 0
+      );
+      paint(selectedValue);
+
+      stars.forEach((star) => {
+        const input = star.querySelector('input[type="radio"]');
+        const value = getStarValue(star);
+        if (!value || !input) return;
+
+        star.addEventListener("mouseenter", () => {
+          paint(value);
+        });
+
+        star.addEventListener("focusin", () => {
+          paint(value);
+        });
+
+        star.addEventListener("click", () => {
+          selectedValue = value;
+          input.checked = true;
+          paint(selectedValue);
+        });
+
+        input.addEventListener("change", () => {
+          selectedValue = Number(input.value || 0);
+          paint(selectedValue);
+        });
+      });
+
+      group.addEventListener("mouseleave", () => {
+        paint(selectedValue);
+      });
+
+      group.addEventListener("focusout", (event) => {
+        if (!group.contains(event.relatedTarget)) {
+          paint(selectedValue);
+        }
+      });
+    });
+  };
+
   const initProjectsLabDeck = () => {
     const cards = Array.from(document.querySelectorAll("[data-lab-card]"));
     if (!cards.length) return;
@@ -885,6 +944,7 @@
     initTracking();
     initForms();
     initProjectMorePanels();
+    initProjectRatingStars();
     initProjectsLabDeck();
     await initI18n();
     initLangSwitch();
