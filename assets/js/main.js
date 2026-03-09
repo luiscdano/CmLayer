@@ -917,10 +917,11 @@
     const cards = Array.from(document.querySelectorAll("[data-lab-card]"));
     if (!cards.length) return;
 
-    const activate = (cardToActivate) => {
+    const activate = (cardToActivate, shouldCenter = true) => {
       cards.forEach((card) => {
         const isActive = card === cardToActivate;
         card.classList.toggle("is-front", isActive);
+        card.classList.toggle("is-centered", isActive && shouldCenter);
         card.setAttribute("aria-expanded", isActive ? "true" : "false");
       });
     };

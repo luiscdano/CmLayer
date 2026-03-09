@@ -2043,21 +2043,21 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-tools-strip {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 38px;
+  justify-content: flex-start;
+  gap: 24px;
 }
 
 .projects-page .projects-tools-icons {
-  flex: 0 0 auto;
-  min-width: auto;
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .projects-page .projects-tools-title {
-  margin: 0;
+  margin: 0 26px 0 0;
   min-width: auto;
   display: inline-flex;
   flex-direction: row;
@@ -2121,7 +2121,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   border: 1px solid rgba(21, 62, 84, 0.11);
   border-radius: 34px;
   box-shadow: 0 16px 34px rgba(12, 34, 48, 0.09);
-  padding: clamp(24px, 3vw, 42px);
+  padding: clamp(18px, 2.4vw, 30px);
 }
 
 .projects-page .projects-lab-heading {
@@ -2143,8 +2143,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-lab-deck {
   position: relative;
-  min-height: 730px;
-  margin-top: 36px;
+  min-height: 620px;
+  margin-top: 24px;
 }
 
 .projects-page .projects-lab-card {
@@ -2221,6 +2221,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   box-shadow: 0 12px 24px rgba(13, 33, 46, 0.18);
 }
 
+.projects-page .projects-lab-card.is-front.is-centered {
+  z-index: 40;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.03);
+}
+
 .projects-page .projects-lab-card.is-front .projects-lab-details {
   max-height: 180px;
   opacity: 1;
@@ -2257,14 +2265,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-lab-card-infra {
   top: 258px;
-  left: 24%;
+  left: 16%;
   --lab-rot: 0.22deg;
   --lab-z: 7;
 }
 
 .projects-page .projects-lab-card-ai {
   top: 258px;
-  right: 15%;
+  right: 16%;
   --lab-rot: -0.24deg;
   --lab-z: 8;
 }
@@ -3089,8 +3097,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-strip {
-    gap: 28px;
-    justify-content: center;
+    gap: 22px;
+    justify-content: flex-start;
   }
 
   .projects-page .projects-tools-icons {
@@ -3100,7 +3108,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-tools-title {
     min-width: auto;
-    margin: 0;
+    margin: 0 18px 0 0;
   }
 
   .projects-page .projects-tools-title-top {
@@ -3126,7 +3134,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-lab-panel {
     border-radius: 28px;
-    padding: 24px;
+    padding: 20px;
   }
 
   .projects-page .projects-lab-heading {
@@ -3138,8 +3146,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-deck {
-    min-height: 640px;
-    margin-top: 26px;
+    min-height: 560px;
+    margin-top: 22px;
   }
 
   .projects-page .projects-lab-card {
@@ -3179,12 +3187,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-card-infra {
-    left: 21%;
+    left: 18%;
     top: 224px;
   }
 
   .projects-page .projects-lab-card-ai {
-    right: 12%;
+    right: 18%;
     top: 224px;
   }
 
@@ -3854,7 +3862,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-lab-panel {
     border-radius: 22px;
-    padding: 18px 14px;
+    padding: 16px 12px;
   }
 
   .projects-page .projects-lab-heading {
