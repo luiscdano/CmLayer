@@ -797,14 +797,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .hero-isotipo {
   position: absolute;
   right: clamp(-24px, 2vw, 94px);
-  top: clamp(50px, 11vh, 134px);
+  top: 50%;
   z-index: 7;
   pointer-events: none;
-  transform: translate(10%, -10%);
+  transform: translate(10%, -50%);
 }
 
 .hero-isotipo img {
-  width: clamp(600px, 35.2vw, 736px);
+  width: clamp(540px, 31.7vw, 662px);
   height: auto;
   display: block;
   filter: brightness(0) invert(1);
@@ -1227,6 +1227,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-hero-sunset {
   position: relative;
   min-height: 68vh;
+  display: flex;
+  align-items: center;
   padding-top: 106px;
   padding-bottom: 188px;
   overflow: hidden;
@@ -2632,12 +2634,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .hero-isotipo {
     right: clamp(-20px, 1vw, 40px);
-    top: clamp(98px, 18vh, 166px);
-    transform: translate(10%, -10%);
+    top: 50%;
+    transform: translate(10%, -50%);
   }
 
   .hero-isotipo img {
-    width: clamp(402px, 32.4vw, 532px);
+    width: clamp(362px, 29.2vw, 479px);
   }
 
   .intro-profile {
@@ -2751,7 +2753,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    inset: 78px -4% 102px;
+    inset: 56px -6% 126px;
   }
 
   .projects-page .projects-hero-inner {
@@ -2760,7 +2762,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-copy {
-    margin-left: 0;
+    margin-left: -16px;
   }
 
   .projects-page .projects-hero-copy h1 {
@@ -3407,7 +3409,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-hero-layer-stack {
-    inset: 72px -8% 96px;
+    inset: 84px -10% 112px;
   }
 
   .projects-page .projects-hero-inner {
