@@ -802,39 +802,55 @@
     );
     if (!buttons.length) return;
 
-    const closeButtonPanel = (button) => {
-      const panelId = button.dataset.projectMoreTarget;
-      const panel = panelId ? document.getElementById(panelId) : null;
-      if (panel) {
-        panel.hidden = true;
-        panel.setAttribute("aria-hidden", "true");
-      }
-      button.setAttribute("aria-expanded", "false");
-      button.classList.remove("active");
+    const closeAllPanels = () => {
+      buttons.forEach((button) => {
+        const panelId = button.dataset.projectMoreTarget;
+        const panel = panelId ? document.getElementById(panelId) : null;
+        if (panel) {
+          panel.hidden = true;
+          panel.setAttribute("aria-hidden", "true");
+        }
+        button.setAttribute("aria-expanded", "false");
+        button.classList.remove("active");
+      });
+      document.body.classList.remove("projects-more-open");
     };
 
     const openButtonPanel = (button) => {
       const panelId = button.dataset.projectMoreTarget;
       const panel = panelId ? document.getElementById(panelId) : null;
       if (!panel) return;
+      closeAllPanels();
       panel.hidden = false;
       panel.setAttribute("aria-hidden", "false");
       button.setAttribute("aria-expanded", "true");
       button.classList.add("active");
+      document.body.classList.add("projects-more-open");
     };
 
     buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const panelId = button.dataset.projectMoreTarget;
-        const panel = panelId ? document.getElementById(panelId) : null;
-        if (!panel) return;
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        openButtonPanel(button);
+      });
+    });
 
-        const shouldOpen = panel.hidden;
-        buttons.forEach((btn) => closeButtonPanel(btn));
-        if (shouldOpen) {
-          openButtonPanel(button);
+    buttons.forEach((button) => {
+      const panelId = button.dataset.projectMoreTarget;
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (!panel) return;
+      panel.addEventListener("click", (event) => {
+        const content = panel.querySelector(".projects-more-panel-inner");
+        if (!content || !content.contains(event.target)) {
+          closeAllPanels();
         }
       });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeAllPanels();
+      }
     });
   };
 
