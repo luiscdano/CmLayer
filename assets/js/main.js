@@ -76,6 +76,18 @@
         el.textContent = state.i18n[key];
       }
     });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (state.i18n[key]) {
+        el.setAttribute("placeholder", state.i18n[key]);
+      }
+    });
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria-label");
+      if (state.i18n[key]) {
+        el.setAttribute("aria-label", state.i18n[key]);
+      }
+    });
     setActiveLangButtons(lang);
     localStorage.setItem("lang", lang);
   };
@@ -784,10 +796,53 @@
 
   };
 
+  const initProjectMorePanels = () => {
+    const buttons = Array.from(
+      document.querySelectorAll("[data-project-more-target]")
+    );
+    if (!buttons.length) return;
+
+    const closeButtonPanel = (button) => {
+      const panelId = button.dataset.projectMoreTarget;
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (panel) {
+        panel.hidden = true;
+        panel.setAttribute("aria-hidden", "true");
+      }
+      button.setAttribute("aria-expanded", "false");
+      button.classList.remove("active");
+    };
+
+    const openButtonPanel = (button) => {
+      const panelId = button.dataset.projectMoreTarget;
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (!panel) return;
+      panel.hidden = false;
+      panel.setAttribute("aria-hidden", "false");
+      button.setAttribute("aria-expanded", "true");
+      button.classList.add("active");
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const panelId = button.dataset.projectMoreTarget;
+        const panel = panelId ? document.getElementById(panelId) : null;
+        if (!panel) return;
+
+        const shouldOpen = panel.hidden;
+        buttons.forEach((btn) => closeButtonPanel(btn));
+        if (shouldOpen) {
+          openButtonPanel(button);
+        }
+      });
+    });
+  };
+
   const init = async () => {
     initNav();
     initTracking();
     initForms();
+    initProjectMorePanels();
     await initI18n();
     initLangSwitch();
     await refreshDynamicSections();
