@@ -916,6 +916,8 @@
   const initProjectsLabDeck = () => {
     const cards = Array.from(document.querySelectorAll("[data-lab-card]"));
     if (!cards.length) return;
+    const defaultCard =
+      cards.find((card) => card.classList.contains("is-front")) || cards[0];
 
     const activate = (cardToActivate, shouldCenter = true) => {
       cards.forEach((card) => {
@@ -925,6 +927,12 @@
         card.setAttribute("aria-expanded", isActive ? "true" : "false");
       });
     };
+
+    const resetToDefault = () => {
+      activate(defaultCard, false);
+    };
+
+    resetToDefault();
 
     cards.forEach((card) => {
       card.addEventListener("click", () => {
@@ -937,6 +945,17 @@
           activate(card);
         }
       });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (event.target.closest("[data-lab-card]")) return;
+      resetToDefault();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        resetToDefault();
+      }
     });
   };
 

@@ -2107,6 +2107,22 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   will-change: transform, filter;
 }
 
+.projects-page .projects-tool-item-mysql img {
+  height: 54px;
+  max-width: 146px;
+}
+
+.projects-page .projects-tool-item-cloudflare img {
+  height: 52px;
+  max-width: 142px;
+}
+
+.projects-page .projects-tool-item-digitalocean img {
+  height: 52px;
+  max-width: 136px;
+  mix-blend-mode: multiply;
+}
+
 .projects-page .projects-tool-item:hover img {
   transform: translateY(-6px) scale(1.055);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08))
@@ -3140,6 +3156,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     max-width: 106px;
   }
 
+  .projects-page .projects-tool-item-mysql img {
+    height: 50px;
+    max-width: 132px;
+  }
+
+  .projects-page .projects-tool-item-cloudflare img,
+  .projects-page .projects-tool-item-digitalocean img {
+    height: 48px;
+    max-width: 126px;
+  }
+
   .projects-page .projects-post-tools-white {
     min-height: 20px;
   }
@@ -3870,6 +3897,17 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-tool-item img {
     height: 40px;
     max-width: 92px;
+  }
+
+  .projects-page .projects-tool-item-mysql img {
+    height: 44px;
+    max-width: 112px;
+  }
+
+  .projects-page .projects-tool-item-cloudflare img,
+  .projects-page .projects-tool-item-digitalocean img {
+    height: 43px;
+    max-width: 108px;
   }
 
   .projects-page .projects-post-tools-white {
