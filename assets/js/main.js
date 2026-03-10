@@ -809,10 +809,22 @@
     );
     if (!buttons.length) return;
 
+    const panelByButton = new Map();
+    let activeButton = null;
+
+    buttons.forEach((button) => {
+      const panelId = button.dataset.projectMoreTarget;
+      const panel = panelId ? document.getElementById(panelId) : null;
+      if (!panel) return;
+      panelByButton.set(button, panel);
+      if (panel.parentElement !== document.body) {
+        document.body.appendChild(panel);
+      }
+    });
+
     const closeAllPanels = () => {
       buttons.forEach((button) => {
-        const panelId = button.dataset.projectMoreTarget;
-        const panel = panelId ? document.getElementById(panelId) : null;
+        const panel = panelByButton.get(button);
         if (panel) {
           panel.hidden = true;
           panel.setAttribute("aria-hidden", "true");
@@ -821,11 +833,11 @@
         button.classList.remove("active");
       });
       document.body.classList.remove("projects-more-open");
+      activeButton = null;
     };
 
     const openButtonPanel = (button) => {
-      const panelId = button.dataset.projectMoreTarget;
-      const panel = panelId ? document.getElementById(panelId) : null;
+      const panel = panelByButton.get(button);
       if (!panel) return;
       closeAllPanels();
       panel.hidden = false;
@@ -833,6 +845,11 @@
       button.setAttribute("aria-expanded", "true");
       button.classList.add("active");
       document.body.classList.add("projects-more-open");
+      const content = panel.querySelector(".projects-more-panel-inner");
+      if (content) {
+        content.scrollTop = 0;
+      }
+      activeButton = button;
     };
 
     buttons.forEach((button) => {
@@ -843,8 +860,7 @@
     });
 
     buttons.forEach((button) => {
-      const panelId = button.dataset.projectMoreTarget;
-      const panel = panelId ? document.getElementById(panelId) : null;
+      const panel = panelByButton.get(button);
       if (!panel) return;
       panel.addEventListener("click", (event) => {
         const content = panel.querySelector(".projects-more-panel-inner");
@@ -856,6 +872,7 @@
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
+        activeButton?.focus({ preventScroll: true });
         closeAllPanels();
       }
     });
