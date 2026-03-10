@@ -2064,7 +2064,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 32px;
+  padding-inline: clamp(10px, 1.4vw, 24px);
 }
 
 .projects-page .projects-tools-title {
@@ -2116,8 +2117,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-tool-item-cloudflare {
   --tool-base-scale: 2.8;
-  flex: 0 0 210px;
-  margin-inline: 8px 14px;
+  flex: 0 0 clamp(250px, 22vw, 328px);
+  margin-inline: clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 20px);
 }
 
 .projects-page .projects-tool-item-digitalocean img {
@@ -3276,7 +3277,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-tools-icons {
     justify-content: center;
-    gap: 18px;
+    gap: 24px;
   }
 
   .projects-page .projects-tools-title {
@@ -3298,8 +3299,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tool-item-cloudflare {
-    flex-basis: 188px;
-    margin-inline: 6px 10px;
+    flex-basis: clamp(218px, 29vw, 278px);
+    margin-inline: 8px 12px;
   }
 
   .projects-page .projects-post-tools-white {
@@ -4065,11 +4066,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-tools-icons {
     width: 100%;
     max-width: 100%;
-    justify-content: space-evenly;
-    gap: 8px;
+    justify-content: center;
+    gap: 12px;
     flex-wrap: nowrap;
     overflow-x: visible;
     padding-bottom: 0;
+    padding-inline: 8px;
   }
 
   .projects-page .projects-tools-title {
@@ -4093,8 +4095,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-tool-item-cloudflare {
     --tool-base-scale: 2.6;
-    flex-basis: auto;
-    margin-inline: 0;
+    flex-basis: clamp(136px, 34vw, 164px);
+    margin-inline: 6px 8px;
   }
 
   .projects-page .projects-post-tools-white {
