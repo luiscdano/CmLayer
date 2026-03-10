@@ -2064,7 +2064,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 24px;
 }
 
 .projects-page .projects-tools-title {
@@ -2116,6 +2116,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-tool-item-cloudflare {
   --tool-base-scale: 2.8;
+  flex: 0 0 210px;
+  margin-inline: 8px 14px;
 }
 
 .projects-page .projects-tool-item-digitalocean img {
@@ -3274,7 +3276,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-tools-icons {
     justify-content: center;
-    gap: 14px;
+    gap: 18px;
   }
 
   .projects-page .projects-tools-title {
@@ -3293,6 +3295,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-tool-item img {
     height: 48px;
     max-width: 112px;
+  }
+
+  .projects-page .projects-tool-item-cloudflare {
+    flex-basis: 188px;
+    margin-inline: 6px 10px;
   }
 
   .projects-page .projects-post-tools-white {
@@ -4059,7 +4066,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     width: 100%;
     max-width: 100%;
     justify-content: space-evenly;
-    gap: 6px;
+    gap: 8px;
     flex-wrap: nowrap;
     overflow-x: visible;
     padding-bottom: 0;
@@ -4086,6 +4093,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
   .projects-page .projects-tool-item-cloudflare {
     --tool-base-scale: 2.6;
+    flex-basis: auto;
+    margin-inline: 0;
   }
 
   .projects-page .projects-post-tools-white {
