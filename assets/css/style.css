@@ -2094,42 +2094,36 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-tool-item {
+  --tool-base-scale: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   line-height: 0;
 }
 
 .projects-page .projects-tool-item img {
-  height: 46px;
+  height: 52px;
   width: auto;
-  max-width: 120px;
+  max-width: 122px;
   object-fit: contain;
   opacity: 1;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
-  transform: translateY(0) scale(1);
+  transform: translateY(0) scale(var(--tool-base-scale));
   transition: transform 0.26s ease, filter 0.26s ease;
   will-change: transform, filter;
 }
 
-.projects-page .projects-tool-item-mysql img {
-  height: 54px;
-  max-width: 146px;
-}
-
-.projects-page .projects-tool-item-cloudflare img {
-  height: 58px;
-  max-width: 158px;
+.projects-page .projects-tool-item-cloudflare {
+  --tool-base-scale: 1.32;
 }
 
 .projects-page .projects-tool-item-digitalocean img {
-  height: 52px;
-  max-width: 136px;
   mix-blend-mode: multiply;
 }
 
 .projects-page .projects-tool-item:hover img {
-  transform: translateY(-6px) scale(1.055);
+  transform: translateY(-6px) scale(calc(var(--tool-base-scale) * 1.055));
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08))
     drop-shadow(0 0 11px rgba(31, 60, 109, 0.35));
 }
@@ -3297,23 +3291,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tool-item img {
-    height: 44px;
-    max-width: 106px;
-  }
-
-  .projects-page .projects-tool-item-mysql img {
-    height: 50px;
-    max-width: 132px;
-  }
-
-  .projects-page .projects-tool-item-cloudflare img {
-    height: 54px;
-    max-width: 142px;
-  }
-
-  .projects-page .projects-tool-item-digitalocean img {
     height: 48px;
-    max-width: 126px;
+    max-width: 112px;
   }
 
   .projects-page .projects-post-tools-white {
@@ -4011,7 +3990,9 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     gap: 14px;
   }
 
-  .projects-page .projects-progress-card-yeya .projects-progress-top-bank {
+  .projects-page .projects-progress-card-yeya .projects-progress-top-bank,
+  .projects-page .projects-progress-card-katherine .projects-progress-top-bank {
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
@@ -4097,23 +4078,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tool-item img {
-    height: 40px;
-    max-width: 92px;
-  }
-
-  .projects-page .projects-tool-item-mysql img {
     height: 44px;
-    max-width: 112px;
+    max-width: 96px;
   }
 
-  .projects-page .projects-tool-item-cloudflare img {
-    height: 49px;
-    max-width: 122px;
-  }
-
-  .projects-page .projects-tool-item-digitalocean img {
-    height: 43px;
-    max-width: 108px;
+  .projects-page .projects-tool-item-cloudflare {
+    --tool-base-scale: 1.28;
   }
 
   .projects-page .projects-post-tools-white {
