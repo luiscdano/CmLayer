@@ -2310,7 +2310,7 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-collab-cta {
   background: var(--section-nude);
-  padding: 28px 0 94px;
+  padding: 16px 0 74px;
 }
 
 .projects-page .projects-collab-cta-inner {
@@ -2322,27 +2322,27 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 .projects-page .projects-collab-title {
   margin: 0;
   color: #d7923c;
-  font-size: clamp(48px, 5.3vw, 104px);
-  line-height: 0.98;
+  font-size: 28pt;
+  line-height: 1.02;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.018em;
 }
 
 .projects-page .projects-collab-question {
-  margin: 2px 0 0;
+  margin: 6px 0 0;
   color: var(--primary-3);
-  font-size: clamp(42px, 4.4vw, 84px);
+  font-size: 24pt;
   font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 1.04;
+  letter-spacing: -0.015em;
 }
 
 .projects-page .projects-collab-copy {
   margin: 10px auto 0;
-  max-width: 1820px;
+  max-width: 1320px;
   color: #d7923c;
-  font-size: clamp(26px, 2.35vw, 50px);
-  line-height: 1.16;
+  font-size: 13pt;
+  line-height: 1.4;
   font-weight: 700;
 }
 
@@ -2352,20 +2352,21 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   justify-content: center;
   margin-top: 14px;
   height: auto !important;
-  min-height: 88px;
-  max-width: 640px;
+  min-height: 52px;
+  max-width: 100%;
   width: fit-content;
-  padding: 14px 48px;
+  padding: 10px 24px;
   border-radius: 999px;
-  border: 7px solid var(--primary-3) !important;
+  border: 3px solid #1f5f74 !important;
   background: transparent !important;
-  color: var(--primary-3) !important;
-  font-size: clamp(22px, 2.05vw, 40px);
-  line-height: 1.02;
-  font-weight: 800;
-  letter-spacing: -0.015em;
+  color: #d7923c !important;
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   box-shadow: none !important;
   white-space: normal;
+  text-align: center;
 }
 
 .projects-page .projects-collab-panel-inner {
@@ -3379,30 +3380,29 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-collab-cta {
-    padding: 18px 0 74px;
+    padding: 12px 0 62px;
   }
 
   .projects-page .projects-collab-title {
-    font-size: clamp(44px, 5vw, 72px);
+    font-size: 28pt;
   }
 
   .projects-page .projects-collab-question {
-    margin-top: 4px;
-    font-size: clamp(36px, 4.2vw, 62px);
+    margin-top: 6px;
+    font-size: 24pt;
   }
 
   .projects-page .projects-collab-copy {
     margin-top: 10px;
-    font-size: clamp(20px, 2.5vw, 32px);
+    font-size: 13pt;
   }
 
   .projects-page .projects-cta-btn {
     margin-top: 12px;
-    min-height: 74px;
-    max-width: 560px;
-    font-size: clamp(18px, 2.2vw, 32px);
-    border-width: 5px !important;
-    padding: 10px 34px;
+    min-height: 50px;
+    font-size: 16px;
+    border-width: 2px !important;
+    padding: 9px 20px;
   }
 
   .projects-page .projects-collab-panel-inner {
@@ -4179,11 +4179,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-collab-cta {
-    padding: 10px 0 42px;
+    padding: 8px 0 36px;
   }
 
   .projects-page .projects-collab-title {
-    font-size: 32pt;
+    font-size: 28pt;
   }
 
   .projects-page .projects-collab-question {
@@ -4194,17 +4194,18 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-collab-copy {
     margin-top: 8px;
     font-size: 13pt;
-    line-height: 1.3;
+    line-height: 1.36;
   }
 
   .projects-page .projects-cta-btn {
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
     justify-content: center;
     margin-top: 12px;
-    min-height: 58px;
-    font-size: 16pt;
-    padding: 8px 14px;
-    border-width: 4px !important;
+    min-height: 46px;
+    font-size: 15px;
+    padding: 8px 18px;
+    border-width: 2px !important;
   }
 
   .projects-page .projects-collab-panel-inner {
