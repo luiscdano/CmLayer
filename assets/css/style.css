@@ -1842,6 +1842,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   filter: drop-shadow(0 4px 8px rgba(13, 33, 46, 0.12));
 }
 
+.projects-page .projects-more-panel-logo.projects-more-panel-logo-dr {
+  width: clamp(44px, 5vw, 58px);
+  height: clamp(44px, 5vw, 58px);
+}
+
 .projects-page .projects-more-panel-title {
   margin: 0;
   color: var(--primary-3);
@@ -2113,8 +2118,8 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-tool-item-cloudflare img {
-  height: 52px;
-  max-width: 142px;
+  height: 58px;
+  max-width: 158px;
 }
 
 .projects-page .projects-tool-item-digitalocean img {
@@ -3301,7 +3306,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     max-width: 132px;
   }
 
-  .projects-page .projects-tool-item-cloudflare img,
+  .projects-page .projects-tool-item-cloudflare img {
+    height: 54px;
+    max-width: 142px;
+  }
+
   .projects-page .projects-tool-item-digitalocean img {
     height: 48px;
     max-width: 126px;
@@ -4097,7 +4106,11 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     max-width: 112px;
   }
 
-  .projects-page .projects-tool-item-cloudflare img,
+  .projects-page .projects-tool-item-cloudflare img {
+    height: 49px;
+    max-width: 122px;
+  }
+
   .projects-page .projects-tool-item-digitalocean img {
     height: 43px;
     max-width: 108px;
