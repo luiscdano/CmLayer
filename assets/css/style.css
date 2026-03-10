@@ -4055,17 +4055,18 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-icons {
-    width: auto;
+    width: 100%;
     max-width: 100%;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-evenly;
+    gap: 6px;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    overflow-x: visible;
+    padding-bottom: 0;
   }
 
   .projects-page .projects-tools-title {
     min-width: auto;
+    flex: 0 0 auto;
     margin: 0;
   }
 
@@ -4078,12 +4079,12 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tool-item img {
-    height: 44px;
-    max-width: 96px;
+    height: 30px;
+    max-width: none;
   }
 
   .projects-page .projects-tool-item-cloudflare {
-    --tool-base-scale: 1.28;
+    --tool-base-scale: 1.22;
   }
 
   .projects-page .projects-post-tools-white {
