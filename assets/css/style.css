@@ -3317,15 +3317,25 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-lab-deck {
-    min-height: 560px;
+    min-height: auto;
     margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
   }
 
   .projects-page .projects-lab-card {
-    width: min(31vw, 320px);
+    position: relative;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100%;
     min-height: 272px;
     padding: 18px 20px;
     border-radius: 44px;
+    transform: none !important;
+    --lab-rot: 0deg;
   }
 
   .projects-page .projects-lab-card h3 {
@@ -3347,24 +3357,15 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     height: 14px;
   }
 
-  .projects-page .projects-lab-card-automation {
-    left: 3%;
-    top: 24px;
+  .projects-page .projects-lab-card.is-front {
+    transform: none !important;
   }
 
-  .projects-page .projects-lab-card-devops {
-    right: 3%;
-    top: 24px;
-  }
-
-  .projects-page .projects-lab-card-infra {
-    left: 18%;
-    top: 224px;
-  }
-
-  .projects-page .projects-lab-card-ai {
-    right: 18%;
-    top: 224px;
+  .projects-page .projects-lab-card.is-front.is-centered {
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
   }
 
   .projects-page .projects-collab-cta {
