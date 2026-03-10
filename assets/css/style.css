@@ -2308,6 +2308,127 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   --lab-z: 8;
 }
 
+.projects-page .projects-collab-cta {
+  background: var(--section-nude);
+  padding: 6px 0 84px;
+}
+
+.projects-page .projects-collab-cta-inner {
+  max-width: 980px;
+}
+
+.projects-page .projects-collab-title {
+  margin: 0;
+  color: #d7923c;
+  font-size: 28pt;
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+}
+
+.projects-page .projects-collab-question {
+  margin: 10px 0 0;
+  color: var(--primary-3);
+  font-size: 24pt;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.projects-page .projects-collab-copy {
+  margin: 10px 0 0;
+  color: var(--primary-3);
+  font-size: 13pt;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.projects-page .projects-cta-btn {
+  margin-top: 18px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 13pt;
+  font-weight: 800;
+}
+
+.projects-page .projects-collab-panel-inner {
+  width: min(880px, calc(100vw - 48px));
+}
+
+.projects-page .projects-collab-form {
+  display: grid;
+  gap: 12px;
+}
+
+.projects-page .projects-collab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.projects-page .projects-collab-field {
+  display: grid;
+  gap: 6px;
+}
+
+.projects-page .projects-collab-field input,
+.projects-page .projects-collab-field select,
+.projects-page .projects-collab-field textarea {
+  width: 100%;
+  border: 1px solid rgba(21, 62, 84, 0.28);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--primary-3);
+  font-family: "Manrope", "Inter", sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  line-height: 1.35;
+  padding: 10px 12px;
+}
+
+.projects-page .projects-collab-field select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(21, 62, 84, 0.7) 50%),
+    linear-gradient(135deg, rgba(21, 62, 84, 0.7) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) calc(50% - 2px),
+    calc(100% - 11px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.projects-page .projects-collab-message {
+  min-height: 118px;
+  resize: vertical;
+}
+
+.projects-page .projects-collab-consent {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--primary-3);
+  font-size: 12pt;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.projects-page .projects-collab-consent input {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+.projects-page .projects-collab-submit {
+  width: fit-content;
+}
+
+.projects-page .projects-collab-status {
+  margin: 2px 0 0;
+  color: var(--primary-3);
+  font-size: 11pt;
+  font-weight: 700;
+}
+
 .projects-page .project-blueprint {
   background: var(--section-nude);
   padding: 86px 0 82px;
@@ -3239,6 +3360,55 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     top: 224px;
   }
 
+  .projects-page .projects-collab-cta {
+    padding: 4px 0 64px;
+  }
+
+  .projects-page .projects-collab-title {
+    font-size: 28pt;
+  }
+
+  .projects-page .projects-collab-question {
+    font-size: 24pt;
+  }
+
+  .projects-page .projects-collab-copy {
+    font-size: 13pt;
+  }
+
+  .projects-page .projects-cta-btn {
+    margin-top: 14px;
+    height: 44px;
+    font-size: 12pt;
+  }
+
+  .projects-page .projects-collab-panel-inner {
+    width: min(820px, calc(100vw - 32px));
+  }
+
+  .projects-page .projects-collab-grid {
+    gap: 8px;
+  }
+
+  .projects-page .projects-collab-field input,
+  .projects-page .projects-collab-field select,
+  .projects-page .projects-collab-field textarea {
+    font-size: 12pt;
+    padding: 9px 11px;
+  }
+
+  .projects-page .projects-collab-message {
+    min-height: 104px;
+  }
+
+  .projects-page .projects-collab-consent {
+    font-size: 12pt;
+  }
+
+  .projects-page .projects-collab-status {
+    font-size: 11pt;
+  }
+
   .projects-page .projects-grid-modern {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
@@ -3983,6 +4153,64 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     top: auto !important;
     right: auto !important;
     transform: none !important;
+  }
+
+  .projects-page .projects-collab-cta {
+    padding: 0 0 44px;
+  }
+
+  .projects-page .projects-collab-title {
+    font-size: 28pt;
+  }
+
+  .projects-page .projects-collab-question {
+    margin-top: 8px;
+    font-size: 24pt;
+  }
+
+  .projects-page .projects-collab-copy {
+    font-size: 13pt;
+  }
+
+  .projects-page .projects-cta-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+    height: 42px;
+    font-size: 12pt;
+    padding: 0 14px;
+  }
+
+  .projects-page .projects-collab-panel-inner {
+    width: calc(100vw - 20px);
+  }
+
+  .projects-page .projects-collab-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .projects-page .projects-collab-field input,
+  .projects-page .projects-collab-field select,
+  .projects-page .projects-collab-field textarea {
+    font-size: 12pt;
+    padding: 9px 10px;
+  }
+
+  .projects-page .projects-collab-message {
+    min-height: 94px;
+  }
+
+  .projects-page .projects-collab-consent {
+    font-size: 12pt;
+  }
+
+  .projects-page .projects-collab-submit {
+    width: 100%;
+  }
+
+  .projects-page .projects-collab-status {
+    font-size: 11pt;
   }
 
   .projects-page .project-blueprint {

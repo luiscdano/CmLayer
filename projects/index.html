@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260309-58" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260309-59" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -535,6 +535,87 @@
             </article>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="projects-collab-cta" id="projects-collab-cta">
+      <div class="container">
+        <div class="projects-collab-cta-inner">
+          <h2 class="projects-collab-title" data-i18n="projects.cta.action.title">Llamada a la Acción</h2>
+          <p class="projects-collab-question" data-i18n="projects.cta.action.question">¿Tienes un proyecto en mente?</p>
+          <p class="projects-collab-copy" data-i18n="projects.cta.action.copy">Colaboro con startups, empresas y equipos para diseñar y construir soluciones digitales confiables.</p>
+          <button
+            type="button"
+            class="projects-cta-btn projects-more-btn projects-more-btn-warm"
+            data-project-more-target="project-collab-panel"
+            aria-expanded="false"
+            aria-controls="project-collab-panel"
+            data-i18n="projects.cta.action.button"
+          >
+            Iniciar un proyecto o discutir una colaboración
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="project-collab-panel" class="projects-more-panel projects-more-panel-warm" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="project-collab-title">
+      <div class="projects-more-panel-inner projects-collab-panel-inner">
+        <div class="projects-more-panel-head">
+          <h4 id="project-collab-title" class="projects-more-panel-title" data-i18n="projects.cta.modal.title">Iniciar Proyecto o Colaboración</h4>
+        </div>
+        <form class="projects-collab-form" data-feedback-form data-source="projects_cta_modal">
+          <div class="projects-collab-grid">
+            <label class="projects-collab-field">
+              <span class="projects-more-field-label" data-i18n="projects.cta.modal.name">Nombre</span>
+              <input type="text" name="name" required data-i18n-placeholder="projects.cta.modal.name.placeholder" placeholder="Tu nombre" />
+            </label>
+            <label class="projects-collab-field">
+              <span class="projects-more-field-label" data-i18n="projects.cta.modal.email">Email</span>
+              <input type="email" name="email" required data-i18n-placeholder="projects.cta.modal.email.placeholder" placeholder="tu@email.com" />
+            </label>
+          </div>
+
+          <div class="projects-collab-grid">
+            <label class="projects-collab-field">
+              <span class="projects-more-field-label" data-i18n="projects.cta.modal.type">Tipo de colaboración</span>
+              <select name="type" required>
+                <option value="" data-i18n="projects.cta.modal.type.placeholder">Selecciona una opción</option>
+                <option value="startup" data-i18n="projects.cta.modal.type.startup">Startup</option>
+                <option value="company" data-i18n="projects.cta.modal.type.company">Empresa</option>
+                <option value="team" data-i18n="projects.cta.modal.type.team">Equipo</option>
+              </select>
+            </label>
+            <label class="projects-collab-field">
+              <span class="projects-more-field-label" data-i18n="projects.cta.modal.timeline">Timeline estimado</span>
+              <input type="text" name="timeline" data-i18n-placeholder="projects.cta.modal.timeline.placeholder" placeholder="Ej: 4-6 semanas" />
+            </label>
+          </div>
+
+          <label class="projects-collab-field">
+            <span class="projects-more-field-label" data-i18n="projects.cta.modal.message">Cuéntame sobre tu proyecto</span>
+            <textarea
+              class="projects-collab-message"
+              name="message"
+              required
+              data-i18n-placeholder="projects.cta.modal.message.placeholder"
+              placeholder="Objetivo, alcance, stack deseado y contexto del proyecto."
+            ></textarea>
+          </label>
+
+          <label class="projects-collab-consent">
+            <input type="checkbox" name="consent" required />
+            <span data-i18n="form.consent.label">Autorizo el uso de estos datos para responder y mejorar CmLayer.</span>
+          </label>
+
+          <button
+            type="submit"
+            class="projects-more-submit projects-collab-submit"
+            data-i18n="projects.cta.modal.submit"
+          >
+            Enviar solicitud
+          </button>
+          <p class="projects-collab-status" data-form-status aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
