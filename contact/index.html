@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CmLayer — Contact</title>
-  <meta name="description" content="Conectar · Colaborar · Construir. Punto de encuentro para ideas, proyectos y aprendizaje técnico en CmLayer." />
+  <title>CmLayer — Contacto</title>
+  <meta name="description" content="Sección Contacto de CmLayer. Base estructural para canales de comunicación y formularios de colaboración." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="CmLayer — Contact" />
-  <meta property="og:description" content="Conectar · Colaborar · Construir" />
+  <meta property="og:title" content="CmLayer — Contacto" />
+  <meta property="og:description" content="Base estructural para canales de comunicación y formularios de colaboración." />
   <meta property="og:url" content="https://cmlayer.com/contact/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
@@ -21,149 +21,97 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260309-73" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "CmLayer Contact",
-    "url": "https://cmlayer.com/contact/",
-    "about": {
-      "@type": "Person",
-      "name": "Luis Emilio Cedano"
-    }
-  }
-  </script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260310-01" />
 </head>
-<body>
-  <div class="bg-grid"></div>
+<body class="home-sunset theme-night projects-page module-page">
   <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/">
-        <img src="/assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
+    <div class="topbar-inner container">
+      <a class="brand brand-lockup" href="/" aria-label="CmLayer Home">
+        <span class="brand-icon-wrap" aria-hidden="true">
+          <img src="/assets/img/isotipo02.png" alt="" class="brand-isotipo" loading="eager" />
+        </span>
+        <span class="brand-wordmark"><span class="cm">Cm</span><span class="layer">Layer</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a data-i18n="nav.projects" href="/projects/">Projects</a>
-        <a data-i18n="nav.services" href="/services/">Services</a>
-        <a data-i18n="nav.knowledge" href="/knowledge-hub/">Knowledge Hub</a>
-        <a data-i18n="nav.voices" href="/voices-experiences/">Voices & Experiences</a>
-        <a data-i18n="nav.about" href="/about/">About</a>
-        <a data-i18n="nav.contact" class="active" href="/contact/">Contact</a>
+        <a data-i18n="nav.top.projects" href="/projects/">Proyectos</a>
+        <a data-i18n="nav.top.about" href="/about/">Sobre</a>
+        <a data-i18n="nav.top.services" href="/services/">Servicios</a>
+        <a data-i18n="nav.top.knowledge" href="/knowledge/">Conocimiento</a>
+        <a data-i18n="nav.top.contact" href="/contact/">Contacto</a>
       </nav>
-      <div class="lang-switch">
-        <button data-lang="en" class="active">🇺🇸 EN</button>
-        <button data-lang="es">🇩🇴 ES</button>
+      <div class="lang-switch" aria-label="Language selector">
+        <button
+          class="lang-world"
+          type="button"
+          aria-label="Select language"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="lang-options"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.8 2.5 2.8 15.5 0 18"></path>
+            <path d="M12 3c-2.8 2.5-2.8 15.5 0 18"></path>
+            <path d="M5.3 6.8c2.1 1.5 11.3 1.5 13.4 0"></path>
+            <path d="M5.3 17.2c2.1-1.5 11.3-1.5 13.4 0"></path>
+          </svg>
+        </button>
+        <div id="lang-options" class="lang-options">
+          <button data-lang="es" class="active" type="button">ES</button>
+          <button data-lang="en" type="button">EN</button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero__text">
-        <p class="eyebrow" data-i18n="contact.hero.eyebrow">CmLayer — Contact</p>
-        <h1 data-i18n="contact.hero.title">Connect · Collaborate · Build</h1>
-        <p class="lede" data-i18n="contact.hero.sub">A meeting point for ideas, projects, and technical learning.</p>
-        <div class="cta">
-          <a class="btn primary" href="#form" data-i18n="contact.hero.cta1">Send Message</a>
-          <a class="btn ghost" href="#routes" data-i18n="contact.hero.cta2">Collaborate</a>
-          <a class="btn ghost" href="#form" data-i18n="contact.hero.cta3">Suggest Content</a>
+  <main class="landing-main">
+    <section class="projects-hero-sunset">
+      <div class="projects-hero-layer-stack" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none">
+          <path class="projects-band band-a" d="M0 260 C300 230 520 330 760 290 C980 250 1210 160 1600 200 L1600 320 L0 320 Z"></path>
+          <path class="projects-band band-b" d="M0 330 C250 300 520 410 760 360 C1010 308 1280 250 1600 280 L1600 410 L0 420 Z"></path>
+          <path class="projects-band band-c" d="M0 430 C280 380 530 500 770 470 C1030 434 1280 380 1600 400 L1600 530 L0 560 Z"></path>
+          <path class="projects-band band-d" d="M0 530 C260 490 520 620 760 590 C1010 556 1300 520 1600 540 L1600 670 L0 680 Z"></path>
+        </svg>
+      </div>
+
+      <div class="container projects-hero-inner">
+        <div class="projects-hero-copy">
+          <h1>Contacto</h1>
+          <p>Punto central para recibir mensajes, propuestas y solicitudes de colaboración dentro del ecosistema CmLayer.</p>
         </div>
       </div>
-    </section>
 
-    <section class="panel" id="what-contact">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="contact.guide.eyebrow">Qué puedes contactar aquí</p><h2 data-i18n="contact.guide.title">Guía rápida</h2></div></div>
-      <div class="services-grid">
-        <article class="service-card wide">
-          <h3>💻 <span data-i18n="contact.guide.dev.title">Software Development</span></h3>
-          <p class="muted" data-i18n="contact.guide.dev.desc">Academic/personal collaborations; architecture review; APIs, backend, frontend, automation.</p>
-        </article>
-        <article class="service-card wide">
-          <h3>🔐 <span data-i18n="contact.guide.sec.title">Cybersecurity</span></h3>
-          <p class="muted" data-i18n="contact.guide.sec.desc">Basic secure design review; access control, logging, best practices; learning resources.</p>
-        </article>
-        <article class="service-card wide">
-          <h3>🤖 <span data-i18n="contact.guide.ai.title">Generative AI</span></h3>
-          <p class="muted" data-i18n="contact.guide.ai.desc">Integrate AI in projects; assistants, automation, LLM flows; ideas for educational tools.</p>
-        </article>
+      <div class="projects-hero-isotipo hero-isotipo" aria-hidden="true">
+        <img src="/assets/img/isotipo01.png" alt="" loading="eager" decoding="sync" />
+      </div>
+
+      <div class="projects-hero-cutoff" aria-hidden="true">
+        <svg viewBox="0 0 1600 120" preserveAspectRatio="none">
+          <path d="M0 68 C220 108 520 108 790 72 C1060 38 1360 30 1600 66 L1600 120 L0 120 Z"></path>
+        </svg>
       </div>
     </section>
 
-    <section class="panel" id="form">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="contact.form.eyebrow">Start the conversation</p><h2 data-i18n="contact.form.title">Main form</h2></div></div>
-      <p class="muted" data-i18n="contact.form.note">Your message is read personally. CmLayer values clear and respectful technical conversations.</p>
-      <div class="contact-grid">
-        <form class="contact-form" data-feedback-form data-source="contact">
-          <label><span data-i18n="contact.form.name">Name</span><input type="text" name="name" placeholder="Your name"></label>
-          <label><span data-i18n="contact.form.email">Email</span><input type="email" name="email" placeholder="you@email.com" required></label>
-          <label><span data-i18n="contact.form.type">Contact type</span><select name="type">
-            <option data-i18n="contact.form.type.opt.colab" value="colab">Collaboration</option>
-            <option data-i18n="contact.form.type.opt.project" value="project">Project</option>
-            <option data-i18n="contact.form.type.opt.feedback" value="feedback">Feedback</option>
-            <option data-i18n="contact.form.type.opt.knowledge" value="knowledge">Knowledge</option>
-            <option data-i18n="contact.form.type.opt.other" value="other">Other</option>
-          </select></label>
-          <label><span data-i18n="contact.form.topic">Topic</span><select name="topic">
-            <option data-i18n="contact.form.topic.opt.software" value="software">Software</option>
-            <option data-i18n="contact.form.topic.opt.security" value="security">Security</option>
-            <option data-i18n="contact.form.topic.opt.ai" value="ai">AI</option>
-            <option data-i18n="contact.form.topic.opt.general" value="general">General</option>
-          </select></label>
-          <label><span data-i18n="contact.form.message">Message</span><textarea name="message" rows="4" placeholder="How can I help?" required></textarea></label>
-          <label class="tiny muted"><input type="checkbox" name="consent" required> <span data-i18n="form.consent.label">Autorizo el uso de estos datos para responder y mejorar CmLayer.</span></label>
-          <button type="submit" class="btn primary" data-i18n="contact.form.submit">Send Message</button>
-          <p class="tiny muted form-status" data-form-status></p>
-        </form>
-        <div class="value-card">
-          <h3 data-i18n="contact.routes.title">Contact routes</h3>
-          <p><strong>📧</strong> <a href="mailto:luiscdano@gmail.com">luiscdano@gmail.com</a></p>
-          <p class="muted" data-i18n="contact.routes.email">For formal messages, proposals, or documented technical collaboration.</p>
-          <p><strong>🌐</strong> GitHub & LinkedIn</p>
-          <p class="muted" data-i18n="contact.routes.platforms">Code review, issues, and technical networking.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="routes">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="contact.eco.eyebrow">Ecosystem connection</p><h2 data-i18n="contact.eco.title">How your message integrates</h2></div></div>
-      <ul>
-        <li data-i18n="contact.eco.item1">Content or learning → Knowledge Hub</li>
-        <li data-i18n="contact.eco.item2">Technical collaboration → Projects / Services</li>
-        <li data-i18n="contact.eco.item3">Feedback or experiences → Voices & Experiences</li>
-      </ul>
-    </section>
-
-    <section class="panel" id="principles">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="contact.principles.eyebrow">Communication principles</p><h2 data-i18n="contact.principles.title">Interaction code</h2></div></div>
-      <ul>
-        <li data-i18n="contact.principles.item1">Respect and technical clarity</li>
-        <li data-i18n="contact.principles.item2">Focus on learning and building</li>
-        <li data-i18n="contact.principles.item3">Basic privacy and confidentiality</li>
-        <li data-i18n="contact.principles.item4">Responsible use of shared information</li>
-      </ul>
-    </section>
-
-    <section class="panel" id="cta-final">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="contact.cta.eyebrow">CTA</p><h2 data-i18n="contact.cta.title">Your voice can build something bigger</h2></div></div>
-      <p class="muted" data-i18n="contact.cta.sub">Idea, comment, or line of code: every message is a chance to learn and improve a system. Tiempo de respuesta estimado: 48h.</p>
-      <div class="cta">
-        <a class="btn primary" href="#form" data-i18n="contact.cta.btn1">Send Message</a>
-        <a class="btn ghost" href="/contact/" data-i18n="contact.cta.btn2">Connect</a>
-        <a class="btn ghost" href="/projects/" data-i18n="contact.cta.btn3">Explore CmLayer</a>
+    <section class="module-beige-section" id="contact-content-base">
+      <div class="container module-beige-container">
+        <article class="module-beige-card">
+          <h2>Sección base: Contacto</h2>
+          <p>Infraestructura inicial lista para integrar formulario principal, canales de contacto y lineamientos de interacción.</p>
+          <p class="module-beige-note">Próxima fase: formulario validado, rutas de colaboración y políticas de respuesta.</p>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <span>© 2026 CmLayer · Luis Emilio Cedano</span>
-    <span class="dot"></span>
-    <span>cmlayer.com</span>
-    <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
+
   <script src="/assets/js/config.js?v=20260205" defer></script>
   <script src="/assets/js/analytics.js?v=20260205" defer></script>
-  <script src="/assets/js/main.js?v=20260309-12" defer></script>
+  <script src="/assets/js/main.js?v=20260310-01" defer></script>
 </body>
 </html>

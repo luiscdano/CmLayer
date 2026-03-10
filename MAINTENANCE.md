@@ -2,7 +2,7 @@
 
 ## Cadencia de revisión
 - Semanal: revisar eventos GA4, formularios y feedback.
-- Mensual: actualizar roadmap, knowledge hub y changelog.
+- Mensual: actualizar roadmap, módulo de conocimiento y changelog.
 - Trimestral: revisar propuestas de valor y ajustar CTAs.
 
 ## Métricas clave (GA4)
@@ -16,6 +16,6 @@
 - Actualizar proyectos y servicios con evidencia reciente.
 
 ## Contenido
-- 1 nuevo recurso en Knowledge Hub por sprint.
+- 1 nuevo recurso en Conocimiento por sprint.
 - 1 entrada de changelog por release.
-- 1 reflexión o historia en Voices & Experiences.
+- 1 actualización estructural en módulos (Sobre/Servicios/Conocimiento/Contacto) según roadmap.

@@ -52,16 +52,12 @@ curl -s https://your-domain.com/admin/feedback -H 'x-admin-token: YOUR_TOKEN'
 
 ## 6. UI verification
 - `/projects/` shows cards from JSON.
-- `/services/` renders service cards from JSON.
-- `/knowledge-hub/` renders library from JSON.
-- `/voices-experiences/` shows health + latest release (Status block).
-- `/voices-experiences/changelog/` shows release history.
+- `/services/`, `/about/`, `/knowledge/`, `/contact/` show hero + beige base section.
+- `/knowledge/` renders the module infrastructure correctly.
+- `/changelog/` shows release history.
 - Language toggle loads from `/api/i18n/:lang`.
 - Feedback form sends and shows success message.
 - Home contact form sends and shows success message.
-- Services project brief form sends and shows success message.
-- Knowledge Hub suggestion form sends and shows success message.
-- Voices sections show published feedback from `/api/voices`.
 
 ## 7. SEO & indexing
 - `robots.txt` reachable.

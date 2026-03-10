@@ -1356,6 +1356,49 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   fill: var(--section-nude);
 }
 
+.module-page .module-beige-section {
+  background: var(--section-nude);
+  padding: 34px 0 64px;
+  border-top: 1px solid rgba(21, 62, 84, 0.08);
+}
+
+.module-page .module-beige-container {
+  max-width: 1200px;
+}
+
+.module-page .module-beige-card {
+  background: #ffffff;
+  border: 1px solid rgba(21, 62, 84, 0.12);
+  border-radius: 34px;
+  box-shadow: 0 16px 34px rgba(12, 34, 48, 0.09);
+  padding: clamp(22px, 3vw, 34px);
+  color: var(--primary-3);
+}
+
+.module-page .module-beige-card h2 {
+  margin: 0 0 12px;
+  color: var(--primary-3);
+  font-size: 28pt;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+}
+
+.module-page .module-beige-card p {
+  margin: 0;
+  color: rgba(22, 63, 84, 0.86);
+  font-size: 13pt;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.module-page .module-beige-card p + p {
+  margin-top: 12px;
+}
+
+.module-page .module-beige-note {
+  color: rgba(22, 63, 84, 0.72);
+}
+
 .projects-page .projects-intro-note {
   position: relative;
   background: var(--section-nude);
@@ -2047,31 +2090,23 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 
 .projects-page .projects-tools-strip {
   --tools-title-balance: clamp(250px, 27vw, 390px);
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--tools-title-balance) minmax(0, 1fr);
   align-items: center;
-  justify-content: flex-start;
-  gap: 16px;
-}
-
-.projects-page .projects-tools-strip::after {
-  content: "";
-  flex: 0 0 var(--tools-title-balance);
+  gap: clamp(14px, 2vw, 26px);
 }
 
 .projects-page .projects-tools-icons {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   align-items: center;
-  justify-content: center;
-  gap: 32px;
-  padding-inline: clamp(10px, 1.4vw, 24px);
+  gap: clamp(14px, 1.7vw, 24px);
+  padding-inline: 0;
 }
 
 .projects-page .projects-tools-title {
   margin: 0;
-  flex: 0 0 var(--tools-title-balance);
-  min-width: auto;
   display: inline-flex;
   flex-direction: row;
   align-items: baseline;
@@ -2095,38 +2130,28 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
 }
 
 .projects-page .projects-tool-item {
-  --tool-base-scale: 1;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
+  min-height: 68px;
+  padding: 8px;
   line-height: 0;
 }
 
 .projects-page .projects-tool-item img {
-  height: 52px;
-  width: auto;
-  max-width: 122px;
+  width: min(100%, 138px);
+  height: 44px;
+  max-width: 138px;
   object-fit: contain;
   opacity: 1;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
-  transform: translateY(0) scale(var(--tool-base-scale));
+  transform: translateY(0);
   transition: transform 0.26s ease, filter 0.26s ease;
   will-change: transform, filter;
 }
 
-.projects-page .projects-tool-item-cloudflare {
-  --tool-base-scale: 2.8;
-  flex: 0 0 clamp(250px, 22vw, 328px);
-  margin-inline: clamp(8px, 1vw, 16px) clamp(10px, 1.2vw, 20px);
-}
-
-.projects-page .projects-tool-item-digitalocean img {
-  mix-blend-mode: multiply;
-}
-
 .projects-page .projects-tool-item:hover img {
-  transform: translateY(-6px) scale(calc(var(--tool-base-scale) * 1.055));
+  transform: translateY(-4px) scale(1.03);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08))
     drop-shadow(0 0 11px rgba(31, 60, 109, 0.35));
 }
@@ -3017,6 +3042,23 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     height: 88px;
   }
 
+  .module-page .module-beige-section {
+    padding: 28px 0 52px;
+  }
+
+  .module-page .module-beige-card {
+    border-radius: 28px;
+    padding: 24px 22px;
+  }
+
+  .module-page .module-beige-card h2 {
+    font-size: 24pt;
+  }
+
+  .module-page .module-beige-card p {
+    font-size: 12pt;
+  }
+
   .projects-page .projects-intro-note {
     padding: 22px 0 44px;
   }
@@ -3272,16 +3314,14 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   .projects-page .projects-tools-strip {
     --tools-title-balance: clamp(220px, 29vw, 320px);
     gap: 14px;
-    justify-content: flex-start;
   }
 
   .projects-page .projects-tools-icons {
-    justify-content: center;
-    gap: 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 16px;
   }
 
   .projects-page .projects-tools-title {
-    min-width: auto;
     margin: 0;
   }
 
@@ -3294,13 +3334,9 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tool-item img {
-    height: 48px;
-    max-width: 112px;
-  }
-
-  .projects-page .projects-tool-item-cloudflare {
-    flex-basis: clamp(218px, 29vw, 278px);
-    margin-inline: 8px 12px;
+    width: min(100%, 120px);
+    height: 40px;
+    max-width: 120px;
   }
 
   .projects-page .projects-post-tools-white {
@@ -3750,6 +3786,29 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
     height: 78px;
   }
 
+  .module-page .module-beige-section {
+    padding: 20px 0 36px;
+  }
+
+  .module-page .module-beige-container {
+    padding: 0 16px;
+  }
+
+  .module-page .module-beige-card {
+    border-radius: 20px;
+    padding: 18px 14px;
+  }
+
+  .module-page .module-beige-card h2 {
+    font-size: 20pt;
+    margin-bottom: 10px;
+  }
+
+  .module-page .module-beige-card p {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
   .projects-page .projects-intro-note {
     padding: 18px 0 20px;
   }
@@ -4053,30 +4112,23 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tools-strip {
-    justify-content: center;
+    grid-template-columns: 1fr;
+    justify-items: center;
     align-items: center;
     gap: 12px;
-    flex-direction: column;
-  }
-
-  .projects-page .projects-tools-strip::after {
-    display: none;
   }
 
   .projects-page .projects-tools-icons {
     width: 100%;
     max-width: 100%;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: nowrap;
-    overflow-x: visible;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
     padding-bottom: 0;
-    padding-inline: 8px;
+    padding-inline: 0;
   }
 
   .projects-page .projects-tools-title {
-    min-width: auto;
-    flex: 0 0 auto;
+    min-width: 0;
     margin: 0;
   }
 
@@ -4089,14 +4141,9 @@ code { background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;
   }
 
   .projects-page .projects-tool-item img {
-    height: 30px;
-    max-width: none;
-  }
-
-  .projects-page .projects-tool-item-cloudflare {
-    --tool-base-scale: 2.6;
-    flex-basis: clamp(136px, 34vw, 164px);
-    margin-inline: 6px 8px;
+    width: min(100%, 96px);
+    height: 32px;
+    max-width: 96px;
   }
 
   .projects-page .projects-post-tools-white {

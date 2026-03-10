@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CmLayer — About</title>
-  <meta name="description" content="CmLayer — persona, plataforma y propósito de Luis Emilio Cedano. Trayectoria, visión y ecosistema tecnológico." />
+  <title>CmLayer — Sobre</title>
+  <meta name="description" content="Sección Sobre de CmLayer. Base estructural para biografía, trayectoria y visión del proyecto." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="CmLayer — About" />
-  <meta property="og:description" content="Persona · Plataforma · Propósito" />
+  <meta property="og:title" content="CmLayer — Sobre" />
+  <meta property="og:description" content="Base estructural para biografía, trayectoria y visión del proyecto." />
   <meta property="og:url" content="https://cmlayer.com/about/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://cmlayer.com/assets/img/isotipo01.png" />
@@ -21,194 +21,97 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260309-73" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Luis Emilio Cedano",
-    "url": "https://cmlayer.com",
-    "jobTitle": "Founder & CTO | Software, Security, AI",
-    "sameAs": ["https://github.com/luiscdano", "https://www.linkedin.com/in/luiscdano"]
-  }
-  </script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260310-01" />
 </head>
-<body>
-  <div class="bg-grid"></div>
+<body class="home-sunset theme-night projects-page module-page">
   <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="/">
-        <img src="/assets/img/Logo01.png" alt="CmLayer" class="brand-mark" />
+    <div class="topbar-inner container">
+      <a class="brand brand-lockup" href="/" aria-label="CmLayer Home">
+        <span class="brand-icon-wrap" aria-hidden="true">
+          <img src="/assets/img/isotipo02.png" alt="" class="brand-isotipo" loading="eager" />
+        </span>
+        <span class="brand-wordmark"><span class="cm">Cm</span><span class="layer">Layer</span></span>
       </a>
       <button class="nav-toggle" aria-label="Open menu">☰</button>
       <nav class="nav-links">
-        <a data-i18n="nav.projects" href="/projects/">Projects</a>
-        <a data-i18n="nav.services" href="/services/">Services</a>
-        <a data-i18n="nav.knowledge" href="/knowledge-hub/">Knowledge Hub</a>
-        <a data-i18n="nav.voices" href="/voices-experiences/">Voices & Experiences</a>
-        <a data-i18n="nav.about" class="active" href="/about/">About</a>
-        <a data-i18n="nav.contact" href="/contact/">Contact</a>
+        <a data-i18n="nav.top.projects" href="/projects/">Proyectos</a>
+        <a data-i18n="nav.top.about" href="/about/">Sobre</a>
+        <a data-i18n="nav.top.services" href="/services/">Servicios</a>
+        <a data-i18n="nav.top.knowledge" href="/knowledge/">Conocimiento</a>
+        <a data-i18n="nav.top.contact" href="/contact/">Contacto</a>
       </nav>
-      <div class="lang-switch">
-        <button data-lang="en" class="active">🇺🇸 EN</button>
-        <button data-lang="es">🇩🇴 ES</button>
+      <div class="lang-switch" aria-label="Language selector">
+        <button
+          class="lang-world"
+          type="button"
+          aria-label="Select language"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="lang-options"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M3 12h18"></path>
+            <path d="M12 3c2.8 2.5 2.8 15.5 0 18"></path>
+            <path d="M12 3c-2.8 2.5-2.8 15.5 0 18"></path>
+            <path d="M5.3 6.8c2.1 1.5 11.3 1.5 13.4 0"></path>
+            <path d="M5.3 17.2c2.1-1.5 11.3-1.5 13.4 0"></path>
+          </svg>
+        </button>
+        <div id="lang-options" class="lang-options">
+          <button data-lang="es" class="active" type="button">ES</button>
+          <button data-lang="en" type="button">EN</button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero__text">
-        <p class="eyebrow" data-i18n="about.hero.eyebrow">CmLayer — About</p>
-        <h1 data-i18n="about.hero.title">Persona · Plataforma · Propósito</h1>
-        <p class="lede" data-i18n="about.hero.sub">Donde la trayectoria personal y la visión tecnológica se convierten en un ecosistema de aprendizaje y construcción de sistemas.</p>
-        <div class="cta">
-          <a class="btn primary" href="/about/certificates/cv01.pdf" target="_blank" rel="noreferrer" data-i18n="about.hero.cta1">Ver CV</a>
-          <a class="btn ghost" href="/projects/" data-i18n="about.hero.cta2">Explorar Proyectos</a>
-          <a class="btn ghost" href="#cmlayer" data-i18n="about.hero.cta3">Conocer CmLayer</a>
+  <main class="landing-main">
+    <section class="projects-hero-sunset">
+      <div class="projects-hero-layer-stack" aria-hidden="true">
+        <svg viewBox="0 0 1600 900" preserveAspectRatio="none">
+          <path class="projects-band band-a" d="M0 260 C300 230 520 330 760 290 C980 250 1210 160 1600 200 L1600 320 L0 320 Z"></path>
+          <path class="projects-band band-b" d="M0 330 C250 300 520 410 760 360 C1010 308 1280 250 1600 280 L1600 410 L0 420 Z"></path>
+          <path class="projects-band band-c" d="M0 430 C280 380 530 500 770 470 C1030 434 1280 380 1600 400 L1600 530 L0 560 Z"></path>
+          <path class="projects-band band-d" d="M0 530 C260 490 520 620 760 590 C1010 556 1300 520 1600 540 L1600 670 L0 680 Z"></path>
+        </svg>
+      </div>
+
+      <div class="container projects-hero-inner">
+        <div class="projects-hero-copy">
+          <h1>Sobre</h1>
+          <p>Base del perfil personal y profesional para documentar visión, trayectoria y evolución técnica dentro del ecosistema CmLayer.</p>
         </div>
       </div>
+
+      <div class="projects-hero-isotipo hero-isotipo" aria-hidden="true">
+        <img src="/assets/img/isotipo01.png" alt="" loading="eager" decoding="sync" />
+      </div>
+
+      <div class="projects-hero-cutoff" aria-hidden="true">
+        <svg viewBox="0 0 1600 120" preserveAspectRatio="none">
+          <path d="M0 68 C220 108 520 108 790 72 C1060 38 1360 30 1600 66 L1600 120 L0 120 Z"></path>
+        </svg>
+      </div>
     </section>
 
-    <section class="panel" id="who">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.who.eyebrow">Quién soy</p><h2 data-i18n="about.who.title">Perfil profesional</h2></div></div>
-      <div class="value-grid" style="align-items:center;">
-        <div class="about-photo"><div class="photo-frame"><img src="/assets/img/foto.luis.png" alt="Luis Emilio Cedano" loading="lazy"></div></div>
-        <article class="value-card">
-          <h3 data-i18n="about.who.name">Luis Emilio Cedano Martínez</h3>
-          <p class="muted" data-i18n="about.who.subtitle">Estudiante de Desarrollo de Software | Ingeniero en formación | Aprendiz en público</p>
-          <p data-i18n="about.who.desc">Soy un estudiante de desarrollo de software con enfoque en arquitectura de sistemas, seguridad digital y automatización con inteligencia artificial. Construyo proyectos reales como método de aprendizaje y documento cada etapa para convertir la experiencia en conocimiento reutilizable.</p>
-          <ul>
-            <li data-i18n="about.who.focus1">Diseño y desarrollo de sistemas de software</li>
-            <li data-i18n="about.who.focus2">Fundamentos de ciberseguridad aplicada</li>
-            <li data-i18n="about.who.focus3">Integración de inteligencia artificial generativa</li>
-            <li data-i18n="about.who.focus4">Documentación técnica y aprendizaje estructurado</li>
-          </ul>
+    <section class="module-beige-section" id="about-content-base">
+      <div class="container module-beige-container">
+        <article class="module-beige-card">
+          <h2>Sección base: Sobre</h2>
+          <p>Infraestructura inicial lista para integrar biografía, experiencia, certificaciones y propuesta de valor.</p>
+          <p class="module-beige-note">Próxima fase: bloques de perfil, trayectoria y documentación personal.</p>
         </article>
-      </div>
-    </section>
-
-    <!-- Removed trajectory block to avoid redundancia con Home/Projects -->
-
-    <section class="panel" id="certs">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.certs.eyebrow">Certificaciones & Formación</p><h2 data-i18n="about.certs.title">Formación técnica</h2></div></div>
-      <ul>
-        <li data-i18n="about.certs.item1">Programación Orientada a Objetos</li>
-        <li data-i18n="about.certs.item2">Bases de Datos y SQL</li>
-        <li data-i18n="about.certs.item3">Desarrollo Web y APIs</li>
-        <li data-i18n="about.certs.item4">Control de Versiones con Git & GitHub</li>
-        <li data-i18n="about.certs.item5">Fundamentos de Ciberseguridad</li>
-        <li data-i18n="about.certs.item6">Introducción a Inteligencia Artificial Generativa</li>
-      </ul>
-      <p class="muted" data-i18n="about.certs.note">Certificados y CV disponibles para descarga.</p>
-      <div class="services-grid">
-        <article class="service-card">
-          <h3 data-i18n="about.certs.downloads">Descargas</h3>
-          <ul class="muted">
-            <li><a href="/about/certificates/cv01.pdf" target="_blank" rel="noreferrer" data-i18n="about.certs.cv">CV (Español)</a></li>
-            <li><a href="/about/certificates/cv02.pdf" target="_blank" rel="noreferrer">Certificado Secundaria</a></li>
-            <li><a href="/about/certificates/titulo-dominico-americano.pdf" target="_blank" rel="noreferrer">Título Dominico-Americano</a></li>
-            <li><a href="/about/certificates/titulo-utesa.pdf" target="_blank" rel="noreferrer">Título UTESA</a></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="panel" id="cv">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.cv.eyebrow">CV — Perfil profesional</p><h2 data-i18n="about.cv.title">Resumen</h2></div></div>
-      <p class="muted" data-i18n="about.cv.desc">Estudiante de desarrollo de software con enfoque en diseño de sistemas, seguridad por diseño y automatización con IA. Orientado al aprendizaje continuo, la documentación técnica y la construcción de soluciones estructuradas.</p>
-      <div class="services-grid">
-        <article class="service-card"><h3 data-i18n="about.cv.skills.title">Competencias</h3><p class="muted" data-i18n="about.cv.skills.desc">Backend/Frontend · Arquitectura · Git/CI-CD básico · Seguridad de apps · Bases de datos · Automatización/IA.</p></article>
-        <article class="service-card"><h3 data-i18n="about.cv.lang.title">Idiomas</h3><p class="muted" data-i18n="about.cv.lang.desc">Español (Nativo) · Inglés (Intermedio)</p></article>
-      </div>
-      <div class="cta">
-        <a class="btn primary" href="/assets/docs/CV.pdf" target="_blank" rel="noreferrer" data-i18n="about.cv.cta1">Descargar CV</a>
-        <a class="btn ghost" href="/projects/" data-i18n="about.cv.cta2">Ver Perfil Técnico</a>
-      </div>
-    </section>
-
-    <section class="panel" id="cmlayer">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.cmlayer.eyebrow">Qué es CmLayer</p><h2 data-i18n="about.cmlayer.title">Identidad de plataforma</h2></div></div>
-      <div class="value-grid" style="align-items:center;">
-        <article class="value-card">
-          <h3 data-i18n="about.cmlayer.desc.title">CmLayer: Un ecosistema de ingeniería en construcción</h3>
-          <p class="muted" data-i18n="about.cmlayer.desc.body">Plataforma tecnológica y educativa para unir aprendizaje, experimentación y sistemas reales. Laboratorio público con prácticas modernas de ingeniería.</p>
-          <p data-i18n="about.cmlayer.desc.purpose"><strong>Propósito:</strong> Transformar conocimiento técnico en sistemas funcionales y crecimiento profesional visible.</p>
-        </article>
-        <div class="about-photo"><div class="photo-frame"><img src="/assets/img/Logo01.png" alt="CmLayer logo" loading="lazy"></div></div>
-      </div>
-    </section>
-
-    <section class="panel" id="vision">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.vision.eyebrow">Visión · Misión · Objetivos</p><h2 data-i18n="about.vision.title">Dirección</h2></div></div>
-      <article class="card glass">
-        <h3 data-i18n="about.vision.v.title">Visión</h3>
-        <p data-i18n="about.vision.v.body">Convertir CmLayer en un ecosistema digital de referencia para el aprendizaje, diseño y construcción de sistemas de software seguros e inteligentes.</p>
-        <h3 data-i18n="about.vision.m.title">Misión</h3>
-        <p data-i18n="about.vision.m.body">Desarrollar plataformas, proyectos y recursos que integren desarrollo de software, ciberseguridad e IA generativa bajo aprendizaje en público y mejora continua.</p>
-        <h3 data-i18n="about.vision.o.title">Objetivos</h3>
-        <ul>
-          <li data-i18n="about.vision.o1">Diseñar sistemas con arquitectura clara y escalable</li>
-          <li data-i18n="about.vision.o2">Integrar seguridad como principio de diseño</li>
-          <li data-i18n="about.vision.o3">Aplicar IA generativa como herramienta de automatización y soporte</li>
-          <li data-i18n="about.vision.o4">Construir una biblioteca pública de conocimiento técnico</li>
-          <li data-i18n="about.vision.o5">Fomentar la colaboración y el feedback técnico</li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Enfoque tecnológico ya cubierto en Home/Services; se omite para evitar duplicado -->
-
-    <section class="panel" id="values">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.values.eyebrow">Valores</p><h2 data-i18n="about.values.title">Principios de CmLayer</h2></div></div>
-      <ul>
-        <li data-i18n="about.values.v1">Transparencia: aprender y construir en público</li>
-        <li data-i18n="about.values.v2">Estructura: priorizar diseño y documentación</li>
-        <li data-i18n="about.values.v3">Responsabilidad: seguridad y ética en el desarrollo</li>
-        <li data-i18n="about.values.v4">Curiosidad: exploración constante de nuevas tecnologías</li>
-        <li data-i18n="about.values.v5">Colaboración: crecimiento a través del feedback</li>
-      </ul>
-    </section>
-
-    <section class="panel" id="policies">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.policies.eyebrow">Políticas & Principios</p><h2 data-i18n="about.policies.title">Uso y seguridad</h2></div></div>
-      <ul>
-        <li data-i18n="about.policies.item1">Uso responsable de tecnología: privacidad, ética, IA responsable.</li>
-        <li data-i18n="about.policies.item2">Seguridad por diseño: riesgos, accesos y trazabilidad desde el inicio.</li>
-        <li data-i18n="about.policies.item3">Contenido educativo: todo el material es para aprendizaje técnico.</li>
-      </ul>
-    </section>
-
-    <section class="panel" id="ecosystem">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.eco.eyebrow">Ecosistema CmLayer</p><h2 data-i18n="about.eco.title">Secciones integradas</h2></div></div>
-      <div class="value-grid">
-        <article class="value-card"><h3 data-i18n="about.eco.projects.title">Projects</h3><p class="muted" data-i18n="about.eco.projects.desc">Sistemas y plataformas en desarrollo.</p></article>
-        <article class="value-card"><h3 data-i18n="about.eco.kh.title">Knowledge Hub</h3><p class="muted" data-i18n="about.eco.kh.desc">Biblioteca de aprendizaje y curaduría técnica.</p></article>
-        <article class="value-card"><h3 data-i18n="about.eco.voices.title">Voices & Experiences</h3><p class="muted" data-i18n="about.eco.voices.desc">Reflexiones y feedback del proceso.</p></article>
-        <article class="value-card"><h3 data-i18n="about.eco.services.title">Services</h3><p class="muted" data-i18n="about.eco.services.desc">Capacidades y colaboración técnica.</p></article>
-      </div>
-    </section>
-
-    <section class="panel" id="cta-final">
-      <div class="section-head"><div><p class="eyebrow" data-i18n="about.cta.eyebrow">CTA</p><h2 data-i18n="about.cta.title">Construyamos Sistemas con Propósito</h2></div></div>
-      <p class="muted" data-i18n="about.cta.sub">Aprender, colaborar o explorar tecnología: CmLayer es un espacio abierto para crecer en software, seguridad e IA.</p>
-      <div class="cta">
-        <a class="btn primary" href="/contact/" data-i18n="about.cta.btn1">Conectar</a>
-        <a class="btn ghost" href="/contact/" data-i18n="about.cta.btn2">Colaborar</a>
-        <a class="btn ghost" href="/projects/" data-i18n="about.cta.btn3">Explorar Proyectos</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <span>© 2026 CmLayer · Luis Emilio Cedano</span>
-    <span class="dot"></span>
-    <span>cmlayer.com</span>
-    <span class="dot"></span>
-    <span class="release">Release: CM-2026.02.05 · Env: Production · <a href="/voices-experiences/changelog/">/voices-experiences/changelog</a></span>
   </footer>
+
   <script src="/assets/js/config.js?v=20260205" defer></script>
   <script src="/assets/js/analytics.js?v=20260205" defer></script>
-  <script src="/assets/js/main.js?v=20260309-12" defer></script>
+  <script src="/assets/js/main.js?v=20260310-01" defer></script>
 </body>
 </html>

@@ -17,8 +17,8 @@ Construir una web de habilidades y servicios que demuestre evidencia técnica, c
 - `/` Inicio (impacto + mapa + CTA)
 - `/projects/` Evidencia técnica y sistemas activos
 - `/services/` Servicios + entregables + brief
-- `/knowledge-hub/` Biblioteca y curación
-- `/voices-experiences/` Feedback loop + changelog
+- `/knowledge/` Biblioteca y curación
+- `/changelog/` Registro de cambios y releases
 - `/about/` Persona, visión, ecosistema
 - `/contact/` Conversión directa
 
@@ -29,8 +29,8 @@ Construir una web de habilidades y servicios que demuestre evidencia técnica, c
 [Map / Ecosystem]
 [Projects preview]
 [Services preview]
-[Knowledge Hub preview]
-[Voices + testimonials]
+[Conocimiento preview]
+[Contacto rápido]
 [Contact form]
 
 ### Services
@@ -49,24 +49,16 @@ Construir una web de habilidades y servicios que demuestre evidencia técnica, c
 [Mindset + lifecycle]
 [Final CTA]
 
-### Knowledge Hub
+### Conocimiento
 [Hero]
 [Library]
 [Videos & courses]
 [Contribution form]
 
-### Voices & Experiences
-[Hero]
-[Status]
-[Stories]
-[Published feedback]
-[Feedback form]
-[Changelog]
-
 ## CTA primaria por sección
 - Home: Ir a Projects / Contacto
 - Services: Enviar brief
 - Projects: Contacto
-- Knowledge Hub: Sugerir recurso
-- Voices: Compartir feedback
+- Conocimiento: Explorar recursos
+- Changelog: Revisar actualizaciones
 - Contact: Enviar mensaje
