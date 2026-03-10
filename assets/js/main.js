@@ -72,20 +72,27 @@
     document.body?.setAttribute("data-lang", lang);
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      if (state.i18n[key]) {
-        el.textContent = state.i18n[key];
+      if (!el.dataset.i18nDefault) {
+        el.dataset.i18nDefault = el.textContent || "";
       }
+      el.textContent = state.i18n[key] || el.dataset.i18nDefault;
     });
     document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
       const key = el.getAttribute("data-i18n-placeholder");
-      if (state.i18n[key]) {
-        el.setAttribute("placeholder", state.i18n[key]);
+      if (!el.dataset.i18nPlaceholderDefault) {
+        el.dataset.i18nPlaceholderDefault = el.getAttribute("placeholder") || "";
       }
+      const value = state.i18n[key] || el.dataset.i18nPlaceholderDefault;
+      el.setAttribute("placeholder", value);
     });
     document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
       const key = el.getAttribute("data-i18n-aria-label");
-      if (state.i18n[key]) {
-        el.setAttribute("aria-label", state.i18n[key]);
+      if (!el.dataset.i18nAriaLabelDefault) {
+        el.dataset.i18nAriaLabelDefault = el.getAttribute("aria-label") || "";
+      }
+      const value = state.i18n[key] || el.dataset.i18nAriaLabelDefault;
+      if (value) {
+        el.setAttribute("aria-label", value);
       }
     });
     setActiveLangButtons(lang);
