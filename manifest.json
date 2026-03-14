@@ -7,17 +7,17 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/assets/img/favicon-b01-512.png?v=20260314-02",
+      "src": "/assets/img/favicon-b01-512.png?v=20260314-03",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
-      "src": "/assets/img/favicon-b01-180.png?v=20260314-02",
+      "src": "/assets/img/favicon-b01-180.png?v=20260314-03",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/assets/img/favicon-b01-192.png?v=20260314-02",
+      "src": "/assets/img/favicon-b01-192.png?v=20260314-03",
       "sizes": "192x192",
       "type": "image/png"
     }
